@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "jakebathman.mysql-syntax",
+        "felixfbecker.php-intellisense",
+        "kokororin.vscode-phpfmt",
+        "bajdzis.vscode-database",
+        "james-yu.latex-workshop",
+        "tecosaur.latex-utilities"
+    ]
+}
