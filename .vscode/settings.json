@@ -7,4 +7,5 @@
     "css.completion.triggerPropertyValueCompletion": true,
     "css.customData": [],
     "css.validate": true,
+    "html.suggest.html5": false,
 }
