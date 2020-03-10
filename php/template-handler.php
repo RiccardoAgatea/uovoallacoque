@@ -11,7 +11,7 @@ class TemplateHandler
         }
 
         $this->root = $root;
-        $this->page = str_replace("<rootFolder />", $root, file_get_contents(__DIR__ . "/components/" . $standard . "-template.php"));
+        $this->page = file_get_contents(__DIR__ . "/components/" . $standard . "-template.php");
     }
 
     public function setTitle(string $title)
@@ -57,11 +57,18 @@ class TemplateHandler
 
     public function send()
     {
+        $this->done();
         echo $this->page;
     }
 
     public function save(string $file)
     {
+        $this->done();
         file_put_contents($file, $this->page);
+    }
+
+    private function done()
+    {
+        $this->page = str_replace("<rootFolder />", $root, $this->page);
     }
 }
