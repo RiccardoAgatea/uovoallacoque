@@ -69,6 +69,6 @@ class TemplateHandler
 
     private function done()
     {
-        $this->page = str_replace("<rootFolder />", $root, $this->page);
+        $this->page = str_replace("<rootFolder />", $this->root, $this->page);
     }
 }
