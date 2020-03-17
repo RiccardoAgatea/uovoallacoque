@@ -2,7 +2,9 @@
 	<h1 class="nome-ricetta">
 		<nomeRicettaPlaceholder />
 	</h1>
-	<img class="immagine-ricetta"  alt="Uovo alla coque"/>
+	<img class="immagine-ricetta"
+		 src="<imgSrcPlaceholder />"
+		 alt="Uovo alla coque" />
 	<dl class="difficoltà-tempo">
 		<dt>Difficoltà:</dt>
 		<dd>
@@ -15,11 +17,9 @@
 	</dl>
 
 	<ul class="ingredienti">
-		<li class="ingrediente"> 
-			<ingredientiPlaceholder />
-		</li>
+		<ingredientiPlaceholder />
 	</ul>
-	<p class="procedura"> 
+	<p class="procedura">
 		<proceduraPlaceholder />
 	</p>
 </div>
