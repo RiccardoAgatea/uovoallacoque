@@ -1,0 +1,66 @@
+/*regole generiche*/
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	max-width: 1024px;
+	margin: 0em auto;
+}
+/*sfondo e stile*/
+html{
+    background-color: none;
+    
+}
+body{
+    background-image: url("../img/sfondo/sfondo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 1em;
+    
+}
+/*menù*/
+#menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-style: solid;
+    border-width: 0.01em;
+    padding: 1em;
+    margin: 1em;
+}
+ul{
+    list-style-type: none;
+}
+/*introduzione*/
+#introduction{
+    border-style: dashed;
+    border-width: 0.07em;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/*Footer*/
+#footer {
+	text-align: left;
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: flex-end;
+	justify-content: space-between;
+    margin-top: 4em;
+    border-style: solid;
+    border-width: 0.1em;
+    border-color: rgb(115, 168, 199);
+}
+
+#footer ul {
+	list-style-type: none;
+    margin-right: auto;
+    padding-left: 1em;
+}
