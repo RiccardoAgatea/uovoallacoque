@@ -24,18 +24,73 @@ body{
     
 }
 /*menù*/
+
 #menu{
     display: flex;
     flex-direction: row;
     justify-content: center;
     border-style: solid;
     border-width: 0.01em;
-    padding: 1em;
+    background-color:  rgba(115,168,199,0.5);
     margin: 1em;
+    padding: 1em;
+    font-size: large;
+    width: max-content;
     
+    
+}
+#menu li a{
+   /* padding-right: 2em;
+    padding-left: 2em;*/
+    
+    
+}
+#primi{
+    padding-left: 2em;
+    padding-right: 2em;
+}
+#secondi{
+    padding-right: 2em;
+}
+#dolci{
+    padding-right: 2em;
+}
+#home{
+    padding-left: 2em;
 }
 ul{
     list-style-type: none;
+
+}
+#barra_ricerca{
+    text-align: center;
+}
+
+a:visited {
+    color: red;
+    border-color: black;
+}
+
+a:hover {
+	background-color:rgba(201, 229, 245, 0.712);
+}
+/*accesso*/
+#lista_accesso{
+   /* border-style: solid;
+    border-width: 0.01em;
+    background-color: rgba(115,168,199,0.5);
+    width: max-content;*/
+    display: flex;
+    flex-direction: row;
+}
+#lista_accesso li a{
+    border-style: solid;
+    border-width: 0.01em;
+    background-color: rgba(115,168,199,0.5);
+    width: max-content;
+}
+#accedi_scritta{
+    padding-right: 1em;
 }
 /*introduzione*/
 #introduction{
