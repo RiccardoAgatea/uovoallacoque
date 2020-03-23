@@ -12,7 +12,7 @@ $handler->setLogin(
     file_get_contents(__DIR__ . "/components/default-login.php")
 );
 $tipo=$_GET['id'];
-
+include (__DIR__ .'/query-portata.php');
 switch($tipo) {
     case 1: 
         $handler->setNav(
@@ -25,6 +25,8 @@ switch($tipo) {
         $handler->setBreadcrumb("Ti trovi in: Home > Primi Piatti");
         $content = file_get_contents(__DIR__ . "/components/primi-content.php");
         $content = preg_replace("(<top.*Placeholder />)", "", $content);
+        $risultato = contentPortata(1);
+        $content = str_replace("<PlaceholderElenco />", $risultato);
         $handler->setContent($content);
         $handler->send();
     break;
@@ -39,6 +41,8 @@ switch($tipo) {
         $handler->setBreadcrumb("Ti trovi in: Home > Secondi Piatti");
         $content = file_get_contents(__DIR__ . "/components/secondi-content.php");
         $content = preg_replace("(<top.*Placeholder />)", "", $content);
+        $risultato = contentPortata(2);
+        $content = str_replace("<PlaceholderElenco />", $risultato);
         $handler->setContent($content);
         $handler->send();
     break;
@@ -53,6 +57,8 @@ switch($tipo) {
         $handler->setBreadcrumb("Ti trovi in: Home > Dolci");
         $content = file_get_contents(__DIR__ . "/components/dolci-content.php");
         $content = preg_replace("(<top.*Placeholder />)", "", $content);
+        $risultato = contentPortata(3);
+        $content = str_replace("<PlaceholderElenco />", $risultato);
         $handler->setContent($content);
         $handler->send();
     break;
