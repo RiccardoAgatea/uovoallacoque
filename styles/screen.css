@@ -29,34 +29,35 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     border-style: solid;
     border-width: 0.01em;
     background-color:  rgba(115,168,199,0.5);
-    margin: 1em;
+    margin-top: 2em;
+    margin-bottom: 2em;
     padding: 1em;
     font-size: large;
     width: max-content;
+    /*non riesco a posizionare il menu centrale e intanto lascio cosi...c'è spazio per il logo*/
+    position: relative;
+    left: 15em;
+    right: 15em;
     
     
 }
-#menu li a{
-   /* padding-right: 2em;
-    padding-left: 2em;*/
-    
-    
-}
+
 #primi{
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
 }
 #secondi{
-    padding-right: 2em;
+    padding-right: 2.5em;
 }
 #dolci{
-    padding-right: 2em;
+    padding-right: 1em;
 }
 #home{
-    padding-left: 2em;
+    padding-left: 1em;
 }
 ul{
     list-style-type: none;
@@ -72,14 +73,11 @@ a:visited {
 }
 
 a:hover {
-	background-color:rgba(201, 229, 245, 0.712);
+	background-color:rgba(216, 235, 247, 0.76);
 }
 /*accesso*/
 #lista_accesso{
-   /* border-style: solid;
-    border-width: 0.01em;
-    background-color: rgba(115,168,199,0.5);
-    width: max-content;*/
+    float:right; /*un pò illegale*/
     display: flex;
     flex-direction: row;
 }
@@ -89,9 +87,17 @@ a:hover {
     background-color: rgba(115,168,199,0.5);
     width: max-content;
 }
+#lista_accesso li a:hover{
+    background-color:rgba(216, 235, 247, 0.76); /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/  
+}
 #accedi_scritta{
     padding-right: 1em;
 }
+/*breadcrumb*/
+/*#breadcrumb{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}*/
 /*introduzione*/
 #introduction{
     border-style: dashed;
@@ -100,7 +106,17 @@ a:hover {
     margin-top: 1em;
     margin-bottom: 1em;
 }
-
+/*Login*/
+.form-fieldset{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.barra-input{
+    
+}
+.label{
+    text-align: center;
+}
 /*Footer*/
 #footer {
 	text-align: left;
@@ -109,14 +125,11 @@ a:hover {
 	flex-wrap: nowrap;
 	align-items: flex-end;
 	justify-content: space-between;
-    margin-top: 5em;
-    bottom: 0em;
+    margin-top: 4em;
+    position: relative;
+    bottom: -2em;
     background-color: rgba(115,168,199,0.5);
     
-   /* right: 0em;
-    left: 0em;
-    bottom: 0em;
-    margin-bottom: 0em;*/
     
 
 }
