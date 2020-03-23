@@ -27,5 +27,5 @@
     }
     
     }
-    DBConnection::disconnect();
+    $msql->disconnect();
 ?>
