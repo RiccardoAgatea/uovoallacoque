@@ -22,7 +22,7 @@ switch($tipo) {
                 file_get_contents(__DIR__ . "/components/default-nav.php")
             )
         );
-        $handler->setBreadcrumb("Ti trovi in: Home > Primi Piatti");
+        $handler->setBreadcrumb("Ti trovi in: Home &gt Primi Piatti");
         $content = file_get_contents(__DIR__ . "/components/primi-content.php");
         $content = preg_replace("(<top.*Placeholder />)", "", $content);
         $risultato = contentPortata(1);
@@ -38,7 +38,7 @@ switch($tipo) {
                 file_get_contents(__DIR__ . "/components/default-nav.php")
             )
         );
-        $handler->setBreadcrumb("Ti trovi in: Home > Secondi Piatti");
+        $handler->setBreadcrumb("Ti trovi in: Home &gt Secondi Piatti");
         $content = file_get_contents(__DIR__ . "/components/secondi-content.php");
         $content = preg_replace("(<top.*Placeholder />)", "", $content);
         $risultato = contentPortata(2);
@@ -54,7 +54,7 @@ switch($tipo) {
                 file_get_contents(__DIR__ . "/components/default-nav.php")
             )
         );
-        $handler->setBreadcrumb("Ti trovi in: Home > Dolci");
+        $handler->setBreadcrumb("Ti trovi in: Home &gt Dolci");
         $content = file_get_contents(__DIR__ . "/components/dolci-content.php");
         $content = preg_replace("(<top.*Placeholder />)", "", $content);
         $risultato = contentPortata(3);

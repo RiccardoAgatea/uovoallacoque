@@ -154,13 +154,13 @@ a:hover {
     border: black solid 1px;
 }
 
-.elenco-content img {
+.elenco-immagine {
     height: 10em;
     width: 10em;
     object-fit: contain;
 }
 
-.elenco-content h2 {
+.elenco-titolo {
     margin-left: 1em;
     display: inline;
 }
