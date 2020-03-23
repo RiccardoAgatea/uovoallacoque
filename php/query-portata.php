@@ -16,10 +16,10 @@
             $immagine = $row['img'];
 
             $risultato = $risultato.
-            '<li>'.
-                '<h2>'.$nome.'</h2>'.
+            '<li class=elenco-elemento>'.
                 '<img src="'.$immagine.'" alt = "immagine di '.$nome.'" />'.
-                '<ul>'.
+                '<h2>'.$nome.'</h2>'.               
+                '<ul class="elenco-attributi">'.
                     '<li> Difficoltà: '.$difficolta.'</li>'.
                     '<li>Tempo: '.$tempo. '</li>'.
                 '</ul>'.
