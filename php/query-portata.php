@@ -1,6 +1,7 @@
 <?php
     include (__DIR__ . '/db-connection.php');
-    $mysql=DBconnection::connectTo("test-data");
+    $mysql= new DBconnection;
+    $mysql->connectTo("test-data");
     function contentPortata($i) {
     $query="SELECT * FROM ricette WHERE portata=$i";
     

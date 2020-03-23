@@ -12,7 +12,7 @@ $handler->setLogin(
     file_get_contents(__DIR__ . "/components/default-login.php")
 );
 $tipo=$_GET['id'];
-include (__DIR__ .'/query-portata.php');
+include (__DIR__ .'./query-portata.php');
 switch($tipo) {
     case 1: 
         $handler->setNav(
