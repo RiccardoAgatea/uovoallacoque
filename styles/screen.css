@@ -1,0 +1,127 @@
+/*regole generiche*/
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	max-width: 1024px;
+	margin: 0em auto;
+}
+/*sfondo e stile*/
+html{
+    background-color: none;
+    
+}
+body{
+    background-image: url("../img/sfondo/sfondo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 1em;
+    
+}
+/*menù*/
+
+#menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-style: solid;
+    border-width: 0.01em;
+    background-color:  rgba(115,168,199,0.5);
+    margin: 1em;
+    padding: 1em;
+    font-size: large;
+    width: max-content;
+    
+    
+}
+#menu li a{
+   /* padding-right: 2em;
+    padding-left: 2em;*/
+    
+    
+}
+#primi{
+    padding-left: 2em;
+    padding-right: 2em;
+}
+#secondi{
+    padding-right: 2em;
+}
+#dolci{
+    padding-right: 2em;
+}
+#home{
+    padding-left: 2em;
+}
+ul{
+    list-style-type: none;
+
+}
+#barra_ricerca{
+    text-align: center;
+}
+
+a:visited {
+    color: red;
+    border-color: black;
+}
+
+a:hover {
+	background-color:rgba(201, 229, 245, 0.712);
+}
+/*accesso*/
+#lista_accesso{
+   /* border-style: solid;
+    border-width: 0.01em;
+    background-color: rgba(115,168,199,0.5);
+    width: max-content;*/
+    display: flex;
+    flex-direction: row;
+}
+#lista_accesso li a{
+    border-style: solid;
+    border-width: 0.01em;
+    background-color: rgba(115,168,199,0.5);
+    width: max-content;
+}
+#accedi_scritta{
+    padding-right: 1em;
+}
+/*introduzione*/
+#introduction{
+    border-style: dashed;
+    border-width: 0.07em;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/*Footer*/
+#footer {
+	text-align: left;
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: flex-end;
+	justify-content: space-between;
+    margin-top: 5em;
+    bottom: 0em;
+    background-color: rgba(115,168,199,0.5);
+    
+   /* right: 0em;
+    left: 0em;
+    bottom: 0em;
+    margin-bottom: 0em;*/
+    
+
+}
+
+#footer ul {
+	list-style-type: none;
+    margin-right: auto;
+}
