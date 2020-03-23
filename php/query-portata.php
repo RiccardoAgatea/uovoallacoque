@@ -1,14 +1,14 @@
 <?php
     include (__DIR__ . '/db-connection.php');
-    $mysql= new DBconnection;
-    $mysql->connectTo("test-data");
+    
     function contentPortata($i) {
+    $mysql= new DBconnection;
     $query="SELECT * FROM ricette WHERE portata=$i";
     
     $risultato = "";
-    if ($result=$mysql->query($query))
+    if ($result=$mysql->risultato($query))
     {
-        while ($row=$result->fetc_assoc())
+        while ($row=$result->fetch_assoc())
         {
             $nome = $row['nome'];
             $difficolta = $row['difficolta'];
@@ -23,9 +23,10 @@
             '<li>Tempo: '.$tempo. '</li>'.
             '</ul>';    
         }
-        $this -> $risultato;
+        return $risultato;
+        
+    }
+    $mysql->disconnect();
     }
     
-    }
-    $msql->disconnect();
 ?>

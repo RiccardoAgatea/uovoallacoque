@@ -26,7 +26,7 @@ switch($tipo) {
         $content = file_get_contents(__DIR__ . "/components/primi-content.php");
         $content = preg_replace("(<top.*Placeholder />)", "", $content);
         $risultato = contentPortata(1);
-        $content = str_replace("<PlaceholderElenco />", $risultato);
+        $content = str_replace("<PlaceholderElenco />", $risultato, file_get_contents(__DIR__ . "/components/primi-content.php"));
         $handler->setContent($content);
         $handler->send();
     break;
@@ -42,7 +42,7 @@ switch($tipo) {
         $content = file_get_contents(__DIR__ . "/components/secondi-content.php");
         $content = preg_replace("(<top.*Placeholder />)", "", $content);
         $risultato = contentPortata(2);
-        $content = str_replace("<PlaceholderElenco />", $risultato);
+        $content = str_replace("<PlaceholderElenco />", $risultato, $content = file_get_contents(__DIR__ . "/components/secondi-content.php"));
         $handler->setContent($content);
         $handler->send();
     break;
@@ -58,7 +58,7 @@ switch($tipo) {
         $content = file_get_contents(__DIR__ . "/components/dolci-content.php");
         $content = preg_replace("(<top.*Placeholder />)", "", $content);
         $risultato = contentPortata(3);
-        $content = str_replace("<PlaceholderElenco />", $risultato);
+        $content = str_replace("<PlaceholderElenco />", $risultato, $content = file_get_contents(__DIR__ . "/components/dolci-content.php"));
         $handler->setContent($content);
         $handler->send();
     break;
