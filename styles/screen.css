@@ -8,21 +8,41 @@ html, body {
 	max-width: 1024px;
 	margin: 0em auto;
 }
+
 /*sfondo e stile*/
 html{
-    background-color: none;
-    
-}
-body{
     background-image: url("../img/sfondo/sfondo.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment:fixed;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 1em;
-    
 }
+body{
+    background-color: rgba(115,168,199,0.5);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 1em 0em;
+}
+
+/*Footer*/
+#footer {
+	text-align: left;
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: flex-end;
+	justify-content: space-between;
+    margin-top: 4em;
+    position: relative;
+    /*bottom: -2em;
+    /*background-color: rgba(115,168,199,0.5);*/
+}
+
+#footer ul {
+	list-style-type: none;
+    margin-right: auto;
+}
+/*fine footer*/
+
 /*menù*/
 
 #menu{
@@ -117,27 +137,7 @@ a:hover {
 .label{
     text-align: center;
 }
-/*Footer*/
-#footer {
-	text-align: left;
-	width: 100%;
-	display: flex;
-	flex-wrap: nowrap;
-	align-items: flex-end;
-	justify-content: space-between;
-    margin-top: 4em;
-    position: relative;
-    bottom: -2em;
-    background-color: rgba(115,168,199,0.5);
-    
-    
 
-}
-
-#footer ul {
-	list-style-type: none;
-    margin-right: auto;
-}
 /*inizio pagina elenco*/
 .elenco-content {
     display: flex;
