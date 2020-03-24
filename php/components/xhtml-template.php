@@ -31,6 +31,7 @@
               media="print"
               href="<rootFolder />/prove/print.css"
               type="text/css" />
+        <script src="<rootFolder />/js/check.js"></script>
     </head>
 
     <body>
