@@ -1,6 +1,8 @@
 <div id="content">
     <h1>Primi Piatti</h1>
-    <PlaceholderElenco />
+    <ul class="elenco-content">
+        <PlaceholderElenco />
+    </ul>
 </div>
     
     

@@ -3,7 +3,7 @@ require_once "./template-handler.php";
 
 $handler = new TemplateHandler("..", "xhtml");
 
-$handler->setTitle("Uovo alla Coque");
+$handler->setTitle("Utente | Uovo alla Coque");
 $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
@@ -16,7 +16,7 @@ $handler->setNav(
     file_get_contents(__DIR__ . "/components/default-nav.php")
 );
 
-$handler->setBreadcrumb("Ti trovi in: Home &gt Primi");
+$handler->setBreadcrumb("Ti trovi in: Home &gt Utente");
 
 $content = file_get_contents(__DIR__ . "/components/utente-content.php");
 

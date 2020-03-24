@@ -3,7 +3,7 @@ require_once "./template-handler.php";
 
 $handler = new TemplateHandler("..", "xhtml");
 
-$handler->setTitle("Uovo alla Coque");
+$handler->setTitle("Accedi | Uovo alla Coque");
 $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");

@@ -27,6 +27,7 @@
         <link rel="stylesheet"
               media="print"
               href="<rootFolder />/prove/print.css" />
+        <script src="<rootFolder />/js/check.js"></script>
     </head>
 
     <body>
