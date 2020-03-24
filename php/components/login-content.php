@@ -2,7 +2,7 @@
     <h1>Accedi</h1>
     <form action="#" method="POST" id="form-login" onsubmit="return loginValidator('login-email')" >
         <fieldset class="form-fieldset">
-            <legend>Accedi</legend>
+            <legend class="legend">Accedi</legend>
             <ul class="form-container">
                 <li class="form-element">
                     <label class="label" for="login-email">Email:</label>
