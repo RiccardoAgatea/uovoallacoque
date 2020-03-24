@@ -2,7 +2,7 @@
     <h1>Registrati</h1>
     <form action="" name="signup" method="POST" id="form-signup" onsubmit="return signupValidator('signup-nome', 'signup-cognome', 'signup-nick', 'signup-email', 'signup-password1', 'signup-password2')">
         <fieldset class="form-fieldset">
-            <legend>Registrazione</legend>
+            <legend class="legend">Registrazione</legend>
             <ul class="form-container">
                 <li class="form-element">
                     <label class="label" for="signup-nome">Nome:</label>

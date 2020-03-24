@@ -35,7 +35,7 @@
             <loginPlaceholder />
         </header>
         <navPlaceholder />
-        <breadcrumbPlaceholder />
+        <breadcrumbPlaceholder/>
         <contentPlaceholder />
         <footer id="footer">
             <ul id="nomi-contatti">

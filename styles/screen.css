@@ -18,11 +18,13 @@ html{
     background-attachment:fixed;
 }
 body{
-    background-color: rgba(115,168,199,0.5);
+    background-color: rgba(211, 224, 245,0.7);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 1em 0em;
 }
-
+#content{
+    margin: 1em;
+}
 /*Footer*/
 #footer {
 	text-align: left;
@@ -33,8 +35,8 @@ body{
 	justify-content: space-between;
     margin-top: 4em;
     position: relative;
-    /*bottom: -2em;
-    /*background-color: rgba(115,168,199,0.5);*/
+    bottom: -1em;
+    background-color: rgba(43, 115, 156, 0.5);
 }
 
 #footer ul {
@@ -62,10 +64,13 @@ body{
     position: relative;
     left: 15em;
     right: 15em;
+    color: black;
     
     
 }
-
+ul li a{
+    color: black;
+}
 #primi{
     padding-left: 2.5em;
     padding-right: 2.5em;
@@ -127,15 +132,37 @@ a:hover {
     margin-bottom: 1em;
 }
 /*Login*/
+.legend{
+    margin-left: 1em;
+}
 .form-fieldset{
     margin-top: 2em;
     margin-bottom: 2em;
+    
+}
+.form-container {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .barra-input{
-    
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    width: 15em;
+    height: 2em;
+    border-radius: 0.5em;
 }
 .label{
     text-align: center;
+}
+.submit{
+    font-size: medium;
+    width: 5em;
+    height: 2em;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
 
 /*inizio pagina elenco*/
