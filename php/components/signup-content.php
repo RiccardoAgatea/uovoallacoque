@@ -1,12 +1,12 @@
 <div id="content">
     <h1>Registrati</h1>
-    <form action="" name="signup" method="POST" id="form-signup" onsubmit="return signupValidator('signup-nome', 'signup-cognome', 'signup-nick', 'signup-email', 'signup-password1', 'signup-password2')">
+    <form action="<rootFolder />/php/handle-signup.php" name="signup" method="POST" id="form-signup" onsubmit="return signupValidator('signup-nome', 'signup-cognome', 'signup-nick', 'signup-email', 'signup-password1', 'signup-password2')">
         <fieldset class="form-fieldset">
             <legend class="legend">Registrazione</legend>
             <ul class="form-container">
                 <li class="form-element">
                     <label class="form-label" for="signup-nome">Nome:</label>
-                    <input class="barra-input" id="signup-nome" type="text" name="nome"  placeholder="Nome" required="required"/>   
+                    <input class="barra-input" id="signup-nome" type="text" name="nome"  placeholder="Nome" required="required"/>
                     <span id="signup-nome-message" class="warning"> </span>
                 </li>
                 <li class="form-element">
