@@ -121,6 +121,25 @@ a:hover {
     margin-top: 1em;
     margin-bottom: 1em;
 }
+/*piatti migliori*/
+.home-immagine {
+    height: 10em;
+    width: 10em;
+    object-fit: contain;
+}
+.elenco-migliori {
+    display: flex;
+    flex-direction: row;
+}
+.elenco-migliori dt {
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+}
+.elenco-migliori dd img {
+    display: flex;
+    flex-direction: column;
+}
 /*Login*/
 .legend{
     margin-left: 1em;

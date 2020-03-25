@@ -30,5 +30,27 @@
     }
     $mysql->disconnect();
     }
+
+    function piattoMigliore($i) {
+        $mysql= new DBconnection;
+        $query="SELECT * FROM ricette, voti WHERE ricette.portata=$i ORDER BY voto ASC LIMIT 1";
+    
+    $risultato = "";
+    if ($result=$mysql->query($query))
+    {
+        while ($row=$result->fetch_assoc())
+        {
+            $nome = $row['nome'];
+            $immagine = $row['img'];
+
+            $risultato = $risultato.
+                '<img class="home-immagine" src="'.$immagine.'" alt = "immagine di '.$nome.'" />'.
+                '<p class=home-titolo>'.$nome.'</p>';    
+        }
+        return $risultato;
+        
+    }
+    $mysql->disconnect();
+    }
     
 ?>

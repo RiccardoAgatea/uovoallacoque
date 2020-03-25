@@ -19,7 +19,7 @@
     </div>
     <div id="top-pages">
         <h2>I piatti più votati!</h2>
-        <dl>
+        <dl class="elenco-migliori">
             <dt>Primo piatto</dt>
             <dd>
                 <topPrimoPlaceholder />
