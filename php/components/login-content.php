@@ -1,12 +1,12 @@
 <div id="content">
     <h1>Accedi</h1>
-    <form action="#" method="POST" id="form-login" onsubmit="return loginValidator('login-email')" >
+    <form action="<rootFolder />/php/handle-login.php" method="POST" id="form-login" onsubmit="return loginValidator('login-email')" >
         <fieldset class="form-fieldset">
             <legend class="legend">Accedi</legend>
             <ul class="form-container">
                 <li class="form-element">
                     <label class="form-label" for="login-email">Email:</label>
-                    <input class="barra-input" id="login-email" type="mail" name="email" placeholder="E-mail" required="required" /> 
+                    <input class="barra-input" id="login-email" type="mail" name="email" placeholder="E-mail" required="required" />
                     <span id="login-email-message"> </span>
                 </li>
                 <li class="form-element">
