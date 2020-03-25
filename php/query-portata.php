@@ -6,7 +6,7 @@
     $query="SELECT * FROM ricette WHERE portata=$i";
     
     $risultato = "";
-    if ($result=$mysql->risultato($query))
+    if ($result=$mysql->query($query))
     {
         while ($row=$result->fetch_assoc())
         {

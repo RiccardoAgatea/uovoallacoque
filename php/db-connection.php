@@ -34,10 +34,7 @@ class DBConnection
 
     public function query($query)
     {
-        return $this->connection->query($query)->fetch_all(MYSQLI_ASSOC);
-    }
-    
-    public function risultato($query) {
         return $this->connection->query($query);
     }
+
 }
