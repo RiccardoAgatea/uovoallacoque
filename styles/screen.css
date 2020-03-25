@@ -35,7 +35,7 @@ body{
 	justify-content: space-between;
     margin-top: 4em;
     position: relative;
-    bottom: -1em;
+    bottom: 0em;
     background-color: rgba(43, 115, 156, 0.5);
 }
 
@@ -44,50 +44,42 @@ body{
     margin-right: auto;
 }
 /*fine footer*/
-
-/*menù*/
-
+ul{
+    list-style-type: none;
+}
+ul li a {
+    color: black;
+}
+/*menu*/
 #menu{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border-style: solid;
-    border-width: 0.01em;
-    background-color:  rgba(115,168,199,0.5);
-    margin-top: 2em;
+    justify-content:center;
+    background-color: rgba(211, 224, 245,0);
     margin-bottom: 2em;
-    padding: 1em;
-    font-size: large;
-    width: max-content;
-    /*non riesco a posizionare il menu centrale e intanto lascio cosi...c'è spazio per il logo*/
-    position: relative;
-    left: 15em;
-    right: 15em;
-    color: black;
+}
+#menu li{
+    display: block;
+    width:9em;
+    height: 3.3em;
+    border: 0.05em solid black;
+    margin:0.2em;
+    background-color: rgba(245, 233, 66, 0.6);
+}
+#menu a {
+    display: block;
+    padding: 0.5em;
+    text-align: center;
+    font-size: 1em;
     
-    
-}
-ul li a{
-    color: black;
-}
-#primi{
-    padding-left: 2.5em;
-    padding-right: 2.5em;
-}
-#secondi{
-    padding-right: 2.5em;
-}
-#dolci{
-    padding-right: 1em;
 }
 #home{
-    padding-left: 1em;
+    padding: 0.5em;
+    display: block;
+    text-align: center;
+    font-size: 1em;
 }
-ul{
-    list-style-type: none;
-
-}
+/*fine menu*/
 #barra_ricerca{
     text-align: center;
 }
@@ -98,25 +90,23 @@ a:visited {
 }
 
 a:hover {
-	background-color:rgba(216, 235, 247, 0.76);
+    background-color:rgba(237, 129, 21, 0.76);
+   height:2em;
 }
 /*accesso*/
 #lista_accesso{
-    float:right; /*un pò illegale*/
+    margin-top: -1em;
     display: flex;
     flex-direction: row;
-}
-#lista_accesso li a{
-    border-style: solid;
-    border-width: 0.01em;
-    background-color: rgba(115,168,199,0.5);
-    width: max-content;
+    justify-content: flex-end;
+    background-color: rgba(211, 224, 245,0);
+
 }
 #lista_accesso li a:hover{
-    background-color:rgba(216, 235, 247, 0.76); /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/  
+    background-color:rgba(237, 129, 21, 0.76); /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/  
 }
 #accedi_scritta{
-    padding-right: 1em;
+    padding-right: 0.5em;
 }
 /*breadcrumb*/
 /*#breadcrumb{
@@ -138,6 +128,7 @@ a:hover {
 .form-fieldset{
     margin-top: 2em;
     margin-bottom: 2em;
+    border: none; /*non mi piaceva il cornicione*/
     
 }
 .form-container {
@@ -145,6 +136,7 @@ a:hover {
     flex-direction: column;
     align-items: center;
 }
+
 .barra-input{
     display: flex;
     flex-direction: column;
@@ -156,6 +148,18 @@ a:hover {
 }
 .label{
     text-align: center;
+    display: block;
+    margin: 0 auto 0 auto;
+}
+ul li .warning{
+    color: red;
+    display: block;
+    margin-bottom: 1em;
+    text-align: center;
+}
+ul li input{
+    display: block;
+    margin: 0 auto 0 auto;
 }
 .submit{
     font-size: medium;
@@ -164,11 +168,18 @@ a:hover {
     margin-bottom: 1em;
     margin-top: 1em;
 }
-
+/*.warning{
+    color: red;
+    background-color: darkgreen;
+    display: block;
+    margin: 0 auto 0 auto;
+    text-align: center;
+}*/
 /*inizio pagina elenco*/
 .elenco-content {
     display: flex;
     flex-direction: column;
+    
 }
 .elenco-elemento {
     display: flex;

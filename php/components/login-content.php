@@ -5,12 +5,12 @@
             <legend class="legend">Accedi</legend>
             <ul class="form-container">
                 <li class="form-element">
-                    <label class="label" for="login-email">Email:</label>
+                    <label class="form-label" for="login-email">Email:</label>
                     <input class="barra-input" id="login-email" type="mail" name="email" placeholder="E-mail" required="required" /> 
                     <span id="login-email-message"> </span>
                 </li>
                 <li class="form-element">
-                    <label class="label" for="login-password">Password:</label>
+                    <label class="form-label" for="login-password">Password:</label>
                     <input class="barra-input" id="login-password" type="password" name="password" placeholder="Password" required="required"/> <span id="login-password-message"> </span>
                 </li>
                 <li class="form-element">
