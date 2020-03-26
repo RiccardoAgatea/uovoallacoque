@@ -14,10 +14,11 @@ function checkEmail(email) { //passo l'id della mail che voglio controllare, per
 	return result;
 }
 
-function checkElementByRegex(id, regex, message) {
-	let test = document.getElementById(id).value;
+function checkNickname(nickname) {
+	let test = document.getElementById(nickname).value;
+	let regex = new RegExp("^[A-Za-z0-9]+$"); 
 	let result = (regex.test(test)) && !(test === "");
-	printError(result, id.toString()+"-message", message);
+	printError(result, nickname.toString()+"-message", "Il nickname deve contenere solo lettere e numeri");
 	return result;
 }
 
@@ -35,7 +36,7 @@ function loginValidator(email) {
 }
 
 function signupValidator(nickname, email, password, passwordConfirm) {
-	let nicknameChecked = checkElementByRegex(nickname, RegExp("^[A-Za-z0-9]+$"), "Il nickname deve contenere solo lettere e numeri"); 
+	let nicknameChecked = checkNickname(nickname); 
 	let emailChecked = checkEmail(email);
 	let passwordChecked = isPasswordEqual(password, passwordConfirm);
 
@@ -44,7 +45,7 @@ function signupValidator(nickname, email, password, passwordConfirm) {
 }
 
 function userValidator(nickname, password, passwordConfirm) {
-	let nicknameChecked = checkElementByRegex(nickname, RegExp("^[A-Za-z0-9]+$"), "Il nickname deve contenere solo lettere e numeri"); 
+	let nicknameChecked = checkNickname(nickname); 
 	let passwordChecked = isPasswordEqual(password, passwordConfirm);
 
 	return (nicknameChecked && passwordChecked);

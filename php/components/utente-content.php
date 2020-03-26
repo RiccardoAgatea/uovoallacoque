@@ -31,7 +31,7 @@
     <!-- visualizzazione nickname -->
     <p>Nickname attuale: <PlaceholderNicknameUtente /></p>
     <!-- form nickname -->
-    <form action="" method="POST" id="form-utente" onsubmit="return checkElementByRegex('user-nickname', RegExp('^[A-Za-z0-9]+$'), 'Il nickname deve contenere solo lettere e numeri')" >
+    <form action="" method="POST" id="form-utente" onsubmit="return checkNickname('user-nickname')" >
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio nickname</legend>
             <ul class="form-container">
