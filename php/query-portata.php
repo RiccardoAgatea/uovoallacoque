@@ -24,7 +24,7 @@
                 '<ul class="elenco-attributi">'.
                     '<li> Difficolt&agrave;: '.$difficolta.'</li>'.
                     '<li>Tempo: '.$tempo. '</li>'.
-                    '<li>Voto medio: ' .$voto. '</li>'.
+                    '<li>Voto medio: ' .$voto. ' &frasl; 5</li>'.
                 '</ul>'.
             '</li>' ;               
         }
@@ -60,7 +60,7 @@
                 '<ul class="elenco-attributi">'.
                     '<li> Difficolt&agrave;: '.$difficolta.'</li>'.
                     '<li>Tempo: '.$tempo. '</li>'.
-                    '<li>Voto medio: ' .$voto. '</li>'.
+                    '<li>Voto medio: ' .$voto. ' &frasl; 5</li>'.
                 '</ul>'.
             '</li>' ;     
         }
