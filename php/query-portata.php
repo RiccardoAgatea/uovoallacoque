@@ -1,5 +1,5 @@
 <?php
-    include (__DIR__ . '/db-connection.php');
+    require_once (__DIR__ . '/db-connection.php');
     
     function contentPortata($i) {
     $mysql= new DBconnection;

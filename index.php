@@ -1,6 +1,6 @@
 <?php
 require_once "./php/template-handler.php";
-include (__DIR__ .'./php/query-portata.php');
+require_once (__DIR__ .'/php/query-portata.php');
 
 $handler = new TemplateHandler(".", "xhtml");
 
