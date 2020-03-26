@@ -122,24 +122,14 @@ a:hover {
     margin-bottom: 1em;
 }
 /*piatti migliori*/
-.home-immagine {
-    height: 10em;
-    width: 10em;
-    object-fit: contain;
-}
 .elenco-migliori {
-    display: flex;
-    flex-direction: row;
+    margin-top: 1em;
 }
 .elenco-migliori dt {
     font-size: larger;
-    display: flex;
-    flex-direction: column;
+    font-weight: bolder;
 }
-.elenco-migliori dd img {
-    display: flex;
-    flex-direction: column;
-}
+
 /*Login*/
 .legend{
     margin-left: 1em;

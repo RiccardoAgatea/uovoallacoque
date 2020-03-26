@@ -14,6 +14,8 @@
             $difficolta = $row['difficolta'];
             $tempo = $row['tempo'];
             $immagine = $row['img'];
+            $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
+            $voto = $votor[0];
 
             $risultato = $risultato.
             '<li class=elenco-elemento>'.
@@ -22,8 +24,9 @@
                 '<ul class="elenco-attributi">'.
                     '<li> Difficolt&agrave;: '.$difficolta.'</li>'.
                     '<li>Tempo: '.$tempo. '</li>'.
+                    '<li>Voto medio: ' .$voto. '</li>'.
                 '</ul>'.
-            '</li>' ;           ;    
+            '</li>' ;               
         }
         return $risultato;
         
@@ -33,7 +36,7 @@
 
     function piattoMigliore($i) {
         $mysql= new DBconnection;
-        $query="SELECT * FROM ricette, voti WHERE ricette.portata=$i ORDER BY voto ASC LIMIT 1";
+        $query="SELECT * FROM ricette, voti WHERE ricette.portata=$i ORDER BY media(ricette.id) DESC LIMIT 1";
     
     $risultato = "";
     if ($result=$mysql->query($query))
@@ -42,10 +45,24 @@
         {
             $nome = $row['nome'];
             $immagine = $row['img'];
+            $nome = $row['nome'];
+            $difficolta = $row['difficolta'];
+            $tempo = $row['tempo'];
+            $immagine = $row['img'];
+            $id = $row['id'];
+            $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
+            $voto = $votor[0];
 
             $risultato = $risultato.
-                '<img class="home-immagine" src="'.$immagine.'" alt = "immagine di '.$nome.'" />'.
-                '<p class=home-titolo>'.$nome.'</p>';    
+            '<li class=elenco-elemento>'.
+                '<img class="elenco-immagine" src="'.$immagine.'" alt = "immagine di '.$nome.'" />'.
+                '<h2 class=elenco-titolo>'.$nome.'</h2>'.               
+                '<ul class="elenco-attributi">'.
+                    '<li> Difficolt&agrave;: '.$difficolta.'</li>'.
+                    '<li>Tempo: '.$tempo. '</li>'.
+                    '<li>Voto medio: ' .$voto. '</li>'.
+                '</ul>'.
+            '</li>' ;     
         }
         return $risultato;
         
