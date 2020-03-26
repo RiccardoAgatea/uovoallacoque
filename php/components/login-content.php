@@ -7,11 +7,11 @@
                 <li class="form-element">
                     <label class="form-label" for="login-email">Email:</label>
                     <input class="barra-input" id="login-email" type="mail" name="email" placeholder="E-mail" required="required" />
-                    <span id="login-email-message"> </span>
+                    <span id="login-email-message" class="warning"> </span>
                 </li>
                 <li class="form-element">
                     <label class="form-label" for="login-password">Password:</label>
-                    <input class="barra-input" id="login-password" type="password" name="password" placeholder="Password" required="required"/> <span id="login-password-message"> </span>
+                    <input class="barra-input" id="login-password" type="password" name="password" placeholder="Password" required="required"/> <span id="login-password-message" class="warning"> </span>
                 </li>
                 <li class="form-element">
                     <input class="submit" type="submit" value="Accedi"/>
