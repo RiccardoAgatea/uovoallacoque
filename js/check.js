@@ -34,13 +34,18 @@ function loginValidator(email) {
 	return emailChecked;
 }
 
-function signupValidator(name, surname, nickname, email, password, passwordConfirm) {
-	let nameChecked = checkElementByRegex(name, RegExp("^[A-Za-z]+$"), "Il nome deve contenere solo lettere");
-	let surnameChecked = checkElementByRegex(surname, RegExp("^[A-Za-z]+$"), "Il cognome deve contenere solo lettere");
+function signupValidator(nickname, email, password, passwordConfirm) {
 	let nicknameChecked = checkElementByRegex(nickname, RegExp("^[A-Za-z0-9]+$"), "Il nickname deve contenere solo lettere e numeri"); 
 	let emailChecked = checkEmail(email);
 	let passwordChecked = isPasswordEqual(password, passwordConfirm);
 
 	//prima le valuto tutte e poi le ritorno :'(
-	return (nameChecked && surnameChecked && nicknameChecked && emailChecked && passwordChecked); //se matchano tutte ritorno true
+	return (nicknameChecked && emailChecked && passwordChecked); //se matchano tutte ritorno true
+}
+
+function userValidator(nickname, password, passwordConfirm) {
+	let nicknameChecked = checkElementByRegex(nickname, RegExp("^[A-Za-z0-9]+$"), "Il nickname deve contenere solo lettere e numeri"); 
+	let passwordChecked = isPasswordEqual(password, passwordConfirm);
+
+	return (nicknameChecked && passwordChecked);
 }
