@@ -61,7 +61,7 @@ ul li a {
 #menu li{
     display: block;
     width:9em;
-    height: 3.5em;
+    height: 2.5em;
     border: 0.05em solid black;
     margin:0.2em;
     background-color: rgba(245, 233, 66, 0.6);
@@ -98,7 +98,7 @@ a:visited {
 
 a:hover {
     background-color:rgba(237, 129, 21, 0.76);
-    height:3.5em;
+    height:2.5em;
     width: 9em;
 }
 /*accesso*/
