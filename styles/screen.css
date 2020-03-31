@@ -97,7 +97,7 @@ a:visited {
 }
 
 a:hover {
-    background-color:rgba(237, 129, 21, 0.76);
+    background-color:rgba(252, 255, 74,0.6);
     height:2.5em;
     width: 9em;
 }
@@ -111,7 +111,7 @@ a:hover {
 
 }
 #lista_accesso li a:hover{
-    background-color:rgba(237, 129, 21, 0.76); /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/  
+    background-color:rgb(252, 255, 74); /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/  
 }
 #accedi_scritta{
     padding-right: 0.5em;
@@ -157,23 +157,20 @@ a:hover {
 .barra-input{
     display: flex;
     flex-direction: column;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     margin-top: 0.5em;
     width: 15em;
     height: 2em;
     border-radius: 0.5em;
 }
 .label{
-    text-align: center;
-    display: block;
-    margin-bottom: 0 auto 0 auto;
+
 }
 ul li .warning{
     color: red;
     display: block;
-    margin-bottom: 1em;
-    text-align: center;
     margin: 0 auto 0 auto;
+    text-align: center;
 }
 ul li input{
     display: block;
@@ -221,3 +218,8 @@ ul li input{
     margin-right: 1em;
 }
 /*fine pagina elenco*/
+.submitutente{
+    width: 10em;
+    height: 2em;
+    margin-top: 1em;
+}

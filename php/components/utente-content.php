@@ -22,7 +22,7 @@
                     <span id="user-password-immagine-message" class="warning"> </span>
                 </li>
                 <li class="form-element">
-                    <input class="submit" type="submit" value="Salva modifiche"/>
+                    <input class="submitutente" type="submit" value="Salva modifiche"/>
                 </li>
             </ul>
         </fieldset>
@@ -46,7 +46,7 @@
                     <span id="user-password-nickname-message" class="warning"> </span>
                 </li>
                 <li class="form-element">
-                    <input class="submit" type="submit" value="Salva modifiche"/>
+                    <input class="submitutente" type="submit" value="Salva modifiche"/>
                 </li>
             </ul>
         </fieldset>
@@ -70,7 +70,7 @@
                     <span id="user-password-email-message" class="warning"> </span>
                 </li>
                 <li class="form-element">
-                    <input class="submit" type="submit" value="Salva modifiche"/>
+                    <input class="submitutente" type="submit" value="Salva modifiche"/>
                 </li>
             </ul>
         </fieldset>
@@ -92,7 +92,7 @@
                     <span id="user-password2-message" class="warning"> </span>
                 </li>
                 <li class="form-element">
-                    <input class="submit" type="submit" value="Salva modifiche"/>
+                    <input class="submitutente" type="submit" value="Salva modifiche"/>
                 </li>
             </ul>
         </fieldset>
