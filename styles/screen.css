@@ -92,9 +92,8 @@ ul li a {
    width: 12em;
    height: 2em;
    margin-left: 0.5em;
-   margin-top: -1em;
+   margin-top: 0em;
    margin-bottom: 0.5em;
-  /* background-color:rgb(94, 189, 230);*/
 }
 /*fine logo*/
 #barra_ricerca{
@@ -113,7 +112,8 @@ a:hover {
 }
 /*accesso*/
 #lista_accesso{
-    margin-top: -1em;
+    margin-top: -2.5em;
+    margin-bottom: 1em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;

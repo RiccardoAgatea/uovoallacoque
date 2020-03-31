@@ -1,5 +1,4 @@
 <ul id="elementi_header">
-<img id="immagine-logo" src="/img/logo/coque_scritta_long.png" alt="Uovo alla coque" />
 <div id="menu">
     <li id="home"><a href="<rootFolder />/index.php">Home</a></li>
     <li id="primi"><a href="<rootFolder />/php/elenco.php?id=1">Primi Piatti</a></li>
