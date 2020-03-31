@@ -87,6 +87,16 @@ ul li a {
     
 }
 /*fine menu*/
+/*logo*/
+#immagine-logo{
+   width: 12em;
+   height: 2em;
+   margin-left: 0.5em;
+   margin-top: -1em;
+   margin-bottom: 0.5em;
+  /* background-color:rgb(94, 189, 230);*/
+}
+/*fine logo*/
 #barra_ricerca{
     text-align: center;
 }
