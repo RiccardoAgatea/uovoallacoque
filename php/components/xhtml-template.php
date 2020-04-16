@@ -32,6 +32,7 @@
               href="<rootFolder />/prove/print.css"
               type="text/css" />
         <script src="<rootFolder />/js/check.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
     </head>
 
     <body>
@@ -43,20 +44,48 @@
         <breadcrumbPlaceholder />
         <contentPlaceholder />
         <div id="footer">
+        <p id="messaggio-footer-social" class="messaggio-footer">
+                       Seguici sui social per più ricette e novità!
+        </p>
+
+        <ul id="logo-social">
+                  <li class="social">
+                        <a href="https://www.facebook.com" class="fa fa-facebook" Title="Facebook"></a>
+                  </li>
+
+                  <li class="social">
+                        <a href="https://www.instagram.com" class="fa fa-instagram" Title="Instagram"></a>
+                  </li>
+
+                  <li class="social">
+                        <a href="https://www.youtube.com" class="fa fa-youtube" Title="youtube"></a>
+                  </li>
+                  
+      </ul>
+            <p id="messaggio-footer-copyright" class="messaggio-footer">
+                  Copyright Uovo alla coque 2020 - Tutti i diritti riservati ©
+            </p>
+
             <ul id="nomi-contatti">
                 <li>Agatea Riccardo</li>
                 <li>Bosinceanu Ecaterina</li>
                 <li>Righetto Sara</li>
                 <li>Schiavon Rebecca</li>
             </ul>
-            <img class="immagine-footer"
-                 id="immagine-html"
-                 src="<rootFolder />/img/validHTML.png"
+            <ul id="immagine-footer">
+            <li class="logo-footer">
+            <img id="immagine-html"
+                 src="<rootFolder />/img/icone/validXHTML.png"
                  alt="HTML valido" />
-            <img class="immagine-footer"
-                 id="immagine-css"
-                 src="<rootFolder />/img/validCSS.gif"
+            </li>
+            <li class="logo-footer">
+            <img id="immagine-css"
+                 src="<rootFolder />/img/icone/validCSS.png"
                  alt="CSS valido" />
+            </li>
+            </ul>    
+            
+            
         </div>
     </body>
 

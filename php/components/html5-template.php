@@ -47,11 +47,11 @@
             </ul>
             <img class="immagine-footer"
                  id="immagine-html"
-                 src="<rootFolder />/img/validHTML.png"
+                 src="<rootFolder />/img/icone/validXHTML.png"
                  alt="HTML valido" />
             <img class="immagine-footer"
                  id="immagine-css"
-                 src="<rootFolder />/img/validCSS.gif"
+                 src="<rootFolder />/img/icone/validCSS.png"
                  alt="CSS valido" />
         </footer>
     </body>
