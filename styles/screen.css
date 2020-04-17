@@ -29,7 +29,7 @@ body{
 #footer {
 	width: 100%;
 	display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
@@ -59,6 +59,7 @@ body{
 #nomi-contatti li{
     display: inline;
     margin-left:0.3em;
+    
     
 }
 #nomi-contatti {
@@ -107,6 +108,7 @@ ul li a {
     display: flex;
     flex-direction: row;
     justify-content:center;
+    flex-wrap: wrap;
     background-color: rgba(211, 224, 245,0);
     margin-bottom: 2em;
 }
@@ -182,11 +184,7 @@ ul li a {
 #accedi_scritta{
     padding-right: 0.5em;
 }
-/*breadcrumb*/
-/*#breadcrumb{
-    margin-top: 1em;
-    margin-bottom: 1em;
-}*/
+
 /*introduzione*/
 #introduction{
     border-style: dashed;
@@ -253,12 +251,14 @@ ul li input{
 /*inizio pagina elenco*/
 .elenco-content {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     
 }
 .elenco-elemento {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items:center;
     justify-content:space-between;
     margin: 1em;
@@ -290,3 +290,12 @@ ul li input{
     height: 2em;
     margin-top: 1em;
 }
+
+/*mobile*/
+@media screen and (max-width: 768px){
+   #immagine-logo{
+    width: 10em;
+    height: 2em;
+   } 
+}
+/*fine mobile*/
