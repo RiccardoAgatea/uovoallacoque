@@ -57,8 +57,6 @@ body{
 #nomi-contatti li{
     display: inline;
     margin-left:0.3em;
-    
-    
 }
 #nomi-contatti {
     position: relative;
@@ -304,7 +302,7 @@ ul li input{ /*uguale a .barra-input */
 .sidenav li {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     color: #5c5c5c;
     display: block;
     transition: 0.3s;
@@ -313,7 +311,7 @@ ul li input{ /*uguale a .barra-input */
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     color: #adadad;
     display: block;
     transition: 0.3s;
@@ -343,9 +341,12 @@ ul li input{ /*uguale a .barra-input */
        } 
 
     #apriNav {
+        right: 0;
+        margin-right: 3.5%;
+        /* position: absolute; */
         display: block;
-        font-size:30px;
-        cursor:pointer;
+        font-size: 30px;
+        cursor: pointer;
     }
 
     #menu{
