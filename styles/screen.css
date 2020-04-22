@@ -313,8 +313,7 @@ ul li input{
        width: 15em;
     }
     .elenco-testo {
-        position: relative;
-        display: flex;
+        margin-top: -5em;
         flex-direction: column;
         margin-left: 5em;
     }
