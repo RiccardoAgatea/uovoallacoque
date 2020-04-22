@@ -263,15 +263,15 @@ ul li input{
     align-items:center;
     justify-content:flex-start;
     margin: 1em;
-    height: 10em;
-    width:30em;
+    height: 14em;
+    width:36em;
     background-color: rgba(245, 233, 66, 0.4);
     border: black solid 1px;
 }
 
 .elenco-immagine {
-    height: 10em;
-    width: 10em;
+    height: 14em;
+    width: 14em;
     object-fit: contain;    
 }
 .elenco-testo {
@@ -313,7 +313,7 @@ ul li input{
        width: 15em;
     }
     .elenco-testo {
-        position: fixed;
+        position: relative;
         display: flex;
         flex-direction: column;
         margin-left: 5em;
