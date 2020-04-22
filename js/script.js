@@ -1,3 +1,5 @@
+// --------- CONTROLLI --------
+
 function isPasswordEqual(password, passwordConfirm){
 	let pwd1 = document.getElementById(password);
 	let pwd2 = document.getElementById(passwordConfirm);
@@ -50,3 +52,16 @@ function userValidator(nickname, password, passwordConfirm) {
 
 	return (nicknameChecked && passwordChecked);
 }
+
+
+// --------- MENU --------
+
+function openSideNav() {
+	document.getElementById("mySidenav").style.width = "75%";
+}
+  
+function closeSideNav() {
+	document.getElementById("mySidenav").style.width = "0";
+}
+
+
