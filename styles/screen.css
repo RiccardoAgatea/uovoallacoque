@@ -45,8 +45,6 @@ body{
     position: relative;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-    
-    
 }
 
 #logo-social li{
@@ -227,22 +225,20 @@ ul li a {
     height: 2em;
     border-radius: 0.5em;
 }
-.label{
 
-}
-ul li .warning{
+.warning{ 
     color: red;
     display: block;
     margin: 0 auto 0 auto;
     text-align: center;
 }
-ul li input{
+ul li input{ /*uguale a .barra-input */
     display: block;
     margin: 0 auto 0 auto;
 }
 .submit{
     font-size: medium;
-    width: 5em;
+    /* width: 5em; su registrati viene tagliata la scritta*/
     height: 2em;
     margin-bottom: 1em;
     margin-top: 1em;
@@ -292,10 +288,83 @@ ul li input{
 }
 
 /*mobile*/
-@media screen and (max-width: 768px){
-   #immagine-logo{
-    width: 10em;
-    height: 2em;
-   } 
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
 }
+
+.sidenav li {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #5c5c5c;
+    display: block;
+    transition: 0.3s;
+}  
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #adadad;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+  
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#apriNav{
+    /* un modo per piazzarlo tutto a destra?*/
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    #immagine-logo{
+        width: 10em;
+        height: 2em;
+       } 
+
+    #apriNav {
+        display: block;
+        font-size:30px;
+        cursor:pointer;
+    }
+
+    #menu{
+        display: none;
+    }
+    /* qualcosa del breadcrumb{
+        display: none;
+    } */
+}
+  
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+
+
 /*fine mobile*/
