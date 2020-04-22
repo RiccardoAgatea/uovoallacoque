@@ -16,16 +16,19 @@
             $immagine = $row['img'];
             $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
             $voto = $votor[0];
+            $voto= number_format($voto, 1);
 
             $risultato = $risultato.
             '<li class=elenco-elemento>'.
                 '<img class="elenco-immagine" src="'.$immagine.'" alt = "immagine di '.$nome.'" />'.
+                '<div class=elenco-testo>'.
                 '<h2 class=elenco-titolo>'.$nome.'</h2>'.               
                 '<ul class="elenco-attributi">'.
                     '<li> Difficolt&agrave;: '.$difficolta.'</li>'.
                     '<li>Tempo: '.$tempo. '</li>'.
                     '<li>Voto medio: ' .$voto. ' &frasl; 5</li>'.
                 '</ul>'.
+                '</div>'.
             '</li>' ;               
         }
         return $risultato;
@@ -56,12 +59,14 @@
             $risultato = $risultato.
             '<li class=elenco-elemento>'.
                 '<img class="elenco-immagine" src="'.$immagine.'" alt = "immagine di '.$nome.'" />'.
+                '<div class=elenco-testo>'.
                 '<h2 class=elenco-titolo>'.$nome.'</h2>'.               
                 '<ul class="elenco-attributi">'.
                     '<li> Difficolt&agrave;: '.$difficolta.'</li>'.
                     '<li>Tempo: '.$tempo. '</li>'.
                     '<li>Voto medio: ' .$voto. ' &frasl; 5</li>'.
                 '</ul>'.
+                '</div>'.
             '</li>' ;     
         }
         return $risultato;
