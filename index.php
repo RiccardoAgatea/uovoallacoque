@@ -33,4 +33,8 @@ $content = str_replace(array("<topPrimoPlaceholder />","<topSecondoPlaceholder /
 
 $handler->setContent($content);
 
+$handler->setBackToTop(
+    file_get_contents(__DIR__ . "/php/components/default-tornaSu.php")
+);
+
 $handler->send();
