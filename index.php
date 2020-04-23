@@ -31,11 +31,10 @@ $handler->setBreadcrumb(
 
 $content = file_get_contents(__DIR__ . "/php/components/home-content.php");
 
-$content = preg_replace("(<top.*Placeholder />)", "", $content);
 $risultato1 = piattoMigliore(1);
 $risultato2 = piattoMigliore(2);
 $risultato3 = piattoMigliore(3);
-$content = str_replace(array("<topPrimoPlaceholder />", "<topSecondoPlaceholder />", "<topDolcePlaceholder />"), array($risultato1, $risultato2, $risultato3), file_get_contents(__DIR__ . "/php/components/home-content.php"));
+$content = str_replace(array("<topPrimoPlaceholder />", "<topSecondoPlaceholder />", "<topDolcePlaceholder />"), array($risultato1, $risultato2, $risultato3), $content);
 
 $handler->setContent($content);
 
