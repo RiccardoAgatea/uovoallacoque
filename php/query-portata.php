@@ -55,6 +55,7 @@
             $id = $row['id'];
             $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
             $voto = $votor[0];
+            $voto= number_format($voto, 1);
 
             $risultato = $risultato.
             '<li class=elenco-elemento>'.
