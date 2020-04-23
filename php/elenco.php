@@ -11,10 +11,10 @@ $handler->setAuthor("");
 $handler->setLogin(
     file_get_contents(__DIR__ . "/components/default-login.php")
 );
-$tipo=$_GET['id'];
-require_once (__DIR__ .'/query-portata.php');
-switch($tipo) {
-    case 1: 
+$tipo = $_GET['id'];
+require_once __DIR__ . '/query-portata.php';
+switch ($tipo) {
+    case 1:
         $handler->setNav(
             str_replace(
                 "<a href=\"<rootFolder />/php/elenco.php?id=1\">Primi Piatti</a>",
@@ -29,7 +29,7 @@ switch($tipo) {
         $content = str_replace("<PlaceholderElenco />", $risultato, file_get_contents(__DIR__ . "/components/primi-content.php"));
         $handler->setContent($content);
         $handler->send();
-    break;
+        break;
     case 2:
         $handler->setNav(
             str_replace(
@@ -45,7 +45,7 @@ switch($tipo) {
         $content = str_replace("<PlaceholderElenco />", $risultato, $content = file_get_contents(__DIR__ . "/components/secondi-content.php"));
         $handler->setContent($content);
         $handler->send();
-    break;
+        break;
     case 3:
         $handler->setNav(
             str_replace(
@@ -61,18 +61,13 @@ switch($tipo) {
         $content = str_replace("<PlaceholderElenco />", $risultato, $content = file_get_contents(__DIR__ . "/components/dolci-content.php"));
         $handler->setContent($content);
         $handler->send();
-    break;
+        break;
     case 4:
         $handler->setBreadcrumb("Ti trovi in: Home > Ricerca");
         $content = file_get_contents(__DIR__ . "/components/ricerca-content.php");
         $content = preg_replace("(<top.*Placeholder />)", "", $content);
         $handler->setContent($content);
         $handler->send();
-    break;
+        break;
 
 }
-
-
-
-
-

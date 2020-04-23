@@ -8,9 +8,9 @@ $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
 
-$handler->setLogin(  
-    str_replace("<a href=\"<rootFolder />/php/login.php\">Accedi</a>", 
-        "Accedi", 
+$handler->setLogin(
+    str_replace("<a href=\"<rootFolder />/php/login.php\">Accedi</a>",
+        "Accedi",
         file_get_contents(__DIR__ . "/components/default-login.php")
     )
 );

@@ -1,98 +1,179 @@
 <div id="content">
-	<div class="foto-nome">
-        <img class="foto-utente" src="" alt=""/>
-        <p class="nome-utente"> Nome Utente<PlaceholderNicknameUtente /> </p>
+    <div class="foto-nome">
+        <img class="foto-utente"
+             src=""
+             alt="" />
+        <p class="nome-utente"> Nome Utente
+            <PlaceholderNicknameUtente />
+        </p>
     </div>
 
     <!-- visualizzazione img -->
-    <p>Immagine attuale: <PlaceholderImmagineUtente /></p>
+    <p>Immagine attuale:
+        <PlaceholderImmagineUtente />
+    </p>
     <!-- form img -->
-    <form action="" method="POST" id="form-utente" onsubmit="return " >
+    <form action=""
+          method="POST"
+          id="form-utente"
+          onsubmit="return ">
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio immagine</legend>
             <ul class="form-container">
                 <li class="form-element">
                     <label for="user-immaginee">Nuova immagine:</label>
-                    <input class="barra-input" type="file" id="user-immagine" name="user-immagine" placeholder="Immagine" required="required" /> 
-                    <span id="user-immagine-message" class="warning"> </span>
+                    <input class="barra-input"
+                           type="file"
+                           id="user-immagine"
+                           name="user-immagine"
+                           placeholder="Immagine"
+                           required="required" />
+                    <span id="user-immagine-message"
+                          class="warning"> </span>
                 </li>
                 <li class="form-element">
-                    <label for="user-password-immagine">Password:</label>
-                    <input class="barra-input" id="user-password-immagine" type="password" name="user-password-immagine" placeholder="Password" required="required" /> 
-                    <span id="user-password-immagine-message" class="warning"> </span>
+                    <label
+                           for="user-password-immagine">Password:</label>
+                    <input class="barra-input"
+                           id="user-password-immagine"
+                           type="password"
+                           name="user-password-immagine"
+                           placeholder="Password"
+                           required="required" />
+                    <span id="user-password-immagine-message"
+                          class="warning"> </span>
                 </li>
                 <li class="form-element">
-                    <input class="submitutente" type="submit" value="Salva modifiche"/>
+                    <input class="submitutente"
+                           type="submit"
+                           value="Salva modifiche" />
                 </li>
             </ul>
         </fieldset>
     </form>
 
     <!-- visualizzazione nickname -->
-    <p>Nickname attuale: <PlaceholderNicknameUtente /></p>
+    <p>Nickname attuale:
+        <PlaceholderNicknameUtente />
+    </p>
     <!-- form nickname -->
-    <form action="" method="POST" id="form-utente" onsubmit="return checkNickname('user-nickname')" >
+    <form action=""
+          method="POST"
+          id="form-utente"
+          onsubmit="return checkNickname('user-nickname')">
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio nickname</legend>
             <ul class="form-container">
                 <li class="form-element">
                     <label for="user-nickname">Nuovo nickname:</label>
-                    <input class="barra-input" id="user-nickname" type="text" name="user-nickname" placeholder="Nickname" required="required" /> 
-                    <span id="user-nickname-message" class="warning"> </span>
+                    <input class="barra-input"
+                           id="user-nickname"
+                           type="text"
+                           name="user-nickname"
+                           placeholder="Nickname"
+                           required="required" />
+                    <span id="user-nickname-message"
+                          class="warning"> </span>
                 </li>
                 <li class="form-element">
-                    <label for="user-password-nickname">Password:</label>
-                    <input class="barra-input" id="user-password-nickname" type="password" name="user-password-nickname" placeholder="Password" required="required" /> 
-                    <span id="user-password-nickname-message" class="warning"> </span>
+                    <label
+                           for="user-password-nickname">Password:</label>
+                    <input class="barra-input"
+                           id="user-password-nickname"
+                           type="password"
+                           name="user-password-nickname"
+                           placeholder="Password"
+                           required="required" />
+                    <span id="user-password-nickname-message"
+                          class="warning"> </span>
                 </li>
                 <li class="form-element">
-                    <input class="submitutente" type="submit" value="Salva modifiche"/>
+                    <input class="submitutente"
+                           type="submit"
+                           value="Salva modifiche" />
                 </li>
             </ul>
         </fieldset>
     </form>
 
     <!-- visualizzazione email -->
-    <p>E-mail attuale: <PlaceholderEmailUtente /></p>
+    <p>E-mail attuale:
+        <PlaceholderEmailUtente />
+    </p>
     <!-- form email -->
-    <form action="" method="POST" id="form-utente" onsubmit="return checkEmail('user-email')" >
+    <form action=""
+          method="POST"
+          id="form-utente"
+          onsubmit="return checkEmail('user-email')">
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio e-mail</legend>
             <ul class="form-container">
                 <li class="form-element">
                     <label for="user-email">Nuova email:</label>
-                    <input class="barra-input" id="user-email" type="email" name="user-email" placeholder="E-mail" required="required" /> 
-                    <span id="user-email-message" class="warning"> </span>
+                    <input class="barra-input"
+                           id="user-email"
+                           type="email"
+                           name="user-email"
+                           placeholder="E-mail"
+                           required="required" />
+                    <span id="user-email-message"
+                          class="warning"> </span>
                 </li>
                 <li class="form-element">
                     <label for="user-password-email">Password:</label>
-                    <input class="barra-input" id="user-password-email" type="password" name="user-password-email" placeholder="Password" required="required" /> 
-                    <span id="user-password-email-message" class="warning"> </span>
+                    <input class="barra-input"
+                           id="user-password-email"
+                           type="password"
+                           name="user-password-email"
+                           placeholder="Password"
+                           required="required" />
+                    <span id="user-password-email-message"
+                          class="warning"> </span>
                 </li>
                 <li class="form-element">
-                    <input class="submitutente" type="submit" value="Salva modifiche"/>
+                    <input class="submitutente"
+                           type="submit"
+                           value="Salva modifiche" />
                 </li>
             </ul>
         </fieldset>
     </form>
 
     <!-- form password -->
-    <form action="" method="POST" id="form-user-password" onsubmit="return isPasswordEqual('user-password1', 'user-password2')" >
+    <form action=""
+          method="POST"
+          id="form-user-password"
+          onsubmit="return isPasswordEqual('user-password1', 'user-password2')">
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio password</legend>
             <ul class="form-container">
                 <li class="form-element">
                     <label for="user-password1">Nuova password:</label>
-                    <input class="barra-input" id="user-password1" type="password" name="user-password1" placeholder="Password" required="required" /> 
-                    <span id="user-password1-message" class="warning"> </span>
+                    <input class="barra-input"
+                           id="user-password1"
+                           type="password"
+                           name="user-password1"
+                           placeholder="Password"
+                           required="required" />
+                    <span id="user-password1-message"
+                          class="warning"> </span>
                 </li>
                 <li class="form-element">
-                    <label for="user-password2">Conferma password:</label>
-                    <input class="barra-input" id="user-password2" type="password" name="user-password2" placeholder="Conferma password" required="required" /> 
-                    <span id="user-password2-message" class="warning"> </span>
+                    <label for="user-password2">Conferma
+                        password:</label>
+                    <input class="barra-input"
+                           id="user-password2"
+                           type="password"
+                           name="user-password2"
+                           placeholder="Conferma password"
+                           required="required" />
+                    <span id="user-password2-message"
+                          class="warning"> </span>
                 </li>
                 <li class="form-element">
-                    <input class="submitutente" type="submit" value="Salva modifiche"/>
+                    <input class="submitutente"
+                           type="submit"
+                           value="Salva modifiche" />
                 </li>
             </ul>
         </fieldset>

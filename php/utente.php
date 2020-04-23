@@ -8,8 +8,8 @@ $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
 
-$handler->setLogin( 
-    file_get_contents(__DIR__ . "/components/default-login.php")  
+$handler->setLogin(
+    file_get_contents(__DIR__ . "/components/default-login.php")
 );
 
 $handler->setNav(

@@ -115,12 +115,12 @@ ul li a {
     border: 0.05em solid black;
     margin:0.2em;
     background-color: rgba(245, 233, 66, 0.6);
-   
+
 }
 #menu a {
     display: block;
-    font-size: 1em;    
-    
+    font-size: 1em;
+
 }
 #home{
     text-align: center;
@@ -134,7 +134,7 @@ ul li a {
 }
 #dolci{
     text-align: center;
-    
+
 }
 /*fine menu*/
 /*logo*/
@@ -156,7 +156,7 @@ ul li a {
 }
 #lista_accesso a:visited{
     color: red;
-    border-color: black; 
+    border-color: black;
 }
 
 #menu a:hover {
@@ -175,7 +175,7 @@ ul li a {
 
 }
 #lista_accesso li a:hover{
-    background-color:rgba(253, 190, 17, 0.801); /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/  
+    background-color:rgba(253, 190, 17, 0.801); /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/
 }
 #accedi_scritta{
     padding-right: 0.5em;
@@ -206,7 +206,7 @@ ul li a {
     margin-top: 2em;
     margin-bottom: 2em;
     border: none; /*non mi piaceva il cornicione*/
-    
+
 }
 .form-container {
 	display: flex;
@@ -224,7 +224,7 @@ ul li a {
     border-radius: 0.5em;
 }
 
-.warning{ 
+.warning{
     color: red;
     display: block;
     margin: 0 auto 0 auto;
@@ -247,7 +247,7 @@ ul li input{ /*uguale a .barra-input */
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    
+
 }
 .elenco-elemento {
     display: flex;
@@ -265,7 +265,7 @@ ul li input{ /*uguale a .barra-input */
     height: 10em;
     width: 10em;
     object-fit: contain;
-    
+
 }
 
 .elenco-titolo {
@@ -306,7 +306,7 @@ ul li input{ /*uguale a .barra-input */
     color: #5c5c5c;
     display: block;
     transition: 0.3s;
-}  
+}
 
 .sidenav a {
     padding: 8px 8px 8px 32px;
@@ -316,11 +316,11 @@ ul li input{ /*uguale a .barra-input */
     display: block;
     transition: 0.3s;
 }
-  
+
 .sidenav a:hover {
     color: #f1f1f1;
 }
-  
+
 .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -338,7 +338,7 @@ ul li input{ /*uguale a .barra-input */
     #immagine-logo{
         width: 10em;
         height: 2em;
-       } 
+       }
 
     #apriNav {
         right: 0;
@@ -356,7 +356,7 @@ ul li input{ /*uguale a .barra-input */
         display: none;
     } */
 }
-  
+
 @media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 15px;
