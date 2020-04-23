@@ -21,7 +21,13 @@ $handler->setNav(
     )
 );
 
-$handler->setBreadcrumb("Ti trovi in: Home");
+$handler->setBreadcrumb(
+    str_replace(
+        "<percorsoPlaceholder />",
+        "Home",
+        file_get_contents(__DIR__ . "/php/components/default-breadcrumb.php")
+    )
+);
 
 $content = file_get_contents(__DIR__ . "/php/components/home-content.php");
 
