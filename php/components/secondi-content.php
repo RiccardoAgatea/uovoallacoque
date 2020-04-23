@@ -2,5 +2,5 @@
     <h1>Secondi Piatti</h1>
     <ul class="elenco-content">
         <PlaceholderElenco />
-    <ul>
+        <ul>
 </div>
