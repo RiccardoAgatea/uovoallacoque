@@ -20,19 +20,19 @@ $tipi = [
     "Dolci",
 ];
 
-$tipo = $_GET['id'];
+$tipo = array_key_exists('id', $_GET) ? $_GET['id'] : 0;
 
 if ($tipo < 0 || $tipo >= 4) {
     throw new Exception("Mica bene!");
 }
 
+$nav=file_get_contents(__DIR__ . "/components/default-nav.php");
+
 if ($tipo != 0) {
-    $handler->setNav(
-        str_replace(
-            "<a href=\"<rootFolder />/php/elenco.php?id=$tipo\">{$tipi[$tipo]}</a>",
-            "{$tipi[$tipo]}",
-            file_get_contents(__DIR__ . "/components/default-nav.php")
-        )
+    $nav = str_replace(
+        "<a href=\"<rootFolder />/php/elenco.php?id=$tipo\">{$tipi[$tipo]}</a>",
+        "{$tipi[$tipo]}",
+        $nav
     );
 
     $handler->setBreadcrumb(
@@ -40,10 +40,12 @@ if ($tipo != 0) {
     );
 }
 
+$handler->setNav($nav);
+
 $content = file_get_contents(__DIR__ . "/components/elenco-content.php");
 $content = str_replace("<categoriaPlaceholder />", $tipi[$tipo], $content);
 
-$risultato = $tipo != 0 ? contentPortata($tipo) : contentRicerca();
+$risultato = $tipo != 0 ? contentPortata($tipo) : contentRicerca($_GET["termine_ricerca"]);
 
 $content = str_replace("<elencoPlaceholder />", $risultato, $content);
 

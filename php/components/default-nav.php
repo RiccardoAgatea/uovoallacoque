@@ -14,8 +14,10 @@
        </li>
 </ul>
 <div id="barra_ricerca">
-       <form>
-              <label for="termine_ricerca">Cerca:</label>
+       <form method="get"
+             action="<rootFolder />/php/elenco.php?id=0">
+              <label for="
+             termine_ricerca">Cerca:</label>
               <input type="text"
                      id="termine_ricerca"
                      name="termine_ricerca" />
