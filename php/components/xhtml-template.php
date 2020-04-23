@@ -41,7 +41,7 @@
       <body>
             <div id="header">
                   <img id="immagine-logo"
-                       src="./img/logo/coque_scritta_long.png"
+                       src="<rootFolder />/img/logo/coque_scritta_long.png"
                        alt="Uovo alla coque" />
                   <loginPlaceholder />
             </div>
