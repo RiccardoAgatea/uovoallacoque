@@ -345,6 +345,7 @@ ul li input{ /*uguale a .barra-input */
 }
 
 #apriNav{
+    display: none;
     position: fixed;
     top: 2;
     right:0;
