@@ -6,7 +6,6 @@
               <a href="<rootFolder />/index.php">
                      Home
               </a>
-
        </li>
        <li id="primi">
               <a href="<rootFolder />/php/elenco.php?id=1">
@@ -32,7 +31,8 @@
                      id="termine_ricerca"
                      class="barra-cerca"
                      name="termine_ricerca" />
-                     <input type="image" id="immagine-lente"
+              <input type="image"
+                     id="immagine-lente"
                      src="<rootFolder />/img/icone/lente-ingrandimento.png"
                      alt="cerca" />
        </form>
