@@ -3,4 +3,5 @@
         <categoriaPlaceholder />
     </h1>
     <elencoPlaceholder />
+    <backToTopPlaceholder />
 </div>

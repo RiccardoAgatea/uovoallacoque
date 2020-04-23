@@ -16,12 +16,22 @@ $handler->setNav(
     file_get_contents(__DIR__ . "/components/default-nav.php")
 );
 
-$handler->setBreadcrumb("Ti trovi in: Home &gt Utente");
+$handler->setBreadcrumb(
+    str_replace(
+        "<percorsoPlaceholder />",
+        "<a href=\"<rootFolder />/index.php\">Home</a> &gt Utente",
+        file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
+    )
+);
 
 $content = file_get_contents(__DIR__ . "/components/utente-content.php");
 
 $content = preg_replace("(<top.*Placeholder />)", "", $content);
 
 $handler->setContent($content);
+
+$handler->setBackToTop(
+    file_get_contents(__DIR__ . "/components/default-tornaSu.php")
+);
 
 $handler->send();

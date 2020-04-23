@@ -40,5 +40,7 @@
         </fieldset>
     </form>
     <p id="registrazione">Non sei ancora registrato? <a
-           href="<rootFolder />/php/signup.php">Registrati</a></p>
+           href="<rootFolder />/php/signup.php">Registrati</a>
+    </p>
+    <backToTopPlaceholder />
 </div>

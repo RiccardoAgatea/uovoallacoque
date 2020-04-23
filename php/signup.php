@@ -19,12 +19,23 @@ $handler->setNav(
     file_get_contents(__DIR__ . "/components/default-nav.php")
 );
 
-$handler->setBreadcrumb("Ti trovi in: Registrati");
+$handler->setBreadcrumb(
+    str_replace(
+        "<percorsoPlaceholder />",
+        "Registrati",
+        file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
+    )
+);
 
 $content = file_get_contents(__DIR__ . "/components/signup-content.php");
 
 $content = preg_replace("(<top.*Placeholder />)", "", $content);
 
 $handler->setContent($content);
+
+$handler->setBackToTop(
+    file_get_contents(__DIR__ . "/components/default-tornaSu.php")
+);
+
 
 $handler->send();

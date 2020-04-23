@@ -178,4 +178,5 @@
             </ul>
         </fieldset>
     </form>
+    <backToTopPlaceholder />
 </div>
