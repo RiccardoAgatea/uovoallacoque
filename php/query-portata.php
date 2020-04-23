@@ -5,18 +5,21 @@ function contentPortata($i)
 {
     $mysql = new DBconnection;
     $query = "SELECT * FROM ricette WHERE portata=$i";
+    $result = $mysql->query($query);
 
     $risultato = "";
-    if ($result = $mysql->query($query)) {
+
+    if ($result) {
+        $risultato .= "<ul id=\"elenco-content\">";
+
         while ($row = $result->fetch_assoc()) {
             $nome = $row['nome'];
             $difficolta = $row['difficolta'];
             $tempo = $row['tempo'];
             $immagine = $row['img'];
-            $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
-            $voto = $votor[0];
+            $voto = $mysql->query("SELECT media($i)")->fetch_row()[0];
 
-            $risultato = $risultato .
+            $risultato .=
                 '<li class=elenco-elemento>' .
                 '<img class="elenco-immagine" src="' . $immagine . '" alt = "immagine di ' . $nome . '" />' .
                 '<h2 class=elenco-titolo>' . $nome . '</h2>' .
@@ -27,10 +30,18 @@ function contentPortata($i)
                 '</ul>' .
                 '</li>';
         }
-        return $risultato;
 
+        $risultato .= "</ul>";
     }
+
     $mysql->disconnect();
+
+    return $risultato;
+}
+
+function contentRicerca($termine)
+{
+
 }
 
 function piattoMigliore($i)
