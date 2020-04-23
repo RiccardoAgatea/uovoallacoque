@@ -1,10 +1,10 @@
 <?php
 require_once __DIR__ . '/db-connection.php';
 
-function contentPortata($i)
+function contentPortata($portata)
 {
     $mysql = new DBconnection;
-    $query = "SELECT * FROM ricette WHERE portata=$i";
+    $query = "SELECT * FROM ricette WHERE portata=$portata";
     $result = $mysql->query($query);
 
     $risultato = "";
@@ -17,7 +17,8 @@ function contentPortata($i)
             $difficolta = $row['difficolta'];
             $tempo = $row['tempo'];
             $immagine = $row['img'];
-            $voto = $mysql->query("SELECT media($i)")->fetch_row()[0];
+            $id = $row['id'];
+            $voto = $mysql->query("SELECT media($id)")->fetch_row()[0];
 
             $risultato .=
                 '<li class=elenco-elemento>' .
@@ -41,13 +42,53 @@ function contentPortata($i)
 
 function contentRicerca($termine)
 {
+    $mysql = new DBConnection;
+    $search_query = "SELECT * FROM ricette WHERE ricette.nome LIKE \"%$termine%\"";
+    $result = $mysql->query($search_query);
 
+    $risultato = "";
+
+    if (!$result) {
+        throw new Exception("Errore nel ritorno dei risultati della ricerca dal db");
+    }
+
+    if ($result->num_rows != 0) {
+        $risultato .= "<ul id=\"elenco-content\">";
+
+        while ($row = $result->fetch_assoc()) {
+            $nome = $row['nome'];
+            $difficolta = $row['difficolta'];
+            $tempo = $row['tempo'];
+            $immagine = $row['img'];
+            $id = $row['id'];
+            $voto = $mysql->query("SELECT media($id)")->fetch_row()[0];
+
+            $risultato .=
+                '<li class=elenco-elemento>' .
+                '<img class="elenco-immagine" src="' . $immagine . '" alt = "immagine di ' . $nome . '" />' .
+                '<h2 class=elenco-titolo>' . $nome . '</h2>' .
+                '<ul class="elenco-attributi">' .
+                '<li> Difficolt&agrave;: ' . $difficolta . '</li>' .
+                '<li>Tempo: ' . $tempo . '</li>' .
+                '<li>Voto medio: ' . $voto . ' &frasl; 5</li>' .
+                '</ul>' .
+                '</li>';
+        }
+
+        $risultato .= "</ul>";
+    } else {
+        $risultato .= "<p>Spiacenti, non siamo riusciti a trovare quello che cercavi</p>";
+    }
+
+    $mysql->disconnect();
+
+    return $risultato;
 }
 
-function piattoMigliore($i)
+function piattoMigliore($portata)
 {
     $mysql = new DBconnection;
-    $query = "SELECT * FROM ricette, voti WHERE ricette.portata=$i ORDER BY media(ricette.id) DESC LIMIT 1";
+    $query = "SELECT * FROM ricette WHERE ricette.portata=$portata ORDER BY media(ricette.id) DESC LIMIT 1";
 
     $risultato = "";
     if ($result = $mysql->query($query)) {
@@ -59,7 +100,7 @@ function piattoMigliore($i)
             $tempo = $row['tempo'];
             $immagine = $row['img'];
             $id = $row['id'];
-            $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
+            $votor = $mysql->query("SELECT media($id);")->fetch_row();
             $voto = $votor[0];
 
             $risultato = $risultato .
@@ -73,8 +114,9 @@ function piattoMigliore($i)
                 '</ul>' .
                 '</li>';
         }
-        return $risultato;
-
     }
+
     $mysql->disconnect();
+
+    return $risultato;
 }
