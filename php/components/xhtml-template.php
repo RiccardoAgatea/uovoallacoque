@@ -57,14 +57,14 @@
                   <ul id="logo-social">
                         <li class="social">
                               <a href="https://www.facebook.com"
-                                 class="fa fa-facebook"
+                                 class="fa fa-facebook-square"
                                  Title="Facebook"></a>
                         </li>
 
                         <li class="social">
                               <a href="https://www.instagram.com"
                                  class="fa fa-instagram"
-                                 Title="Instagram"></a>
+                                 Title="Instagram"></a>                             
                         </li>
 
                         <li class="social">

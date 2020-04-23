@@ -76,7 +76,7 @@ body{
     font-size: xx-large;
 
 }
-.fa-facebook:hover{
+.fa-facebook-square:hover{
     color: rgb(59,89,152);
 }
 .fa-instagram:hover{
@@ -148,6 +148,29 @@ ul li a {
 /*fine logo*/
 #barra_ricerca{
     text-align: center;
+    
+}
+.barra-cerca{
+    width: 25em;
+    height: 2em;
+}
+#immagine-lente{
+    position: relative;
+    top:0.7em;
+    background-color: rgb(242, 242, 242);
+    width: 1.2em;
+    height: 1.2em;
+    border-style: solid;
+    border-color: gray;
+    border-width:  0.01em;
+    padding: 0.5em 1em 0.5em 1em;
+    margin-left: 0em;
+    
+    
+
+}
+#immagine-lente:hover{
+    background-color: orange;
 }
 
 #menu a:visited {
@@ -180,7 +203,12 @@ ul li a {
 #accedi_scritta{
     padding-right: 0.5em;
 }
-
+#tornaSuLink{
+    position: absolute;
+    right: 0;
+    margin-top: 2em;
+    margin-right: 10em;
+}
 /*introduzione*/
 #introduction{
     border-style: dashed;

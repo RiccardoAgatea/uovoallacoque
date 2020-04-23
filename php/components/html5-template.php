@@ -51,7 +51,7 @@
                   <ul id="logo-social">
                         <li class="social">
                               <a href="https://www.facebook.com"
-                                 class="fa fa-facebook"
+                                 class="fa fa-facebook-square"
                                  Title="Facebook"></a>
                         </li>
 
@@ -63,7 +63,7 @@
 
                         <li class="social">
                               <a href="https://www.youtube.com"
-                                 class="fa fa-youtube"
+                                 class="fab fa-youtube"
                                  Title="youtube"></a>
                         </li>
                   </ul>

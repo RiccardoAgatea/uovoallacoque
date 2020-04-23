@@ -16,12 +16,12 @@
 <div id="barra_ricerca">
        <form method="get"
              action="<rootFolder />/php/elenco.php?id=0">
-              <label for="
-             termine_ricerca">Cerca:</label>
+              <label for="termine_ricerca">Cerca:</label>
               <input type="text"
                      id="termine_ricerca"
+                     class="barra-cerca"
                      name="termine_ricerca" />
-              <input type="image"
+                     <input type="image" id="immagine-lente"
                      src="<rootFolder />/img/icone/lente-ingrandimento.png"
                      alt="cerca" />
        </form>
