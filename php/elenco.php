@@ -26,11 +26,11 @@ if ($tipo < 0 || $tipo >= 4) {
     throw new Exception("Mica bene!");
 }
 
-$nav=file_get_contents(__DIR__ . "/components/default-nav.php");
+$nav = file_get_contents(__DIR__ . "/components/default-nav.php");
 
 if ($tipo != 0) {
-    $nav = str_replace(
-        "<a href=\"<rootFolder />/php/elenco.php?id=$tipo\">{$tipi[$tipo]}</a>",
+    $nav = preg_replace(
+        "((?s)<a href=\"<rootFolder />/php/elenco\.php\?id=$tipo\">.*?</a>)",
         "{$tipi[$tipo]}",
         $nav
     );
