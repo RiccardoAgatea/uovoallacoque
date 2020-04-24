@@ -266,30 +266,31 @@ ul li input{ /*uguale a .barra-input */
 .elenco-content {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-
+    flex-direction: row;
+    justify-content: center;
 }
 .elenco-elemento {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items:center;
-    justify-content:space-between;
+    justify-content:flex-start;
     margin: 1em;
-    height: 10em;
+    height: 14em;
+    width:36em;
     background-color: rgba(245, 233, 66, 0.4);
     border: black solid 1px;
 }
 
 .elenco-immagine {
-    height: 10em;
-    width: 10em;
-    object-fit: contain;
-
+    height: 14em;
+    width: 14em;
+    object-fit: contain;    
 }
-
+.elenco-testo {
+    margin-left: 0.5em;
+}
 .elenco-titolo {
-    margin-left: 1em;
     display: inline;
 }
 
@@ -306,6 +307,41 @@ ul li input{ /*uguale a .barra-input */
 }
 
 /*mobile*/
+@media screen and (max-width: 768px){
+    body {
+        width: 100%;
+    }
+   #immagine-logo{
+        width: 10em;
+        height: 2em;
+    } 
+    .elenco-content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        
+    }
+   .elenco-elemento {
+       height: 5em;
+       width: 15em;
+    }
+    .elenco-testo {
+        margin-top: -5em;
+        flex-direction: column;
+        margin-left: 5em;
+    }
+   .elenco-immagine {
+        height: 5em;
+        width: 5em;    
+    }
+   .elenco-titolo {
+        font-size: small;
+        display: block;
+    }
+    .elenco-attributi {
+        display: block;
+        font-size: small;
+    }
 /*.sidenav {
     height: 100%;
     width: 0;
