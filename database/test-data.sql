@@ -27,7 +27,29 @@ VALUES
     15,
     "<rootFolder />/img/ricette/default.png",
     3
+  ),
+   (
+    'Crema inglese',
+    2,
+    15,
+    "<rootFolder />/img/ricette/default.png",
+    3
+  ),
+  (
+    'Uovo all occhio di bue',
+    1,
+    5,
+    "<rootFolder />/img/ricette/default.png",
+    2
+  ),
+   (
+    'Uovo strapazzato',
+    1,
+    7,
+    "<rootFolder />/img/ricette/default.png",
+    2
   );
+
 INSERT INTO utenti (email, passw, nickname)
 VALUES
   (
@@ -58,4 +80,5 @@ VALUES
   (3, 1, 1),
   (3, 2, 2),
   (3, 3, 3),
-  (3, 4, 2);
+  (3, 4, 2),
+  (3, 5, 5);

@@ -18,9 +18,10 @@ function contentPortata($portata)
             $difficolta = $row['difficolta'];
             $tempo = $row['tempo'];
             $immagine = $row['img'];
+            $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
+            $voto = $votor[0];
+            $voto= number_format($voto, 1);
             $id = $row['id'];
-            $voto = $mysql->query("SELECT media($id)")->fetch_row()[0];
-
             $link = "<rootFolder />/php/ricetta.php?id=$id";
 
             $risultato .=
@@ -58,7 +59,9 @@ function contentRicerca($termine)
             $tempo = $row['tempo'];
             $immagine = $row['img'];
             $id = $row['id'];
-            $voto = $mysql->query("SELECT media($id)")->fetch_row()[0];
+            $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
+            $voto = $votor[0];
+            $voto= number_format($voto, 1);
 
             $link = "<rootFolder />/php/ricetta.php?id=$id";
 
@@ -93,8 +96,10 @@ function piattoMigliore($portata)
             $tempo = $row['tempo'];
             $immagine = $row['img'];
             $id = $row['id'];
-            $voto = $mysql->query("SELECT media($id);")->fetch_row()[0];
 
+            $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
+            $voto = $votor[0];
+            $voto= number_format($voto, 1);
             $link = "<rootFolder />/php/ricetta.php?id=$id";
 
             $risultato = $risultato .
