@@ -277,7 +277,6 @@ ul li input{ /*uguale a .barra-input */
     justify-content:flex-start;
     margin: 1em;
     height: 14em;
-    width:36em;
     background-color: rgba(245, 233, 66, 0.4);
     border: black solid 1px;
 }
@@ -289,6 +288,11 @@ ul li input{ /*uguale a .barra-input */
 }
 .elenco-testo {
     margin-left: 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:space-between;
+    width: 65%;
 }
 .elenco-titolo {
     display: inline;
@@ -317,30 +321,29 @@ ul li input{ /*uguale a .barra-input */
     } 
     .elenco-content {
         display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        
+        flex-wrap: wrap;        
     }
    .elenco-elemento {
-       height: 5em;
-       width: 15em;
+       height: 8em;
+       width: 20em;
+       flex-direction: row;
+       justify-content: flex-start;
     }
     .elenco-testo {
-        margin-top: -5em;
+        width: initial;
         flex-direction: column;
-        margin-left: 5em;
+        font-size: small;
     }
    .elenco-immagine {
-        height: 5em;
-        width: 5em;    
+        height: 8em;
+        width: 8em;    
     }
    .elenco-titolo {
-        font-size: small;
         display: block;
+        font-size: small;
     }
     .elenco-attributi {
         display: block;
-        font-size: small;
     }
 /*.sidenav {
     height: 100%;
@@ -419,7 +422,6 @@ ul li input{ /*uguale a .barra-input */
     right:0;
 }
 
-@media screen and (max-width: 768px) {
     /* #header {
         position: fixed;
     } */
