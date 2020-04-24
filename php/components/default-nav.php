@@ -2,22 +2,22 @@
       onclick="openSideNav()">&#9776; </span>
 
 <ul id="menu">
-       <li id="home">
+       <li id="home" class="elementoMenu">
               <a href="<rootFolder />/index.php">
                      Home
               </a>
        </li>
-       <li id="primi">
+       <li id="primi" class="elementoMenu">
               <a href="<rootFolder />/php/elenco.php?id=1">
                      Primi Piatti
               </a>
        </li>
-       <li id="secondi">
+       <li id="secondi" class="elementoMenu">
               <a href="<rootFolder />/php/elenco.php?id=2">
                      Secondi Piatti
               </a>
        </li>
-       <li id="dolci">
+       <li id="dolci" class="elementoMenu">
               <a href="<rootFolder />/php/elenco.php?id=3">
                      Dolci
               </a>
@@ -41,19 +41,23 @@
 
 <ul id="mySidenav"
     class="sidenav">
-       <li id="chiudiNav"><a href="javascript:void(0)"
+       <li id="chiudiNav" class ="sidenavElemento"><a href="javascript:void(0)"
                  class="closebtn"
                  onclick="closeSideNav()">&times;</a></li>
 
-       <li id="home"><a href="<rootFolder />/index.php">Home</a></li>
-       <li id="primi"><a href="<rootFolder />/php/elenco.php?id=1">Primi
+       <li id="home" class ="sidenavElemento"><a href="<rootFolder />/index.php">Home</a></li>
+       <li id="primi" class ="sidenavElemento"><a href="<rootFolder />/php/elenco.php?id=1">Primi
                      Piatti</a></li>
-       <li id="secondi"><a
+       <li id="secondi" class ="sidenavElemento"><a
                  href="<rootFolder />/php/elenco.php?id=2">Secondi
                      Piatti</a>
        </li>
-       <li id="dolci"><a
+       <li id="dolci" class ="sidenavElemento"><a
                  href="<rootFolder />/php/elenco.php?id=3">Dolci</a>
        </li>
-       <!-- accedi e registrati? -->
+       <li id="accedi_scritta" class ="sidenavElemento"><a
+                 href="<rootFolder />/php/login.php">Accedi</a></li>
+       <li id="registrati_scritta" class ="sidenavElemento"><a
+                 href="<rootFolder />/php/signup.php">Registrati</a>
+       </li>
 </ul>

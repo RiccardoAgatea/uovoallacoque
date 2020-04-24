@@ -108,7 +108,9 @@ ul li a {
     background-color: rgba(211, 224, 245,0);
     margin-bottom: 2em;
 }
-#menu li{
+
+.elementoMenu{
+    text-align: center;
     display: block;
     width:9em;
     height: 2.5em;
@@ -117,25 +119,12 @@ ul li a {
     background-color: rgba(245, 233, 66, 0.6);
 
 }
-#menu a {
+
+.elementoMenu a {
     display: block;
     font-size: 1em;
+}
 
-}
-#home{
-    text-align: center;
-}
-#primi{
-    text-align: center;
-}
-#secondi{
-    text-align: center;
-
-}
-#dolci{
-    text-align: center;
-
-}
 /*fine menu*/
 /*logo*/
 #immagine-logo{
@@ -341,28 +330,40 @@ ul li input{ /*uguale a .barra-input */
   right: -6em;
   z-index: 1;
   transition: 0.5s;
-  background: rgb(0, 31, 59);
+  background: rgba(0, 19, 36, 0.904);
 }
-.sidenav li {
+
+.sidenavElemento{
     padding: 0.3em 1em 0.5em 0em;
+    text-align: left;
     text-decoration: none;
     font-size: 1.2em;
-    color: #a3a5a7;
+    color: #d6d6d6;
+    display: block;
+    transition: 0.3s;
+}
+/*
+   .sidenav li {
+    padding: 0.3em 1em 0.5em 0em;
+    text-align: left;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #d6d6d6;
     display: block;
     transition: 0.3s;
 
 }
-
+*/
 
  .sidenav a {
     padding-bottom: 1.5em;
     text-decoration: none;
     text-align: left;
     font-size: 1.2em;
-    color: #a3a5a7;
+    color: #cecece;
     display: block;
     transition: 0.3s;
-}
+} 
 
 .sidenav a:hover {
     color: #f1f1f1;
@@ -383,10 +384,29 @@ ul li input{ /*uguale a .barra-input */
 }
 
 @media screen and (max-width: 768px) {
-    #immagine-logo{
+    /* #header {
+        position: fixed;
+    } */
+
+    #immagine-logo {
         width: 10em;
         height: 2em;
-       }
+    }
+
+    #breadcrumb {
+        display: none;
+    }
+    #lista_accesso{
+        display: none;
+    }
+    
+    .barra-cerca{
+        width: auto;
+    }
+
+    #menu{
+        display: none;
+    }
 
     #apriNav {
         /*position: absolute;
@@ -396,18 +416,6 @@ ul li input{ /*uguale a .barra-input */
         font-size: 2em;
         cursor: pointer;
     }
-
-    #menu{
-        display: none;
-    }
-    
-    .barra-cerca{
-        width: auto;
-    }
-    
-    /* qualcosa del breadcrumb{
-        display: none;
-    } */
 }
 
 @media screen and (max-height: 450px) {
