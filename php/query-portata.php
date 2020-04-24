@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/db-connection.php';
+require_once __DIR__ . '/scheda-ricetta.php';
 
 function contentPortata($portata)
 {
@@ -20,15 +21,11 @@ function contentPortata($portata)
             $id = $row['id'];
             $voto = $mysql->query("SELECT media($id)")->fetch_row()[0];
 
+            $link = "<rootFolder />/php/ricetta.php?id=$id";
+
             $risultato .=
-                '<li class=elenco-elemento>' .
-                '<img class="elenco-immagine" src="' . $immagine . '" alt = "immagine di ' . $nome . '" />' .
-                '<h2 class=elenco-titolo>' . $nome . '</h2>' .
-                '<ul class="elenco-attributi">' .
-                '<li> Difficolt&agrave;: ' . $difficolta . '</li>' .
-                '<li>Tempo: ' . $tempo . '</li>' .
-                '<li>Voto medio: ' . $voto . ' &frasl; 5</li>' .
-                '</ul>' .
+            '<li class=elenco-elemento>' .
+            schedaRicetta($immagine, $nome, $difficolta, $tempo, $voto, $link) .
                 '</li>';
         }
 
@@ -63,15 +60,11 @@ function contentRicerca($termine)
             $id = $row['id'];
             $voto = $mysql->query("SELECT media($id)")->fetch_row()[0];
 
+            $link = "<rootFolder />/php/ricetta.php?id=$id";
+
             $risultato .=
-                '<li class=elenco-elemento>' .
-                '<img class="elenco-immagine" src="' . $immagine . '" alt = "immagine di ' . $nome . '" />' .
-                '<h2 class=elenco-titolo>' . $nome . '</h2>' .
-                '<ul class="elenco-attributi">' .
-                '<li> Difficolt&agrave;: ' . $difficolta . '</li>' .
-                '<li>Tempo: ' . $tempo . '</li>' .
-                '<li>Voto medio: ' . $voto . ' &frasl; 5</li>' .
-                '</ul>' .
+            '<li class=elenco-elemento>' .
+            schedaRicetta($immagine, $nome, $difficolta, $tempo, $voto, $link) .
                 '</li>';
         }
 
@@ -100,18 +93,13 @@ function piattoMigliore($portata)
             $tempo = $row['tempo'];
             $immagine = $row['img'];
             $id = $row['id'];
-            $votor = $mysql->query("SELECT media($id);")->fetch_row();
-            $voto = $votor[0];
+            $voto = $mysql->query("SELECT media($id);")->fetch_row()[0];
+
+            $link = "<rootFolder />/php/ricetta.php?id=$id";
 
             $risultato = $risultato .
-                '<li class=elenco-elemento>' .
-                '<img class="elenco-immagine" src="' . $immagine . '" alt = "immagine di ' . $nome . '" />' .
-                '<h2 class=elenco-titolo>' . $nome . '</h2>' .
-                '<ul class="elenco-attributi">' .
-                '<li> Difficolt&agrave;: ' . $difficolta . '</li>' .
-                '<li>Tempo: ' . $tempo . '</li>' .
-                '<li>Voto medio: ' . $voto . ' &frasl; 5</li>' .
-                '</ul>' .
+            '<li class=elenco-elemento>' .
+            schedaRicetta($immagine, $nome, $difficolta, $tempo, $voto, $link) .
                 '</li>';
         }
     }

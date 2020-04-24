@@ -14,8 +14,8 @@ $handler->setLogin(
 );
 
 $handler->setNav(
-    str_replace(
-        "<a href=\"<rootFolder />/index.php\">Home</a>",
+    preg_replace(
+        "((?s)<a href=\"<rootFolder />/index\.php\">.*?</a>)",
         "Home",
         file_get_contents(__DIR__ . "/php/components/default-nav.php")
     )
