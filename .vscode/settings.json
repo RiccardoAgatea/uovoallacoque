@@ -8,4 +8,7 @@
     "css.customData": [],
     "css.validate": true,
     "html.suggest.html5": false,
+    "files.associations": {
+        "**/php/components/*.*": "html"
+    },
 }

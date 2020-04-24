@@ -4,7 +4,3 @@
         <PlaceholderElenco />
     </ul>
 </div>
-    
-    
-    
-    

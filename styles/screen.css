@@ -45,8 +45,6 @@ body{
     position: relative;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-    
-    
 }
 
 #logo-social li{
@@ -59,8 +57,6 @@ body{
 #nomi-contatti li{
     display: inline;
     margin-left:0.3em;
-    
-    
 }
 #nomi-contatti {
     position: relative;
@@ -80,7 +76,7 @@ body{
     font-size: xx-large;
 
 }
-.fa-facebook:hover{
+.fa-facebook-square:hover{
     color: rgb(59,89,152);
 }
 .fa-instagram:hover{
@@ -112,34 +108,23 @@ ul li a {
     background-color: rgba(211, 224, 245,0);
     margin-bottom: 2em;
 }
-#menu li{
+
+.elementoMenu{
+    text-align: center;
     display: block;
     width:9em;
     height: 2.5em;
     border: 0.05em solid black;
     margin:0.2em;
     background-color: rgba(245, 233, 66, 0.6);
-   
-}
-#menu a {
-    display: block;
-    font-size: 1em;    
-    
-}
-#home{
-    text-align: center;
-}
-#primi{
-    text-align: center;
-}
-#secondi{
-    text-align: center;
 
 }
-#dolci{
-    text-align: center;
-    
+
+.elementoMenu a {
+    display: block;
+    font-size: 1em;
 }
+
 /*fine menu*/
 /*logo*/
 #immagine-logo{
@@ -152,6 +137,29 @@ ul li a {
 /*fine logo*/
 #barra_ricerca{
     text-align: center;
+    
+}
+.barra-cerca{
+    width: 25em;
+    height: 2em;
+}
+#immagine-lente{
+    position: relative;
+    top:0.7em;
+    background-color: rgb(242, 242, 242);
+    width: 1.2em;
+    height: 1.2em;
+    border-style: solid;
+    border-color: gray;
+    border-width:  0.01em;
+    padding: 0.5em 1em 0.5em 1em;
+    margin-left: 0em;
+    
+    
+
+}
+#immagine-lente:hover{
+    background-color: orange;
 }
 
 #menu a:visited {
@@ -160,7 +168,7 @@ ul li a {
 }
 #lista_accesso a:visited{
     color: red;
-    border-color: black; 
+    border-color: black;
 }
 
 #menu a:hover {
@@ -179,10 +187,18 @@ ul li a {
 
 }
 #lista_accesso li a:hover{
-    background-color:rgba(253, 190, 17, 0.801); /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/  
+    background-color:rgba(253, 190, 17, 0.801); /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/
 }
 #accedi_scritta{
     padding-right: 0.5em;
+}
+
+/* torna su */
+#tornaSuLink{
+    position: absolute;
+    right: 15%;
+    margin-top: 2em;
+    /* margin-right: 10em; */
 }
 
 /*introduzione*/
@@ -210,7 +226,7 @@ ul li a {
     margin-top: 2em;
     margin-bottom: 2em;
     border: none; /*non mi piaceva il cornicione*/
-    
+
 }
 .form-container {
 	display: flex;
@@ -227,22 +243,20 @@ ul li a {
     height: 2em;
     border-radius: 0.5em;
 }
-.label{
 
-}
-ul li .warning{
+.warning{
     color: red;
     display: block;
     margin: 0 auto 0 auto;
     text-align: center;
 }
-ul li input{
+ul li input{ /*uguale a .barra-input */
     display: block;
     margin: 0 auto 0 auto;
 }
 .submit{
     font-size: medium;
-    width: 5em;
+    /* width: 5em; su registrati viene tagliata la scritta*/
     height: 2em;
     margin-bottom: 1em;
     margin-top: 1em;
@@ -254,7 +268,6 @@ ul li input{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    
 }
 .elenco-elemento {
     display: flex;
@@ -329,5 +342,129 @@ ul li input{
         display: block;
         font-size: small;
     }
+/*.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 5em;
+}*/
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: -6em 0 0 0;
+  padding: 3em;
+  padding-top: 5em;
+  right: -6em;
+  z-index: 1;
+  transition: 0.5s;
+  background: rgba(0, 19, 36, 0.904);
 }
+
+.sidenavElemento{
+    padding: 0.3em 1em 0.5em 0em;
+    text-align: left;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #d6d6d6;
+    display: block;
+    transition: 0.3s;
+}
+/*
+   .sidenav li {
+    padding: 0.3em 1em 0.5em 0em;
+    text-align: left;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #d6d6d6;
+    display: block;
+    transition: 0.3s;
+
+}
+*/
+
+ .sidenav a {
+    padding-bottom: 1.5em;
+    text-decoration: none;
+    text-align: left;
+    font-size: 1.2em;
+    color: #cecece;
+    display: block;
+    transition: 0.3s;
+} 
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    padding-top: 1em;
+    padding-left: 3.5em;
+    font-size: 2.2em;
+
+}
+
+#apriNav{
+    display: none;
+    position: fixed;
+    top: 2;
+    right:0;
+}
+
+@media screen and (max-width: 768px) {
+    /* #header {
+        position: fixed;
+    } */
+
+    #immagine-logo {
+        width: 10em;
+        height: 2em;
+    }
+
+    #breadcrumb {
+        display: none;
+    }
+    #lista_accesso{
+        display: none;
+    }
+    
+    .barra-cerca{
+        width: auto;
+    }
+
+    #menu{
+        display: none;
+    }
+
+    #apriNav {
+        /*position: absolute;
+        right: 0;
+        margin-right: 3.5%;*/
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 0.3em;
+        
+    }
+    .sidenav a {
+      font-size: 1em;
+    }
+    
+}
+
+
+
 /*fine mobile*/

@@ -55,6 +55,11 @@ class TemplateHandler
         $this->page = str_replace("<contentPlaceholder />", $contentSnippet, $this->page);
     }
 
+    public function setBackToTop(string $backToTopSnippet)
+    {
+        $this->page = str_replace("<backToTopPlaceholder />", $backToTopSnippet, $this->page);
+    }
+      
     public function send()
     {
         $this->done();

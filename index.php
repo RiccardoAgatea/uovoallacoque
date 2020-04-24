@@ -1,6 +1,6 @@
 <?php
 require_once "./php/template-handler.php";
-require_once (__DIR__ .'/php/query-portata.php');
+require_once __DIR__ . '/php/query-portata.php';
 
 $handler = new TemplateHandler(".", "xhtml");
 
@@ -14,23 +14,32 @@ $handler->setLogin(
 );
 
 $handler->setNav(
-    str_replace(
-        "<a href=\"<rootFolder />/index.php\">Home</a>",
+    preg_replace(
+        "((?s)<a href=\"<rootFolder />/index\.php\">.*?</a>)",
         "Home",
         file_get_contents(__DIR__ . "/php/components/default-nav.php")
     )
 );
 
-$handler->setBreadcrumb("Ti trovi in: Home");
+$handler->setBreadcrumb(
+    str_replace(
+        "<percorsoPlaceholder />",
+        "Home",
+        file_get_contents(__DIR__ . "/php/components/default-breadcrumb.php")
+    )
+);
 
 $content = file_get_contents(__DIR__ . "/php/components/home-content.php");
 
-$content = preg_replace("(<top.*Placeholder />)", "", $content);
 $risultato1 = piattoMigliore(1);
 $risultato2 = piattoMigliore(2);
 $risultato3 = piattoMigliore(3);
-$content = str_replace(array("<topPrimoPlaceholder />","<topSecondoPlaceholder />","<topDolcePlaceholder />"), array($risultato1,$risultato2,$risultato3), file_get_contents(__DIR__ . "/php/components/home-content.php")) ;
+$content = str_replace(array("<topPrimoPlaceholder />", "<topSecondoPlaceholder />", "<topDolcePlaceholder />"), array($risultato1, $risultato2, $risultato3), $content);
 
 $handler->setContent($content);
+
+$handler->setBackToTop(
+    file_get_contents(__DIR__ . "/php/components/default-tornaSu.php")
+);
 
 $handler->send();

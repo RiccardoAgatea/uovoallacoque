@@ -22,4 +22,5 @@
 	<p class="procedura">
 		<proceduraPlaceholder />
 	</p>
+	<backToTopPlaceholder />
 </div>
