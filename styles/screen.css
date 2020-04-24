@@ -398,8 +398,9 @@ ul li input{ /*uguale a .barra-input */
         display: none;
     }
     
-    
-    
+    .barra-cerca{
+        width: auto;
+    }
     
     /* qualcosa del breadcrumb{
         display: none;
@@ -413,7 +414,6 @@ ul li input{ /*uguale a .barra-input */
     }
     .sidenav a {
       font-size: 1em;
-        
     }
     
 }
