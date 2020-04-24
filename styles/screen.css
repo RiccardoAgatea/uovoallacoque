@@ -203,12 +203,15 @@ ul li a {
 #accedi_scritta{
     padding-right: 0.5em;
 }
+
+/* torna su */
 #tornaSuLink{
     position: absolute;
-    right: 0;
+    right: 15%;
     margin-top: 2em;
-    margin-right: 10em;
+    /* margin-right: 10em; */
 }
+
 /*introduzione*/
 #introduction{
     border-style: dashed;
