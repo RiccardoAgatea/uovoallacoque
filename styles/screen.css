@@ -173,7 +173,7 @@ ul li a {
 
 #menu a:hover {
     background-color:rgba(253, 190, 17, 0.801);
-    height:2.45em;
+    height:2.5em;
     width: 9em;
 }
 /*accesso*/
@@ -310,69 +310,19 @@ ul li input{ /*uguale a .barra-input */
     margin-top: 1em;
 }
 
+/*.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 5em;
+}*/
 .sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin: -6em 0 0 0;
-  padding: 3em;
-  padding-top: 5em;
-  right: -6em;
-  z-index: 1;
-  transition: 0.5s;
- /* background: rgba(0, 19, 36, 0.904);*/
- background: rgb(0,19,36);
-}
-
-.sidenavElemento{
-    padding: 0.3em 1em 0.5em 0em;
-    text-align: left;
-    text-decoration: none;
-    font-size: 1.2em;
-    color: #d6d6d6;
-    display: block;
-    transition: 0.3s;
-}
-/*
-   .sidenav li {
-    padding: 0.3em 1em 0.5em 0em;
-    text-align: left;
-    text-decoration: none;
-    font-size: 1.2em;
-    color: #d6d6d6;
-    display: block;
-    transition: 0.3s;
-
-}
-*/
-
- .sidenav a {
-    margin-bottom: 1.5em;
-    text-decoration: none;
-    text-align: left;
-    font-size: 1.2em;
-    color: #cecece;
-    display: block;
-    transition: 0.3s;
-} 
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    margin-top: 1em;
-    margin-left: 3.5em;
-    font-size: 2.2em;
-    width: 1em;
-    height: 0.1em;
-
-}
-
-#apriNav{
-    display: none;
     height: 100%;
     width: 0;
     position: fixed;
@@ -384,10 +334,12 @@ ul li input{ /*uguale a .barra-input */
     right: -6em;
     z-index: 1;
     transition: 0.5s;
-    background: rgb(0, 19, 36);
-  }
+    background: rgba(0, 19, 36, 0.904);
+}
   
-  .sidenavElemento{
+
+  /*
+     .sidenav li {
       padding: 0.3em 1em 0.5em 0em;
       text-align: left;
       text-decoration: none;
@@ -395,7 +347,29 @@ ul li input{ /*uguale a .barra-input */
       color: #d6d6d6;
       display: block;
       transition: 0.3s;
+  
   }
+  */
+  
+
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    padding-top: 1em;
+    padding-left: 3.5em;
+    font-size: 2.2em;
+
+}
+
+#apriNav{
+    display: none;
+    position: fixed;
+    top: 2;
+    right:0;
+}
 
 
 /*mobile*/
@@ -448,6 +422,26 @@ ul li input{ /*uguale a .barra-input */
     #menu{
         display: none;
     }
+
+    .elementoMenu{
+        padding: 0.3em 1em 0.5em 0em;
+        text-align: left;
+        text-decoration: none;
+        font-size: 1.2em;
+        color: #d6d6d6;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a {
+        padding-bottom: 1.5em;
+        text-decoration: none;
+        text-align: left;
+        font-size: 1.2em;
+        color: #cecece;
+        display: block;
+        transition: 0.3s;
+    } 
 
     #apriNav {
         /*position: absolute;
