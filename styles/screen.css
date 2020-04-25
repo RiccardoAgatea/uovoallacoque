@@ -137,7 +137,6 @@ ul li a {
 /*fine logo*/
 #barra_ricerca{
     text-align: center;
-    margin-bottom: 5em;
     
     
 }
@@ -180,8 +179,7 @@ ul li a {
 }
 /*accesso*/
 #lista_accesso{
-    margin-top: -9.5em;
-    margin-bottom: 3em;
+    margin-top: -12em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -193,7 +191,13 @@ ul li a {
 #accedi_scritta{
     padding-right: 0.5em;
 }
+#nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
+    margin-bottom: 10em;
+}
 /* torna su */
 #tornaSuLink{
     position: absolute;
