@@ -310,6 +310,84 @@ ul li input{ /*uguale a .barra-input */
     margin-top: 1em;
 }
 
+/*.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 5em;
+}*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: -6em 0 0 0;
+    padding: 3em;
+    padding-top: 5em;
+    right: -6em;
+    z-index: 1;
+    transition: 0.5s;
+    background: rgba(0, 19, 36, 0.904);
+  }
+  
+  .sidenavElemento{
+      padding: 0.3em 1em 0.5em 0em;
+      text-align: left;
+      text-decoration: none;
+      font-size: 1.2em;
+      color: #d6d6d6;
+      display: block;
+      transition: 0.3s;
+  }
+  /*
+     .sidenav li {
+      padding: 0.3em 1em 0.5em 0em;
+      text-align: left;
+      text-decoration: none;
+      font-size: 1.2em;
+      color: #d6d6d6;
+      display: block;
+      transition: 0.3s;
+  
+  }
+  */
+  
+   .sidenav a {
+      padding-bottom: 1.5em;
+      text-decoration: none;
+      text-align: left;
+      font-size: 1.2em;
+      color: #cecece;
+      display: block;
+      transition: 0.3s;
+  } 
+  
+  .sidenav a:hover {
+      color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+      padding-top: 1em;
+      padding-left: 3.5em;
+      font-size: 2.2em;
+  
+  }
+  
+  #apriNav{
+      display: none;
+      position: fixed;
+      top: 2;
+      right:0;
+  }
+
+
 /*mobile*/
 @media screen and (max-width: 768px){
     body {
@@ -344,91 +422,6 @@ ul li input{ /*uguale a .barra-input */
     }
     .elenco-attributi {
         display: block;
-    }
-/*.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 5em;
-}*/
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin: -6em 0 0 0;
-  padding: 3em;
-  padding-top: 5em;
-  right: -6em;
-  z-index: 1;
-  transition: 0.5s;
-  background: rgba(0, 19, 36, 0.904);
-}
-
-.sidenavElemento{
-    padding: 0.3em 1em 0.5em 0em;
-    text-align: left;
-    text-decoration: none;
-    font-size: 1.2em;
-    color: #d6d6d6;
-    display: block;
-    transition: 0.3s;
-}
-/*
-   .sidenav li {
-    padding: 0.3em 1em 0.5em 0em;
-    text-align: left;
-    text-decoration: none;
-    font-size: 1.2em;
-    color: #d6d6d6;
-    display: block;
-    transition: 0.3s;
-
-}
-*/
-
- .sidenav a {
-    padding-bottom: 1.5em;
-    text-decoration: none;
-    text-align: left;
-    font-size: 1.2em;
-    color: #cecece;
-    display: block;
-    transition: 0.3s;
-} 
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    padding-top: 1em;
-    padding-left: 3.5em;
-    font-size: 2.2em;
-
-}
-
-#apriNav{
-    display: none;
-    position: fixed;
-    top: 2;
-    right:0;
-}
-
-    /* #header {
-        position: fixed;
-    } */
-
-    #immagine-logo {
-        width: 10em;
-        height: 2em;
     }
 
     #breadcrumb {
