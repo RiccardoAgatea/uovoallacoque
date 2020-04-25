@@ -198,6 +198,10 @@ ul li a {
 
     margin-bottom: 10em;
 }
+
+#breadcrumb{
+    margin: 2em;
+}
 /* torna su */
 #tornaSuLink{
     position: absolute;
@@ -211,8 +215,7 @@ ul li a {
     border-style: dashed;
     border-width: 0.07em;
     padding: 1em;
-    /*margin-top: 8em;
-    margin-bottom: 4em;*/
+    margin: 3em;
 }
 /*piatti migliori*/
 .elenco-migliori {
