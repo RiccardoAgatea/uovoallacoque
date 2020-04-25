@@ -4,7 +4,7 @@ require_once "./query-portata.php";
 
 $handler = new TemplateHandler("..", "xhtml");
 
-$handler->setTitle("Uovo alla Coque");
+
 $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
@@ -25,7 +25,7 @@ $tipo = array_key_exists('id', $_GET) ? $_GET['id'] : 0;
 if ($tipo < 0 || $tipo >= 4) {
     throw new Exception("Mica bene!");
 }
-
+$handler->setTitle("$tipi[$tipo] | Uovo alla Coque");
 $nav = file_get_contents(__DIR__ . "/components/default-nav.php");
 
 if ($tipo != 0) {

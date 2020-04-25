@@ -43,9 +43,11 @@
                   <img id="immagine-logo"
                        src="<rootFolder />/img/logo/coque_scritta_long.png"
                        alt="Uovo alla coque" />
+            </div>
+            <div id="nav">
+                  <navPlaceholder />
                   <loginPlaceholder />
             </div>
-            <navPlaceholder />
             <breadcrumbPlaceholder />
             <contentPlaceholder />
             <div id="footer">
@@ -64,7 +66,7 @@
                         <li class="social">
                               <a href="https://www.instagram.com"
                                  class="fa fa-instagram"
-                                 Title="Instagram"></a>                             
+                                 Title="Instagram"></a>
                         </li>
 
                         <li class="social">

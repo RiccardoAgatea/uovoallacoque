@@ -266,30 +266,35 @@ ul li input{ /*uguale a .barra-input */
 .elenco-content {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-
+    flex-direction: row;
+    justify-content: center;
 }
 .elenco-elemento {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items:center;
-    justify-content:space-between;
+    justify-content:flex-start;
     margin: 1em;
-    height: 10em;
+    height: 14em;
     background-color: rgba(245, 233, 66, 0.4);
     border: black solid 1px;
 }
 
 .elenco-immagine {
-    height: 10em;
-    width: 10em;
-    object-fit: contain;
-
+    height: 14em;
+    width: 14em;
+    object-fit: contain;    
 }
-
+.elenco-testo {
+    margin-left: 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:space-between;
+    width: 65%;
+}
 .elenco-titolo {
-    margin-left: 1em;
     display: inline;
 }
 
@@ -305,19 +310,6 @@ ul li input{ /*uguale a .barra-input */
     margin-top: 1em;
 }
 
-/*mobile*/
-/*.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 5em;
-}*/
 .sidenav {
   height: 100%;
   width: 0;
@@ -381,19 +373,65 @@ ul li input{ /*uguale a .barra-input */
 
 #apriNav{
     display: none;
+    height: 100%;
+    width: 0;
     position: fixed;
-    top: 2;
-    right:0;
-}
+    top: 0;
+    right: 0;
+    margin: -6em 0 0 0;
+    padding: 3em;
+    padding-top: 5em;
+    right: -6em;
+    z-index: 1;
+    transition: 0.5s;
+    background: rgb(0, 19, 36);
+  }
+  
+  .sidenavElemento{
+      padding: 0.3em 1em 0.5em 0em;
+      text-align: left;
+      text-decoration: none;
+      font-size: 1.2em;
+      color: #d6d6d6;
+      display: block;
+      transition: 0.3s;
+  }
 
-@media screen and (max-width: 768px) {
-    /* #header {
-        position: fixed;
-    } */
 
-    #immagine-logo {
+/*mobile*/
+@media screen and (max-width: 768px){
+    body {
+        width: 100%;
+    }
+   #immagine-logo{
         width: 10em;
         height: 2em;
+    } 
+    .elenco-content {
+        display: flex;
+        flex-wrap: wrap;        
+    }
+   .elenco-elemento {
+       height: 8em;
+       width: 20em;
+       flex-direction: row;
+       justify-content: flex-start;
+    }
+    .elenco-testo {
+        width: initial;
+        flex-direction: column;
+        font-size: small;
+    }
+   .elenco-immagine {
+        height: 8em;
+        width: 8em;    
+    }
+   .elenco-titolo {
+        display: block;
+        font-size: small;
+    }
+    .elenco-attributi {
+        display: block;
     }
 
     #breadcrumb {

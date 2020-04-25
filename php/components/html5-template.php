@@ -37,9 +37,11 @@
                   <img id="immagine-logo"
                        src="<rootFolder />/img/logo/coque_scritta_long.png"
                        alt="Uovo alla coque" />
-                  <loginPlaceholder />
             </header>
-            <navPlaceholder />
+            <nav>
+                  <navPlaceholder />
+                  <loginPlaceholder />
+            </nav>
             <breadcrumbPlaceholder />
             <contentPlaceholder />
             <footer id="footer">
