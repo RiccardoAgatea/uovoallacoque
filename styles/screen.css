@@ -196,11 +196,15 @@ ul li a {
     flex-direction: column;
     justify-content: space-evenly;
 
-    margin-bottom: 10em;
+    margin-bottom: 12em;
 }
 
 #breadcrumb{
     margin: 2em;
+}
+
+#header{
+        margin-bottom: 3em;
 }
 /* torna su */
 #tornaSuLink{
