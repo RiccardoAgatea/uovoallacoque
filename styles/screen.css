@@ -173,7 +173,7 @@ ul li a {
 
 #menu a:hover {
     background-color:rgba(253, 190, 17, 0.801);
-    height:2.5em;
+    height:2.45em;
     width: 9em;
 }
 /*accesso*/
@@ -330,7 +330,8 @@ ul li input{ /*uguale a .barra-input */
   right: -6em;
   z-index: 1;
   transition: 0.5s;
-  background: rgba(0, 19, 36, 0.904);
+ /* background: rgba(0, 19, 36, 0.904);*/
+ background: rgb(0,19,36);
 }
 
 .sidenavElemento{
@@ -356,7 +357,7 @@ ul li input{ /*uguale a .barra-input */
 */
 
  .sidenav a {
-    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
     text-decoration: none;
     text-align: left;
     font-size: 1.2em;
@@ -370,9 +371,11 @@ ul li input{ /*uguale a .barra-input */
 }
 
 .sidenav .closebtn {
-    padding-top: 1em;
-    padding-left: 3.5em;
+    margin-top: 1em;
+    margin-left: 3.5em;
     font-size: 2.2em;
+    width: 1em;
+    height: 0.1em;
 
 }
 
