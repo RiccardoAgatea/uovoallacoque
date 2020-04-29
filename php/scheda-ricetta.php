@@ -9,7 +9,7 @@ function schedaRicetta(string $immagine, string $nome, string $difficolta, strin
             <li> Difficolt&agrave;: $difficolta</li>
             <li>Tempo: $tempo</li>
             <li>Voto medio: $voto &frasl; 5</li>
-        </ul>
-        <a href=\"$link\">Apri</a>
+            <a href=\"$link\">Apri</a>
+        </ul>      
     </div>";
 }

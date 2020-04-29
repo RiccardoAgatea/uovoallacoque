@@ -57,11 +57,29 @@ function userValidator(nickname, password, passwordConfirm) {
 // --------- MENU --------
 
 function openSideNav() {
-	document.getElementById("mySidenav").style.width = "75%";
+
+	const apriNav = document.querySelector('.open-button');
+	const chiudiNav = document.querySelector('.chiudi-nav');
+	const nav = document.querySelector('.nav');
+
+	apriNav.addEventListener("click", function () {
+		nav.classList.add("menu-active");
+		chiudiNav.classList.add("chiudi-nav-active");
+	})
+
+	chiudiNav.addEventListener("click", function () {
+		nav.classList.remove("menu-active");
+		nav.classList.add("menu-disable");
+		chiudiNav.classList.remove("chiudi-nav-active");
+		chiudiNav.classList.add("chiudi-nav-disable");
+	})
+	
 }
   
 function closeSideNav() {
-	document.getElementById("mySidenav").style.width = "0";
+	document.getElementById("menu").style.width = "0";
 }
+
+
 
 

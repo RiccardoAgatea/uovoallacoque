@@ -32,15 +32,18 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	</head>
 
-	<body>
+	<body onload="openSideNav()">
 		<header id="header">
 			<img id="immagine-logo"
 				src="<rootFolder />/img/logo/coque_scritta_long.png"
 				alt="Uovo alla coque" />
-			<nav>
+				<span id="apri-nav">
+					<img class="open-button"   src="<rootFolder />/img/icone/hamburger.png" alt="apri menu"/>
+				</span>
+			<div class="nav">
 				<navPlaceholder />
 				<loginPlaceholder />
-			</nav>
+			</div>
 			<breadcrumbPlaceholder />
 		</header>
 		

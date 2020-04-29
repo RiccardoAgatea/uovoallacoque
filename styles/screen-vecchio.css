@@ -1,22 +1,24 @@
 /*regole generiche*/
 * {
-	padding: 0em;
-	margin: 0em;
+	padding: 0;
+	margin: 0;
 }
 
 html, body {
 	max-width: 1024px;
-    margin: 0em auto;
-    padding: 0em 0em;
+	margin: 0em auto;
 }
 
 /*sfondo e stile*/
-
-html {
-    background-color: white;
+html{
+    background-image: url("../img/sfondo/sfondo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed;
 }
 body{
-    background-color: rgba(211, 224, 245);
+    background-color: rgba(211, 224, 245,0.7);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 1em 0em;
 }
@@ -98,32 +100,24 @@ ul li a {
 }
 
 /*menu*/
-
-#menu {
+#menu{
     display: flex;
     flex-direction: row;
+    justify-content:center;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5em;
-    color: white;
-}
-
-#menu-pagine {
-    display: flex;
-    flex-direction: row;
-}
-
-#menu a:visited {
-    color: #cecece;
+    background-color: rgba(211, 224, 245,0);
+    margin-bottom: 2em;
 }
 
 .elementoMenu{
     text-align: center;
     display: block;
     width:9em;
+    height: 2.5em;
+    border: 0.05em solid black;
     margin:0.2em;
-    font-size: 1.1em;
+    background-color: rgba(245, 233, 66, 0.6);
+
 }
 
 .elementoMenu a {
@@ -131,20 +125,20 @@ ul li a {
     font-size: 1em;
 }
 
-#menu a:hover {
-    background-color:rgba(253, 190, 17, 0.801);
-}
-
 /*fine menu*/
 /*logo*/
 #immagine-logo{
-   height: 4em;
-   align-items: center;
+   width: 12em;
+   height: 2em;
+   margin-left: 0.5em;
+   margin-top: 0em;
+   margin-bottom: 0.5em;
 }
 /*fine logo*/
-#barra-ricerca{
+#barra_ricerca{
     text-align: center;
-    color: white;    
+    
+    
 }
 .barra-cerca{
     width: 25em;
@@ -169,15 +163,23 @@ ul li a {
     background-color: orange;
 }
 
-
+#menu a:visited {
+    color: red;
+    border-color: black;
+}
 #lista_accesso a:visited{
-    color: #cecece;
+    color: red;
     border-color: black;
 }
 
-
+#menu a:hover {
+    background-color:rgba(253, 190, 17, 0.801);
+    height:2.5em;
+    width: 9em;
+}
 /*accesso*/
 #lista_accesso{
+    margin-top: -12em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -193,18 +195,16 @@ ul li a {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding-bottom: 1em;
+
+    margin-bottom: 12em;
 }
 
 #breadcrumb{
-    background-color: rgba(211, 224, 245);
-    padding-top: 1em;
-    padding-left: 2em;
+    margin: 2em;
 }
 
 #header{
         margin-bottom: 3em;
-        background-color: rgb(41,49,51);
 }
 /* torna su */
 #tornaSuLink{
@@ -275,37 +275,46 @@ ul li input{ /*uguale a .barra-input */
 }
 
 /*inizio pagina elenco*/
-#elenco-content {
+.elenco-content {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: center;
 }
 .elenco-elemento {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items:center;
     justify-content:flex-start;
     margin: 1em;
-    width: 18em;
-    background-color: rgb(41,49,51);
-    color: white;
-    border-radius: 3em;
+    height: 14em;
+    background-color: rgba(245, 233, 66, 0.4);
+    border: black solid 1px;
 }
 
 .elenco-immagine {
-    border-radius: 10em;
-    margin-top: 1em;
     height: 14em;
     width: 14em;
     object-fit: contain;    
 }
-
 .elenco-testo {
-    margin: 1em;
+    margin-left: 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:space-between;
+    width: 65%;
+}
+.elenco-titolo {
+    display: inline;
 }
 
+.elenco-attributi {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1em;
+}
 /*fine pagina elenco*/
 .submitutente{
     width: 10em;
@@ -313,11 +322,70 @@ ul li input{ /*uguale a .barra-input */
     margin-top: 1em;
 }
 
+/*.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 5em;
+}*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: -6em 0 0 0;
+    padding: 3em;
+    padding-top: 5em;
+    right: -6em;
+    z-index: 1;
+    transition: 0.5s;
+    background: rgb(0, 19, 36);
 
-.apri-nav{
     display: none;
 }
-.chiudi-nav {
+  
+
+  /*
+     .sidenav li {
+      padding: 0.3em 1em 0.5em 0em;
+      text-align: left;
+      text-decoration: none;
+      font-size: 1.2em;
+      color: #d6d6d6;
+      display: block;
+      transition: 0.3s;
+  
+  }
+  */
+  
+
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    margin-top: 1em;
+    margin-left: 5em;
+    font-size: 2.2em;
+    
+
+}
+
+#apriNav{
+    display: none;
+    position: fixed;
+    top: 2;
+    right:0;
+}
+#chiudiNav {
     display: none;
 }
 
@@ -327,16 +395,9 @@ ul li input{ /*uguale a .barra-input */
     body {
         width: 100%;
     }
-
-    #header {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-between;
-    }
    #immagine-logo{
-        height: 4em;
+        width: 10em;
+        height: 2em;
     } 
     .elenco-content {
         display: flex;
@@ -352,12 +413,10 @@ ul li input{ /*uguale a .barra-input */
         width: initial;
         flex-direction: column;
         font-size: small;
-        margin-left: 0em;
     }
    .elenco-immagine {
-        height: 6em;
-        width: 6em;
-        margin: 1em;    
+        height: 8em;
+        width: 8em;    
     }
    .elenco-titolo {
         display: block;
@@ -371,20 +430,17 @@ ul li input{ /*uguale a .barra-input */
         display: none;
     }
     #lista_accesso{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        font-size: 1.1em;
+        display: none;
     }
     
     .barra-cerca{
         width: auto;
     }
 
-    .nav{
+    #menu{
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-around;
         height: 100%;
         width: 0;
@@ -394,47 +450,11 @@ ul li input{ /*uguale a .barra-input */
         margin: -6em 0 0 0;
         padding: 3em;
         padding-top: 5em;
-        right: -15em;
+        right: -6em;
         z-index: 1;
         transition: 0.5s;
-        background: rgb(41,49,51);
+        background: rgb(0, 19, 36);
     }
-
-    #menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-    }
-
-    .elementoMenu {
-        height: 2em;
-    }
-
-    .nav a {
-        color: white;
-    }
-
-    .nav a:visited {
-        color: red;
-    }
-
-    .menu-active {
-        width: 80%;
-    }
-
-    .chiudi-nav-active {
-        display: block;
-        margin-left: 85%;
-        z-index: 1;
-    }
-
-    .chiudi-nav img {
-        width: 3em;
-        margin-bottom: 2em;
-        margin-left: 0em;
-    }
-
 
     .elementoMenu{
         margin: 0.3em 1em 0.5em 0em;
@@ -458,13 +478,17 @@ ul li input{ /*uguale a .barra-input */
         width: max-content;
     } 
 
-
-    .apri-nav {
+    #chiudiNav {
         display: block;
-        cursor: pointer;
     }
-    .apri-nav img {
-        width: 3em;
+
+    #apriNav {
+        /*position: absolute;
+        right: 0;
+        margin-right: 3.5%;*/
+        display: block;
+        font-size: 2em;
+        cursor: pointer;
     }
 }
 
