@@ -468,6 +468,12 @@ ul li input{ /*uguale a .barra-input */
     }
 }
 
+@media screen and (max-width: 524px) {
+    #immagine-logo {
+        height: 2em;
+    }
+}
+
 @media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 0.3em;
