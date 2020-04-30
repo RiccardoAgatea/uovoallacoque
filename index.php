@@ -1,6 +1,9 @@
 <?php
-require_once "./php/template-handler.php";
-require_once __DIR__ . '/php/query-portata.php';
+require_once __DIR__ . "/php/template-handler.php";
+require_once __DIR__ . "/php/query-portata.php";
+require_once __DIR__ . "/php/user.php";
+
+session_start();
 
 $handler = new TemplateHandler(".", "xhtml");
 
@@ -9,9 +12,20 @@ $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
 
-$handler->setLogin(
-    file_get_contents(__DIR__ . "/php/components/default-login.php")
-);
+$login = "";
+
+if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
+    $login .= file_get_contents(__DIR__ . "/php/components/personal-login.php");
+
+    $login = str_replace("<idUtentePlaceholder />", $_SESSION["user"]->getID(), $login);
+
+    $login = str_replace("<nomeUtentePlaceholder />", $_SESSION["user"]->getNickname(), $login);
+
+} else {
+    $login .= file_get_contents(__DIR__ . "/php/components/default-login.php");
+}
+
+$handler->setLogin($login);
 
 $handler->setNav(
     preg_replace(

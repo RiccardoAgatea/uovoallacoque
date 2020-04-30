@@ -1,5 +1,8 @@
 <?php
 require_once "./template-handler.php";
+require_once __DIR__ . "/user.php";
+
+session_start();
 
 $handler = new TemplateHandler("..", "xhtml");
 
@@ -8,9 +11,7 @@ $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
 
-$handler->setLogin(
-    file_get_contents(__DIR__ . "/components/default-login.php")
-);
+$handler->setLogin("");
 
 $handler->setNav(
     file_get_contents(__DIR__ . "/components/default-nav.php")

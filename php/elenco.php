@@ -1,17 +1,30 @@
 <?php
-require_once "./template-handler.php";
-require_once "./query-portata.php";
+require_once __DIR__ . "/template-handler.php";
+require_once __DIR__ . "/query-portata.php";
+require_once __DIR__ . "/user.php";
+
+session_start();
 
 $handler = new TemplateHandler("..", "xhtml");
-
 
 $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
 
-$handler->setLogin(
-    file_get_contents(__DIR__ . "/components/default-login.php")
-);
+$login = "";
+
+if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
+    $login .= file_get_contents(__DIR__ . "/components/personal-login.php");
+
+    $login = str_replace("<idUtentePlaceholder />", $_SESSION["user"]->getID(), $login);
+
+    $login = str_replace("<nomeUtentePlaceholder />", $_SESSION["user"]->getNickname(), $login);
+
+} else {
+    $login .= file_get_contents(__DIR__ . "/components/default-login.php");
+}
+
+$handler->setLogin($login);
 
 $tipi = [
     "Risultati della ricerca",
