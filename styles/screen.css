@@ -33,7 +33,7 @@ body{
     margin-top: 8em;
     position: relative;
     bottom: -1.1em;
-    background-color: rgba(43, 115, 156, 0.5);
+    background-color: rgb(43, 115, 156);
     height: 12em;
     font-size: 0.9em;
 }
@@ -50,6 +50,9 @@ body{
 }
 #logo-social {
     align-self: center;
+}
+#logo-social li a {
+    color:black;
 }
 #nomi-contatti li{
     display: inline;
@@ -92,9 +95,9 @@ body{
 ul{
     list-style-type: none;
 }
-ul li a {
+/*ul li a {
     color: black;
-}
+}*/
 
 /*menu*/
 
@@ -105,7 +108,7 @@ ul li a {
     align-items: center;
     justify-content: center;
     padding: 0.5em;
-    color: white;
+    
 }
 
 #menu-pagine {
@@ -114,24 +117,25 @@ ul li a {
 }
 
 #menu a:visited {
-    color: #cecece;
+    color: #faf600;;
 }
 
 .elementoMenu{
     text-align: center;
     display: block;
-    width:9em;
-    margin:0.2em;
+    margin:2em;
     font-size: 1.1em;
 }
 
 .elementoMenu a {
     display: block;
     font-size: 1em;
+    color: white;
 }
 
 #menu a:hover {
-    background-color:rgba(253, 190, 17, 0.801);
+    background-color:#ff8c00;
+    color: black;
 }
 
 /*fine menu*/
@@ -162,13 +166,12 @@ ul li a {
     margin-left: 0em;
 }
 #immagine-lente:hover{
-    background-color: orange;
+    background-color: #ff8c00;
 }
 
 
 #lista_accesso a:visited{
-    color: #cecece;
-    border-color: black;
+    color: #faf600;
 }
 
 
@@ -177,10 +180,19 @@ ul li a {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    position: relative;
+    bottom:12em;
+    margin-right: 1em;
 
 }
+#lista_accesso li a{
+    color: white;
+    margin: 0.5em;
+    
+}
 #lista_accesso li a:hover{
-    background-color:rgba(253, 190, 17, 0.801); /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/
+    color: black;
+    background-color:#ff8c00; /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/
 }
 #accedi_scritta{
     padding-right: 0.5em;
@@ -194,14 +206,16 @@ ul li a {
 
 #breadcrumb{
     background-color: rgba(211, 224, 245);
+    color: black;
     padding-top: 1em;
     padding-left: 2em;
 }
 
 #header{
+        color:white;
         margin-bottom: 3em;
         padding-top: 1em;
-        background-color: rgb(41,49,51);
+        background-color: #0c2752;
 }
 /* torna su */
 #tornaSuLink{
@@ -286,7 +300,7 @@ ul li input{ /*uguale a .barra-input */
     justify-content:flex-start;
     margin: 1em;
     width: 18em;
-    background-color: rgb(41,49,51);
+    background-color: #0c2752;;
     color: white;
     border-radius: 3em;
 }
@@ -416,7 +430,7 @@ ul li input{ /*uguale a .barra-input */
     }
 
     .nav a:visited {
-        color: red;
+        color: #faf600;
     }
 
     .menu-active {
