@@ -33,12 +33,12 @@
 			media="print"
 			href="<rootFolder />/prove/print.css"
 			type="text/css" />
-		<script src="<rootFolder />/js/script.js"></script>
+		<script defer src="<rootFolder />/js/script.js"></script>
 		<link rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	</head>
 
-	<body onload="openSideNav()">
+	<body>
 		<div id="header">
 			<img id="immagine-logo"
 			     src="<rootFolder />/img/logo/coque_scritta_long.png"

@@ -15,8 +15,8 @@
     <!-- form img -->
     <form action=""
           method="POST"
-          id="form-utente"
-          onsubmit="return ">
+          id="form-utente-img"
+        >
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio immagine</legend>
             <ul class="form-container">
@@ -59,8 +59,8 @@
     <!-- form nickname -->
     <form action=""
           method="POST"
-          id="form-utente"
-          onsubmit="return checkNickname('user-nickname')">
+          id="form-utente-nick"
+          >
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio nickname</legend>
             <ul class="form-container">
@@ -103,8 +103,8 @@
     <!-- form email -->
     <form action=""
           method="POST"
-          id="form-utente"
-          onsubmit="return checkEmail('user-email')">
+          id="form-utente-email"
+          >
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio e-mail</legend>
             <ul class="form-container">
@@ -143,7 +143,7 @@
     <form action=""
           method="POST"
           id="form-user-password"
-          onsubmit="return isPasswordEqual('user-password1', 'user-password2')">
+          >
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio password</legend>
             <ul class="form-container">

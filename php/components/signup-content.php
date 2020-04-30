@@ -4,7 +4,7 @@
           name="signup"
           method="POST"
           id="form-signup"
-          onsubmit="return signupValidator('signup-nick', 'signup-email', 'signup-password1', 'signup-password2')">
+       >
         <fieldset class="form-fieldset">
             <legend class="legend">Registrazione</legend>
             <ul class="form-container">
@@ -28,7 +28,7 @@
                            type="email"
                            name="email"
                            placeholder="E-mail"
-                           required="required" />
+                           required="required"/>
                     <span id="signup-email-message"
                           class="warning"> </span>
                 </li>

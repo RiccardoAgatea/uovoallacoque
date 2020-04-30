@@ -1,6 +1,5 @@
 // --------- CONTROLLI --------
-
-function isPasswordEqual(password, passwordConfirm){
+function isPasswordEqual(password, passwordConfirm){;
 	let pwd1 = document.getElementById(password);
 	let pwd2 = document.getElementById(passwordConfirm);
 	let result = pwd1.value === pwd2.value;
@@ -65,20 +64,76 @@ function openSideNav() {
 	apriNav.addEventListener("click", function () {
 		nav.classList.add("menu-active");
 		chiudiNav.classList.add("chiudi-nav-active");
-	})
+	});
 
 	chiudiNav.addEventListener("click", function () {
 		nav.classList.remove("menu-active");
 		nav.classList.add("menu-disable");
 		chiudiNav.classList.remove("chiudi-nav-active");
 		chiudiNav.classList.add("chiudi-nav-disable");
-	})
+	});
 	
 }
-  
-function closeSideNav() {
-	document.getElementById("menu").style.width = "0";
+
+// ------- CHIAMATE FUNZIONI -------
+openSideNav();
+
+//------ LOGIN ---------
+const loginForm = document.getElementById("form-login"); 
+if (loginForm) {
+	loginForm.addEventListener("submit", function(event) {
+		if(!loginValidator("login-email")) {
+			event.preventDefault();
+		}
+	});
 }
+//------ SIGN UP ---------
+const signupForm = document.getElementById("form-signup"); 
+if (signupForm) {
+	signupForm.addEventListener("submit", function(event) {
+		if(!signupValidator('signup-nick', 'signup-email', 'signup-password1', 'signup-password2')) {
+			event.preventDefault();
+		}
+	});
+}
+
+//------- CAMBIO ATTRIBUTI UTENTE-------
+const passwordUtente = document.getElementById("form-user-password"); 
+if (passwordUtente) {
+	passwordUtente.addEventListener("submit", function(event) {
+		if(!isPasswordEqual('user-password1', 'user-password2')) {
+			event.preventDefault();
+		}
+	});
+}
+const formUtenteEmail = document.getElementById("form-utente-email"); 
+if (formUtenteEmail) {
+	formUtenteEmail.addEventListener("submit", function(event) {
+		if(!checkEmail('user-email')) {
+			event.preventDefault();
+		}
+	});
+}
+
+const formUtenteNick = document.getElementById("form-utente-nick"); 
+if (formUtenteNick) {
+	formUtenteNick.addEventListener("submit", function(event) {
+		if(!checkNickname('user-nickname')) {
+			event.preventDefault();
+		}
+	});
+}
+
+const formUtenteImg = document.getElementById("form-utente-img"); 
+if (formUtenteImg) {
+	formUtenteImg.addEventListener("submit", function(event) {
+		if(!true) {
+			event.preventDefault();
+		}
+	});
+}
+
+
 
 
 

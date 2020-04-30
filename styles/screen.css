@@ -18,7 +18,6 @@ html {
 body{
     background-color: rgba(211, 224, 245);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 1em 0em;
 }
 #content{
     margin: 1em;
@@ -161,9 +160,6 @@ ul li a {
     border-width:  0.01em;
     padding: 0.5em 1em 0.5em 1em;
     margin-left: 0em;
-    
-    
-
 }
 #immagine-lente:hover{
     background-color: orange;
@@ -204,6 +200,7 @@ ul li a {
 
 #header{
         margin-bottom: 3em;
+        padding-top: 1em;
         background-color: rgb(41,49,51);
 }
 /* torna su */
@@ -320,7 +317,10 @@ ul li input{ /*uguale a .barra-input */
 .chiudi-nav {
     display: none;
 }
-
+/*pagina utente*/
+.form-element {
+    width: 12em;
+}
 
 /*mobile*/
 @media screen and (max-width: 768px){

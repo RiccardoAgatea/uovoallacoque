@@ -3,7 +3,7 @@
     <form action="<rootFolder />/php/handle-login.php"
           method="POST"
           id="form-login"
-          onsubmit="return loginValidator('login-email')">
+    >
         <fieldset class="form-fieldset">
             <legend class="legend">Accedi</legend>
             <ul class="form-container">
@@ -12,7 +12,7 @@
                            for="login-email">Email:</label>
                     <input class="barra-input"
                            id="login-email"
-                           type="mail"
+                           type="email"
                            name="email"
                            placeholder="E-mail"
                            required="required" />

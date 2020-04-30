@@ -36,7 +36,11 @@ if ($tipo != 0) {
     );
 
     $handler->setBreadcrumb(
-        "Ti trovi in: Home &gt; $tipi[$tipo]"
+    str_replace(
+            "<percorsoPlaceholder />",
+            "<a href=\"<rootFolder />/index.php\">Home</a> &gt; $tipi[$tipo]",
+            file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
+        )
     );
 }
 
