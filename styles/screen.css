@@ -420,7 +420,7 @@ ul li input{ /*uguale a .barra-input */
     }
 
     .menu-active {
-        width: 80%;
+        width: 30em;
     }
 
     .chiudi-nav-active {
