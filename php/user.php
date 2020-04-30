@@ -1,5 +1,5 @@
 <?php
-require_once "./db-connection.php";
+require_once __DIR__ . "/db-connection.php";
 
 class User
 {
@@ -33,7 +33,7 @@ class User
 
     public function getNickname()
     {
-        return $this->email;
+        return $this->nickname;
     }
 
     public function getPassword()
