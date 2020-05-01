@@ -59,6 +59,11 @@ class TemplateHandler
     {
         $this->page = str_replace("<backToTopPlaceholder />", $backToTopSnippet, $this->page);
     }
+
+    public function setFooter(string $footerSnippet)
+    {
+        $this->page = str_replace("<footerPlaceholder />", $footerSnippet, $this->page);
+    }
       
     public function send()
     {

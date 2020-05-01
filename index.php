@@ -56,4 +56,8 @@ $handler->setBackToTop(
     file_get_contents(__DIR__ . "/php/components/default-tornaSu.php")
 );
 
+$handler->setFooter ( 
+    file_get_contents(__DIR__ . "/php/components/html/footer.html")
+);
+
 $handler->send();

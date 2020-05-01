@@ -31,7 +31,7 @@
 			type="text/css" />
 		<link rel="stylesheet"
 			media="print"
-			href="<rootFolder />/prove/print.css"
+			href="<rootFolder />/styles/print.css"
 			type="text/css" />
 		<script defer src="<rootFolder />/js/script.js"></script>
 		<link rel="stylesheet"
@@ -55,58 +55,7 @@
 		
 		<contentPlaceholder />
 		
-		<div id="footer">
-			<p id="messaggio-footer-social"
-			   class="messaggio-footer">
-				Seguici sui social per più ricette e novità!
-			</p>
-
-			<ul id="logo-social">
-				<li class="social">
-					<a href="https://www.facebook.com"
-					   class="fa fa-facebook-square"
-					   Title="Facebook"></a>
-				</li>
-
-				<li class="social">
-					<a href="https://www.instagram.com"
-					   class="fa fa-instagram"
-					   Title="Instagram"></a>
-				</li>
-
-				<li class="social">
-					<a href="https://www.youtube.com"
-					   class="fa fa-youtube"
-					   Title="youtube"></a>
-				</li>
-			</ul>
-			<p id="messaggio-footer-copyright"
-			   class="messaggio-footer">
-				Copyright Uovo alla coque 2020 - Tutti i diritti
-				riservati ©
-			</p>
-
-			<!-- <ul id="nomi-contatti">
-		    <li>Agatea Riccardo</li>
-		    <li>Bosinceanu Ecaterina</li>
-		    <li>Righetto Sara</li>
-		    <li>Schiavon Rebecca</li>
-		</ul> -->
-			<ul id="immagine-footer">
-				<li class="logo-footer">
-					<img id="immagine-html"
-					     src="<rootFolder />/img/icone/validXHTML.png"
-					     alt="HTML valido" />
-				</li>
-				<li class="logo-footer">
-					<img id="immagine-css"
-					     src="<rootFolder />/img/icone/validCSS.png"
-					     alt="CSS valido" />
-				</li>
-			</ul>
-
-
-		</div>
+		<footerPlaceholder />
 	</body>
 
 </html>
