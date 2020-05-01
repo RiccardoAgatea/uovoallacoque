@@ -37,6 +37,7 @@ body{
     height: 12em;
     font-size: 0.9em;
 }
+
 .messaggio-footer{
     align-self: center;
     position: relative;
@@ -51,8 +52,14 @@ body{
 #logo-social {
     align-self: center;
 }
-#logo-social li a {
-    color:black;
+.fa-facebook-square{
+color: black;
+}
+.fa-youtube{
+color: black;
+}
+.fa-instagram{
+color: black;
 }
 #nomi-contatti li{
     display: inline;
@@ -89,7 +96,7 @@ body{
     text-align: center;
 }
 #logo-social a:visited{
-    color: rgb(255, 226, 147);
+    color: #faf600;
 }
 /*fine footer*/
 ul{
@@ -117,7 +124,7 @@ ul{
 }
 
 #menu a:visited {
-    color: #faf600;;
+    color: #faf600;
 }
 
 .elementoMenu{
@@ -388,7 +395,12 @@ ul li input{ /*uguale a .barra-input */
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        font-size: 1.1em;
+        font-size: 1.2em;
+        position: relative;
+        top:0.5em;
+    }
+    #lista_accesso li {
+        margin-bottom: 1em;
     }
     
     .barra-cerca{
@@ -411,14 +423,16 @@ ul li input{ /*uguale a .barra-input */
         right: -15em;
         z-index: 1;
         transition: 0.5s;
-        background: rgb(41,49,51);
+        background: #04142e;
     }
 
     #menu {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: space-around;
+        position: relative;
+        top:2.5em;
+        text-align: left;
     }
 
     .elementoMenu {
@@ -444,29 +458,26 @@ ul li input{ /*uguale a .barra-input */
     }
 
     .chiudi-nav img {
-        width: 3em;
-        margin-bottom: 2em;
-        margin-left: 0em;
+        width: 2em;
+       position: relative;
+       left:5em;
+       bottom:3em;
+        
     }
 
 
     .elementoMenu{
         margin: 0.3em 1em 0.5em 0em;
-        text-align: left;
         text-decoration: none;
-        font-size: 1.2em;
-        color: #d6d6d6;
+        font-size: 1.4em;
+        color: white;
         display: block;
         transition: 0.3s;
-        background: none;
-        border: none;
     }
 
     #menu a {
         margin-bottom: 1.5em;
         text-decoration: none;
-        text-align: left;
-        color: #cecece;
         display: block;
         transition: 0.3s;
         width: max-content;
