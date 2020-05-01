@@ -1,0 +1,37 @@
+a:link:after, a:visited:after {
+    content: " [www.uovaallacoque.it" attr(href) "] ";
+    font-size:90%;
+    }
+
+
+#immagine-logo {
+    height: 4em;
+}
+
+.chiudi-nav {
+    display: none;
+}
+
+.apri-nav {
+    display: none;
+}
+
+.nav {
+    display: none;
+}
+
+.elenco-immagine {
+    display: none;
+}
+
+#torna-su-link {
+    display: none;
+}
+
+#footer {
+    display: none;
+}
+
+.elenco-migliori {
+    list-style: none;
+}

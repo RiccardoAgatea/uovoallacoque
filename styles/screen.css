@@ -218,7 +218,7 @@ ul{
         background-color: #0c2752;
 }
 /* torna su */
-#tornaSuLink{
+#torna-su-link{
     position: absolute;
     right: 15%;
     margin-top: 2em;
@@ -264,6 +264,8 @@ ul{
     margin-top: 0.5em;
     width: 15em;
     height: 2em;
+    -wedkit-border-radius:0.5em;
+    -moz-border-radius:0.5em;
     border-radius: 0.5em;
 }
 
@@ -302,10 +304,14 @@ ul li input{ /*uguale a .barra-input */
     width: 18em;
     background-color: #0c2752;;
     color: white;
+    -wedkit-border-radius:3em;
+    -moz-border-radius:3em;
     border-radius: 3em;
 }
 
 .elenco-immagine {
+    -wedkit-border-radius:10em;
+    -moz-border-radius:10em;
     border-radius: 10em;
     margin-top: 1em;
     height: 14em;
