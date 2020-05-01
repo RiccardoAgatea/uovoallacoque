@@ -2,22 +2,22 @@
 <span class="chiudi-nav"> 
 					<img class="close-button"  src="<rootFolder />/img/icone/exit.png" alt="esci dal menu"/>
 				</span>
-	<li id="home" class="elementoMenu">
+	<li id="home" class="elemento-menu">
 		<a href="<rootFolder />/index.php">
 			Home
 		</a>
 	</li>
-	<li id="primi" class="elementoMenu">
+	<li id="primi" class="elemento-menu">
 		<a href="<rootFolder />/php/elenco.php?id=1">
 			Primi Piatti
 		</a>
 	</li>
-	<li id="secondi" class="elementoMenu">
+	<li id="secondi" class="elemento-menu">
 		<a href="<rootFolder />/php/elenco.php?id=2">
 			Secondi Piatti
 		</a>
 	</li>
-	<li id="dolci" class="elementoMenu">
+	<li id="dolci" class="elemento-menu">
 		<a href="<rootFolder />/php/elenco.php?id=3">
 			Dolci
 		</a>

@@ -127,14 +127,14 @@ ul{
     color: #faf600;
 }
 
-.elementoMenu{
+.elemento-menu{
     text-align: center;
     display: block;
     margin:2em;
     font-size: 1.1em;
 }
 
-.elementoMenu a {
+.elemento-menu a {
     display: block;
     font-size: 1em;
     color: white;
@@ -436,12 +436,13 @@ ul li input{ /*uguale a .barra-input */
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        align-items: flex-start;
         position: relative;
         top:2.5em;
         text-align: left;
     }
 
-    .elementoMenu {
+    .elemento-menu {
         height: 2em;
     }
     .nav a {
@@ -471,7 +472,7 @@ ul li input{ /*uguale a .barra-input */
     }
 
 
-    .elementoMenu{
+    .elemento-menu{
         margin: 0.3em 1em 0.5em 0em;
         text-decoration: none;
         font-size: 1.4em;
