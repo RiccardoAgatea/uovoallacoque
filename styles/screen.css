@@ -141,7 +141,7 @@ ul{
 }
 
 #menu a:hover {
-    background-color:#ff8c00;
+    background-color:#FF9F29;
     color: black;
 }
 
@@ -173,7 +173,7 @@ ul{
     margin-left: 0em;
 }
 #immagine-lente:hover{
-    background-color: #ff8c00;
+    background-color: #FF9F29;
 }
 
 
@@ -199,7 +199,7 @@ ul{
 }
 #lista_accesso li a:hover{
     color: black;
-    background-color:#ff8c00; /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/
+    background-color:#FF9F29; /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/
 }
 #accedi_scritta{
     padding-right: 0.5em;
@@ -226,8 +226,8 @@ ul{
 }
 /* torna su */
 #torna-su-link{
-    position: absolute;
-    right: 15%;
+    position: relative;
+    left: 80%;
     margin-top: 2em;
     /* margin-right: 10em; */
 }
@@ -247,6 +247,18 @@ ul{
     font-size: larger;
     font-weight: bolder;
 }
+/*pagina utente*/
+.legend{
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+.cambio-info{
+    display: block;
+    align-items: center;
+    margin-left: 5em;
+}
+
+/*fine pagina utente*/
 
 /*Login*/
 .legend{

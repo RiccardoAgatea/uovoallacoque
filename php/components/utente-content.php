@@ -9,15 +9,16 @@
     </div>
 
     <!-- visualizzazione img -->
-    <p>Immagine attuale:
+    <p class="info-attuale">Immagine attuale:
         <PlaceholderImmagineUtente />
     </p>
     <!-- form img -->
     <form action=""
           method="POST"
           id="form-utente-img"
+          class="cambio-info"
         >
-        <fieldset class="form-fieldset">
+        <fieldset class="form-fieldset" >
             <legend class="legend">Cambio immagine</legend>
             <ul class="form-container">
                 <li class="form-element">
@@ -51,17 +52,17 @@
             </ul>
         </fieldset>
     </form>
-
     <!-- visualizzazione nickname -->
-    <p>Nickname attuale:
+    <p class="info-attuale">Nickname attuale:
         <PlaceholderNicknameUtente />
     </p>
     <!-- form nickname -->
     <form action=""
           method="POST"
           id="form-utente-nick"
+          class="cambio-info"
           >
-        <fieldset class="form-fieldset">
+        <fieldset class="form-fieldset" >
             <legend class="legend">Cambio nickname</legend>
             <ul class="form-container">
                 <li class="form-element">
@@ -97,13 +98,14 @@
     </form>
 
     <!-- visualizzazione email -->
-    <p>E-mail attuale:
+    <p class="info-attuale">E-mail attuale:
         <PlaceholderEmailUtente />
     </p>
     <!-- form email -->
     <form action=""
           method="POST"
           id="form-utente-email"
+          class="cambio-info"
           >
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio e-mail</legend>
@@ -138,13 +140,13 @@
             </ul>
         </fieldset>
     </form>
-
     <!-- form password -->
     <form action=""
           method="POST"
           id="form-user-password"
+          class="cambio-info"
           >
-        <fieldset class="form-fieldset">
+        <fieldset class="form-fieldset" >
             <legend class="legend">Cambio password</legend>
             <ul class="form-container">
                 <li class="form-element">
