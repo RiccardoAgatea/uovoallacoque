@@ -7,13 +7,16 @@ class DBConnection
     //di accesso. localhost rimane uguale perchè lo script e il db
     //girano comunque sulla stessa macchina
     private $host = "localhost";
-    private $username = "root";
-    private $password = "";
+    private $username;
+    private $password;
     private $connection;
 
     public function __construct()
     {
-        $this->connectTo("tecweb");
+        $this->username = str_replace("\n", "", file_get_contents(__DIR__ . "/username.txt"));
+        $this->password = str_replace("\n", "", file_get_contents(__DIR__ . "/pwd_db-1920.txt"));
+
+        $this->connectTo(str_replace("\n", "", file_get_contents(__DIR__ . "/dbname.txt")));
     }
 
     public function connectTo(string $database)
