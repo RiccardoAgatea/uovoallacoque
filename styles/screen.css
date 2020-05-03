@@ -365,6 +365,7 @@ ul li input{ /*uguale a .barra-input */
 @media screen and (max-width: 768px){
     body {
         width: 100%;
+        min-width: 25em;
     }
 
     #header {
@@ -384,6 +385,7 @@ ul li input{ /*uguale a .barra-input */
    .elenco-elemento {
        height: 8em;
        width: 20em;
+       min-width: 20em;
        flex-direction: row;
        justify-content: flex-start;
     }
