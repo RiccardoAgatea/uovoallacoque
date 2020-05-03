@@ -449,6 +449,7 @@ ul li input{ /*uguale a .barra-input */
         padding-top: 5em;
         right: -15em;
         z-index: 1;
+        -webkit-transition: 0.5s;
         transition: 0.5s;
         background: #04142e;
     }
@@ -499,6 +500,7 @@ ul li input{ /*uguale a .barra-input */
         font-size: 1.4em;
         color: white;
         display: block;
+        -webkit-transition: 0.3s;
         transition: 0.3s;
     }
 
@@ -506,6 +508,7 @@ ul li input{ /*uguale a .barra-input */
         margin-bottom: 1.5em;
         text-decoration: none;
         display: block;
+        -webkit-transition: 0.3s;
         transition: 0.3s;
         width: max-content;
     } 
