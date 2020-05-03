@@ -1,6 +1,8 @@
 <?php
 require_once "./template-handler.php";
 
+session_start();
+
 $handler = new TemplateHandler("..", "xhtml");
 
 $handler->setTitle("Accedi | Uovo alla Coque");
@@ -29,14 +31,31 @@ $handler->setBreadcrumb(
 
 $content = file_get_contents(__DIR__ . "/components/login-content.php");
 
-$content = preg_replace("(<top.*Placeholder />)", "", $content);
+if (key_exists("wrong-login", $_SESSION) && $_SESSION["wrong-login"]) {
+    $content = str_replace("<emailPlaceholder />", $_SESSION["email"], $content);
+
+    $content = str_replace("<passwordPlaceholder />", $_SESSION["password"], $content);
+
+    $content = str_replace("<errorPlaceholder />", "<p>Credenziali errate</p>", $content);
+
+    $_SESSION["wrong-login"] = false;
+    $_SESSION["email"] = "";
+    $_SESSION["password"] = "";
+
+} else {
+    $content = str_replace("<emailPlaceholder />", "", $content);
+
+    $content = str_replace("<passwordPlaceholder />", "", $content);
+
+    $content = str_replace("<errorPlaceholder />", "", $content);
+}
 
 $handler->setContent($content);
 
 $handler->setBackToTop(
     file_get_contents(__DIR__ . "/components/default-tornaSu.php")
 );
-$handler->setFooter ( 
+$handler->setFooter(
     file_get_contents(__DIR__ . "/components/html/footer.html")
 );
 

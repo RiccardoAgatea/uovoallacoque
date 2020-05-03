@@ -1,11 +1,11 @@
 <div id="content">
     <h1>Accedi</h1>
+    <errorPlaceholder />
     <form action="<rootFolder />/php/handle-login.php"
           method="POST"
-          id="form-login"
-    >
+          id="form-login">
         <fieldset class="form-fieldset">
-            <legend class="legend">Accedi</legend>
+            <legend class="legend">Inserisci le tue credenziali</legend>
             <ul class="form-container">
                 <li class="form-element">
                     <label class="form-label"
@@ -15,7 +15,8 @@
                            type="email"
                            name="email"
                            placeholder="E-mail"
-                           required="required" />
+                           required="required"
+                           value="<emailPlaceholder />" />
                     <span id="login-email-message"
                           class="warning"> </span>
                 </li>
@@ -27,8 +28,9 @@
                            type="password"
                            name="password"
                            placeholder="Password"
-                           required="required" /> <span
-                          id="login-password-message"
+                           required="required"
+                           value="<passwordPlaceholder />" /> <span id="
+                           login-password-message"
                           class="warning"> </span>
                 </li>
                 <li class="form-element">

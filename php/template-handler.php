@@ -64,7 +64,7 @@ class TemplateHandler
     {
         $this->page = str_replace("<footerPlaceholder />", $footerSnippet, $this->page);
     }
-      
+
     public function send()
     {
         $this->done();
@@ -75,6 +75,11 @@ class TemplateHandler
     {
         $this->done();
         file_put_contents($file, $this->page);
+    }
+
+    private function decorate()
+    {
+        //Bisogna aggiungere, dopo tutti i link, il link fra quadre, per la stampa
     }
 
     private function done()
