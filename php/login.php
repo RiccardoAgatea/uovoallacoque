@@ -11,7 +11,7 @@ $handler->setKeywords("");
 $handler->setAuthor("");
 
 $handler->setLogin(
-    str_replace("<a href=\"<rootFolder />/php/login.php\">Accedi</a>",
+    preg_replace("((?s)<a href=\"<rootFolder />/php/login\.php\">.*?</a>)",
         "Accedi",
         file_get_contents(__DIR__ . "/components/default-login.php")
     )
