@@ -480,13 +480,14 @@ ul li input{ /*uguale a .barra-input */
     }
 
     .chiudi-nav-active {
+        cursor: pointer;
         display: block;
         margin-left: 85%;
         z-index: 1;
     }
 
     .chiudi-nav img {
-        width: 2em;
+       width: 2em;
        position: relative;
        left:5em;
        bottom:3em;
