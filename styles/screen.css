@@ -11,6 +11,13 @@ html, body {
 }
 
 /*sfondo e stile*/
+#link-apri {
+    color: white;
+}
+
+#link-apri:visited {
+    color: white;
+}
 
 html {
     background-color: white;
@@ -511,6 +518,8 @@ ul li input{ /*uguale a .barra-input */
     .apri-nav img {
         width: 3em;
     }
+
+    
 }
 
 @media screen and (max-width: 524px) {
