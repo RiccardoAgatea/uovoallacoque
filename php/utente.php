@@ -11,7 +11,17 @@ $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
 
-$handler->setLogin("");
+$login = "";
+
+$login .= file_get_contents(__DIR__ . "/components/personal-login.php");
+
+$login = preg_replace("((?s)<a href=\"<rootFolder />/php/utente\.php\?id=<idUtentePlaceholder />\">.*?</a>)", "<nomeUtentePlaceholder />", $login);
+
+$login = str_replace("<idUtentePlaceholder />", $_SESSION["user"]->getID(), $login);
+
+$login = str_replace("<nomeUtentePlaceholder />", $_SESSION["user"]->getNickname(), $login);
+
+$handler->setLogin($login);
 
 $handler->setNav(
     file_get_contents(__DIR__ . "/components/default-nav.php")
