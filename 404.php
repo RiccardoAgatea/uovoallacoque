@@ -51,4 +51,4 @@ $handler->setFooter(
     file_get_contents(__DIR__ . "/php/components/html/footer.html")
 );
 
-$handler->send(__DIR__ . "/404.html");
+$handler->send();
