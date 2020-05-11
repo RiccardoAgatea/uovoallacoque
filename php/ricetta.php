@@ -40,7 +40,7 @@ $result = $connection->query("SELECT * FROM ricette WHERE id={$_GET["id"]}")->fe
 if (!$result) {
     // redirect 404
 } else {
-    $nome = $result["name"];
+    $nome = $result["nome"];
     $portata = $result["portata"];
     $difficolta = $result["difficolta"];
     $tempo = $result["tempo"];
@@ -54,7 +54,7 @@ if (!$result) {
         "Dessert",
     ];
 
-    $percorsoBread = "<a href=\"<rootFolder />/index.php\">Home</a> &gt; <a href=\"<rootFolder />/php/elenco.php?id=$portata\">{$portate[$portata]}</a> &gt; $nome";
+    $percorsoBread = "<a href=\"<rootFolder />/index.php\">Home</a> &gt; <a href=\"<rootFolder />/php/elenco.php?id=$portata\">{$portate[$portata-1]}</a> &gt; $nome";
 
     $handler->setBreadcrumb(
         str_replace(
