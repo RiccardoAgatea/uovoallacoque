@@ -15,10 +15,11 @@
 			<tempoPlaceholder />
 		</dd>
 	</dl>
-
+	<h2>Ingredienti</h2>
 	<ul class="ingredienti">
 		<ingredientiPlaceholder />
 	</ul>
+	<h2>Procedura</h2>
 	<p class="procedura">
 		<proceduraPlaceholder />
 	</p>

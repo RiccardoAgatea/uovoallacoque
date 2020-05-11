@@ -358,7 +358,7 @@ ul li input{ /*uguale a .barra-input */
     margin-top: 1em;
     height: 14em;
     width: 14em;
-    object-fit: contain;    
+    object-fit: cover;    
 }
 
 .elenco-testo {
@@ -366,6 +366,19 @@ ul li input{ /*uguale a .barra-input */
 }
 
 /*fine pagina elenco*/
+
+/*INIZIO PAGINA RICETTA*/
+.immagine-ricetta {
+    width: 30em;
+    height: 20em;
+    object-fit: cover;
+    float: left;
+    margin-right: 2em;
+}
+.ingredienti {
+    list-style-type: disc;
+}
+/*FINE PAGINA RICETTA*/
 .submitutente{
     width: 10em;
     height: 2em;
@@ -536,6 +549,17 @@ ul li input{ /*uguale a .barra-input */
     .apri-nav img {
         width: 3em;
     }
+
+    /*INIZIO PAGINA RICETTA*/
+    .immagine-ricetta {
+        width: 20em;
+        height: 20em;
+        object-fit: contain;
+    }
+    .ingredienti {
+        margin-left: 1em;
+    }
+    /*FINE PAGINA RICETTA*/
 
     
 }

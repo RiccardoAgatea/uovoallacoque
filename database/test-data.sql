@@ -12,7 +12,7 @@ VALUES
     "Carbonara",
     2,
     15,
-    "<rootFolder />/img/ricette/default.png",
+    "<rootFolder />/img/ricette/carbonara.jpg",
     1,
     "480g pasta all\'uovo,200g guanciale,5 uova,120g pecorino romano,q.b. pepe nero,2 pizzichi sale grosso",
     "Metti a bollire l’acqua per gli spaghetti con due pizzichi di sale grosso. Gratta il pecorino non fino, ma piuttosto grossolano.
@@ -23,7 +23,7 @@ VALUES
     "Omelette",
     3,
     5,
-    "<rootFolder />/img/ricette/default.png",
+    "<rootFolder />/img/ricette/omelette.jpg",
     2,
     "2 uova grandi,30g latte intero,q.b. sale fino,15g olio extravergine d'oliva",
     "Per preparare le omelette come prima cosa rompete le uova in una ciotola. Aggiungete il latte e un pizzico di sale. Poi sbattete le uova utilizzando una frusta, in modo da amalgamarle insieme al latte. Saranno pronte quando sollevando la frusta il composto verr&agrave; gi&ugrave; a filo. Scaldate un tegame sul fuoco e aggiungete un filo d'olio extravergine d'oliva. Non appena sar&agrave; caldo versate il composto di uova all'interno; per capire se l'olio &egrave; sufficientemente caldo provate a versarne prima qualche goccia. Cuocete l'omelette a fiamma moderata: con una cottura lenta l'uovo rester&agrave; pi&ugrave; morbido. La parte esterna dovr&agrave; risultare dorata ma non troppo, non appena inizier&agrave; a rapprendersi sui bordi coprite con un coperchio. Se la temperatura dovesse sembrarvi eccessiva spostate la padella dal fuoco per qualche secondo, mantenendo sempre il coperchio. Roteate la padella delicatamente per evitare che l'omelette resti sullo stesso punto per troppo tempo. Non appena l'omelette sar&agrave; morbida in superficie (ovvero bavosa) mentre sollevando il bordo con una spatola, il sotto risulter&agrave; ben dorato ripiegate l'omelette a mezzaluna, attendete pochi secondi ancora in padella e servite la vostra omelette ben calda. Semplice o accompagnata da verdure di stagione, sar&agrave; un ottimo secondo piatto. Con bacon croccante invece sar&agrave; perfetta per una colazione continentale!"
@@ -32,7 +32,7 @@ VALUES
     "Uovo sodo",
     1,
     8,
-    "<rootFolder />/img/ricette/default.png",
+    "<rootFolder />/img/ricette/uovo_sodo.jpg",
     2,
     "1 uovo,q.b. aceto bianco",
     "Immergete o fate immergere delicatamente l'uovo o le uova da cuocere in acqua fredda o a temperatura ambiente (così &egrave; pi&ugrave; facile calcolare il tempo di cottura) e iniziate a contare i minuti a partire dall'ebollizione: bastano 7 minuti se volete il tuorlo cremoso, servono 8-9 minuti se al contrario vi piace compatto. Potete aggiungere all'acqua, che dovr&agrave; completamente sommergere le uova, 1 o pi&ugrave; cucchiai di aceto bianco: far&agrave; velocemente rassodare gli albumi ne caso dovessero formarsi piccole incrinature nel guscio. Scolate l'uovo sodo, passatelo immediatamente sotto l'acqua fredda per fermare la cottura quindi picchiettatelo con il dorso di un cucchiaio o di un coltello per romperne delicatamente il guscio. Mettete l'uovo sodo picchiettato in una ciotola di acqua fredda per qualche minuto, in modo che il guscio, pellicola compresa, si stacchi perfettamente dall'albume e possiate toglierlo con le mani velocemente senza problemi."
@@ -41,7 +41,7 @@ VALUES
     "Crema pasticcera",
     3,
     15,
-    "<rootFolder />/img/ricette/default.png",
+    "<rootFolder />/img/ricette/crema_pasticcera.jpg",
     3,
     "500g latte intero,130g zucchero,7 tuorli,40g amido di riso,2 bacelli di vaniglia,1/2 scorza di limone",
     "Per preparare la crema pasticcera come prima cosa inserite in freezer una ciotola di vetro. A questo punto ricavate i semi dalla vaniglia 1 e tagliate i baccelli in pezzi. Versate il latte in un tegame e aggiungete sia i semi che i baccelli della vaniglia.
@@ -53,7 +53,7 @@ VALUES
     "Crema inglese",
     2,
     15,
-    "<rootFolder />/img/ricette/default.png",
+    "<rootFolder />/img/ricette/crema-inglese.jpg",
     3,
     "330g latte intero,170g panna fresca liquida,8 tuorli,1 bacello di vaniglia,1 scorza di limone,100g zucchero,1 pizzico di sale",
     "Per preparare la crema inglese come prima cosa incidete una bacca di vaniglia, prelevatene i semi 1 e teneteli da parte. Versate poi in un pentolino latte e panna, aggiungete il baccello privato dei semi e la scorza grattugiata di un limone. Ponete sul fuoco e portate il latte a sfiorare il bollore. Trasferite i tuorli leggermente sbattuti in un altro pentolino, aggiungete i semi della vaniglia e lo zucchero. Mescolate delicatamente con una spatola cercando di non incorporare aria e unite anche il sale.
@@ -64,7 +64,7 @@ VALUES
     "Uovo all'occhio di bue",
     1,
     5,
-    "<rootFolder />/img/ricette/default.png",
+    "<rootFolder />/img/ricette/uovo_occhio.jpg",
     2,
     "1 uovo,q.b. sale,q.b. pepe,1 cucchiaio di olio extravergine d'oliva",
     "Sgusciare l'uovo avendo cura di non rompere il tuorlo, dunque raccoglierlo in una ciotola. Nel frattempo, scaldare moltissimo una padella in pietra o antiaderente: quando &egrave; rovente, ungerla con un foglio di carta assorbente intinto in poco olio extravergine d'oliva. Versare l'uovo, abbassare la fiamma e cuocerlo per un paio di minuti, avendo cura di evitare la formazione della crosticina marrone ai lati degll'albume e di assicurare un tuorlo lucido e brillante (non si dovr&agrave; ottenere una consistenza troppo dura). Quando l'uovo sono pronte, farle scivolare dalla padella e servire ultimando con sale e pepe, insieme ad un contorno di verdure a piacere."
@@ -73,7 +73,7 @@ VALUES
     "Uovo strapazzato",
     1,
     7,
-    "<rootFolder />/img/ricette/default.png",
+    "<rootFolder />/img/ricette/strapazzato.jpg",
     2,
     "4 uova,30g di burro,q.b. pepe nero,q.b. sale",
     "Rompete le uova in una ciotola e sbattetele brevemente con una forchetta per amalgamare tuorli e albume. Tagliate il burro a dadini e unitelo alle uova con una presa di sale.
