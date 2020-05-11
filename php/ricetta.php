@@ -1,5 +1,6 @@
 <?php
 require_once "./template-handler.php";
+require_once __DIR__ . "/db-connection.php";
 require_once __DIR__ . "/user.php";
 
 session_start();
@@ -26,22 +27,56 @@ if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
 
 $handler->setLogin($login);
 
-
 $handler->setNav(
     file_get_contents(__DIR__ . "/components/default-nav.php")
 );
 
-$handler->setBreadcrumb(
-    str_replace(
-        "<percorsoPlaceholder />",
-        "<a href=\"<rootFolder />/index.php\">Home</a> &gt ??",
-        file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
-    )
-);
-
 $content = file_get_contents(__DIR__ . "/components/ricetta-content.php");
 
-$content = preg_replace("(<top.*Placeholder />)", "", $content);
+$connection = new DBConnection();
+
+$result = $connection->query("SELECT * FROM ricette WHERE id={$_GET["id"]}")->fetch_assoc();
+
+if (!$result) {
+    // redirect 404
+} else {
+    $nome = $result["name"];
+    $portata = $result["portata"];
+    $difficolta = $result["difficolta"];
+    $tempo = $result["tempo"];
+    $img = $result["img"];
+    $ingredienti = $result["ingredienti"];
+    $procedimento = $result["procedimento"];
+
+    $portate = [
+        "Primi piatti",
+        "Secondi piatti",
+        "Dessert",
+    ];
+
+    $percorsoBread = "<a href=\"<rootFolder />/index.php\">Home</a> &gt; <a href=\"<rootFolder />/php/elenco.php?id=$portata\">{$portate[$portata]}</a> &gt; $nome";
+
+    $handler->setBreadcrumb(
+        str_replace(
+            "<percorsoPlaceholder />",
+            $percorsoBread,
+            file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
+        )
+    );
+
+    $listaIngredienti = "";
+
+    foreach (explode(",", $ingredienti) as $ing) {
+        $listaIngredienti .= "<li>$ing</li>";
+    }
+
+    $content = str_replace("<nomeRicettaPlaceholder />", $nome, $content);
+    $content = str_replace("<imgSrcPlaceholder />", $img, $content);
+    $content = str_replace("<difficoltàPlaceholder />", $difficolta, $content);
+    $content = str_replace("<tempoPlaceholder />", $tempo, $content);
+    $content = str_replace("<ingredientiPlaceholder />", $listaIngredienti, $content);
+    $content = str_replace("<proceduraPlaceholder />", $procedimento, $content);
+}
 
 $handler->setContent($content);
 
