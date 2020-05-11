@@ -17,22 +17,14 @@
             discutere con gli altri utenti nella sezione dei commenti.
         </p>
     </div>
-    <div id="top-pages">
-        <h2>I piatti più votati!</h2>
-        <dl class="elenco-migliori">
-            <dt>Primo piatto</dt>
-            <dd>
+        <div class="elenco-migliori">
+            <h2>Primo piatto pi&ugrave; votato</h2>
                 <topPrimoPlaceholder />
-            </dd>
-            <dt>Secondo piatto</dt>
-            <dd>
+            <h2>Secondo piatto pi&ugrave; votato</h2>
                 <topSecondoPlaceholder />
-            </dd>
-            <dt>Dessert</dt>
-            <dd>
+            <h2>Dessert pi&ugrave; votato</h2>
                 <topDolcePlaceholder />
-            </dd>
-        </dl>
+        </div>
     </div>
     <backToTopPlaceholder />
 </div>

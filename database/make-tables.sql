@@ -6,6 +6,8 @@ CREATE TABLE ricette (
   -- url dell'immagine, embeddata come <img>:
   img VARCHAR(256) NOT NULL,
   portata TINYINT UNSIGNED NOT NULL,
+  ingredienti TEXT NOT NULL,
+  procedimento TEXT NOT NULL,
   PRIMARY KEY (id),
   UNIQUE (nome)
 );

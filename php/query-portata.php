@@ -23,10 +23,11 @@ function contentPortata($portata)
             $voto= number_format($voto, 1);
             $id = $row['id'];
             $link = "<rootFolder />/php/ricetta.php?id=$id";
+            $livello = 2;
 
             $risultato .=
             '<li class=elenco-elemento>' .
-            schedaRicetta($immagine, $nome, $difficolta, $tempo, $voto, $link) .
+            schedaRicetta($immagine, $nome, $difficolta, $tempo, $voto, $link, $livello) .
                 '</li>';
         }
 
@@ -62,12 +63,13 @@ function contentRicerca($termine)
             $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
             $voto = $votor[0];
             $voto= number_format($voto, 1);
+            $livello = 2;
 
             $link = "<rootFolder />/php/ricetta.php?id=$id";
 
             $risultato .=
             '<li class=elenco-elemento>' .
-            schedaRicetta($immagine, $nome, $difficolta, $tempo, $voto, $link) .
+            schedaRicetta($immagine, $nome, $difficolta, $tempo, $voto, $link, $livello) .
                 '</li>';
         }
 
@@ -96,6 +98,7 @@ function piattoMigliore($portata)
             $tempo = $row['tempo'];
             $immagine = $row['img'];
             $id = $row['id'];
+            $livello = 3;
 
             $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
             $voto = $votor[0];
@@ -103,9 +106,9 @@ function piattoMigliore($portata)
             $link = "<rootFolder />/php/ricetta.php?id=$id";
 
             $risultato = $risultato .
-            '<li class=elenco-elemento>' .
-            schedaRicetta($immagine, $nome, $difficolta, $tempo, $voto, $link) .
-                '</li>';
+            '<div class=elenco-elemento>' .
+            schedaRicetta($immagine, $nome, $difficolta, $tempo, $voto, $link, $livello) .
+                '</div>';
         }
     }
 

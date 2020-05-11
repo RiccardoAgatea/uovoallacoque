@@ -1,15 +1,15 @@
 <?php
 
-function schedaRicetta(string $immagine, string $nome, string $difficolta, string $tempo, string $voto, string $link)
+function schedaRicetta(string $immagine, string $nome, string $difficolta, string $tempo, string $voto, string $link, int $livello)
 {
     return "<img class=\"elenco-immagine\" src=\"$immagine\" alt = \"immagine di $nome\" />
-    <div class=elenco-testo>
-        <h2 class=elenco-titolo>$nome</h2>
-        <ul class=\"elenco-attributi\">
-            <li> Difficolt&agrave;: $difficolta</li>
-            <li>Tempo: $tempo</li>
-            <li>Voto medio: $voto &frasl; 5</li>
-            <a id=\"link-apri\" href=\"$link\">Apri</a>
-        </ul>      
-    </div>";
+    
+        <h$livello class=elenco-titolo>$nome</h$livello>
+            <dl class=\"elenco-attributi\">
+                <dt> Difficolt&agrave; </dt> <dd>$difficolta</dd>
+                <dt>Tempo</dt> <dd>$tempo</dd>
+                <dt>Voto medio</dt> <dd>$voto &frasl; 5</dd>
+            </dl>   
+            <a id=\"link-apri\" href=\"$link\">Apri</a>  
+    ";
 }
