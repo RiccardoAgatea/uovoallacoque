@@ -249,13 +249,11 @@ ul{
 }
 /*piatti migliori*/
 .elenco-migliori {
-    padding: 1.5em;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-.elenco-migliori dt {
-    font-size: larger;
+.elenco-attributi dt {
     font-weight: bolder;
 }
 .miglior-elemento{
@@ -263,7 +261,6 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1em;
 }
 .titolo-migliori{
     font-size:1.45em;
@@ -341,6 +338,7 @@ ul li input{ /*uguale a .barra-input */
     align-items:center;
     justify-content:flex-start;
     margin: 1em;
+    margin-left: 0;
     width: 18em;
     background-color: #0c2752;;
     color: white;
@@ -403,35 +401,32 @@ ul li input{ /*uguale a .barra-input */
    #immagine-logo{
         height: 4em;
     } 
+
+    .elenco-migliori {
+        flex-direction: column;
+    }
     .elenco-content {
         display: flex;
         flex-wrap: wrap;        
     }
    .elenco-elemento {
-       height: 8em;
-       width: 20em;
-       min-width: 20em;
-       flex-direction: row;
-       justify-content: flex-start;
-    }
-    .elenco-testo {
-        width: initial;
-        flex-direction: column;
-        font-size: small;
-        margin-left: 0em;
+       min-width: 21em;
+       display: block;
+
     }
    .elenco-immagine {
         height: 6em;
         width: 6em;
-        margin: 1em;    
+        margin: 1em;  
+        margin-top: 2em;
+        margin-bottom: 3em; 
+        float: left; 
     }
-   .elenco-titolo {
-        display: block;
-        font-size: small;
+
+    .elenco-titolo {
+        padding-right: 1em;
     }
-    .elenco-attributi {
-        display: block;
-    }
+   
 
     #breadcrumb {
         display: none;
@@ -536,6 +531,7 @@ ul li input{ /*uguale a .barra-input */
     .apri-nav {
         display: block;
         cursor: pointer;
+        margin-right: 2em;
     }
     .apri-nav img {
         width: 3em;
