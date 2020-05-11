@@ -138,7 +138,8 @@ ul{
     text-align: center;
     display: block;
     margin:2em;
-    font-size: 1.1em;
+    font-size: 1.3em;
+    font-weight: bolder;
 }
 
 .elemento-menu a {
@@ -195,7 +196,7 @@ ul{
     flex-direction: row;
     justify-content: flex-end;
     position: relative;
-    bottom:12em;
+    bottom:14em;
     margin-right: 1em;
 
 }
@@ -248,11 +249,24 @@ ul{
 }
 /*piatti migliori*/
 .elenco-migliori {
-    margin-top: 1em;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .elenco-migliori dt {
     font-size: larger;
     font-weight: bolder;
+}
+.miglior-elemento{
+    align-self: baseline;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+.titolo-migliori{
+    font-size:1.45em;
 }
 /*pagina utente*/
 .legend{
@@ -330,9 +344,13 @@ ul li input{ /*uguale a .barra-input */
     width: 18em;
     background-color: #0c2752;;
     color: white;
+    padding-bottom: 1em;
     -wedkit-border-radius:3em;
     -moz-border-radius:3em;
     border-radius: 3em;
+}
+.elenco-titolo{
+    font-size: 1.4em;
 }
 
 .elenco-immagine {

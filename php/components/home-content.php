@@ -18,12 +18,18 @@
         </p>
     </div>
         <div class="elenco-migliori">
-            <h2>Primo piatto pi&ugrave; votato</h2>
+            <div class="miglior-elemento">
+            <h2 class="titolo-migliori">Primo piatto migliore</h2>
                 <topPrimoPlaceholder />
-            <h2>Secondo piatto pi&ugrave; votato</h2>
+            </div>
+            <div class="miglior-elemento">   
+            <h2 class="titolo-migliori">Secondo piatto migliore</h2>
                 <topSecondoPlaceholder />
-            <h2>Dessert pi&ugrave; votato</h2>
+            </div>
+            <div class="miglior-elemento">  
+            <h2 class="titolo-migliori">Dessert migliore</h2>
                 <topDolcePlaceholder />
+            </div>    
         </div>
     </div>
     <backToTopPlaceholder />
