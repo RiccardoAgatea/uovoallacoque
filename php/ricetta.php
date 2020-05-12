@@ -73,7 +73,7 @@ if (!$result) {
     $content = str_replace("<nomeRicettaPlaceholder />", $nome, $content);
     $content = str_replace("<imgSrcPlaceholder />", $img, $content);
     $content = str_replace("<difficoltàPlaceholder />", $difficolta, $content);
-    $content = str_replace("<tempoPlaceholder />", $tempo, $content);
+    $content = str_replace("<tempoPlaceholder />", "$tempo minuti", $content);
     $content = str_replace("<ingredientiPlaceholder />", $listaIngredienti, $content);
     $content = str_replace("<proceduraPlaceholder />", $procedimento, $content);
 }
@@ -82,6 +82,9 @@ $handler->setContent($content);
 
 $handler->setBackToTop(
     file_get_contents(__DIR__ . "/components/default-tornaSu.php")
+);
+$handler->setFooter ( 
+    file_get_contents(__DIR__ . "/components/html/footer.html")
 );
 
 $handler->send();

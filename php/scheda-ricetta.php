@@ -7,7 +7,7 @@ function schedaRicetta(string $immagine, string $nome, string $difficolta, strin
         <h$livello class=elenco-titolo>$nome</h$livello>
             <dl class=\"elenco-attributi\">
                 <dt> Difficolt&agrave; </dt> <dd>$difficolta</dd>
-                <dt>Tempo</dt> <dd>$tempo</dd>
+                <dt>Tempo</dt> <dd>$tempo minuti</dd>
                 <dt>Voto medio</dt> <dd>$voto &frasl; 5</dd>
             </dl>   
             <a id=\"link-apri\" href=\"$link\">Apri</a>  

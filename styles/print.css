@@ -35,3 +35,11 @@ a:link:after, a:visited:after {
 .elenco-migliori {
     list-style: none;
 }
+
+.paginazione {
+    display: none;
+}
+
+.immagine-ricetta {
+    display: none;
+}

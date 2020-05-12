@@ -49,7 +49,7 @@ if ($tipo != 0) {
     );
 
     $handler->setBreadcrumb(
-    str_replace(
+        str_replace(
             "<percorsoPlaceholder />",
             "<a href=\"<rootFolder />/index.php\">Home</a> &gt; $tipi[$tipo]",
             file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
@@ -62,7 +62,19 @@ $handler->setNav($nav);
 $content = file_get_contents(__DIR__ . "/components/elenco-content.php");
 $content = str_replace("<categoriaPlaceholder />", $tipi[$tipo], $content);
 
-$risultato = $tipo != 0 ? contentPortata($tipo) : contentRicerca($_GET["termine_ricerca"]);
+$perPagina = 6; //sarà 9
+$pagina = (key_exists("pagina", $_GET)) ? intval($_GET['pagina']) : 1;
+$primoElemento = ($pagina - 1) * $perPagina;
+
+$temp =
+$tipo != 0 ?
+contentPortata($tipo, $primoElemento, $perPagina) :
+contentRicerca($_GET["termine_ricerca"], $primoElemento, $perPagina);
+
+$risultato = $temp[0];
+$totPagine = $temp[1];
+
+$risultato .= getPaginazione($totPagine, $tipo, $pagina);
 
 $content = str_replace("<elencoPlaceholder />", $risultato, $content);
 
@@ -70,8 +82,7 @@ $handler->setContent($content);
 $handler->setBackToTop(
     file_get_contents(__DIR__ . "/components/default-tornaSu.php")
 );
-$handler->setFooter ( 
+$handler->setFooter(
     file_get_contents(__DIR__ . "/components/html/footer.html")
 );
 $handler->send();
-

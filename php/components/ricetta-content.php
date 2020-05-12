@@ -5,12 +5,12 @@
 	<img class="immagine-ricetta"
 		 src="<imgSrcPlaceholder />"
 		 alt="Uovo alla coque" />
-	<dl class="difficoltà-tempo">
+	<dl class="difficolta-tempo">
 		<dt>Difficoltà:</dt>
 		<dd>
 			<difficoltàPlaceholder />
 		</dd>
-		<dt>Tempo:</dt>
+		<dt id=ricetta-tempo>Tempo:</dt>
 		<dd>
 			<tempoPlaceholder />
 		</dd>
@@ -19,7 +19,7 @@
 	<ul class="ingredienti">
 		<ingredientiPlaceholder />
 	</ul>
-	<h2>Procedura</h2>
+	<h2 id="ricetta-procedura">Procedura</h2>
 	<p class="procedura">
 		<proceduraPlaceholder />
 	</p>
