@@ -391,6 +391,8 @@ ul li input{ /*uguale a .barra-input */
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 #ricetta-tempo {
@@ -440,9 +442,9 @@ ul li input{ /*uguale a .barra-input */
     .elenco-migliori {
         flex-direction: column;
     }
-    .elenco-content {
-        display: flex;
-        flex-wrap: wrap;        
+    #elenco-content {
+        flex-direction: column;
+        justify-content: flex-start;       
     }
    .elenco-elemento {
        min-width: 21em;
