@@ -2,10 +2,13 @@
 require_once __DIR__ . '/db-connection.php';
 require_once __DIR__ . '/scheda-ricetta.php';
 
-function contentPortata($portata)
+function contentPortata($portata, $min, $num)
 {
     $mysql = new DBconnection;
-    $query = "SELECT * FROM ricette WHERE portata=$portata";
+
+    $totPagine = ceil($mysql->query("SELECT COUNT(*) FROM ricette WHERE portata=$portata")->fetch_row()[0] / $num);
+
+    $query = "SELECT * FROM ricette WHERE portata=$portata ORDER BY id DESC LIMIT $min,$num";
     $result = $mysql->query($query);
 
     $risultato = "";
@@ -19,13 +22,13 @@ function contentPortata($portata)
             $tempo = $row['tempo'];
             $immagine = $row['img'];
 
-            if($immagine ==null){
-                
+            if ($immagine == null) {
+
             }
 
             $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
             $voto = $votor[0];
-            $voto= number_format($voto, 1);
+            $voto = number_format($voto, 1);
             $id = $row['id'];
             $link = "<rootFolder />/php/ricetta.php?id=$id";
             $livello = 2;
@@ -41,13 +44,16 @@ function contentPortata($portata)
 
     $mysql->disconnect();
 
-    return $risultato;
+    return [$risultato, $totPagine];
 }
 
-function contentRicerca($termine)
+function contentRicerca($termine, $min, $num)
 {
     $mysql = new DBConnection;
-    $search_query = "SELECT * FROM ricette WHERE ricette.nome LIKE \"%$termine%\"";
+
+    $totPagine = ceil($mysql->query("SELECT COUNT(*)FROM ricette WHERE ricette.nome LIKE \"%$termine%\"")->fetch_row()[0] / $num);
+
+    $search_query = "SELECT * FROM ricette WHERE ricette.nome LIKE \"%$termine%\" ORDER BY id DESC LIMIT $min,$num";
     $result = $mysql->query($search_query);
 
     $risultato = "";
@@ -67,7 +73,7 @@ function contentRicerca($termine)
             $id = $row['id'];
             $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
             $voto = $votor[0];
-            $voto= number_format($voto, 1);
+            $voto = number_format($voto, 1);
             $livello = 2;
 
             $link = "<rootFolder />/php/ricetta.php?id=$id";
@@ -85,7 +91,7 @@ function contentRicerca($termine)
 
     $mysql->disconnect();
 
-    return $risultato;
+    return [$risultato, $totPagine];
 }
 
 function piattoMigliore($portata)
@@ -107,7 +113,7 @@ function piattoMigliore($portata)
 
             $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
             $voto = $votor[0];
-            $voto= number_format($voto, 1);
+            $voto = number_format($voto, 1);
             $link = "<rootFolder />/php/ricetta.php?id=$id";
 
             $risultato = $risultato .
@@ -120,4 +126,25 @@ function piattoMigliore($portata)
     $mysql->disconnect();
 
     return $risultato;
+}
+
+function getPaginazione($totPagine, $tipo, $corrente)
+{
+    $out = "<ul class=\"paginazione\">";
+    for ($i = 1; $i <= $totPagine; $i++) {
+        if ($i != $corrente) {
+            $out .= "<li><a href=\"?";
+            if ($tipo == 0) {
+                $out .= "termine_ricerca={$_GET["termine_ricerca"]}";
+            } else {
+                $out .= "id=$tipo";
+            }
+            $out .= "&pagina=" . $i . "\">" . $i . "</a></li>";
+        } else {
+            $out .= "<li>$i</li>";
+        }
+    }
+    $out .= "</ul>";
+
+    return $out;
 }
