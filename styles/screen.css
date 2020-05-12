@@ -372,6 +372,18 @@ ul li input{ /*uguale a .barra-input */
     margin: 1em;
 }
 
+.paginazione {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.paginazione li {
+    margin: 0.5em;
+}
+
 /*fine pagina elenco*/
 
 /*INIZIO PAGINA RICETTA*/

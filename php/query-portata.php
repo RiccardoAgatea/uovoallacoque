@@ -130,7 +130,20 @@ function piattoMigliore($portata)
 
 function getPaginazione($totPagine, $tipo, $corrente)
 {
-    $out = "<ul class=\"paginazione\">";
+    if ($totPagine==1) {
+        $out="";
+    }
+    else {
+        $out = "<ul class=\"paginazione\">";
+        if ($corrente != 1) {
+            $out .= "<li><a href=\"?";
+            if ($tipo == 0) {
+                $out .= "termine_ricerca={$_GET["termine_ricerca"]}";
+            } else {
+                $out .= "id=$tipo";
+            }
+            $out .= "&pagina=" . strval($corrente-1) . "\">Precedente</a></li>";
+        }
     for ($i = 1; $i <= $totPagine; $i++) {
         if ($i != $corrente) {
             $out .= "<li><a href=\"?";
@@ -144,7 +157,18 @@ function getPaginazione($totPagine, $tipo, $corrente)
             $out .= "<li>$i</li>";
         }
     }
+    if ($corrente != $totPagine) {
+        $out .= "<li><a href=\"?";
+        if ($tipo == 0) {
+            $out .= "termine_ricerca={$_GET["termine_ricerca"]}";
+        } else {
+            $out .= "id=$tipo";
+        }
+        $out .= "&pagina=" . strval($corrente+1) . "\">Successiva</a></li>";
+    }
     $out .= "</ul>";
+    }
+    
 
     return $out;
 }
