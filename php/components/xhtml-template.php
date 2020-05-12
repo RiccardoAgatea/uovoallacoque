@@ -1,60 +1,61 @@
 <!DOCTYPE html
-	    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+		  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xml:lang="it"
-	lang="it">
+	  xml:lang="it"
+	  lang="it">
 
 	<head>
 		<title>
 			<titlePlaceholder />
 		</title>
 		<meta name="viewport"
-			content="width=device-width, initial-scale=1.0" />
+			  content="width=device-width, initial-scale=1.0" />
 		<meta name="title"
-			content="<titlePlaceholder />" />
+			  content="<titlePlaceholder />" />
 		<meta name="description"
-			content="<descriptionPlaceholder />" />
+			  content="<descriptionPlaceholder />" />
 		<meta name="keywords"
-			content="<keywordsPlaceholder />" />
+			  content="<keywordsPlaceholder />" />
 		<meta name="language"
-			content="italian it" />
+			  content="italian it" />
 		<meta name="author"
-			content="<authorPlaceholder />" />
+			  content="<authorPlaceholder />" />
 		<meta http-equiv="Content-type"
-			content="text/html; charset=utf-8" />
+			  content="text/html; charset=utf-8" />
 		<link rel="icon"
-			href="<rootFolder />/img/logo/logo-head.jpg"
-			type="image/x-icon" />
+			  href="<rootFolder />/img/logo/logo-head.jpg"
+			  type="image/x-icon" />
 		<link rel="stylesheet"
-			media="screen"
-			href="<rootFolder />/styles/screen.css"
-			type="text/css" />
+			  media="screen"
+			  href="<rootFolder />/styles/screen.css"
+			  type="text/css" />
 		<link rel="stylesheet"
-			media="print"
-			href="<rootFolder />/styles/print.css"
-			type="text/css" />
-		<script defer src="<rootFolder />/js/script.js"></script>
-		<link rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+			  media="print"
+			  href="<rootFolder />/styles/print.css"
+			  type="text/css" />
+		<script defer
+				src="<rootFolder />/js/script.js"></script>
 	</head>
 
 	<body>
 		<div id="header">
 			<img id="immagine-logo"
-			     src="<rootFolder />/img/logo/coque_scritta_long.png"
+				 src="<rootFolder />/img/logo/coque_scritta_long.png"
 				 alt="Uovo alla coque" />
-				 <span class="apri-nav">
-					<img class="open-button"   src="<rootFolder />/img/icone/hamburger.png" alt="apri menu"/>
-				</span>
+			<span class="apri-nav">
+				<img class="open-button"
+					 src="<rootFolder />/img/icone/hamburger.png"
+					 alt="apri menu" />
+			</span>
 			<div class="nav">
 				<navPlaceholder />
 				<loginPlaceholder />
 			</div>
 			<breadcrumbPlaceholder />
 		</div>
-		
+
 		<contentPlaceholder />
-		
+
 		<footerPlaceholder />
 	</body>
 

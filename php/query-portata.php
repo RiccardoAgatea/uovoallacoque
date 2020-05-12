@@ -18,6 +18,11 @@ function contentPortata($portata)
             $difficolta = $row['difficolta'];
             $tempo = $row['tempo'];
             $immagine = $row['img'];
+
+            if($immagine ==null){
+                
+            }
+
             $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
             $voto = $votor[0];
             $voto= number_format($voto, 1);
