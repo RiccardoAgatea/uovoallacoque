@@ -6,7 +6,7 @@
 		 src="<imgSrcPlaceholder />"
 		 alt="Uovo alla coque" />
 	<dl class="difficolta-tempo">
-		<dt>Difficoltà:</dt>
+		<dt>Difficolt&agrave;:</dt>
 		<dd>
 			<difficoltàPlaceholder />
 		</dd>
