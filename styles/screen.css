@@ -31,7 +31,7 @@ html {
     background-attachment:fixed;
 }
 body{
-    background-color: rgba(211, 224, 245,0.8);
+    background-color: rgb(211, 224, 245);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #content{
@@ -332,14 +332,14 @@ ul li input{ /*uguale a .barra-input */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
 }
 .elenco-elemento {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items:center;
-    justify-content:flex-start;
+    justify-content: space-between;
     margin: 1em;
     margin-left: 0;
     width: 18em;
@@ -352,6 +352,10 @@ ul li input{ /*uguale a .barra-input */
 }
 .elenco-titolo{
     font-size: 1.4em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 0.5em;
+    text-align: center;
 }
 
 .elenco-immagine {
@@ -380,6 +384,21 @@ ul li input{ /*uguale a .barra-input */
 }
 .ingredienti {
     list-style-type: disc;
+    margin-left: 32em;
+}
+
+.difficolta-tempo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#ricetta-tempo {
+    margin-left: 2em;
+}
+
+#ricetta-procedura {
+    clear: left;
 }
 /*FINE PAGINA RICETTA*/
 .submitutente{
@@ -434,13 +453,20 @@ ul li input{ /*uguale a .barra-input */
         height: 6em;
         width: 6em;
         margin: 1em;  
-        margin-top: 2em;
-        margin-bottom: 3em; 
+        margin-top: 2em; 
         float: left; 
     }
 
     .elenco-titolo {
-        padding-right: 1em;
+        padding-top: 0.5em;
+    }
+
+    .elenco-attributi {
+        margin-left: 8em;
+    }
+
+    #link-apri {
+        margin-left: 8em;
     }
    
 
@@ -562,7 +588,17 @@ ul li input{ /*uguale a .barra-input */
     .ingredienti {
         margin-left: 1em;
     }
+
+    .difficolta-tempo {
+        display: block;
+    }
+
+    #ricetta-tempo {
+        margin-left: 0em;
+    }
     /*FINE PAGINA RICETTA*/
+
+    
 
     
 }
