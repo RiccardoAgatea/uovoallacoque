@@ -393,6 +393,7 @@ ul li input{ /*uguale a .barra-input */
     object-fit: cover;
     float: left;
     margin-right: 2em;
+    margin-bottom: 1em;
 }
 .ingredienti {
     list-style-type: disc;
