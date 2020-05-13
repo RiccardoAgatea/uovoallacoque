@@ -1,6 +1,6 @@
-<p>
+<p id="messaggio-utente">
     Ciao
-    <a href="<rootFolder />/php/utente.php?id=<idUtentePlaceholder />">
+    <a id="messaggio-utente-nome" href="<rootFolder />/php/utente.php?id=<idUtentePlaceholder />">
         <nomeUtentePlaceholder />
     </a>
     !

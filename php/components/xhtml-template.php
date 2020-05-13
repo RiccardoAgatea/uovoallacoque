@@ -53,8 +53,11 @@
 					 alt="apri menu" />
 			</span>
 			<div class="nav">
-				<navPlaceholder />
+				<span class="chiudi-nav"> 
+					<img class="close-button"  src="<rootFolder />/img/icone/exit.png" alt="esci dal menu"/>
+				</span>
 				<loginPlaceholder />
+				<navPlaceholder />
 			</div>
 			<breadcrumbPlaceholder />
 		</div>

@@ -74,9 +74,7 @@ body{
 
 }
 #immagine-footer{
-    position: relative;
     align-self: flex-end;
-    top:0.6em;
 }
 
 .messaggio-footer{
@@ -148,7 +146,8 @@ ul{
 /*fine logo*/
 #barra-ricerca{
     text-align: center;
-    color: white;    
+    color: white; 
+    margin-bottom: 1em;   
 }
 .barra-cerca{
     width: 25em;
@@ -171,19 +170,18 @@ ul{
 }
 
 
-#lista_accesso a:visited{
+#lista_accesso a:visited, #messaggio-utente-nome:visited{
     color: #faf600;
 }
 
 
 /*accesso*/
-#lista_accesso{
+#lista_accesso, #messaggio-utente{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    position: relative;
-    bottom:14em;
     margin-right: 1em;
+    margin-top: -3em;
 
 }
 #lista_accesso li a{
@@ -191,10 +189,15 @@ ul{
     margin: 0.5em;
     
 }
-#lista_accesso li a:hover{
+#lista_accesso li a:hover, #messaggio-utente-nome:hover{
     color: black;
     background-color:#FF9F29; /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/
 }
+#messaggio-utente-nome {
+    margin-left:1em;
+    color: white;
+}
+
 #accedi_scritta{
     padding-right: 0.5em;
 }
@@ -521,11 +524,16 @@ ul li input{ /*uguale a .barra-input */
         flex-direction: column;
         justify-content: space-around;
         font-size: 1.2em;
-        position: relative;
-        top:0.5em;
     }
     #lista_accesso li {
         margin-bottom: 1em;
+    }
+
+    #messaggio-utente {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        font-size: 1.2em;
     }
     
     .barra-cerca{
@@ -557,8 +565,6 @@ ul li input{ /*uguale a .barra-input */
         flex-direction: column;
         justify-content: space-around;
         align-items: flex-start;
-        position: relative;
-        top:2.5em;
         text-align: left;
     }
 
@@ -580,8 +586,8 @@ ul li input{ /*uguale a .barra-input */
     .chiudi-nav-active {
         cursor: pointer;
         display: block;
-        margin-left: 85%;
         z-index: 1;
+        margin-top: 4em;
     }
 
     .chiudi-nav img {

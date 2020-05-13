@@ -47,8 +47,8 @@
 					 alt="apri menu" />
 			</span>
 			<div class="nav">
-				<navPlaceholder />
 				<loginPlaceholder />
+				<navPlaceholder />
 			</div>
 			<breadcrumbPlaceholder />
 		</header>

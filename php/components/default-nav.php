@@ -1,7 +1,4 @@
 <ul id="menu">
-<span class="chiudi-nav"> 
-					<img class="close-button"  src="<rootFolder />/img/icone/exit.png" alt="esci dal menu"/>
-				</span>
 	<li id="home" class="elemento-menu">
 		<a href="<rootFolder />/index.php">
 			Home
