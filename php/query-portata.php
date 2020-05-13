@@ -30,7 +30,7 @@ function contentPortata($portata, $min, $num)
             $voto = $votor[0];
             $voto = number_format($voto, 1);
             $id = $row['id'];
-            $link = "<rootFolder />/php/ricetta.php?id=$id";
+            $link = "<rootFolder />/php/ricetta.php?id=$id&pagina=1";
             $livello = 2;
 
             $risultato .=
@@ -76,7 +76,7 @@ function contentRicerca($termine, $min, $num)
             $voto = number_format($voto, 1);
             $livello = 2;
 
-            $link = "<rootFolder />/php/ricetta.php?id=$id";
+            $link = "<rootFolder />/php/ricetta.php?id=$id&pagina=1";
 
             $risultato .=
             '<li class=elenco-elemento>' .
@@ -114,7 +114,7 @@ function piattoMigliore($portata)
             $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
             $voto = $votor[0];
             $voto = number_format($voto, 1);
-            $link = "<rootFolder />/php/ricetta.php?id=$id";
+            $link = "<rootFolder />/php/ricetta.php?id=$id&pagina=1";
 
             $risultato = $risultato .
             '<div class=elenco-elemento>' .

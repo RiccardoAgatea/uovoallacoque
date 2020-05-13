@@ -34,6 +34,7 @@ $handler->setNav(
 $content = file_get_contents(__DIR__ . "/components/ricetta-content.php");
 
 $connection = new DBConnection();
+$id = $_GET["id"];
 
 $result = $connection->query("SELECT * FROM ricette WHERE id={$_GET["id"]}")->fetch_assoc();
 
@@ -78,9 +79,14 @@ if (!$result) {
         $nuovoCommento =file_get_contents(__DIR__ . "/components/inserimento-commento.php");
         $nuovoCommento = str_replace("<ricettaPlaceholder />", $_GET["id"], $nuovoCommento);
         $commenti .= $nuovoCommento;
+        $pagina = intval($_GET["pagina"]);
+        $num = 2;
+        $min=($pagina - 1) * $num;
+        $corrente = $_GET["pagina"];
 
 
-        $resultCommenti = $connection->query("SELECT utenti.img AS img, utenti.nickname AS nick, commenti.contenuto AS testo, commenti.dataeora AS dataora FROM commenti, utenti WHERE ricetta={$_GET["id"]} & commenti.utente=utenti.id ORDER BY dataora DESC" );
+        $resultCommenti = $connection->query("SELECT utenti.img AS img, utenti.nickname AS nick, commenti.contenuto AS testo, commenti.dataeora AS dataora FROM commenti, utenti WHERE commenti.ricetta={$_GET["id"]} and utenti.id=commenti.utente ORDER BY dataora DESC LIMIT $min, $num");
+        $totPagine = ceil($connection->query("SELECT COUNT(*) FROM commenti WHERE commenti.ricetta={$_GET["id"]}")->fetch_row()[0] / $num);
 
         if ($resultCommenti) {
             $commenti .= "<ul class=\"commenti\">";
@@ -101,6 +107,8 @@ if (!$result) {
                 $commenti .= "<li>" . $commentiContent . "</li>";
             }
             $commenti .= "</ul>";
+            $commenti.= getPaginazione($corrente, $totPagine, $id);
+
         }
 
 
@@ -133,3 +141,36 @@ $handler->setFooter (
 );
 
 $handler->send();
+
+function getPaginazione($corrente, $totPagine, $id)
+{
+    if ($totPagine==1) {
+        $out="";
+    }
+    else {
+        $out = "<ul class=\"paginazione\">";
+        if ($corrente != 1) {
+            $out .= "<li><a href=\"?";
+            $out .= "id=$id";
+            $out .= "&pagina=" . strval($corrente-1) . "\">Precedente</a></li>";
+        }
+    for ($i = 1; $i <= $totPagine; $i++) {
+        if ($i != $corrente) {
+            $out .= "<li><a href=\"?";
+            $out .= "id=$id";
+            $out .= "&pagina=" . $i . "\">" . $i . "</a></li>";
+        } else {
+            $out .= "<li>$i</li>";
+        }
+    }
+    if ($corrente != $totPagine) {
+        $out .= "<li><a href=\"?";
+        $out .= "id=$id";
+        $out .= "&pagina=" . strval($corrente+1) . "\">Successiva</a></li>";
+    }
+    $out .= "</ul>";
+    }
+    
+
+    return $out;
+}
