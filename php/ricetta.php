@@ -80,7 +80,7 @@ if (!$result) {
         $nuovoCommento = str_replace("<ricettaPlaceholder />", $_GET["id"], $nuovoCommento);
         $commenti .= $nuovoCommento;
         $pagina = intval($_GET["pagina"]);
-        $num = 2;
+        $num = 10;
         $min=($pagina - 1) * $num;
         $corrente = $_GET["pagina"];
 
