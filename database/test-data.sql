@@ -306,22 +306,25 @@ VALUES
     Scaldate pochissimo una padella o, ancora meglio, posizionatela in una padella pi&ugrave; grande contenente acqua calda in modo da effettuare una cottura a bagnomaria. Aggiungete le uova e mescolate lentamente con un cucchiaio di legno, fino a che il composto inizia a rapprendersi.
     Proseguite la cottura, sempre mescolando, fino a che le uova diventano opache e risultano cotte, ma non asciutte. Servitele subito nel loro pentolino, ben calde, e, se vi piace, spolverizzate con una macinata di pepe."
   );
-INSERT INTO utenti (email, passw, nickname)
+INSERT INTO utenti (email, passw, nickname, img)
 VALUES
   (
     "rosalinda.puccipucci@gmail.com",
     "fragola",
-    "Tenebrina634"
+    "Tenebrina634",
+    "<rootFolder />/img/utenti/def1.png"
   ),
   (
     "assunta.incielo@libero.it",
     "pentecoste",
-    "SacroCuoreDiMaria"
+    "SacroCuoreDiMaria",
+    "<rootFolder />/img/utenti/def1.png"
   ),
   (
     "american.people@gmail.com",
     "idiot",
-    "PastaAlSugoConLaPanna"
+    "PastaAlSugoConLaPanna",
+    "<rootFolder />/img/utenti/def1.png"
   );
 INSERT INTO voti (utente, ricetta, voto)
 VALUES
@@ -338,3 +341,22 @@ VALUES
   (3, 3, 3),
   (3, 4, 2),
   (3, 5, 5);
+
+INSERT INTO commenti (utente, ricetta, contenuto, dataeora)
+VALUES
+ (1, 1, "molto interessante", "2020-05-12T10:30:42"),
+ (2, 1, "molto interessante", "2020-05-11T10:30:42"),
+ (3, 1, "molto interessante", "2020-05-13T10:30:42"),
+ (1, 2, "molto interessante", "2020-05-12T10:34:42"),
+ (2, 2, "molto interessante", "2020-05-12T10:32:42"),
+ (3, 2, "molto interessante", "2020-05-12T10:38:42"),
+ (1, 3, "molto interessante", "2020-05-12T10:15:42"),
+ (2, 4, "molto interessante", "2020-05-12T10:39:42"),
+ (3, 5, "molto interessante", "2020-04-29T23:30:42"),
+ (1, 5, "molto interessante", "2020-05-12T10:32:42"),
+ (2, 6, "molto interessante", "2020-05-12T10:19:42"),
+ (3, 7, "molto interessante", "2020-05-12T10:12:42"),
+ (1, 1, "molto interessante", "2020-05-12T10:16:42");
+
+
+

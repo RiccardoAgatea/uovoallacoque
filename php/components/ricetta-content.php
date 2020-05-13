@@ -24,4 +24,8 @@
 		<proceduraPlaceholder />
 	</p>
 	<backToTopPlaceholder />
+	<h2 id="sezione-commenti">Commenti</h2>
+		<commentiPlaceholder />
+
+	<backToTopPlaceholder />
 </div>

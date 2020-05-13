@@ -62,7 +62,7 @@ $handler->setNav($nav);
 $content = file_get_contents(__DIR__ . "/components/elenco-content.php");
 $content = str_replace("<categoriaPlaceholder />", $tipi[$tipo], $content);
 
-$perPagina = 6; //sarà 9
+$perPagina = 9;
 $pagina = (key_exists("pagina", $_GET)) ? intval($_GET['pagina']) : 1;
 $primoElemento = ($pagina - 1) * $perPagina;
 

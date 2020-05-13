@@ -69,6 +69,50 @@ if (!$result) {
     foreach (explode(",", $ingredienti) as $ing) {
         $listaIngredienti .= "<li>$ing</li>";
     }
+    
+    $commenti = "";
+
+    if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
+
+        
+        $nuovoCommento =file_get_contents(__DIR__ . "/components/inserimento-commento.php");
+        $nuovoCommento = str_replace("<ricettaPlaceholder />", $_GET["id"], $nuovoCommento);
+        $commenti .= $nuovoCommento;
+
+
+        $resultCommenti = $connection->query("SELECT utenti.img AS img, utenti.nickname AS nick, commenti.contenuto AS testo, commenti.dataeora AS dataora FROM commenti, utenti WHERE ricetta={$_GET["id"]} & commenti.utente=utenti.id ORDER BY dataora DESC" );
+
+        if ($resultCommenti) {
+            $commenti .= "<ul class=\"commenti\">";
+
+            while ($row= $resultCommenti->fetch_assoc()) {
+                $immagine = $row['img'];
+                $nickname = $row['nick'];
+                $testo = $row ['testo'];
+                $dataora = $row['dataora'];
+
+                $commentiContent = file_get_contents(__DIR__ . "/components/commento-content.php");
+
+                $commentiContent = str_replace("<immagineUtentePlaceholder />", $immagine, $commentiContent);
+                $commentiContent = str_replace("<nomeUtentePlaceholder />", $nickname, $commentiContent);
+                $commentiContent = str_replace("<testoCommentoPlaceholder />", $testo, $commentiContent);
+                $commentiContent = str_replace("<dataOraCommentoPlaceholder />", $dataora, $commentiContent);
+
+                $commenti .= "<li>" . $commentiContent . "</li>";
+            }
+            $commenti .= "</ul>";
+        }
+
+
+        else {
+            $commenti .= "<p>Scrivi il primo commento per questa ricetta!</p>";
+        }
+
+    }
+    else {
+        $commenti .= "<p>Per visualizzare e inserire i commenti, <a href=\"<rootFolder />/php/login.php\">accedi</a> o <a href=\"<rootFolder />/php/signup.php\">registrati</a>.</p>";
+    }
+
 
     $content = str_replace("<nomeRicettaPlaceholder />", $nome, $content);
     $content = str_replace("<imgSrcPlaceholder />", $img, $content);
@@ -76,6 +120,7 @@ if (!$result) {
     $content = str_replace("<tempoPlaceholder />", "$tempo minuti", $content);
     $content = str_replace("<ingredientiPlaceholder />", $listaIngredienti, $content);
     $content = str_replace("<proceduraPlaceholder />", $procedimento, $content);
+    $content = str_replace("<commentiPlaceholder />", $commenti, $content);
 }
 
 $handler->setContent($content);
