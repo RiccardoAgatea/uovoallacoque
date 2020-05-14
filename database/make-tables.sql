@@ -36,6 +36,7 @@ CREATE TABLE commenti (
   ricetta INT,
   contenuto VARCHAR(256) NOT NULL,
   dataeora DATETIME,
+  modificato BOOLEAN DEFAULT FALSE,
   PRIMARY KEY (id),
   FOREIGN KEY (utente) REFERENCES utenti (id),
   FOREIGN KEY (ricetta) REFERENCES ricette (id)
