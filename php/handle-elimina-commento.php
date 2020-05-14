@@ -1,14 +1,12 @@
 <?php
-
 require_once __DIR__. "/db-connection.php";
 require_once __DIR__. "/user.php";
 
 session_start();
 $connection = new DBConnection();
 
-$idUtente = $_SESSION['user']->getId();
 $idRicetta = $_GET['ricetta'];
-$testo = $_POST['scrivi-commento'];
+$idCommento = $_GET['idcommento'];
 
-$connection->query("INSERT INTO commenti(utente, ricetta, contenuto, dataeora) VALUE($idUtente, $idRicetta, \"$testo\", NOW())");
+$connection->query("DELETE FROM commenti WHERE commenti.id=$idCommento");
 header("Location: ricetta.php?id=$idRicetta&pagina=1#sezione-commenti");

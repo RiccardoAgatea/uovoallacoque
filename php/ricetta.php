@@ -75,17 +75,34 @@ if (!$result) {
 
     if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
 
-        
-        $nuovoCommento =file_get_contents(__DIR__ . "/components/inserimento-commento.php");
-        $nuovoCommento = str_replace("<ricettaPlaceholder />", $_GET["id"], $nuovoCommento);
-        $commenti .= $nuovoCommento;
         $pagina = intval($_GET["pagina"]);
         $num = 10;
         $min=($pagina - 1) * $num;
         $corrente = $_GET["pagina"];
 
+        if(!key_exists("idcommento",$_GET)) {
+            $nuovoCommento =file_get_contents(__DIR__ . "/components/inserimento-commento.php");
+            $nuovoCommento = str_replace("<ricettaPlaceholder />", $_GET["id"], $nuovoCommento);
+            $commenti .= $nuovoCommento;
+        }
 
-        $resultCommenti = $connection->query("SELECT utenti.img AS img, utenti.nickname AS nick, commenti.contenuto AS testo, commenti.dataeora AS dataora FROM commenti, utenti WHERE commenti.ricetta={$_GET["id"]} and utenti.id=commenti.utente ORDER BY dataora DESC LIMIT $min, $num");
+        else {
+            $idcommento = $_GET['idcommento'];
+            $commentoResult = $connection->query("SELECT commenti.contenuto as testo FROM commenti WHERE commenti.id=$idcommento");
+            if (!$commentoResult) {
+                throw new Exception("Il commento non esiste");
+                
+            }
+            $testo = $commentoResult->fetch_row()[0];
+            $modificaCommento =file_get_contents(__DIR__ . "/components/modifica-commento.php");
+            $modificaCommento = str_replace("<ricettaPlaceholder />", $_GET["id"], $modificaCommento);
+            $modificaCommento = str_replace("<idCommentoPlaceholder />", $idcommento, $modificaCommento);
+            $modificaCommento = str_replace("<paginaPlaceholder />", $corrente, $modificaCommento);
+            $modificaCommento = str_replace("<testoCommentoDaModificarePlaceholder />", $testo, $modificaCommento);
+            $commenti .= $modificaCommento;
+        }
+    
+        $resultCommenti = $connection->query("SELECT commenti.modificato AS edited, commenti.id AS id, utenti.id AS idutente, utenti.img AS img, utenti.nickname AS nick, commenti.contenuto AS testo, commenti.dataeora AS dataora FROM commenti, utenti WHERE commenti.ricetta={$_GET["id"]} and utenti.id=commenti.utente ORDER BY dataora DESC LIMIT $min, $num");
         $totPagine = ceil($connection->query("SELECT COUNT(*) FROM commenti WHERE commenti.ricetta={$_GET["id"]}")->fetch_row()[0] / $num);
 
         if ($resultCommenti) {
@@ -96,6 +113,14 @@ if (!$result) {
                 $nickname = $row['nick'];
                 $testo = $row ['testo'];
                 $dataora = $row['dataora'];
+                $idUtente = $row['idutente'];
+                $idcommento = $row['id'];
+                $tmpEdited = $row['edited'];
+                $edited = "";
+
+                if($tmpEdited) {
+                    $edited .= "(modificato)";
+                }
 
                 $commentiContent = file_get_contents(__DIR__ . "/components/commento-content.php");
 
@@ -103,6 +128,19 @@ if (!$result) {
                 $commentiContent = str_replace("<nomeUtentePlaceholder />", $nickname, $commentiContent);
                 $commentiContent = str_replace("<testoCommentoPlaceholder />", $testo, $commentiContent);
                 $commentiContent = str_replace("<dataOraCommentoPlaceholder />", $dataora, $commentiContent);
+                $commentiContent = str_replace("<editedPlaceholder />", $edited, $commentiContent);
+
+                if($idUtente==$_SESSION['user']->getId()) {
+                    $commentiContent = str_replace("<modificaCommentoPlaceholder />", "<form method=\"POST\" action=\"<rootFolder />/php/setup-modifica-commento.php?ricetta={$_GET["id"]}&idcommento=$idcommento&pagina=$corrente\"><input type=\"submit\" value=\"Modifica\"/></form>", $commentiContent);
+                    $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "<form method=\"POST\" action=\"<rootFolder />/php/handle-elimina-commento.php?ricetta={$_GET["id"]}&idcommento=$idcommento\"><input type=\"submit\" value=\"Elimina\"/></form>", $commentiContent);
+                }
+                else {
+                    $commentiContent = str_replace("<modificaCommentoPlaceholder />", "", $commentiContent);
+                    $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "", $commentiContent);
+                }
+                
+            
+            
 
                 $commenti .= "<li>" . $commentiContent . "</li>";
             }
@@ -120,6 +158,8 @@ if (!$result) {
     else {
         $commenti .= "<p>Per visualizzare e inserire i commenti, <a href=\"<rootFolder />/php/login.php\">accedi</a> o <a href=\"<rootFolder />/php/signup.php\">registrati</a>.</p>";
     }
+
+    
 
 
     $content = str_replace("<nomeRicettaPlaceholder />", $nome, $content);

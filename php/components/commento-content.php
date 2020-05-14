@@ -8,6 +8,12 @@
         <testoCommentoPlaceholder />
     </p>
     <p class="commento-dataora">
+        <editedPlaceholder />
         <dataOraCommentoPlaceholder />
-    </p>   
+    </p>
+    <div class="tasti-commento">
+        <modificaCommentoPlaceholder />
+        <eliminaCommentoPlaceholder />
+    </div>
+        
 </div>
