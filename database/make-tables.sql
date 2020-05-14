@@ -31,11 +31,12 @@ CREATE TABLE voti (
   FOREIGN KEY (ricetta) REFERENCES ricette (id)
 );
 CREATE TABLE commenti (
+  id INT AUTO_INCREMENT,
   utente INT,
   ricetta INT,
   contenuto VARCHAR(256) NOT NULL,
   dataeora DATETIME,
-  PRIMARY KEY (utente, ricetta, dataeora),
+  PRIMARY KEY (id),
   FOREIGN KEY (utente) REFERENCES utenti (id),
   FOREIGN KEY (ricetta) REFERENCES ricette (id)
 );
