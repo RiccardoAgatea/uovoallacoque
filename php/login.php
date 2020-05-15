@@ -10,6 +10,10 @@ $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
 
+if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
+    header("Location: ./utente.php");
+}
+
 $handler->setLogin(
     preg_replace("((?s)<a href=\"<rootFolder />/php/login\.php\">.*?</a>)",
         "Accedi",

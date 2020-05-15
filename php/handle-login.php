@@ -15,6 +15,7 @@ try {
         $_SESSION["email"] = "";
         $_SESSION["password"] = "";
         header("Location: ./utente.php");
+        exit;
     }
 } catch (Exception $e) {
     $_SESSION["logged"] = false;
@@ -22,4 +23,5 @@ try {
     $_SESSION["email"] = $_POST["email"];
     $_SESSION["password"] = $_POST["password"];
     header("Location: ./login.php");
+    exit;
 }

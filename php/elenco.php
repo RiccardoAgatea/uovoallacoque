@@ -16,8 +16,6 @@ $login = "";
 if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
     $login .= file_get_contents(__DIR__ . "/components/personal-login.php");
 
-    $login = str_replace("<idUtentePlaceholder />", $_SESSION["user"]->getID(), $login);
-
     $login = str_replace("<nomeUtentePlaceholder />", $_SESSION["user"]->getNickname(), $login);
 
 } else {
@@ -36,8 +34,10 @@ $tipi = [
 $tipo = array_key_exists('id', $_GET) ? $_GET['id'] : 0;
 
 if ($tipo < 0 || $tipo >= 4) {
-    throw new Exception("Mica bene!");
+    header("Location: ../404.php");
+    exit;
 }
+
 $handler->setTitle("$tipi[$tipo] | Uovo alla Coque");
 $nav = file_get_contents(__DIR__ . "/components/default-nav.php");
 

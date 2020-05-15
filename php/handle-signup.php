@@ -13,6 +13,7 @@ if ($connection->query("SELECT email FROM utenti WHERE email=\"{$_POST['email']}
     $_SESSION["password"] = $_POST['password1'];
     $_SESSION["nickname"] = $_POST['nickname'];
     header("Location: ./signup.php");
+    exit;
 } else if ($connection->query("SELECT nickname FROM utenti WHERE nickname=\"{$_POST['nickname']}\"")->fetch_row() != null) {
     $_SESSION["wrong-signup"] = true;
     $_SESSION["error"] = "nickname";
@@ -20,6 +21,7 @@ if ($connection->query("SELECT email FROM utenti WHERE email=\"{$_POST['email']}
     $_SESSION["password"] = $_POST['password1'];
     $_SESSION["nickname"] = $_POST['nickname'];
     header("Location: ./signup.php");
+    exit;
 } else {
     (new DBConnection())->query("INSERT INTO utenti (email, passw, nickname) VALUES (\"{$_POST['email']}\",\"{$_POST['password1']}\",\"{$_POST['nickname']}\");");
 
@@ -31,4 +33,5 @@ if ($connection->query("SELECT email FROM utenti WHERE email=\"{$_POST['email']}
     $_SESSION["password"] = "";
     $_SESSION["nickname"] = "";
     header("Location: ./utente.php");
+    exit;
 }

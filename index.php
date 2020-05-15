@@ -17,8 +17,6 @@ $login = "";
 if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
     $login .= file_get_contents(__DIR__ . "/php/components/personal-login.php");
 
-    $login = str_replace("<idUtentePlaceholder />", $_SESSION["user"]->getID(), $login);
-
     $login = str_replace("<nomeUtentePlaceholder />", $_SESSION["user"]->getNickname(), $login);
 
 } else {
@@ -56,7 +54,7 @@ $handler->setBackToTop(
     file_get_contents(__DIR__ . "/php/components/default-tornaSu.php")
 );
 
-$handler->setFooter ( 
+$handler->setFooter (
     file_get_contents(__DIR__ . "/php/components/html/footer.html")
 );
 

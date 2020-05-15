@@ -15,9 +15,7 @@ $login = "";
 
 $login .= file_get_contents(__DIR__ . "/components/personal-login.php");
 
-$login = preg_replace("((?s)<a href=\"<rootFolder />/php/utente\.php\?id=<idUtentePlaceholder />\">.*?</a>)", "<nomeUtentePlaceholder />", $login);
-
-$login = str_replace("<idUtentePlaceholder />", $_SESSION["user"]->getID(), $login);
+$login = preg_replace("((?s)<a.*?href=\"<rootFolder />/php/utente\.php\">.*?</a>)", "<nomeUtentePlaceholder />", $login);
 
 $login = str_replace("<nomeUtentePlaceholder />", $_SESSION["user"]->getNickname(), $login);
 
@@ -36,8 +34,6 @@ $handler->setBreadcrumb(
 );
 
 $content = file_get_contents(__DIR__ . "/components/utente-content.php");
-
-$content = preg_replace("(<top.*Placeholder />)", "", $content);
 
 $handler->setContent($content);
 
