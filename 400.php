@@ -6,7 +6,7 @@ session_start();
 
 $handler = new TemplateHandler(".", "xhtml");
 
-$handler->setTitle("Pagina non trovata | Uovo alla Coque");
+$handler->setTitle("Richiesta errata | Uovo alla Coque");
 $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
@@ -37,7 +37,7 @@ $handler->setBreadcrumb(
     ""
 );
 
-$content = "<p>Non abbiamo trovato quello che cercavi. Accipicchia!!</p>";
+$content = "<p>Attenzione alle richieste che fai! Probabilmente hai commesso un errore.</p>";
 
 $handler->setContent($content);
 

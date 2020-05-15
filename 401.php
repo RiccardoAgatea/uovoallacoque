@@ -6,7 +6,7 @@ session_start();
 
 $handler = new TemplateHandler(".", "xhtml");
 
-$handler->setTitle("Pagina non trovata | Uovo alla Coque");
+$handler->setTitle("Non autorizzato | Uovo alla Coque");
 $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
@@ -37,7 +37,7 @@ $handler->setBreadcrumb(
     ""
 );
 
-$content = "<p>Non abbiamo trovato quello che cercavi. Accipicchia!!</p>";
+$content = "<p>Hai cercato di fare qualcosa per cui serve l'autenticazione! Esegui l'<a href=\"<rootFolder />/php/login.php\">accesso</a>, poi riprova.</p>";
 
 $handler->setContent($content);
 
