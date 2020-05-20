@@ -33,9 +33,12 @@ function checkImage(image){ //image=stringa"user-immagine"
 }
 
 // validazione del nome della ricetta, lunghezza massima 70(?)
-function checkLunghezza(lunghezza){
-	let test=doument.getElementById(lunghezza).value;
-	let 
+function checkTitolo(titolo){
+	let test=doument.getElementById(titolo).value;
+	let regex= new RegExp("^([a-zA-Z0-9]){3,70}$")
+	let result = (regex.test(test)) && !(test==="");
+	printError(result, titolo.toString()+"-message", "La lunghezza massima è di 70 caratteri alfanumerici");
+	return result;
 }
 
 // difficoltà -> da uno a 5 
