@@ -1,4 +1,4 @@
-// --------- CONTROLLI --------
+	// --------- CONTROLLI --------
 function isPasswordEqual(password, passwordConfirm){ 
 	let pwd1 = document.getElementById(password);
 	let pwd2 = document.getElementById(passwordConfirm); 
@@ -23,14 +23,38 @@ function checkNickname(nickname) {
 	return result;
 }
 
-// validazione immagine -> .png .jpg ; dimensione dell'immagine
+// validazione immagine -> .png .jpg ; dimensione dell'immagine (da fare)
+function checkImage(image){ //image=stringa"user-immagine"
+	let test= document.getElementById(image).value;
+	let extensions = ['png','jpg','jpeg','svg'];
+	let isImage = extensions.includes(test.split('.').pop()); //split taglia dove c'è il punto e pop prende in considerazione quello che c'è dopo il punto
+	printError(isImage, image.toString()+"-message", "Il formato non è valido");
+	return isImage;
+}
 
 // validazione del nome della ricetta, lunghezza massima 70(?)
+function checkLunghezza(lunghezza){
+	let test=doument.getElementById(lunghezza).value;
+	let 
+}
 
 // difficoltà -> da uno a 5 
+function checkDifficolta(difficolta) {
+	let test = document.getElementById(difficolta).value;
+	let regex = new RegExp("^[1-5]$"); 
+	let result = (regex.test(test)) && !(test === "");
+	printError(result, difficolta.toString()+"-message", "L'intervallo valido è tra 1 e 5");
+	return result;
+}
 
 // tempo -> solo numeri
-
+function checktempo(tempo) {
+	let test = document.getElementById(tempo).value;
+	let regex = new RegExp("^[1-9][0-9]*$"); 
+	let result = (regex.test(test)) && !(test === "");
+	printError(result, tempo.toString()+"-message", "Sono ammessi solo valori interi positivi");
+	return result;
+}
 
 function printError(condition, id, message){ // se condition è true significa che matcha la regex, passo l'id dell'elemento che voglio stampare, passo il messaggio da settare nel caso di errori
 	if (condition) { 
