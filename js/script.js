@@ -1,8 +1,8 @@
 // --------- CONTROLLI --------
-function isPasswordEqual(password, passwordConfirm){;
+function isPasswordEqual(password, passwordConfirm){ 
 	let pwd1 = document.getElementById(password);
-	let pwd2 = document.getElementById(passwordConfirm);
-	let result = pwd1.value === pwd2.value;
+	let pwd2 = document.getElementById(passwordConfirm); 
+	let result = pwd1.value === pwd2.value; 
 	printError(result, passwordConfirm.toString()+"-message", "Password diverse");
 	return result;
 }
@@ -23,6 +23,15 @@ function checkNickname(nickname) {
 	return result;
 }
 
+// validazione immagine -> .png .jpg ; dimensione dell'immagine
+
+// validazione del nome della ricetta, lunghezza massima 70(?)
+
+// difficoltà -> da uno a 5 
+
+// tempo -> solo numeri
+
+
 function printError(condition, id, message){ // se condition è true significa che matcha la regex, passo l'id dell'elemento che voglio stampare, passo il messaggio da settare nel caso di errori
 	if (condition) { 
 		document.getElementById(id).innerHTML = ""; //mi serve perchè se non ho errori devo nascondere il messaggio di errore se esiste
@@ -31,7 +40,7 @@ function printError(condition, id, message){ // se condition è true significa c
 	}
 }
 
-function loginValidator(email) {
+function loginValidator(email) { 
 	let emailChecked = checkEmail(email);
 	return emailChecked;
 }
