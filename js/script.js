@@ -82,7 +82,7 @@ function signupValidator(nickname, email, password, passwordConfirm) {
 }
 //function ricetta validator
 
-function ricettaValidator(titolo, difficolta,tempo, image){
+function ricettaValidator(titolo, difficolta, tempo, image){
 	let titoloChecked = checkTitolo(titolo);
 	let difficoltaChecked = checkDifficolta(difficolta);
 	let tempoChecked = checkTempo(tempo);
@@ -134,10 +134,10 @@ if (signupForm) {
 	});
 }
 //------RICETTA------
-const ricettaForm = document.getElementById("")
-if(ricettaForm){
+const ricettaForm = document.getElementById("form-add");
+if(ricettaForm) {
 	ricettaForm.addEventListener("submit", function(event) {
-		if(!ricettaValidator('','','','')) {
+		if(!ricettaValidator('add-nome','add-difficolta','add-tempo','add-immagine')) {
 			event.preventDefault();
 		}
 	});

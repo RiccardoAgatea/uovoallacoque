@@ -1,5 +1,6 @@
 <?php
 require_once "./template-handler.php";
+require_once __DIR__ . "/user.php";
 
 session_start();
 
@@ -10,9 +11,15 @@ $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
 
-$handler->setLogin( 
-	file_get_contents(__DIR__ . "/components/default-login.php")
-);
+$login = "";
+
+$login .= file_get_contents(__DIR__ . "/components/personal-login.php");
+
+$login = preg_replace("((?s)<a.*?href=\"<rootFolder />/php/utente\.php\">.*?</a>)", "<nomeUtentePlaceholder />", $login);
+
+$login = str_replace("<nomeUtentePlaceholder />", $_SESSION["user"]->getNickname(), $login);
+
+$handler->setLogin($login);
 
 $handler->setNav(
     file_get_contents(__DIR__ . "/components/default-nav.php")
@@ -21,37 +28,19 @@ $handler->setNav(
 $handler->setBreadcrumb(
     str_replace(
         "<percorsoPlaceholder />",
-        "Accedi",
+        "Aggiungi ricetta",
         file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
     )
 );
 
 $content = file_get_contents(__DIR__ . "/components/add-ricetta-content.php");
 
-if (key_exists("wrong-login", $_SESSION) && $_SESSION["wrong-login"]) {
-    $content = str_replace("<emailPlaceholder />", $_SESSION["email"], $content);
-
-    $content = str_replace("<passwordPlaceholder />", $_SESSION["password"], $content);
-
-    $content = str_replace("<errorPlaceholder />", "<p>Credenziali errate</p>", $content);
-
-    $_SESSION["wrong-login"] = false;
-    $_SESSION["email"] = "";
-    $_SESSION["password"] = "";
-
-} else {
-    $content = str_replace("<emailPlaceholder />", "", $content);
-
-    $content = str_replace("<passwordPlaceholder />", "", $content);
-
-    $content = str_replace("<errorPlaceholder />", "", $content);
-}
-
 $handler->setContent($content);
 
 $handler->setBackToTop(
     file_get_contents(__DIR__ . "/components/default-tornaSu.php")
 );
+
 $handler->setFooter(
     file_get_contents(__DIR__ . "/components/html/footer.html")
 );
