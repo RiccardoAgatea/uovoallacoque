@@ -22,7 +22,7 @@
             <legend class="legend">Cambio immagine</legend>
             <ul class="form-container">
                 <li class="form-element">
-                    <label for="user-immaginee">Nuova immagine:</label>
+                    <label for="user-immagine">Nuova immagine:</label>
                     <input class="barra-input"
                            type="file"
                            id="user-immagine"
