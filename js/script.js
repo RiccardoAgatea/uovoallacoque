@@ -51,7 +51,7 @@ function checkDifficolta(difficolta) {
 }
 
 // tempo -> solo numeri
-function checktempo(tempo) {
+function checkTempo(tempo) {
 	let test = document.getElementById(tempo).value;
 	let regex = new RegExp("^[1-9][0-9]*$"); 
 	let result = (regex.test(test)) && !(test === "");
@@ -80,14 +80,15 @@ function signupValidator(nickname, email, password, passwordConfirm) {
 	//prima le valuto tutte e poi le ritorno :'(
 	return (nicknameChecked && emailChecked && passwordChecked); //se matchano tutte ritorno true
 }
+//function ricetta validator
 
-function userValidator(nickname, password, passwordConfirm) {
-	let nicknameChecked = checkNickname(nickname); 
-	let passwordChecked = isPasswordEqual(password, passwordConfirm);
-
-	return (nicknameChecked && passwordChecked);
+function ricettaValidator(titolo, difficolta,tempo, image){
+	let titoloChecked = checkTitolo(titolo);
+	let difficoltaChecked = checkDifficolta(difficolta);
+	let tempoChecked = checkTempo(tempo);
+	let imageChecked = checkImage(image);
+	return (titoloChecked &&  difficoltaChecked && tempoChecked && imageChecked);
 }
-
 
 // --------- MENU --------
 
@@ -132,6 +133,15 @@ if (signupForm) {
 		}
 	});
 }
+//------RICETTA------
+const ricettaForm = document.getElementById("")
+if(ricettaForm){
+	ricettaForm.addEventListener("submit", function(event) {
+		if(!ricettaValidator('','','','')) {
+			event.preventDefault();
+		}
+	});
+}
 
 //------- CAMBIO ATTRIBUTI UTENTE-------
 const passwordUtente = document.getElementById("form-user-password"); 
@@ -163,7 +173,7 @@ if (formUtenteNick) {
 const formUtenteImg = document.getElementById("form-utente-img"); 
 if (formUtenteImg) {
 	formUtenteImg.addEventListener("submit", function(event) {
-		if(!true) {
+		if(!checkImage('user-immagine')) {
 			event.preventDefault();
 		}
 	});
