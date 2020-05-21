@@ -3,7 +3,7 @@
        <form action=""
              name=""
              method="POST"
-             id="edit-add">
+             id="form-edit">
               <fieldset class="form-fieldset">
                      <legend class="legend">
                             Modifica i dati della ricetta

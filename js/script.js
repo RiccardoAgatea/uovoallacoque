@@ -144,6 +144,15 @@ if(ricettaForm) {
 	});
 }
 
+const editRicettaForm = document.getElementById("form-edit");
+if(editricettaForm) {
+	editricettaForm.addEventListener("submit", function(event) {
+		if(!ricettaValidator('edit-nome','edit-difficolta','edit-tempo','edit-immagine')) {
+			event.preventDefault();
+		}
+	});
+}
+
 //------- CAMBIO ATTRIBUTI UTENTE-------
 const passwordUtente = document.getElementById("form-user-password"); 
 if (passwordUtente) {
