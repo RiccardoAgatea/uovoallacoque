@@ -161,6 +161,7 @@ if (!$result) {
     }
 
     $content = str_replace("<nomeRicettaPlaceholder />", $nome, $content);
+    $content = str_replace("<editPlaceholder />", "<a href=\" <rootFolder />/php/add-ricetta.php\" > Modifica la ricetta </a> ", $content);
     $content = str_replace("<imgSrcPlaceholder />", $img, $content);
     $content = str_replace("<difficoltàPlaceholder />", $difficolta, $content);
     $content = str_replace("<tempoPlaceholder />", "$tempo minuti", $content);
