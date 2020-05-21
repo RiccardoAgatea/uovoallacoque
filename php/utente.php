@@ -39,6 +39,14 @@ $content = str_replace("<PlaceholderImmagineUtente />", $_SESSION["user"]->getPi
 $content = str_replace("<PlaceholderNicknameUtente />", $_SESSION["user"]->getNickname(), $content);
 $content = str_replace("<PlaceholderEmailUtente />", $_SESSION["user"]->getEmail(), $content);
 
+if (key_exists("wrong", $_SESSION)) {
+    $content = str_replace("<errorPlaceholder />", "<p>Password errata</p>", $content);
+
+    unset($_SESSION["wrong"]);
+} else {
+    $content = str_replace("<errorPlaceholder />", "", $content);
+}
+
 $handler->setContent($content);
 
 $handler->setBackToTop(

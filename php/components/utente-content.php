@@ -6,21 +6,21 @@
         <h1 class="nome-utente">
             <PlaceholderNicknameUtente />
         </h1>
+        <errorPlaceholder />
     </div>
 
     <!-- visualizzazione img -->
     <p class="info-attuale">Immagine attuale:</p>
     <img class="foto-utente"
-        src="<PlaceholderImmagineUtente />"
-        alt="la tua immagine del profilo" />
+         src="<PlaceholderImmagineUtente />"
+         alt="la tua immagine del profilo" />
     <!-- form img -->
     <form action="<rootFolder />/php/handle-modifica-utente.php?item=img"
           method="POST"
           id="form-utente-img"
           class="cambio-info"
-          enctype="multipart/form-data"
-        >
-        <fieldset class="form-fieldset" >
+          enctype="multipart/form-data">
+        <fieldset class="form-fieldset">
             <legend class="legend">Cambio immagine</legend>
             <ul class="form-container">
                 <li class="form-element">
@@ -62,9 +62,8 @@
     <form action="<rootFolder />/php/handle-modifica-utente.php?item=nick"
           method="POST"
           id="form-utente-nick"
-          class="cambio-info"
-          >
-        <fieldset class="form-fieldset" >
+          class="cambio-info">
+        <fieldset class="form-fieldset">
             <legend class="legend">Cambio nickname</legend>
             <ul class="form-container">
                 <li class="form-element">
@@ -107,8 +106,7 @@
     <form action="<rootFolder />/php/handle-modifica-utente.php?item=email"
           method="POST"
           id="form-utente-email"
-          class="cambio-info"
-          >
+          class="cambio-info">
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio e-mail</legend>
             <ul class="form-container">
@@ -146,14 +144,13 @@
     <form action="<rootFolder />/php/handle-modifica-utente.php?item=psw"
           method="POST"
           id="form-user-password"
-          class="cambio-info"
-          >
-        <fieldset class="form-fieldset" >
+          class="cambio-info">
+        <fieldset class="form-fieldset">
             <legend class="legend">Cambio password</legend>
             <ul class="form-container">
                 <li class="form-element">
-                    <label
-                           for="user-password-password">Password attuale:</label>
+                    <label for="user-password-password">Password
+                        attuale:</label>
                     <input class="barra-input"
                            id="user-password-password"
                            type="password"

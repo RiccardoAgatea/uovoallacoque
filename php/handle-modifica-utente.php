@@ -19,7 +19,8 @@ switch ($_GET["item"]) {
                 $connection->query("UPDATE utenti SET img=\"$path\" WHERE utenti.id = {$_SESSION["user"]->getId()}");
                 $connection->disconnect();
             }
-            header("Location: ./utente.php");
+        } else {
+            $_SESSION["wrong"] = "img";
         }
         break;
     case "nick":if ($_POST["user-password-nickname"] == $_SESSION["user"]->getPassword()) {
@@ -29,17 +30,30 @@ switch ($_GET["item"]) {
                 $connection->query("UPDATE utenti SET nickname=\"$nuovoNick\" WHERE utenti.id = {$_SESSION["user"]->getId()}");
                 $connection->disconnect();
             }
-            header("Location: ./utente.php");
+        } else {
+            $_SESSION["wrong"] = "nick";
         }
         break;
-    case "psw":
+    case "psw":if ($_POST["user-password-password"] == $_SESSION["user"]->getPassword() && $_POST["user-password1"] == $_POST["user-password2"]) {
+            $nuovaPsw = $_POST["user-password1"];
+            if ($_SESSION["user"]->getPassword() != $nuovaPsw) {
+                $connection = new DBConnection();
+                $connection->query("UPDATE utenti SET passw=\"$nuovaPsw\" WHERE utenti.id = {$_SESSION["user"]->getId()}");
+                $connection->disconnect();
+            }
+        } else {
+            $_SESSION["wrong"] = "psw";
+        }
         break;
     case "email":if ($_POST["user-password-email"] == $_SESSION["user"]->getPassword()) {
             $connection = new DBConnection();
             $connection->query("UPDATE utenti SET email=\"{$_POST['user-email']}\" WHERE utenti.id = {$_SESSION["user"]->getId()}");
             $connection->disconnect();
+        } else {
+            $_SESSION["wrong"] = "email";
         }
-        header("Location: ./utente.php");
+        break;
 }
 
 $_SESSION["user"]->update();
+header("Location: ./utente.php");
