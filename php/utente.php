@@ -38,6 +38,7 @@ $content = file_get_contents(__DIR__ . "/components/utente-content.php");
 $content = str_replace("<PlaceholderImmagineUtente />", $_SESSION["user"]->getPicture(), $content);
 $content = str_replace("<PlaceholderNicknameUtente />", $_SESSION["user"]->getNickname(), $content);
 $content = str_replace("<PlaceholderEmailUtente />", $_SESSION["user"]->getEmail(), $content);
+$content = str_replace("<addPlaceholder />", "<a href=\" <rootFolder />/php/add-ricetta.php\" > Aggiungi nuova ricetta </a> ", $content);
 
 if (key_exists("wrong", $_SESSION)) {
     $content = str_replace("<errorPlaceholder />", "<p>Password errata</p>", $content);

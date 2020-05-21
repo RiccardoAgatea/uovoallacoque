@@ -9,6 +9,8 @@
         <errorPlaceholder />
     </div>
 
+    <addPlaceholder />
+
     <!-- visualizzazione img -->
     <p class="info-attuale">Immagine attuale:</p>
     <img class="foto-utente"
