@@ -358,5 +358,9 @@ VALUES
  (3, 7, "molto interessante", "2020-05-12T10:12:42"),
  (1, 1, "molto interessante", "2020-05-12T10:16:42");
 
+ INSERT INTO utenti (email, passw, nickname, img, ad)
+ VALUES
+ ("admin@gmail.com", "admin", "admin1", "<rootFolder />/img/utenti/def1.png", TRUE)
+
 
 

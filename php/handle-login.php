@@ -7,6 +7,7 @@ try {
     $user = new User($_POST['email']);
 
     if ($user->getPassword() != $_POST['password']) {
+        exit;
         throw new Exception("Wrong password", 1);
     } else {
         $_SESSION["logged"] = true;

@@ -11,11 +11,17 @@ $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
 
+if (!key_exists("logged", $_SESSION)||(!$_SESSION["logged"]))
+{
+    header("Location: ../401.php");
+}
+else if (!$_SESSION["user"]->getAdmin()) {
+    header("Location: ../403.php");
+}
+
 $login = "";
 
 $login .= file_get_contents(__DIR__ . "/components/personal-login.php");
-
-$login = preg_replace("((?s)<a.*?href=\"<rootFolder />/php/utente\.php\">.*?</a>)", "<nomeUtentePlaceholder />", $login);
 
 $login = str_replace("<nomeUtentePlaceholder />", $_SESSION["user"]->getNickname(), $login);
 

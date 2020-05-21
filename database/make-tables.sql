@@ -18,9 +18,10 @@ CREATE TABLE utenti (
   email VARCHAR(256) NOT NULL,
   passw VARCHAR(256) NOT NULL,
   nickname VARCHAR(256) NOT NULL,
+  ad BOOLEAN DEFAULT FALSE,
   PRIMARY KEY (id),
   UNIQUE (email),
-  UNIQUE (nickname)
+  UNIQUE (nickname) 
 );
 CREATE TABLE voti (
   utente INT,

@@ -8,22 +8,25 @@ class User
     private $password;
     private $email;
     private $picture;
+    private $admin;
 
     public function __construct(string $email)
     {
-        $result = (new DBConnection())->query("SELECT id, nickname, img, passw FROM utenti WHERE email=\"{$email}\"");
+        $result = (new DBConnection())->query("SELECT id, nickname, img, passw, ad FROM utenti WHERE email=\"{$email}\"");
 
         if (!$result) {
+            exit;
             throw new Exception("User doesn't exist", 1);
         }
 
         $user_row = $result->fetch_assoc();
 
-        $this->id = $user_row['id'];
+        $this->id = intval($user_row['id']);
         $this->nickname = $user_row['nickname'];
         $this->password = $user_row['passw'];
         $this->email = $email;
         $this->picture = $user_row['img'];
+        $this->admin = boolval($user_row['ad']);
     }
 
     public function getId()
@@ -49,5 +52,9 @@ class User
     public function getPicture()
     {
         return $this->picture;
+    }
+    public function getAdmin()
+    {
+        return $this->admin;
     }
 }
