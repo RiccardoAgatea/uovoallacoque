@@ -6,7 +6,7 @@ session_start();
 
 $handler = new TemplateHandler("..", "xhtml"); 
 
-$handler->setTitle("Aggiungi ricetta | Uovo alla Coque");
+$handler->setTitle("Aggiungi ricetta | Utente | Uovo alla Coque");
 $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");

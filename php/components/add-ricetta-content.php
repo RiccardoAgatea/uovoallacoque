@@ -1,9 +1,9 @@
 <div id="content">
        <h1>Aggiungi ricetta</h1>
-       <form action=""
-             name=""
+       <form action="#"
+             name="add-form"
              method="POST"
-             id="form-add">
+             id="form-add" >
               <fieldset class="form-fieldset">
                      <legend class="legend">
                             Inserisci i dati della nuova ricetta
@@ -28,7 +28,7 @@
                                           id="add-immagine"
                                           name="add-immagine"
                                           placeholder="Immagine ricetta"
-                                          required="required" />
+                                          />
                                    <span id="add-immagine-message"
                                           class="warning"> </span>
                             </li>
@@ -57,7 +57,7 @@
                                           type="text"
                                           name="difficolta"
                                           placeholder="Difficolta ricetta"
-                                          required="required" />
+                                           />
                                    <span id="add-difficolta-message"
                                          class="warning"> </span>
                             </li>
@@ -69,7 +69,7 @@
                                           type="text"
                                           name="tempo"
                                           placeholder="Tempo in minuti"
-                                          required="required" />
+                                           />
                                    <span id="add-tempo-message"
                                          class="warning"> </span>
                             </li>
@@ -81,7 +81,7 @@
                                           type="textArea"
                                           name="ingredienti"
                                           placeholder="Elenca tutti gli ingredienti separati da una virgola"
-                                          required="required" />
+                                          />
                                    <span id="add-ingredienti-message"
                                          class="warning"> </span>
                             </li>
@@ -93,14 +93,15 @@
                                           type="textArea"
                                           name="procedura"
                                           placeholder="Descrivi tutti i passi da seguire per comporre la ricetta"
-                                          required="required" />
+                                           />
                                    <span id="add-procedura-message"
                                          class="warning"> </span>
                             </li>
                             <li class="form-element">
                                    <input class="submit"
                                           type="submit"
-                                          value="Aggiungi" onsubmit="ricettaValidator('add-nome','add-difficolta','add-tempo','add-immagine')" />
+                                          value="Aggiungi" /> 
+
                             </li>
                      </ul>
               </fieldset>

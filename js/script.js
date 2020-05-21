@@ -34,8 +34,8 @@ function checkImage(image){ //image=stringa"user-immagine"
 
 // validazione del nome della ricetta, lunghezza massima 55
 function checkTitolo(titolo){
-	let test=doument.getElementById(titolo).value;
-	let regex= new RegExp("^([a-zA-Z0-9]){3,55}$")
+	let test=document.getElementById(titolo).value;
+	let regex= new RegExp("^[a-zA-Z0-9]{3,55}$");
 	let result = (regex.test(test)) && !(test==="");
 	printError(result, titolo.toString()+"-message", "La lunghezza massima è di 55 caratteri alfanumerici");
 	return result;
@@ -81,7 +81,6 @@ function signupValidator(nickname, email, password, passwordConfirm) {
 	return (nicknameChecked && emailChecked && passwordChecked); //se matchano tutte ritorno true
 }
 //function ricetta validator
-
 function ricettaValidator(titolo, difficolta, tempo, image){
 	let titoloChecked = checkTitolo(titolo);
 	let difficoltaChecked = checkDifficolta(difficolta);
@@ -124,6 +123,7 @@ if (loginForm) {
 		}
 	});
 }
+
 //------ SIGN UP ---------
 const signupForm = document.getElementById("form-signup"); 
 if (signupForm) {
@@ -133,6 +133,7 @@ if (signupForm) {
 		}
 	});
 }
+
 //------RICETTA------
 const ricettaForm = document.getElementById("form-add");
 if(ricettaForm) {
