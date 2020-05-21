@@ -170,7 +170,7 @@ ul{
 }
 
 
-#lista_accesso a:visited, #messaggio-utente-nome:visited{
+#lista_accesso a:visited, #messaggio-utente-nome:visited, #messaggio-utente-esci:visited{
     color: #faf600;
 }
 
@@ -189,11 +189,11 @@ ul{
     margin: 0.5em;
     
 }
-#lista_accesso li a:hover, #messaggio-utente-nome:hover{
+#lista_accesso li a:hover, #messaggio-utente-nome:hover, #messaggio-utente-esci:hover{
     color: black;
     background-color:#FF9F29; /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/
 }
-#messaggio-utente-nome {
+#messaggio-utente-nome, #messaggio-utente-esci{
     margin-left:1em;
     color: white;
 }

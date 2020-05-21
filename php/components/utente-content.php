@@ -1,22 +1,24 @@
 <div id="content">
     <div class="foto-nome">
         <img class="foto-utente"
-             src=""
-             alt="" />
-        <p class="nome-utente"> Nome Utente
+             src="<PlaceholderImmagineUtente />"
+             alt="la tua immagine del profilo" />
+        <h1 class="nome-utente">
             <PlaceholderNicknameUtente />
-        </p>
+        </h1>
     </div>
 
     <!-- visualizzazione img -->
-    <p class="info-attuale">Immagine attuale:
-        <PlaceholderImmagineUtente />
-    </p>
+    <p class="info-attuale">Immagine attuale:</p>
+    <img class="foto-utente"
+        src="<PlaceholderImmagineUtente />"
+        alt="la tua immagine del profilo" />
     <!-- form img -->
-    <form action=""
+    <form action="<rootFolder />/php/handle-modifica-utente.php?item=img"
           method="POST"
           id="form-utente-img"
           class="cambio-info"
+          enctype="multipart/form-data"
         >
         <fieldset class="form-fieldset" >
             <legend class="legend">Cambio immagine</legend>
@@ -57,7 +59,7 @@
         <PlaceholderNicknameUtente />
     </p>
     <!-- form nickname -->
-    <form action=""
+    <form action="<rootFolder />/php/handle-modifica-utente.php?item=nick"
           method="POST"
           id="form-utente-nick"
           class="cambio-info"
@@ -102,7 +104,7 @@
         <PlaceholderEmailUtente />
     </p>
     <!-- form email -->
-    <form action=""
+    <form action="<rootFolder />/php/handle-modifica-utente.php?item=email"
           method="POST"
           id="form-utente-email"
           class="cambio-info"
@@ -141,7 +143,7 @@
         </fieldset>
     </form>
     <!-- form password -->
-    <form action=""
+    <form action="<rootFolder />/php/handle-modifica-utente.php?item=psw"
           method="POST"
           id="form-user-password"
           class="cambio-info"
@@ -149,6 +151,18 @@
         <fieldset class="form-fieldset" >
             <legend class="legend">Cambio password</legend>
             <ul class="form-container">
+                <li class="form-element">
+                    <label
+                           for="user-password-password">Password attuale:</label>
+                    <input class="barra-input"
+                           id="user-password-password"
+                           type="password"
+                           name="user-password-password"
+                           placeholder="Password"
+                           required="required" />
+                    <span id="user-password-password-message"
+                          class="warning"> </span>
+                </li>
                 <li class="form-element">
                     <label for="user-password1">Nuova password:</label>
                     <input class="barra-input"
@@ -161,7 +175,7 @@
                           class="warning"> </span>
                 </li>
                 <li class="form-element">
-                    <label for="user-password2">Conferma
+                    <label for="user-password2">Conferma nuova
                         password:</label>
                     <input class="barra-input"
                            id="user-password2"

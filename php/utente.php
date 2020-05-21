@@ -35,6 +35,10 @@ $handler->setBreadcrumb(
 
 $content = file_get_contents(__DIR__ . "/components/utente-content.php");
 
+$content = str_replace("<PlaceholderImmagineUtente />", $_SESSION["user"]->getPicture(), $content);
+$content = str_replace("<PlaceholderNicknameUtente />", $_SESSION["user"]->getNickname(), $content);
+$content = str_replace("<PlaceholderEmailUtente />", $_SESSION["user"]->getEmail(), $content);
+
 $handler->setContent($content);
 
 $handler->setBackToTop(
