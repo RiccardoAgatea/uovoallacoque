@@ -78,7 +78,7 @@
                                           for="add-ingredienti"> Ingredienti: </label>
                                    <input class="barra-input"
                                           id="add-ingredienti"
-                                          type="text"
+                                          type="textArea"
                                           name="ingredienti"
                                           placeholder="Elenca tutti gli ingredienti separati da una virgola"
                                           required="required" />
@@ -90,7 +90,7 @@
                                           for="add-procedura"> Procedura: </label>
                                    <input class="barra-input"
                                           id="add-procedura"
-                                          type="text"
+                                          type="textArea"
                                           name="procedura"
                                           placeholder="Descrivi tutti i passi da seguire per comporre la ricetta"
                                           required="required" />
