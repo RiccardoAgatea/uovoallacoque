@@ -57,4 +57,17 @@ class User
     {
         return $this->admin;
     }
+
+    public function update()
+    {
+        $result = (new DBConnection())->query("SELECT nickname, img, email, passw, ad FROM utenti WHERE id={$this->id}");
+
+        $user_row = $result->fetch_assoc();
+
+        $this->nickname = $user_row['nickname'];
+        $this->password = $user_row['passw'];
+        $this->email = $user_row['email'];
+        $this->picture = $user_row['img'];
+        $this->admin = boolval($user_row['ad']);
+    }
 }
