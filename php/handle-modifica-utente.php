@@ -24,7 +24,13 @@ switch($_GET["item"]) {
     }
     break;
     case "nick": if($_POST["user-password-nickname"]==$_SESSION["user"]->getPassword()) {
-
+        $nuovoNick = $_POST["user-nickname"];
+        if($_SESSION["user"]->getNickname()!=$nuovoNick) {
+            $connection = new DBConnection();
+            $connection->query("UPDATE utenti SET nickname=\"$nuovoNick\" WHERE utenti.id = {$_SESSION["user"]->getId()}");
+            $connection->disconnect();
+        }
+        header("Location: ./utente.php");
     }
     break;
     case "psw":
