@@ -34,7 +34,7 @@ $handler->setNav(
 $handler->setBreadcrumb(
     str_replace(
         "<percorsoPlaceholder />",
-        "Aggiungi ricetta",
+        "<a href=\"<rootFolder />/php/utente.php\">Utente</a> &gt Aggiungi ricetta",
         file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
     )
 );
