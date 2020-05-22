@@ -12,7 +12,8 @@ class User
 
     public function __construct(string $email)
     {
-        $result = (new DBConnection())->query("SELECT id, nickname, img, passw, ad FROM utenti WHERE email=\"{$email}\"");
+        $connection = new DBConnection();
+        $result = $connection->query("SELECT id, nickname, img, passw, ad FROM utenti WHERE email=\"{$email}\"");
 
         if (!$result) {
             exit;
@@ -27,6 +28,9 @@ class User
         $this->email = $email;
         $this->picture = $user_row['img'];
         $this->admin = boolval($user_row['ad']);
+
+        $connection->disconnect();
+
     }
 
     public function getId()
@@ -60,7 +64,9 @@ class User
 
     public function update()
     {
-        $result = (new DBConnection())->query("SELECT nickname, img, email, passw, ad FROM utenti WHERE id={$this->id}");
+        $connection = new DBConnection();
+
+        $result = $connection->query("SELECT nickname, img, email, passw, ad FROM utenti WHERE id={$this->id}");
 
         $user_row = $result->fetch_assoc();
 
@@ -69,5 +75,8 @@ class User
         $this->email = $user_row['email'];
         $this->picture = $user_row['img'];
         $this->admin = boolval($user_row['ad']);
+
+        $connection->disconnect();
+
     }
 }
