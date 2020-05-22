@@ -16,8 +16,8 @@ class User
         $result = $connection->query("SELECT id, nickname, img, passw, ad FROM utenti WHERE email=\"{$email}\"");
 
         if (!$result) {
-            exit;
             throw new Exception("User doesn't exist", 1);
+            exit;
         }
 
         $user_row = $result->fetch_assoc();

@@ -20,6 +20,7 @@
 	<ul class="ingredienti">
 		<ingredientiPlaceholder />
 	</ul>
+	<votoPlaceholder />
 	<h2 id="ricetta-procedura">Procedura</h2>
 	<p class="procedura">
 		<proceduraPlaceholder />

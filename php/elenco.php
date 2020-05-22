@@ -13,6 +13,13 @@ $handler->setAuthor("");
 
 $login = "";
 
+if(key_exists("pagina", $_GET)) {
+    if (intval($_GET["pagina"]<1)) {
+        header("Location: ../404.php");
+        exit;
+    }
+}
+
 if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
     $login .= file_get_contents(__DIR__ . "/components/personal-login.php");
 

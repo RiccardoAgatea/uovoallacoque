@@ -19,7 +19,12 @@ $testo = $_POST['modifica-commento'];
 
 $result = $connection->query("SELECT commenti.utente AS idutente, commenti.ricetta AS idricetta FROM commenti WHERE commenti.id=$idCommento");
 
-if ($result) {
+if($result && $result->num_rows==0) {
+    header("Location: ../400.php");
+    exit;
+}
+
+else {
     $row = $result->fetch_assoc();
 
     if ($row['idutente'] != $_SESSION['user']->getID()) {
@@ -27,6 +32,7 @@ if ($result) {
         header("Location: ../403.php");
         exit;
     }
+
 
     if ($row['idricetta'] != $idRicetta) {
         $connection->disconnect();
