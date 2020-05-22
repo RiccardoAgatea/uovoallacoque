@@ -12,6 +12,7 @@ if ($connection->query("SELECT email FROM utenti WHERE email=\"{$_POST['email']}
     $_SESSION["email"] = $_POST['email'];
     $_SESSION["password"] = $_POST['password1'];
     $_SESSION["nickname"] = $_POST['nickname'];
+    $connection->disconnect();
     header("Location: ./signup.php");
     exit;
 } else if ($connection->query("SELECT nickname FROM utenti WHERE nickname=\"{$_POST['nickname']}\"")->fetch_row() != null) {
@@ -20,6 +21,7 @@ if ($connection->query("SELECT email FROM utenti WHERE email=\"{$_POST['email']}
     $_SESSION["email"] = $_POST['email'];
     $_SESSION["password"] = $_POST['password1'];
     $_SESSION["nickname"] = $_POST['nickname'];
+    $connection->disconnect();
     header("Location: ./signup.php");
     exit;
 } else {
@@ -32,6 +34,7 @@ if ($connection->query("SELECT email FROM utenti WHERE email=\"{$_POST['email']}
     $_SESSION["email"] = "";
     $_SESSION["password"] = "";
     $_SESSION["nickname"] = "";
+    $connection->disconnect();
     header("Location: ./utente.php");
     exit;
 }

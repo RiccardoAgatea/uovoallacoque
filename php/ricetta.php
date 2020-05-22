@@ -43,6 +43,7 @@ if(key_exists("pagina", $_GET)) {
 
 $result = $connection->query("SELECT * FROM ricette WHERE id={$_GET["id"]}")->fetch_assoc();
 if (!$result) {
+    $connection->disconnect();
     header("Location: ../404.php");
     exit;
 } else {
@@ -113,6 +114,7 @@ if (!$result) {
             $commentoResult = $connection->query("SELECT commenti.contenuto AS testo, commenti.utente AS idutente FROM commenti WHERE commenti.id=$idcommento");
 
             if (!$commentoResult || $commentoResult->num_rows==0) {
+                $connection->disconnect();
                 header("Location: ../404.php");
                 exit;
             }
@@ -122,6 +124,7 @@ if (!$result) {
             $idUtente = $row['idutente'];
 
             if ($idUtente != $_SESSION['user']->getId()) {
+                $connection->disconnect();
                 header("Location: ../403.php");
                 exit;
             }
@@ -208,6 +211,8 @@ $handler->setBackToTop(
 $handler->setFooter(
     file_get_contents(__DIR__ . "/components/html/footer.html")
 );
+
+$connection->disconnect();
 
 $handler->send();
 

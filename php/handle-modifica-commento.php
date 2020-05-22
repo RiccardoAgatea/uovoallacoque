@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__. "/db-connection.php";
-require_once __DIR__. "/user.php";
+require_once __DIR__ . "/db-connection.php";
+require_once __DIR__ . "/user.php";
 
 session_start();
 $connection = new DBConnection();
@@ -28,15 +28,21 @@ else {
     $row = $result->fetch_assoc();
 
     if ($row['idutente'] != $_SESSION['user']->getID()) {
+        $connection->disconnect();
         header("Location: ../403.php");
         exit;
     }
 
-    if($row['idricetta']!= $idRicetta){
-        header("Location: ../404.php");
+
+    if ($row['idricetta'] != $idRicetta) {
+        $connection->disconnect();
+        header("Location: ../400.php");
         exit;
     }
 }
 
 $connection->query("UPDATE commenti SET commenti.contenuto = \"$testo\", commenti.modificato = TRUE WHERE commenti.id=$idCommento");
+
+$connection->disconnect();
+
 header("Location: ricetta.php?id=$idRicetta&pagina=$pagina#sezione-commenti");

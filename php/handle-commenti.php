@@ -23,4 +23,7 @@ if (intval($contaRicette) == 0) {
 }
 
 $connection->query("INSERT INTO commenti(utente, ricetta, contenuto, dataeora) VALUE($idUtente, $idRicetta, \"$testo\", NOW())");
+
+$connection->disconnect();
+
 header("Location: ricetta.php?id=$idRicetta&pagina=1#sezione-commenti");

@@ -18,15 +18,20 @@ if ($result) {
     $row = $result->fetch_assoc();
 
     if ($row['idutente'] != $_SESSION['user']->getID()) {
+        $connection->disconnect();
         header("Location: ../403.php");
         exit;
     }
 
-    if($row['idricetta']!= $idRicetta){
+    if ($row['idricetta'] != $idRicetta) {
+        $connection->disconnect();
         header("Location: ../400.php");
         exit;
     }
 }
 
 $connection->query("DELETE FROM commenti WHERE commenti.id=$idCommento");
+
+$connection->disconnect();
+
 header("Location: ricetta.php?id=$idRicetta&pagina=1#sezione-commenti");
