@@ -22,7 +22,8 @@
 </ul>
 <div id="barra-ricerca">
 	<form method="get"
-	      action="<rootFolder />/php/elenco.php?id=0">
+		  action="<rootFolder />/php/elenco.php?id=0"
+		  id="form-barra-ricerca">
 		<label for="termine_ricerca">Cerca:</label>
 		<input type="text"
 			id="termine_ricerca"

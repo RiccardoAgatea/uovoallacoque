@@ -33,6 +33,10 @@ html {
 body{
     background-color: rgb(211, 224, 245);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 #content{
     margin: 1em;
@@ -43,32 +47,24 @@ body{
 	display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-	align-items: flex-start;
 	justify-content: center;
-    margin-top: 8em;
-    position: relative;
-    bottom: -1.1em;
     background-color: #133F58;
     color: #D2D5D5;
-    height: 12em;
     font-size: 0.9em;
+    padding-top:1em;
+    padding-bottom:1em;
 }
 
-.messaggio-footer{
-    align-self: center;
-    position: relative;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+.messaggio-footer, #nomi-contatti{
+    margin-bottom: 1em;
+    text-align: center;
 }
 
 #nomi-contatti li{
     display: inline;
     margin-left:0.3em;
 }
-#nomi-contatti {
-    position: relative;
-    top:2.5em;
-}
+
 #immagine-footer li{
     display: inline;
 
@@ -77,14 +73,9 @@ body{
     align-self: flex-end;
 }
 
-.messaggio-footer{
-    text-align: center;
-}
-
 /*fine footer*/
 ul{
     list-style-type: none;
-    color: ;
 }
 /*ul li a {
     color: black;
@@ -154,8 +145,6 @@ ul{
     height: 2em;
 }
 #immagine-lente{
-    position: relative;
-    top:0.7em;
     background-color: rgb(242, 242, 242);
     width: 1.2em;
     height: 1.2em;
@@ -207,6 +196,13 @@ ul{
     justify-content: space-evenly;
     padding-bottom: 1em;
 }
+#form-barra-ricerca {
+    display: flex;
+    justify-content: center;
+}
+#form-barra-ricerca input {
+    margin-left: 0.5em;
+}
 
 #breadcrumb{
     background-color: rgba(211, 224, 245);
@@ -229,6 +225,7 @@ ul{
 }
 #torna-su-link{
     color: black;
+    margin: 1em;
 }
 #torna-su-link:hover{
     background-color:#FF9F29;
@@ -238,13 +235,14 @@ ul{
     border-style: dashed;
     border-width: 0.07em;
     padding: 1em;
-    margin: 3em;
 }
 /*piatti migliori*/
 .elenco-migliori {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    margin-top: 1em;
 }
 .elenco-attributi dt {
     font-weight: bolder;
@@ -344,7 +342,6 @@ ul li input{ /*uguale a .barra-input */
     align-items:center;
     justify-content: space-between;
     margin: 1em;
-    margin-left: 0;
     width: 18em;
     background-color: #0c2752;
     color: white;
@@ -519,30 +516,17 @@ ul li input{ /*uguale a .barra-input */
         justify-content: flex-start;       
     }
    .elenco-elemento {
-       min-width: 21em;
-       display: block;
-
+       min-width: 18em;
     }
    .elenco-immagine {
         height: 6em;
         width: 6em;
-        margin: 1em;  
-        margin-top: 2em; 
-        float: left; 
+        margin: 1em; 
     }
 
     .elenco-titolo {
         padding-top: 0.5em;
     }
-
-    .elenco-attributi {
-        margin-left: 8em;
-    }
-
-    #link-apri {
-        margin-left: 8em;
-    }
-   
 
     #breadcrumb {
         display: none;
@@ -571,21 +555,23 @@ ul li input{ /*uguale a .barra-input */
     .nav{
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
         justify-content: space-around;
         height: 100%;
         width: 0;
         position: fixed;
         top: 0;
-        right: 0;
         margin: -6em 0 0 0;
-        padding: 3em;
+        padding: 1em;
+        padding-bottom: 5em;
         padding-top: 5em;
         right: -15em;
         z-index: 1;
         -webkit-transition: 0.5s;
         transition: 0.5s;
         background: #04142e;
+    }
+    #form-barra-ricerca {
+        justify-content: flex-start;
     }
 
     #menu {
@@ -608,22 +594,18 @@ ul li input{ /*uguale a .barra-input */
     }
 
     .menu-active {
-        width: 30em;
+        width: 33em;
     }
 
     .chiudi-nav-active {
         cursor: pointer;
         display: block;
         z-index: 1;
-        margin-top: 4em;
+        margin-bottom: 1em;
     }
 
     .chiudi-nav img {
-       width: 2em;
-       position: relative;
-       left:5em;
-       bottom:3em;
-        
+       width: 2em;       
     }
 
 
