@@ -34,8 +34,14 @@ $content = file_get_contents(__DIR__ . "/components/ricetta-content.php");
 $connection = new DBConnection();
 $id = $_GET["id"];
 
-$result = $connection->query("SELECT * FROM ricette WHERE id={$_GET["id"]}")->fetch_assoc();
+if(key_exists("pagina", $_GET)) {
+    if (intval($_GET["pagina"]<1)) {
+        header("Location: ../404.php");
+        exit;
+    }
+}
 
+$result = $connection->query("SELECT * FROM ricette WHERE id={$_GET["id"]}")->fetch_assoc();
 if (!$result) {
     header("Location: ../404.php");
     exit;
@@ -71,8 +77,27 @@ if (!$result) {
     }
 
     $commenti = "";
+    $tastiVoto = "";
 
     if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
+
+        $queryVoto = $connection->query("SELECT voto FROM voti WHERE voti.utente={$_SESSION["user"]->getId()} AND voti.ricetta=$id");
+        
+        if($queryVoto && $queryVoto->num_rows!=0) {
+            $row = $queryVoto->fetch_assoc()["voto"];
+            $tastiVoto ="<p>Il tuo voto per questa ricetta &egrave; " . strval($row) ."/5</p>";
+        }
+        else {
+            $tastiVoto = "<form action=\"<rootFolder />/php/handle-voto.php?ricetta={$id}\" method=POST>
+                <label for=\"pulsante-voto-1\">1 Stella</label><input type=\"radio\" id=\"pulsante-voto-1\" name=\"pulsante-voto\" value=\"1\" />
+                <label for=\"pulsante-voto-2\">2 Stelle</label><input type=\"radio\" id=\"pulsante-voto-2\" name=\"pulsante-voto\" value=\"2\" />
+                <label for=\"pulsante-voto-3\">3 Stelle</label><input type=\"radio\" id=\"pulsante-voto-3\" name=\"pulsante-voto\" value=\"3\" />
+                <label for=\"pulsante-voto-4\">4 Stelle</label><input type=\"radio\" id=\"pulsante-voto-4\" name=\"pulsante-voto\" value=\"4\" />
+                <label for=\"pulsante-voto-5\">5 Stelle</label><input type=\"radio\" id=\"pulsante-voto-5\" name=\"pulsante-voto\" value=\"5\" />
+                <input type=\"submit\" value= \"vota\"/> 
+            </form>";
+        }
+        
 
         $pagina = intval($_GET["pagina"]);
         $num = 10;
@@ -87,7 +112,7 @@ if (!$result) {
             $idcommento = $_GET['idcommento'];
             $commentoResult = $connection->query("SELECT commenti.contenuto AS testo, commenti.utente AS idutente FROM commenti WHERE commenti.id=$idcommento");
 
-            if (!$commentoResult) {
+            if (!$commentoResult || $commentoResult->num_rows==0) {
                 header("Location: ../404.php");
                 exit;
             }
@@ -153,6 +178,10 @@ if (!$result) {
             $commenti .= getPaginazione($corrente, $totPagine, $id);
 
         } else {
+            if($corrente != 1) {
+                $commenti .= "<p>Sei andato troppo avanti! Non ci sono commenti qui.</p>";
+            }
+            else
             $commenti .= "<p>Scrivi il primo commento per questa ricetta!</p>";
         }
 
@@ -168,6 +197,7 @@ if (!$result) {
     $content = str_replace("<ingredientiPlaceholder />", $listaIngredienti, $content);
     $content = str_replace("<proceduraPlaceholder />", $procedimento, $content);
     $content = str_replace("<commentiPlaceholder />", $commenti, $content);
+    $content = str_replace("<votoPlaceholder />", $tastiVoto, $content);
 }
 
 $handler->setContent($content);
@@ -201,7 +231,7 @@ function getPaginazione($corrente, $totPagine, $id)
                 $out .= "<li>$i</li>";
             }
         }
-        if ($corrente != $totPagine) {
+        if ($corrente < $totPagine) {
             $out .= "<li><a href=\"?";
             $out .= "id=$id";
             $out .= "&pagina=" . strval($corrente + 1) . "\">Successiva</a></li>";

@@ -23,7 +23,7 @@ if ($connection->query("SELECT email FROM utenti WHERE email=\"{$_POST['email']}
     header("Location: ./signup.php");
     exit;
 } else {
-    (new DBConnection())->query("INSERT INTO utenti (email, passw, nickname) VALUES (\"{$_POST['email']}\",\"{$_POST['password1']}\",\"{$_POST['nickname']}\");");
+    $connection->query("INSERT INTO utenti (email, passw, nickname) VALUES (\"{$_POST['email']}\",\"{$_POST['password1']}\",\"{$_POST['nickname']}\");");
 
     $user = new User($_POST['email']);
     $_SESSION['user'] = $user;

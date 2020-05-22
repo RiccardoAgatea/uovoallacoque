@@ -222,8 +222,12 @@ ul{
         background-color: #0c2752;
 }
 /* torna su */
+#torna-su {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
 #torna-su-link{
-    margin-left: 80%;
     color: black;
 }
 #torna-su-link:hover{
@@ -261,9 +265,22 @@ ul{
 }
 .cambio-info{
     display: block;
-    align-items: center;
-    margin-left: 5em;
 }
+.foto-utente {
+    width: 5em;
+    height: 5em;
+    object-fit: contain;
+    border-radius: 2em;
+    margin-right: 2em;
+}
+.foto-nome {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1em;
+}
+
 
 /*fine pagina utente*/
 
@@ -481,7 +498,6 @@ ul li input{ /*uguale a .barra-input */
 @media screen and (max-width: 768px){
     body {
         width: 100%;
-        min-width: 25em;
     }
 
     #header {

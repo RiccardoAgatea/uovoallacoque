@@ -98,9 +98,9 @@ function piattoMigliore($portata)
 {
     $mysql = new DBconnection;
     $query = "SELECT * FROM ricette WHERE ricette.portata=$portata ORDER BY media(ricette.id) DESC LIMIT 1";
-
+    $result = $mysql->query($query);
     $risultato = "";
-    if ($result = $mysql->query($query)) {
+    if ($result) {
         while ($row = $result->fetch_assoc()) {
             $nome = $row['nome'];
             $immagine = $row['img'];
@@ -157,7 +157,7 @@ function getPaginazione($totPagine, $tipo, $corrente)
             $out .= "<li>$i</li>";
         }
     }
-    if ($corrente != $totPagine) {
+    if ($corrente < $totPagine) {
         $out .= "<li><a href=\"?";
         if ($tipo == 0) {
             $out .= "termine_ricerca={$_GET["termine_ricerca"]}";
