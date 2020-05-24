@@ -1,6 +1,5 @@
 <div id="content">
        <h1>Registrati</h1>
-       <errorPlaceholder />
        <form action="<rootFolder />/php/handle-signup.php"
              name="signup"
              method="POST"
@@ -20,7 +19,7 @@
                                           required="required"
                                           value="<nicknamePlaceholder />" />
                                    <span id="signup-nick-message"
-                                         class="warning"> </span>
+                                         class="warning"> <errorNicknamePlaceholder /> </span>
                             </li>
                             <li class="form-element">
                                    <label class="form-label"
@@ -33,7 +32,7 @@
                                           required="required"
                                           value="<emailPlaceholder />" />
                                    <span id="signup-email-message"
-                                         class="warning"> </span>
+                                         class="warning"> <errorEmailPlaceholder /> </span>
                             </li>
                             <li class="form-element">
                                    <label class="form-label"
@@ -45,8 +44,6 @@
                                           placeholder="Password"
                                           required="required"
                                           value="<password1Placeholder />" />
-                                   <span id="signup-password1-message"
-                                         class="warning"> </span>
                             </li>
                             <li class="form-element">
                                    <label class="form-label"
@@ -59,7 +56,7 @@
                                           placeholder="Password"
                                           required="required" />
                                    <span id="signup-password2-message"
-                                         class="warning"> </span>
+                                         class="warning"> <errorPasswordPlaceholder /> </span>
                             </li>
                             <li class="form-element">
                                    <input class="submit"
