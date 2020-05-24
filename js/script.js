@@ -28,7 +28,7 @@ function checkImage(image){ //image=stringa"user-immagine"
 	let test= document.getElementById(image).value;
 	let extensions = ['png','jpg','jpeg','svg'];
 	let isImage = extensions.includes(test.split('.').pop()); //split taglia dove c'è il punto e pop prende in considerazione quello che c'è dopo il punto
-	printError(isImage, image.toString()+"-message", "Il formato non è valido");
+	printError(isImage, image.toString()+"-message", "Il formato non &egrave; valido");
 	return isImage;
 }
 
@@ -37,7 +37,7 @@ function checkTitolo(titolo){
 	let test=document.getElementById(titolo).value;
 	let regex= new RegExp("^[a-zA-Z0-9]{3,55}$");
 	let result = (regex.test(test)) && !(test==="");
-	printError(result, titolo.toString()+"-message", "La lunghezza massima è di 55 caratteri alfanumerici");
+	printError(result, titolo.toString()+"-message", "La lunghezza massima &egrave; di 55 caratteri alfanumerici");
 	return result;
 }
 
@@ -46,7 +46,7 @@ function checkDifficolta(difficolta) {
 	let test = document.getElementById(difficolta).value;
 	let regex = new RegExp("^[1-5]$"); 
 	let result = (regex.test(test)) && !(test === "");
-	printError(result, difficolta.toString()+"-message", "L'intervallo valido è tra 1 e 5");
+	printError(result, difficolta.toString()+"-message", "L'intervallo valido &egrave; tra 1 e 5");
 	return result;
 }
 
@@ -188,9 +188,3 @@ if (formUtenteImg) {
 		}
 	});
 }
-
-
-
-
-
-
