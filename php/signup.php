@@ -32,32 +32,23 @@ $handler->setBreadcrumb(
 $content = file_get_contents(__DIR__ . "/components/signup-content.php");
 
 if (key_exists("wrong-signup", $_SESSION) && $_SESSION["wrong-signup"]) {
-    $content = str_replace("<emailPlaceholder />", $_SESSION["email"], $content);
-
-    $content = str_replace("<password1Placeholder />", $_SESSION["password"], $content);
-
     $content = str_replace("<nicknamePlaceholder />", $_SESSION["nickname"], $content);
-
-    if ($_SESSION["error"] == "email") {
-        $content = str_replace("<errorPlaceholder />", "<p>L'indirizzo email inserito risulta già associato ad un utente</p>", $content);
-    } else if ($_SESSION["error"] == "nickname") {
-        $content = str_replace("<errorPlaceholder />", "<p>Il nickname inserito non è disponibile</p>", $content);
-
+    $content = str_replace("<emailPlaceholder />", $_SESSION["email"], $content);
+    $content = str_replace("<password1Placeholder />", $_SESSION["password"], $content);
+    
+    if ($_SESSION["errorNickname"] !== NULL) {
+        $content = str_replace("<errorNicknamePlaceholder />", $_SESSION["errorNickname"], $content);
     }
 
     $_SESSION["wrong-signup"] = false;
     $_SESSION["email"] = "";
     $_SESSION["password"] = "";
     $_SESSION["nickname"] = "";
-
 } else {
-    $content = str_replace("<emailPlaceholder />", "", $content);
-
-    $content = str_replace("<password1Placeholder />", "", $content);
-
     $content = str_replace("<nicknamePlaceholder />", "", $content);
-
-    $content = str_replace("<errorPlaceholder />", "", $content);
+    $content = str_replace("<emailPlaceholder />", "", $content);
+    $content = str_replace("<password1Placeholder />", "", $content);
+    $content = str_replace("<errorNicknamePlaceholder />", "", $content);
 }
 
 $handler->setContent($content);
