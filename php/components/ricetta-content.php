@@ -3,6 +3,7 @@
 		<nomeRicettaPlaceholder />
 	</h1>
 	<editPlaceholder />
+	<removePlaceholder />
 	<img class="immagine-ricetta"
 		 src="<imgSrcPlaceholder />"
 		 alt="Uovo alla coque" />
