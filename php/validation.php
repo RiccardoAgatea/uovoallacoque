@@ -5,15 +5,15 @@ $nicknameErr = $emailErr = $difficoltaErr = "";
 $nickname = $email = $difficolta = "";
 
 function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
+  $data = trim($data); //rimuove gli spazi
+  $data = stripslashes($data); 
+  $data = htmlspecialchars($data); // à -> &agrave;
   return $data;
 }
 
 function checkNickname($stringNickname){ // $stringNickname -> "nickname"
-  $connection = new DBConnection();
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $connection = new DBConnection(); // oggetto che rappresenta il database
+  if ($_SERVER["REQUEST_METHOD"] == "POST") { 
     if (empty($_POST[$stringNickname])) {
       $nicknameErr = "Il nickname non pu&ograve; essere vuoto";
     } else {
@@ -30,17 +30,13 @@ function checkNickname($stringNickname){ // $stringNickname -> "nickname"
   }
 }
 
+
+
 /*
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["nickname"])) {
-    $nicknameErr = "Il nickname non pu&ograve; essere vuoto";
-  } else {
-    $nickname = test_input($_POST["nickname"]);
-    if (!preg_match("/^[A-Za-z0-9]+$/",$nickname)) {
-      $nicknameErr = "Il nickname deve contenere solo lettere e numeri";
-    }
-  }
+  
 
+  // mail
   if (empty($_POST["email"])) {
     $emailErr = "La e-mail non pu&ograve; essere vuota";
   } else {
@@ -58,9 +54,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["password"] = $_POST['password1'];
     $_SESSION["nickname"] = $_POST['nickname'];
     $connection->disconnect();
-    $emailErr = "L'indirizzo email inserito risulta già associato ad un utente";
+    $emailErr = "L'indirizzo email inserito risulta gi&agrave; associato ad un utente";
   }
 
+
+
+
+  //difficoltà
   if (empty($_POST["difficolta"])) {
     $difficoltaErr = "La difficolt&agrave; non pu&ograve; essere vuota";
   } else {
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $max = 5;
 
     if (filter_var($difficolta, FILTER_VALIDATE_INT, array("options" => array("min_range"=>$min, "max_range"=>$max))) === false) {
-        $difficoltaErr = "L'intervallo valido è tra 1 e 5";
+        $difficoltaErr = "L'intervallo valido &egrave; tra 1 e 5";
     } else {
         $difficoltaErr = "";
     }

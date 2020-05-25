@@ -9,13 +9,14 @@ $_SESSION["email"] = $_POST['email'];
 $_SESSION["password"] = $_POST['password1'];
 $_SESSION["nickname"] = $_POST['nickname'];
 
-$_SESSION["errorNickname"] = checkNickname("nickname"); 
+$_SESSION["errorNickname"] = checkNickname("nickname"); //richiamo della funzione in validation.php
+//$_SESSION["erroremail"] = checkemail("email"); 
 
-if ($_SESSION["errorNickname"] !== NULL) {
-    $_SESSION["wrong-signup"] = true;
-    header("Location: ./signup.php");
+if ($_SESSION["errorNickname"] !== "" || $_SESSION["erroremail"] !== "") { //c'è almeno un errore
+    $_SESSION["wrong-signup"] = true; //qualcosa è andato storto
+    header("Location: ./signup.php"); //rimango nella pagina di signup
     exit;
-} else {
+} else { //non c'è nessun errore
     $connection = new DBConnection();
     $connection->query("INSERT INTO utenti (email, passw, nickname) VALUES (\"{$_POST['email']}\",\"{$_POST['password1']}\",\"{$_POST['nickname']}\");");
 

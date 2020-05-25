@@ -36,7 +36,7 @@ if (key_exists("wrong-signup", $_SESSION) && $_SESSION["wrong-signup"]) {
     $content = str_replace("<emailPlaceholder />", $_SESSION["email"], $content);
     $content = str_replace("<password1Placeholder />", $_SESSION["password"], $content);
     
-    if ($_SESSION["errorNickname"] !== NULL) {
+    if ($_SESSION["errorNickname"] !== "") {
         $content = str_replace("<errorNicknamePlaceholder />", $_SESSION["errorNickname"], $content);
     }
 

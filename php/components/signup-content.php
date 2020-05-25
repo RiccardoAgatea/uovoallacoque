@@ -12,7 +12,7 @@
                                    <label class="form-label"
                                           for="signup-nick">Nickname:</label>
                                    <input class="barra-input"
-                                          id="signup-nick"
+                                          id="signup-nick" 
                                           type="text"
                                           name="nickname"
                                           placeholder="Nickname"
