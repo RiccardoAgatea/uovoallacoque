@@ -14,7 +14,7 @@ $_SESSION["errorNickname"] = checkNickname("nickname"); //richiamo della funzion
 
 if ($_SESSION["errorNickname"] !== "" || $_SESSION["erroremail"] !== "") { //c'è almeno un errore
     $_SESSION["wrong-signup"] = true; //qualcosa è andato storto
-    header("Location: ./signup.php"); //rimango nella pagina di signup
+   header("Location: ./signup.php"); //rimango nella pagina di signup
     exit;
 } else { //non c'è nessun errore
     $connection = new DBConnection();
@@ -22,6 +22,7 @@ if ($_SESSION["errorNickname"] !== "" || $_SESSION["erroremail"] !== "") { //c'�
 
     $user = new User($_POST['email']);
     $_SESSION['user'] = $user;
+    $_SESSION["logged"] = true;
     $_SESSION["wrong-signup"] = false;
     $_SESSION["email"] = "";
     $_SESSION["password"] = "";
