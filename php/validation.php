@@ -30,7 +30,91 @@ function checkNickname($stringNickname){ // $stringNickname -> "nickname"
   }
 }
 
+function checkMail($stringEmail){
+  $connection = new DBConnection();
+  if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(empty($_POST["REQUEST_METHOD"])){
+      $emailErr = "La mail non pu&ograve; essere vuota";
+    }
+    else{
+      $email = test_input($_POST[$stringEmail]);
+      if(!preg_match("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$",$email)){
+        $emailErr = "Email incorretta";
+      }
+      if ($connection->query(" SELECT email FROM utenti WHERE email=\"$email\" ")->fetch_row() != null) { 
+        $emailErr = "&Egrave; gi&agrave; presente un account con questa email";
+        $connection->disconnect();
+      }
+    }
+    return $emailErr;
+  }
+}
 
+function checkNomeRicetta($stringNomeRicetta){
+  $connection = new DBConnection();
+  if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(empty($_POST["REQUEST_METHOD"])){
+      $nomeRicettaErr = "Il nome non pu&ograve; essere un campo vuoto";
+    }
+    else{
+      $nomeRicetta = test_input($_POST[$stringNomeRicetta]);
+      if(!preg_match("^[a-zA-Z0-9]{3,55}$",$nomeRicetta)){
+        $nomeRicettaErr = "La lunghezza massima &egrave; di 55 caratteri alfanumerici";
+      }
+      if ($connection->query(" SELECT nome FROM ricette WHERE nome=\"$nomeRicetta\" ")->fetch_row() != null) { 
+        $emailErr = "Questa ricetta &egrave; gi&agrave; presente";
+        $connection->disconnect();
+      }
+    }
+    return $nomeRicettaErr;
+  }
+}
+
+
+function checkDifficolta($stringDifficolta){
+  if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(empty($_POST["REQUEST_METHOD"])){
+      $difficoltaErr = "La difficolt&agrave; non pu&ograve; essere un campo vuoto";
+    }
+    else{
+      $difficolta = test_input($_POST[$stringDifficolta]);
+      if(!preg_match("^[1-5]$",$difficolta)){
+        $nomeRicettaErr = "L'intervallo valido &egrave; tra 1 e 5";
+      }
+    }
+    return $difficoltaErr;
+  }
+}
+
+function checkTempo($stringTempo){
+  if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(empty($_POST["REQUEST_METHOD"])){
+      $tempoErr = "Il tempo non pu&ograve; essere un campo vuoto";
+    }
+    else{
+      $tempo = test_input($_POST[$stringtempo]);
+      if(!preg_match("^[1-9][0-9]*$",$tempo)){
+        $tempoErr = "Sono ammessi solo valori interi positivi";
+      }
+    return $tempoErr;
+    }
+}
+
+function checkPassword($stringPassword, $stringPasswordCofirm){
+  if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(empty($_POST["REQUEST_METHOD"])){
+      $passwordErr = "La password non pu&ograve; essere un campo vuoto";
+    }
+    else{
+      $password = test_input($_POST[$stringPassword]);
+      $passwordConfirm = test_input($_POST[$stringPasswordConfirm]);
+      if(!preg_match($password, $passwordConfirm)){
+        $passwordErr = "Le password non coincidono";
+      }
+    }
+    return $passwordErr;
+}
+}
 
 /*
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
