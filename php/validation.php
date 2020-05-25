@@ -96,8 +96,9 @@ function checkTempo($stringTempo){
       if(!preg_match("^[1-9][0-9]*$",$tempo)){
         $tempoErr = "Sono ammessi solo valori interi positivi";
       }
-    return $tempoErr;
     }
+    return $tempoErr;
+  }
 }
 
 function checkPassword($stringPassword, $stringPasswordCofirm){
@@ -113,7 +114,7 @@ function checkPassword($stringPassword, $stringPasswordCofirm){
       }
     }
     return $passwordErr;
-}
+  }
 }
 
 /*
@@ -162,6 +163,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 }*/
 
-?> 
-
-
+?>
