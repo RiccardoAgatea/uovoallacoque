@@ -80,8 +80,7 @@
                                           class="barra-input"
                                           id="add-ingredienti"
                                           name="ingredienti"
-                                          placeholder="Elenca tutti gli ingredienti separati da una virgola"
-                                          required="required" />
+                                          required="required"> </textarea>
                                    <span id="add-ingredienti-message"
                                          class="warning"> </span>
                             </li>
@@ -92,8 +91,7 @@
                                           class="barra-input"
                                           id="add-procedura"
                                           name="procedura"
-                                          placeholder="Descrivi tutti i passi da seguire per comporre la ricetta"
-                                          required="required" />
+                                          required="required"> </textarea>
                                    <span id="add-procedura-message"
                                          class="warning"> </span>
                             </li>
