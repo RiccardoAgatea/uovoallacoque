@@ -70,7 +70,7 @@
                             <li class="form-element">
                                    <input class="submit"
                                           type="submit"
-                                          value="Aggiungi" onsubmit="ricettaValidator('add-nome','add-difficolta','add-tempo','add-immagine')" />
+                                          value="Salva modifiche" />
                             </li>
                      </ul>
               </fieldset>
