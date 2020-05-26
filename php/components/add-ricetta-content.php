@@ -76,9 +76,9 @@
 			       <li class="form-element">
                                    <label class="form-label"
                                           for="add-ingredienti"> Ingredienti: </label>
-                                   <input class="barra-input"
+                                   <textarea wrap="hard"
+                                          class="barra-input"
                                           id="add-ingredienti"
-                                          type="textArea"
                                           name="ingredienti"
                                           placeholder="Elenca tutti gli ingredienti separati da una virgola"
                                           required="required" />
@@ -88,9 +88,9 @@
 			       <li class="form-element">
                                    <label class="form-label"
                                           for="add-procedura"> Procedura: </label>
-                                   <input class="barra-input"
+                                   <textarea wrap="hard"
+                                          class="barra-input"
                                           id="add-procedura"
-                                          type="textArea"
                                           name="procedura"
                                           placeholder="Descrivi tutti i passi da seguire per comporre la ricetta"
                                           required="required" />
