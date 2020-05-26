@@ -11,17 +11,6 @@ html, body {
 }
 
 /*sfondo e stile*/
-.link-apri {
-    color: white;
-}
-
-.link-apri:visited {
-    color: #faf600;
-}
-.link-apri:hover {
-    background-color:#FF9F29;
-    color: black;
-}
 
 html {
     background-image: url("../img/sfondo/sfondo.png");
@@ -367,9 +356,19 @@ ul li input{ /*uguale a .barra-input */
     width: 14em;
     object-fit: cover;    
 }
-
 .elenco-testo {
     margin: 1em;
+}
+.link-apri {
+    color: white;
+}
+
+.link-apri:visited {
+    color: #faf600;
+}
+.link-apri:hover {
+    background-color:#FF9F29;
+    color: black;
 }
 
 .paginazione {
