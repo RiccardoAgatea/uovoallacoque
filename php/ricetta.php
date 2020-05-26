@@ -193,7 +193,7 @@ if (!$result) {
     }
 
     $content = str_replace("<nomeRicettaPlaceholder />", $nome, $content);
-    $content = str_replace("<editPlaceholder />", "<a href=\" <rootFolder />/php/edit-ricetta.php\" > Modifica la ricetta </a> ", $content);
+    
     $content = str_replace("<imgSrcPlaceholder />", $img, $content);
     $content = str_replace("<difficoltàPlaceholder />", $difficolta, $content);
     $content = str_replace("<tempoPlaceholder />", "$tempo minuti", $content);
@@ -201,6 +201,11 @@ if (!$result) {
     $content = str_replace("<proceduraPlaceholder />", $procedimento, $content);
     $content = str_replace("<commentiPlaceholder />", $commenti, $content);
     $content = str_replace("<votoPlaceholder />", $tastiVoto, $content);
+}
+
+if(key_exists("logged", $_SESSION) && $_SESSION["logged"] && $_SESSION["user"]->getAdmin()){
+    $content = str_replace("<editPlaceholder />", "<a href=\" <rootFolder />/php/edit-ricetta.php\" > Modifica la ricetta </a> ", $content);
+    // <removePlaceholder />
 }
 
 $handler->setContent($content);
