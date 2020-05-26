@@ -1,20 +1,24 @@
 <ul id="menu">
-	<li id="home" class="elemento-menu">
+	<li id="home"
+		class="elemento-menu">
 		<a href="<rootFolder />/index.php">
 			Home
 		</a>
 	</li>
-	<li id="primi" class="elemento-menu">
+	<li id="primi"
+		class="elemento-menu">
 		<a href="<rootFolder />/php/elenco.php?id=1">
 			Primi Piatti
 		</a>
 	</li>
-	<li id="secondi" class="elemento-menu">
+	<li id="secondi"
+		class="elemento-menu">
 		<a href="<rootFolder />/php/elenco.php?id=2">
 			Secondi Piatti
 		</a>
 	</li>
-	<li id="dolci" class="elemento-menu">
+	<li id="dolci"
+		class="elemento-menu">
 		<a href="<rootFolder />/php/elenco.php?id=3">
 			Dolci
 		</a>
@@ -26,14 +30,13 @@
 		  id="form-barra-ricerca">
 		<label for="termine_ricerca">Cerca:</label>
 		<input type="text"
-			id="termine_ricerca"
-			class="barra-cerca"
-			name="termine_ricerca" />
+			   id="termine_ricerca"
+			   class="barra-cerca"
+			   name="termine_ricerca"
+			   required="required" />
 		<input type="image"
-			id="immagine-lente"
-			src="<rootFolder />/img/icone/lente-ingrandimento.png"
-			alt="cerca" />
+			   id="immagine-lente"
+			   src="<rootFolder />/img/icone/lente-ingrandimento.png"
+			   alt="cerca" />
 	</form>
 </div>
-
-

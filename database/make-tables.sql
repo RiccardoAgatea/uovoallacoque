@@ -21,15 +21,15 @@ CREATE TABLE utenti (
   ad BOOLEAN DEFAULT FALSE,
   PRIMARY KEY (id),
   UNIQUE (email),
-  UNIQUE (nickname) 
+  UNIQUE (nickname)
 );
 CREATE TABLE voti (
   utente INT,
   ricetta INT,
   voto TINYINT UNSIGNED NOT NULL,
   PRIMARY KEY (utente, ricetta),
-  FOREIGN KEY (utente) REFERENCES utenti (id),
-  FOREIGN KEY (ricetta) REFERENCES ricette (id)
+  FOREIGN KEY (utente) REFERENCES utenti (id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (ricetta) REFERENCES ricette (id) ON DELETE CASCADE ON UPDATE CASCADEON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE commenti (
   id INT AUTO_INCREMENT,
@@ -39,6 +39,6 @@ CREATE TABLE commenti (
   dataeora DATETIME,
   modificato BOOLEAN DEFAULT FALSE,
   PRIMARY KEY (id),
-  FOREIGN KEY (utente) REFERENCES utenti (id),
-  FOREIGN KEY (ricetta) REFERENCES ricette (id)
+  FOREIGN KEY (utente) REFERENCES utenti (id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (ricetta) REFERENCES ricette (id) ON DELETE CASCADE ON UPDATE CASCADE
 );

@@ -193,5 +193,28 @@
             </ul>
         </fieldset>
     </form>
+    <!--Eliminazione account-->
+    <form id="form-elimina-account"
+          method="POST"
+          action="<rootFolder />/php/handle-elimina-account.php"
+          class="cambio-info">
+        <fieldset class="form-fieldset fieldset-elimina-account">
+            <legend class="legend">Eliminazione Account</legend>
+            <label for="user-password-elimina">Password:</label>
+            <input type="password"
+                   required="required"
+                   id="user-password-elimina"
+                   name="user-password-elimina"
+                   class="barra-input" />
+            <input type="submit"
+                   value="Elimina account"
+                   class="submitutente" />
+        </fieldset>
+        <p id="attenzione-elimina-account">
+            <strong>Attenzione!</strong> L&apos;eliminazione
+            dell&apos;account non &egrave; reversibile, e comporta
+            la rimozione di tutti i commenti e i voti associati.
+        </p>
+    </form>
     <backToTopPlaceholder />
 </div>
