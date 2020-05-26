@@ -204,7 +204,8 @@ if (!$result) {
 }
 
 if(key_exists("logged", $_SESSION) && $_SESSION["logged"] && $_SESSION["user"]->getAdmin()){
-    $content = str_replace("<editPlaceholder />", "<a href=\" <rootFolder />/php/edit-ricetta.php\" > Modifica la ricetta </a> ", $content);
+    $editPath = "<rootFolder />/php/edit-ricetta.php?id=$id";
+    $content = str_replace("<editPlaceholder />", "<a href=\"$editPath\"> Modifica la ricetta </a> ", $content);
     // <removePlaceholder />
 }
 
