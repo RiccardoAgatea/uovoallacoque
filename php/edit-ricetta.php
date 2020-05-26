@@ -72,10 +72,9 @@ if (!$result) {
             $percorsoBread,
             file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
         )
-    );
-
-    $content = str_replace("<nomeRicettaPlaceholder />", "iuvabfiaub", $content);
+    );   
 }
+$content = str_replace("<nomeRicettaPlaceholder />", "DIOPORCO", $content);
 
 $handler->setContent($content);
 
