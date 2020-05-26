@@ -1,6 +1,6 @@
 <div id="content">
        <h1>Modifica ricetta </h1>
-       <form action="<rootFolder />/php/handle-edit-ricetta.php"
+       <form action="<rootFolder />/php/handle-edit-ricetta.php?id=<idPlaceholder/>"
              name="edit-form"
              method="POST"
              id="form-edit">
@@ -56,7 +56,7 @@
                                           id="edit-difficolta"
                                           type="text"
                                           name="difficolta"
-                                          value="<difficoltàPlaceholder/>" />
+                                          value="<difficoltaPlaceholder/>" />
                                    <span id="edit-difficolta-message"
                                          class="warning"> </span>
                             </li>

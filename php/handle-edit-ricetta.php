@@ -4,17 +4,18 @@ require_once "./validation.php";
 
 session_start();
 $_SESSION["error"] = "";
+$id = $_GET['id'];
 
 if ($_SESSION["error"] !== "" ) { 
     $_SESSION["wrong-edit"] = true; 
-   header("Location: ./edit-ricetta.php"); 
+   header("Location: ./edit-ricetta.php?id={$id}"); 
     exit;
 } else { 
     $connection = new DBConnection();
-    $connection->query(" UPDATE ricette SET nome=\"{$_POST['nome']}\", difficolta=\"{$_POST['difficolta']}\", tempo=\"{$_POST['tempo']}\", img=\"{$_POST['immagine']}\", portata=\"1\", ingredienti=\"{$_POST['ingredienti']}\", procedimento=\"{$_POST['procedura']}\" WHERE id=\"{$_GET['id']}\" ");
+    $connection->query(" UPDATE ricette SET nome=\"{$_POST['nome']}\", difficolta=\"{$_POST['difficolta']}\", tempo=\"{$_POST['tempo']}\", img=\"{$_POST['immagine']}\", portata=\"1\", ingredienti=\"{$_POST['ingredienti']}\", procedimento=\"{$_POST['procedura']}\" WHERE id=\"{$id}\" ");
 
     $_SESSION["wrong-edit"] = false;
     $connection->disconnect();
-    header("Location: ../index.php");
+    header("Location: ./edit-ricetta.php?id={$id}");
     exit;
 }
