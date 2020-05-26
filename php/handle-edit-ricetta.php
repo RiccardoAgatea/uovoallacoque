@@ -12,7 +12,8 @@ if ($_SESSION["error"] !== "" ) {
     exit;
 } else { 
     $connection = new DBConnection();
-    $connection->query(" UPDATE ricette SET nome=\"{$_POST['nome']}\", difficolta=\"{$_POST['difficolta']}\", tempo=\"{$_POST['tempo']}\", img=\"{$_POST['immagine']}\", portata=\"1\", ingredienti=\"{$_POST['ingredienti']}\", procedimento=\"{$_POST['procedura']}\" WHERE id=\"{$id}\" ");
+    $queryString = " UPDATE ricette SET nome='{$_POST['nome']}', difficolta='{$_POST['difficolta']}', tempo='{$_POST['tempo']}', img='{$_POST['immagine']}', portata='1', ingredienti='{$_POST['ingredienti']}', procedimento='{$_POST['procedura']}' WHERE id='{$id}' ";
+    $connection->query($queryString);
 
     $_SESSION["wrong-edit"] = false;
     $connection->disconnect();
