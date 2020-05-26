@@ -14,6 +14,7 @@ if (!key_exists("user", $_SESSION)) {
 $idUtente = $_SESSION['user']->getId();
 $idRicetta = $_GET['ricetta'];
 $testo = $_POST['scrivi-commento'];
+$testo = htmlspecialchars($testo);
 
 $contaRicette = $connection->query("SELECT COUNT(*) FROM ricette WHERE id=$idRicetta")->fetch_row()[0];
 

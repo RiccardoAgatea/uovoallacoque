@@ -113,8 +113,6 @@ function checkTempo($stringTempo){
         $tempoErr = "Sono ammessi solo valori interi positivi";
       }
     }
-<<<<<<< HEAD
-=======
     return $tempoErr;
   }
 }
@@ -132,7 +130,6 @@ function checkPassword($stringPassword, $stringPasswordCofirm){
       }
     }
     return $passwordErr;
->>>>>>> 28bdf52aa64ffbaaef8d7e5475fe0349bf873a2f
   }
 }
 
