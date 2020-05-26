@@ -10,6 +10,6 @@ function schedaRicetta(string $immagine, string $nome, string $difficolta, strin
                 <dt>Tempo</dt> <dd>$tempo minuti</dd>
                 <dt>Voto medio</dt> <dd>" . ($voto == "0" ? "-" : $voto) . " &frasl; 5</dd>
             </dl>
-            <a id=\"link-apri\" href=\"$link\">Apri</a>
+            <a class=\"link-apri\" href=\"$link\">Apri</a>
     ";
 }
