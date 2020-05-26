@@ -86,7 +86,7 @@ ul{
     align-items: center;
     justify-content: center;
     padding: 0.5em;
-    
+
 }
 
 #menu-pagine {
@@ -126,8 +126,8 @@ ul{
 /*fine logo*/
 #barra-ricerca{
     text-align: center;
-    color: white; 
-    margin-bottom: 1em;   
+    color: white;
+    margin-bottom: 1em;
 }
 .barra-cerca{
     width: 25em;
@@ -165,7 +165,7 @@ ul{
 #lista_accesso li a{
     color: white;
     margin: 0.5em;
-    
+
 }
 #lista_accesso li a:hover, #messaggio-utente-nome:hover, #messaggio-utente-esci:hover{
     color: black;
@@ -287,6 +287,23 @@ ul{
     align-items: center;
 }
 
+#form-elimina-account{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fieldset-elimina-account{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#attenzione-elimina-account {
+    width: 30em;
+    text-align: justify;
+}
+
 .barra-input{
     display: flex;
     flex-direction: column;
@@ -354,7 +371,7 @@ ul li input{ /*uguale a .barra-input */
     margin-top: 1em;
     height: 14em;
     width: 14em;
-    object-fit: cover;    
+    object-fit: cover;
 }
 .elenco-testo {
     margin: 1em;
@@ -428,7 +445,7 @@ ul li input{ /*uguale a .barra-input */
         float: left;
         margin-right: 1em;
     }
-    
+
     .commento-dataora {
         font-size: 0.8em;
         margin-top: 1em;
@@ -505,14 +522,14 @@ ul li input{ /*uguale a .barra-input */
     }
    #immagine-logo{
         height: 4em;
-    } 
+    }
 
     .elenco-migliori {
         flex-direction: column;
     }
     #elenco-content {
         flex-direction: column;
-        justify-content: flex-start;       
+        justify-content: flex-start;
     }
    .elenco-elemento {
        min-width: 18em;
@@ -520,7 +537,7 @@ ul li input{ /*uguale a .barra-input */
    .elenco-immagine {
         height: 6em;
         width: 6em;
-        margin: 1em; 
+        margin: 1em;
     }
 
     .elenco-titolo {
@@ -546,7 +563,7 @@ ul li input{ /*uguale a .barra-input */
         justify-content: space-around;
         font-size: 1.2em;
     }
-    
+
     .barra-cerca{
         width: auto;
     }
@@ -604,7 +621,7 @@ ul li input{ /*uguale a .barra-input */
     }
 
     .chiudi-nav img {
-       width: 2em;       
+       width: 2em;
     }
 
 
@@ -625,7 +642,7 @@ ul li input{ /*uguale a .barra-input */
         -webkit-transition: 0.3s;
         transition: 0.3s;
         width: max-content;
-    } 
+    }
 
 
     .apri-nav {
@@ -661,9 +678,9 @@ ul li input{ /*uguale a .barra-input */
     }
     /*FINE PAGINA RICETTA*/
 
-    
 
-    
+
+
 }
 
 @media screen and (max-width: 524px) {
@@ -675,12 +692,12 @@ ul li input{ /*uguale a .barra-input */
 @media screen and (max-height: 450px) {
     .sidenav {
         padding-top: 0.3em;
-        
+
     }
     .sidenav a {
       font-size: 1em;
     }
-    
+
 }
 
 
