@@ -1,12 +1,13 @@
 <?php
 require_once "./template-handler.php";
+require_once __DIR__ . "/db-connection.php";
 require_once __DIR__ . "/user.php";
 
 session_start();
 
 $handler = new TemplateHandler("..", "xhtml"); 
 
-$handler->setTitle("Modifica ricetta | Utente | Uovo alla Coque");
+$handler->setTitle("Modifica ricetta | Uovo alla Coque");
 $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
@@ -31,15 +32,50 @@ $handler->setNav(
     file_get_contents(__DIR__ . "/components/default-nav.php")
 );
 
-$handler->setBreadcrumb(
-    str_replace(
-        "<percorsoPlaceholder />",
-        "<a href=\"<rootFolder />/php/utente.php\">Utente</a> &gt Modifica ricetta",
-        file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
-    )
-);
-
 $content = file_get_contents(__DIR__ . "/components/edit-ricetta-content.php");
+
+$connection = new DBConnection();
+$id = $_GET["id"];
+
+if(key_exists("pagina", $_GET)) {
+    if (intval($_GET["pagina"]<1)) {
+        header("Location: ../404.php");
+        exit;
+    }
+}
+
+$result = $connection->query("SELECT * FROM ricette WHERE id={$id}")->fetch_assoc();
+if (!$result) {
+    $connection->disconnect();
+    header("Location: ../404.php");
+    exit;
+} else {
+    $nome = $result["nome"];
+    $portata = $result["portata"];
+    $difficolta = $result["difficolta"];
+    $tempo = $result["tempo"];
+    $img = $result["img"];
+    $ingredienti = $result["ingredienti"];
+    $procedimento = $result["procedimento"];
+
+    $portate = [
+        "Primi piatti",
+        "Secondi piatti",
+        "Dessert",
+    ];
+
+    $percorsoBread = "<a href=\"<rootFolder />/index.php\">Home</a> &gt; <a href=\"<rootFolder />/php/elenco.php?id=$portata\">{$portate[$portata - 1]}</a> &gt; <a href=\"<rootFolder />/php/ricetta.php?id=$id&pagina=1\">$nome</a> &gt; Modifica ricetta";
+
+    $handler->setBreadcrumb(
+        str_replace(
+            "<percorsoPlaceholder />",
+            $percorsoBread,
+            file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
+        )
+    );
+
+    $content = str_replace("<nomeRicettaPlaceholder />", "iuvabfiaub", $content);
+}
 
 $handler->setContent($content);
 
