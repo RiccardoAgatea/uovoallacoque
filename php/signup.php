@@ -30,7 +30,7 @@ $handler->setBreadcrumb(
 );
 
 $content = file_get_contents(__DIR__ . "/components/signup-content.php");
-
+//------nickname-----------
 if (key_exists("wrong-signup", $_SESSION) && $_SESSION["wrong-signup"]) {
     $content = str_replace("<nicknamePlaceholder />", $_SESSION["nickname"], $content);
     $content = str_replace("<emailPlaceholder />", $_SESSION["email"], $content);
@@ -39,6 +39,26 @@ if (key_exists("wrong-signup", $_SESSION) && $_SESSION["wrong-signup"]) {
     if ($_SESSION["errorNickname"] !== "") {
         $content = str_replace("<errorNicknamePlaceholder />", $_SESSION["errorNickname"], $content);
     }
+
+
+if (key_exists("wrong-email", $_SESSION) && $_SESSION["wrong-signup"]) {
+        $content = str_replace("<nicknamePlaceholder />", $_SESSION["nickname"], $content);
+        $content = str_replace("<emailPlaceholder />", $_SESSION["email"], $content);
+        $content = str_replace("<password1Placeholder />", $_SESSION["password"], $content);
+        
+    if ($_SESSION["errorEmail"] !== "") {
+            $content = str_replace("<errorEmailPlaceholder />", $_SESSION["errorEmail"], $content);
+        }
+
+if (key_exists("wrong-password", $_SESSION) && $_SESSION["wrong-password"]) {
+            $content = str_replace("<nicknamePlaceholder />", $_SESSION["nickname"], $content);
+            $content = str_replace("<emailPlaceholder />", $_SESSION["email"], $content);
+            $content = str_replace("<password1Placeholder />", $_SESSION["password"], $content);
+            
+    if ($_SESSION["errorPassword"] !== "") {
+                $content = str_replace("<errorPasswordPlaceholder />", $_SESSION["errorPassword"], $content);
+            }        
+
 
     $_SESSION["wrong-signup"] = false;
     $_SESSION["email"] = "";
@@ -50,6 +70,9 @@ if (key_exists("wrong-signup", $_SESSION) && $_SESSION["wrong-signup"]) {
     $content = str_replace("<password1Placeholder />", "", $content);
     $content = str_replace("<errorNicknamePlaceholder />", "", $content);
 }
+
+
+
 
 $handler->setContent($content);
 

@@ -10,7 +10,7 @@ $_SESSION["password"] = $_POST['password1'];
 $_SESSION["nickname"] = $_POST['nickname'];
 
 $_SESSION["errorNickname"] = checkNickname("nickname"); //richiamo della funzione in validation.php
-//$_SESSION["erroremail"] = checkemail("email"); 
+$_SESSION["erroremail"] = checkEmail("email"); 
 
 if ($_SESSION["errorNickname"] !== "" || $_SESSION["erroremail"] !== "") { //c'è almeno un errore
     $_SESSION["wrong-signup"] = true; //qualcosa è andato storto
