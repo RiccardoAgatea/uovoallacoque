@@ -1,9 +1,6 @@
 <?php
 require_once "./db-connection.php";
 
-$nicknameErr = $emailErr = $difficoltaErr = "";
-$nickname = $email = $difficolta = "";
-
 function test_input($data) {
   $data = trim($data); //rimuove gli spazi
   $data = stripslashes($data); 
@@ -12,6 +9,7 @@ function test_input($data) {
 }
 
 function checkNickname($stringNickname){ // $stringNickname -> "nickname"
+  $nicknameErr = $nickname = "";
   $connection = new DBConnection(); // oggetto che rappresenta il database
   if ($_SERVER["REQUEST_METHOD"] == "POST") { 
     if (empty($_POST[$stringNickname])) {
