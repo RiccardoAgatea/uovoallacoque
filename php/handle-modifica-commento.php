@@ -16,7 +16,7 @@ $idRicetta = $_GET['ricetta'];
 $idCommento = $_GET['idcommento'];
 $pagina = $_GET['pagina'];
 $testo = $_POST['modifica-commento'];
-$testo = htmlspecialchars($testo);
+$testo = htmlentities($testo, ENT_QUOTES | ENT_XHTML);
 
 $result = $connection->query("SELECT commenti.utente AS idutente, commenti.ricetta AS idricetta FROM commenti WHERE commenti.id=$idCommento");
 

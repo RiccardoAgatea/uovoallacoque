@@ -39,6 +39,7 @@ if (key_exists("wrong-signup", $_SESSION) && $_SESSION["wrong-signup"]) {
     if ($_SESSION["errorNickname"] !== "") {
         $content = str_replace("<errorNicknamePlaceholder />", $_SESSION["errorNickname"], $content);
     }
+}
 
 
 if (key_exists("wrong-email", $_SESSION) && $_SESSION["wrong-signup"]) {
@@ -49,6 +50,7 @@ if (key_exists("wrong-email", $_SESSION) && $_SESSION["wrong-signup"]) {
     if ($_SESSION["errorEmail"] !== "") {
             $content = str_replace("<errorEmailPlaceholder />", $_SESSION["errorEmail"], $content);
         }
+    }
 
 if (key_exists("wrong-password", $_SESSION) && $_SESSION["wrong-password"]) {
             $content = str_replace("<nicknamePlaceholder />", $_SESSION["nickname"], $content);

@@ -4,7 +4,7 @@ require_once "./db-connection.php";
 function test_input($data) {
   $data = trim($data); //rimuove gli spazi
   $data = stripslashes($data); 
-  $data = htmlspecialchars($data); // à -> &agrave;
+  $data = htmlentities($data, ENT_QUOTES | ENT_XHTML); // à -> &agrave;
   return $data;
 }
 
