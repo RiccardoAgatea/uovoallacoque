@@ -1,6 +1,6 @@
 <div id="content">
        <h1>Aggiungi ricetta</h1>
-       <form action="#"
+       <form action="<rootFolder />/php/handle-add-ricetta.php"
              name="add-form"
              method="POST"
              id="form-add" >
@@ -26,7 +26,7 @@
                                    <input class="barra-input"
                                           type="file"
                                           id="add-immagine"
-                                          name="add-immagine"
+                                          name="immagine"
                                           placeholder="Immagine ricetta"
                                           required="required" />
                                    <span id="add-immagine-message"
