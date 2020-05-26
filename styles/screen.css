@@ -11,14 +11,14 @@ html, body {
 }
 
 /*sfondo e stile*/
-#link-apri {
+.link-apri {
     color: white;
 }
 
-#link-apri:visited {
+.link-apri:visited {
     color: #faf600;
 }
-#link-apri:hover {
+.link-apri:hover {
     background-color:#FF9F29;
     color: black;
 }

@@ -4,7 +4,7 @@ CREATE TABLE ricette (
   difficolta TINYINT UNSIGNED NOT NULL,
   tempo SMALLINT UNSIGNED NOT NULL,
   -- url dell'immagine, embeddata come <img>:
-  img VARCHAR(256) NOT NULL,
+  img VARCHAR(256) NOT NULL DEFAULT "<rootFolder />/img/ricette/default.png",
   portata TINYINT UNSIGNED NOT NULL,
   ingredienti TEXT NOT NULL,
   procedimento TEXT NOT NULL,

@@ -4,7 +4,7 @@ require_once "./db-connection.php";
 function test_input($data) {
   $data = trim($data); //rimuove gli spazi
   $data = stripslashes($data); 
-  $data = htmlspecialchars($data); // à -> &agrave;
+  $data = htmlentities($data, ENT_QUOTES | ENT_XHTML); // à -> &agrave;
   return $data;
 }
 
@@ -111,8 +111,6 @@ function checkTempo($stringTempo){
         $tempoErr = "Sono ammessi solo valori interi positivi";
       }
     }
-<<<<<<< HEAD
-=======
     return $tempoErr;
   }
 }
@@ -130,7 +128,6 @@ function checkPassword($stringPassword, $stringPasswordCofirm){
       }
     }
     return $passwordErr;
->>>>>>> 28bdf52aa64ffbaaef8d7e5475fe0349bf873a2f
   }
 }
 

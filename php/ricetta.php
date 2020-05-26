@@ -78,7 +78,7 @@ if (!$result) {
     }
 
     $commenti = "";
-    $tastiVoto = "";
+    $tastiVoto = "<p><a href=\"<rootFolder />/php/login.php\">Accedi</a> o <a href=\"<rootFolder />/php/signup.php\">registrati</a> per votare questa ricetta.</p>";
 
     if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
 
