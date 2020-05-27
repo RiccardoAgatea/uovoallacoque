@@ -168,7 +168,7 @@ if (!$result) {
                 $commentiContent = str_replace("<editedPlaceholder />", $edited, $commentiContent);
 
                 if ($idUtente == $_SESSION['user']->getId()) {
-                    $commentiContent = str_replace("<modificaCommentoPlaceholder />", "<form method=\"POST\" action=\"<rootFolder />/php/setup-modifica-commento.php?ricetta={$_GET["id"]}&idcommento=$idcommento&pagina=$corrente\"><input type=\"submit\" value=\"Modifica\"/></form>", $commentiContent);
+                    $commentiContent = str_replace("<modificaCommentoPlaceholder />", "<form method=\"POST\" action=\"<rootFolder />/php/setup-modifica-commento.php?ricetta={$_GET["id"]}&idcommento=$idcommento&amp;pagina=$corrente\"><input type=\"submit\" value=\"Modifica\"/></form>", $commentiContent);
                     $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "<form method=\"POST\" action=\"<rootFolder />/php/handle-elimina-commento.php?ricetta={$_GET["id"]}&idcommento=$idcommento\"><input type=\"submit\" value=\"Elimina\"/></form>", $commentiContent);
                 } else {
                     $commentiContent = str_replace("<modificaCommentoPlaceholder />", "", $commentiContent);
@@ -231,13 +231,13 @@ function getPaginazione($corrente, $totPagine, $id)
         if ($corrente != 1) {
             $out .= "<li><a href=\"?";
             $out .= "id=$id";
-            $out .= "&pagina=" . strval($corrente - 1) . "\">Precedente</a></li>";
+            $out .= "&amp;pagina=" . strval($corrente - 1) . "\">Precedente</a></li>";
         }
         for ($i = 1; $i <= $totPagine; $i++) {
             if ($i != $corrente) {
                 $out .= "<li><a href=\"?";
                 $out .= "id=$id";
-                $out .= "&pagina=" . $i . "\">" . $i . "</a></li>";
+                $out .= "&amp;pagina=" . $i . "\">" . $i . "</a></li>";
             } else {
                 $out .= "<li>$i</li>";
             }
@@ -245,7 +245,7 @@ function getPaginazione($corrente, $totPagine, $id)
         if ($corrente < $totPagine) {
             $out .= "<li><a href=\"?";
             $out .= "id=$id";
-            $out .= "&pagina=" . strval($corrente + 1) . "\">Successiva</a></li>";
+            $out .= "&amp;pagina=" . strval($corrente + 1) . "\">Successiva</a></li>";
         }
         $out .= "</ul>";
     }

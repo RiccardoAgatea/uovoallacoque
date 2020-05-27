@@ -30,7 +30,7 @@ function contentPortata($portata, $min, $num)
             $voto = $votor[0];
             $voto = number_format($voto, 1);
             $id = $row['id'];
-            $link = "<rootFolder />/php/ricetta.php?id=$id&pagina=1";
+            $link = "<rootFolder />/php/ricetta.php?id=$id&amp;pagina=1";
             $livello = 2;
 
             $risultato .=
@@ -76,7 +76,7 @@ function contentRicerca($termine, $min, $num)
             $voto = number_format($voto, 1);
             $livello = 2;
 
-            $link = "<rootFolder />/php/ricetta.php?id=$id&pagina=1";
+            $link = "<rootFolder />/php/ricetta.php?id=$id&amp;pagina=1";
 
             $risultato .=
             '<li class=elenco-elemento>' .
@@ -114,7 +114,7 @@ function piattoMigliore($portata)
             $votor = $mysql->query("SELECT media({$row['id']});")->fetch_row();
             $voto = $votor[0];
             $voto = number_format($voto, 1);
-            $link = "<rootFolder />/php/ricetta.php?id=$id&pagina=1";
+            $link = "<rootFolder />/php/ricetta.php?id=$id&amp;pagina=1";
 
             $risultato = $risultato .
             '<div class=elenco-elemento>' .
@@ -142,7 +142,7 @@ function getPaginazione($totPagine, $tipo, $corrente)
             } else {
                 $out .= "id=$tipo";
             }
-            $out .= "&pagina=" . strval($corrente-1) . "\">Precedente</a></li>";
+            $out .= "&amp;pagina=" . strval($corrente-1) . "\">Precedente</a></li>";
         }
     for ($i = 1; $i <= $totPagine; $i++) {
         if ($i != $corrente) {
@@ -152,7 +152,7 @@ function getPaginazione($totPagine, $tipo, $corrente)
             } else {
                 $out .= "id=$tipo";
             }
-            $out .= "&pagina=" . $i . "\">" . $i . "</a></li>";
+            $out .= "&amp;pagina=" . $i . "\">" . $i . "</a></li>";
         } else {
             $out .= "<li>$i</li>";
         }
@@ -164,7 +164,7 @@ function getPaginazione($totPagine, $tipo, $corrente)
         } else {
             $out .= "id=$tipo";
         }
-        $out .= "&pagina=" . strval($corrente+1) . "\">Successiva</a></li>";
+        $out .= "&amp;pagina=" . strval($corrente+1) . "\">Successiva</a></li>";
     }
     $out .= "</ul>";
     }
