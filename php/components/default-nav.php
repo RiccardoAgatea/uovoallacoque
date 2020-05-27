@@ -32,8 +32,7 @@
 		<input type="text"
 			   id="termine_ricerca"
 			   class="barra-cerca"
-			   name="termine_ricerca"
-			   required="required" />
+			   name="termine_ricerca" />
 		<input type="image"
 			   id="immagine-lente"
 			   src="<rootFolder />/img/icone/lente-ingrandimento.png"

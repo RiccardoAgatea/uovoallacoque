@@ -2,7 +2,7 @@
        <h1>Aggiungi ricetta</h1>
        <form action="<rootFolder />/php/handle-add-ricetta.php"
              name="add-form"
-             method="POST"
+             method="post"
              id="form-add" >
               <fieldset class="form-fieldset">
                      <legend class="legend">
@@ -16,8 +16,7 @@
                                           id="add-nome"
                                           type="text"
                                           name="nome"
-                                          placeholder="Nome ricetta"
-                                          required="required" />
+                                          placeholder="Nome ricetta" />
                                    <span id="add-nome-message"
                                          class="warning"> </span>
                             </li>
@@ -27,8 +26,7 @@
                                           type="file"
                                           id="add-immagine"
                                           name="immagine"
-                                          placeholder="Immagine ricetta"
-                                          required="required" />
+                                          placeholder="Immagine ricetta" />
                                    <span id="add-immagine-message"
                                           class="warning"> </span>
                             </li>
@@ -56,8 +54,7 @@
                                           id="add-difficolta"
                                           type="text"
                                           name="difficolta"
-                                          placeholder="Difficolta ricetta"
-                                          required="required" />
+                                          placeholder="Difficolta ricetta" />
                                    <span id="add-difficolta-message"
                                          class="warning"> </span>
                             </li>
@@ -68,8 +65,7 @@
                                           id="add-tempo"
                                           type="text"
                                           name="tempo"
-                                          placeholder="Tempo in minuti"
-                                          required="required" />
+                                          placeholder="Tempo in minuti" />
                                    <span id="add-tempo-message"
                                          class="warning"> </span>
                             </li>
@@ -79,8 +75,7 @@
                                    <textarea wrap="hard"
                                           class="barra-input"
                                           id="add-ingredienti"
-                                          name="ingredienti"
-                                          required="required"> </textarea>
+                                          name="ingredienti"> </textarea>
                                    <span id="add-ingredienti-message"
                                          class="warning"> </span>
                             </li>
@@ -90,8 +85,7 @@
                                    <textarea wrap="hard"
                                           class="barra-input"
                                           id="add-procedura"
-                                          name="procedura"
-                                          required="required"> </textarea>
+                                          name="procedura"> </textarea>
                                    <span id="add-procedura-message"
                                          class="warning"> </span>
                             </li>

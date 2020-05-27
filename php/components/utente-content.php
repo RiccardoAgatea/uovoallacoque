@@ -18,7 +18,7 @@
          alt="la tua immagine del profilo" />
     <!-- form img -->
     <form action="<rootFolder />/php/handle-modifica-utente.php?item=img"
-          method="POST"
+          method="post"
           id="form-utente-img"
           class="cambio-info"
           enctype="multipart/form-data">
@@ -30,9 +30,7 @@
                     <input class="barra-input"
                            type="file"
                            id="user-immagine"
-                           name="user-immagine"
-                           placeholder="Immagine"
-                           required="required" />
+                           name="user-immagine" />
                     <span id="user-immagine-message"
                           class="warning"> </span>
                 </li>
@@ -42,9 +40,7 @@
                     <input class="barra-input"
                            id="user-password-immagine"
                            type="password"
-                           name="user-password-immagine"
-                           placeholder="Password"
-                           required="required" />
+                           name="user-password-immagine" />
                     <span id="user-password-immagine-message"
                           class="warning"> </span>
                 </li>
@@ -62,7 +58,7 @@
     </p>
     <!-- form nickname -->
     <form action="<rootFolder />/php/handle-modifica-utente.php?item=nick"
-          method="POST"
+          method="post"
           id="form-utente-nick"
           class="cambio-info">
         <fieldset class="form-fieldset">
@@ -73,9 +69,7 @@
                     <input class="barra-input"
                            id="user-nickname"
                            type="text"
-                           name="user-nickname"
-                           placeholder="Nickname"
-                           required="required" />
+                           name="user-nickname" />
                     <span id="user-nickname-message"
                           class="warning"> </span>
                 </li>
@@ -85,9 +79,7 @@
                     <input class="barra-input"
                            id="user-password-nickname"
                            type="password"
-                           name="user-password-nickname"
-                           placeholder="Password"
-                           required="required" />
+                           name="user-password-nickname" />
                     <span id="user-password-nickname-message"
                           class="warning"> </span>
                 </li>
@@ -106,7 +98,7 @@
     </p>
     <!-- form email -->
     <form action="<rootFolder />/php/handle-modifica-utente.php?item=email"
-          method="POST"
+          method="post"
           id="form-utente-email"
           class="cambio-info">
         <fieldset class="form-fieldset">
@@ -117,9 +109,7 @@
                     <input class="barra-input"
                            id="user-email"
                            type="email"
-                           name="user-email"
-                           placeholder="E-mail"
-                           required="required" />
+                           name="user-email" />
                     <span id="user-email-message"
                           class="warning"> </span>
                 </li>
@@ -128,9 +118,7 @@
                     <input class="barra-input"
                            id="user-password-email"
                            type="password"
-                           name="user-password-email"
-                           placeholder="Password"
-                           required="required" />
+                           name="user-password-email" />
                     <span id="user-password-email-message"
                           class="warning"> </span>
                 </li>
@@ -144,7 +132,7 @@
     </form>
     <!-- form password -->
     <form action="<rootFolder />/php/handle-modifica-utente.php?item=psw"
-          method="POST"
+          method="post"
           id="form-user-password"
           class="cambio-info">
         <fieldset class="form-fieldset">
@@ -156,9 +144,7 @@
                     <input class="barra-input"
                            id="user-password-password"
                            type="password"
-                           name="user-password-password"
-                           placeholder="Password"
-                           required="required" />
+                           name="user-password-password"  />
                     <span id="user-password-password-message"
                           class="warning"> </span>
                 </li>
@@ -167,9 +153,7 @@
                     <input class="barra-input"
                            id="user-password1"
                            type="password"
-                           name="user-password1"
-                           placeholder="Password"
-                           required="required" />
+                           name="user-password1" />
                     <span id="user-password1-message"
                           class="warning"> </span>
                 </li>
@@ -179,9 +163,7 @@
                     <input class="barra-input"
                            id="user-password2"
                            type="password"
-                           name="user-password2"
-                           placeholder="Conferma password"
-                           required="required" />
+                           name="user-password2" />
                     <span id="user-password2-message"
                           class="warning"> </span>
                 </li>
@@ -195,14 +177,13 @@
     </form>
     <!--Eliminazione account-->
     <form id="form-elimina-account"
-          method="POST"
+          method="post"
           action="<rootFolder />/php/handle-elimina-account.php"
           class="cambio-info">
         <fieldset class="form-fieldset fieldset-elimina-account">
             <legend class="legend">Eliminazione Account</legend>
             <label for="user-password-elimina">Password:</label>
             <input type="password"
-                   required="required"
                    id="user-password-elimina"
                    name="user-password-elimina"
                    class="barra-input" />

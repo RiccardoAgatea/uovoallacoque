@@ -2,7 +2,7 @@
     <h1>Accedi</h1>
     <errorPlaceholder />
     <form action="<rootFolder />/php/handle-login.php"
-          method="POST"
+          method="post"
           id="form-login">
         <fieldset class="form-fieldset">
             <legend class="legend">Inserisci le tue credenziali</legend>
@@ -15,7 +15,6 @@
                            type="email"
                            name="email"
                            placeholder="E-mail"
-                           required="required"
                            value="<emailPlaceholder />" />
                     <span id="login-email-message"
                           class="warning"> </span>
@@ -28,7 +27,6 @@
                            type="password"
                            name="password"
                            placeholder="Password"
-                           required="required"
                            value="<passwordPlaceholder />" /> <span id="
                            login-password-message"
                           class="warning"> </span>

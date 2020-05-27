@@ -89,7 +89,7 @@ if (!$result) {
             $tastiVoto ="<p>Il tuo voto per questa ricetta &egrave; " . strval($row) ."/5</p>";
         }
         else {
-            $tastiVoto = "<form action=\"<rootFolder />/php/handle-voto.php?ricetta={$id}\" method=POST>
+            $tastiVoto = "<form action=\"<rootFolder />/php/handle-voto.php?ricetta={$id}\" method=\"post\">
                 <label for=\"pulsante-voto-1\">1 Stella</label><input type=\"radio\" id=\"pulsante-voto-1\" name=\"pulsante-voto\" value=\"1\" />
                 <label for=\"pulsante-voto-2\">2 Stelle</label><input type=\"radio\" id=\"pulsante-voto-2\" name=\"pulsante-voto\" value=\"2\" />
                 <label for=\"pulsante-voto-3\">3 Stelle</label><input type=\"radio\" id=\"pulsante-voto-3\" name=\"pulsante-voto\" value=\"3\" />
