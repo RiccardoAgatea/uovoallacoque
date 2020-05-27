@@ -65,7 +65,7 @@ if (!$result) {
         "Dessert",
     ];
 
-    $percorsoBread = "<a href=\"<rootFolder />/index.php\">Home</a> &gt; <a href=\"<rootFolder />/php/elenco.php?id=$portata\">{$portate[$portata - 1]}</a> &gt; <a href=\"<rootFolder />/php/ricetta.php?id=$id&pagina=1\">$nome</a> &gt; Modifica ricetta";
+    $percorsoBread = "<a href=\"<rootFolder />/index.php\">Home</a> &gt; <a href=\"<rootFolder />/php/elenco.php?id=$portata\">{$portate[$portata - 1]}</a> &gt; <a href=\"<rootFolder />/php/ricetta.php?id=$id&amp;pagina=1\">$nome</a> &gt; Modifica ricetta";
 
     $handler->setBreadcrumb(
         str_replace(

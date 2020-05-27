@@ -2,7 +2,7 @@
        <h1>Registrati</h1>
        <form action="<rootFolder />/php/handle-signup.php"
              name="signup"
-             method="POST"
+             method="post"
              id="form-signup">
               <fieldset class="form-fieldset">
                      <legend class="legend">Inserisci i tuoi dati
@@ -16,7 +16,6 @@
                                           type="text"
                                           name="nickname"
                                           placeholder="Nickname"
-                                          required="required"
                                           value="<nicknamePlaceholder />" />
                                    <span id="signup-nick-message"
                                          class="warning"> <errorNicknamePlaceholder /> </span>
@@ -29,7 +28,6 @@
                                           type="email"
                                           name="email"
                                           placeholder="E-mail"
-                                          required="required"
                                           value="<emailPlaceholder />" />
                                    <span id="signup-email-message"
                                          class="warning"> <errorEmailPlaceholder /> </span>
@@ -42,7 +40,6 @@
                                           type="password"
                                           name="password1"
                                           placeholder="Password"
-                                          required="required"
                                           value="<password1Placeholder />" />
                             </li>
                             <li class="form-element">
@@ -53,8 +50,7 @@
                                           id="signup-password2"
                                           type="password"
                                           name="password2"
-                                          placeholder="Password"
-                                          required="required" />
+                                          placeholder="Password" />
                                    <span id="signup-password2-message"
                                          class="warning"> <errorPasswordPlaceholder /> </span>
                             </li>

@@ -2,7 +2,7 @@
        <h1>Modifica ricetta </h1>
        <form action="<rootFolder />/php/handle-edit-ricetta.php?id=<idPlaceholder/>"
              name="edit-form"
-             method="POST"
+             method="post"
              id="form-edit">
               <fieldset class="form-fieldset">
                      <legend class="legend">
@@ -17,7 +17,6 @@
                                           type="text"
                                           name="nome"
                                           placeholder="Nome della ricetta"
-                                          required="required"
                                           value="<nomeRicettaPlaceholder/>" />
                                    <span id="edit-nome-message"
                                          class="warning"> <errorNomePlaceholder /> </span>

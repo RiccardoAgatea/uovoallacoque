@@ -10,12 +10,12 @@ $_SESSION["password"] = $_POST['password1'];
 $_SESSION["nickname"] = $_POST['nickname'];
 
 $_SESSION["errorNickname"] = checkNickname("nickname"); //richiamo della funzione in validation.php
-$_SESSION["erroremail"] = checkEmail("email"); 
-$_SESSION["errorPassword"] = "";
+$_SESSION["errorEmail"] = checkEmail("email");
+$_SESSION["errorPassword"] = checkPassword("password1", "password2");
 
 if ($_SESSION["errorNickname"] !== "" || $_SESSION["erroremail"] !== "") { //c'è almeno un errore
     $_SESSION["wrong-signup"] = true; //qualcosa è andato storto
-   header("Location: ./signup.php"); //rimango nella pagina di signup
+    header("Location: ./signup.php"); //rimango nella pagina di signup
     exit;
 } else { //non c'è nessun errore
     $connection = new DBConnection();

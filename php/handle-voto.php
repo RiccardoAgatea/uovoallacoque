@@ -30,6 +30,6 @@ if($queryVoto && $queryVoto->num_rows!=0) {
 
 $connection->query("INSERT INTO voti (utente, ricetta, voto) VALUES($idUtente, $idRicetta, $voto)");
 $connection->disconnect();
-header("Location: ./ricetta.php?id=$idRicetta&pagina=1");
+header("Location: ./ricetta.php?id=$idRicetta&amp;pagina=1");
 exit;
 
