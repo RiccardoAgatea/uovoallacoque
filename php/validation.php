@@ -10,7 +10,6 @@ function test_input($data)
 }
 
 function checkNickname($stringNickname)
-{ // $stringNickname -> "nickname"
     $nicknameErr = $nickname = "";
     $connection = new DBConnection(); // oggetto che rappresenta il database
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -32,6 +31,7 @@ function checkNickname($stringNickname)
 
 function checkEmail($stringEmail)
 {
+    $emailErr = $email = "";
     $connection = new DBConnection();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST[$stringEmail])) {
@@ -52,6 +52,7 @@ function checkEmail($stringEmail)
 
 function checkPassword($stringPassword, $stringPasswordCofirm)
 {
+	$passwordErr = $password = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST[$stringPassword])) {
             $passwordErr = "La password non pu&ograve; essere un campo vuoto";
@@ -68,6 +69,7 @@ function checkPassword($stringPassword, $stringPasswordCofirm)
 
 function checkNomeRicetta($stringNomeRicetta)
 {
+	$nomeRicettaErr = $nomeRicetta = "";
     $connection = new DBConnection();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["REQUEST_METHOD"])) {
@@ -75,10 +77,10 @@ function checkNomeRicetta($stringNomeRicetta)
         } else {
             $nomeRicetta = test_input($_POST[$stringNomeRicetta]);
             if (!preg_match("^[a-zA-Z0-9]{3,55}$", $nomeRicetta)) {
-                $nomeRicettaErr = "La lunghezza massima &egrave; di 55 caratteri alfanumerici";
+                $nomeRicettaErr = "La lunghezza &egrave; tra 3 e 55 caratteri alfanumerici";
             }
             if ($connection->query(" SELECT nome FROM ricette WHERE nome=\"$nomeRicetta\" ")->fetch_row() != null) {
-                $emailErr = "Questa ricetta &egrave; gi&agrave; presente";
+                $nomeRicettaErr = "Questa ricetta &egrave; gi&agrave; presente";
                 $connection->disconnect();
             }
         }
@@ -88,13 +90,14 @@ function checkNomeRicetta($stringNomeRicetta)
 
 function checkDifficolta($stringDifficolta)
 {
+	$difficoltaErr = $difficolta = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["REQUEST_METHOD"])) {
             $difficoltaErr = "La difficolt&agrave; non pu&ograve; essere un campo vuoto";
         } else {
             $difficolta = test_input($_POST[$stringDifficolta]);
             if (!preg_match("^[1-5]$", $difficolta)) {
-                $nomeRicettaErr = "L'intervallo valido &egrave; tra 1 e 5";
+                $difficoltaErr = "L'intervallo valido &egrave; tra 1 e 5";
             }
         }
         return $difficoltaErr;
@@ -103,6 +106,7 @@ function checkDifficolta($stringDifficolta)
 
 function checkTempo($stringTempo)
 {
+	$tempoErr = $tempo = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["REQUEST_METHOD"])) {
             $tempoErr = "Il tempo non pu&ograve; essere un campo vuoto";
@@ -116,43 +120,4 @@ function checkTempo($stringTempo)
     }
 }
 
-/*
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-// mail
-if (empty($_POST["email"])) {
-$emailErr = "La e-mail non pu&ograve; essere vuota";
-} else {
-$email = test_input($_POST["email"]);
-// Remove all illegal characters from email
-$email = filter_var($email, FILTER_SANITIZE_EMAIL);
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-$emailErr = "Email non corretta";
-}
-}
-if ($connection->query("SELECT email FROM utenti WHERE email=\"{$_POST['email']}\"")->fetch_row() != null) {
-$_SESSION["wrong-signup"] = true;
-$_SESSION["error"] = "email";
-$_SESSION["email"] = $_POST['email'];
-$_SESSION["password"] = $_POST['password1'];
-$_SESSION["nickname"] = $_POST['nickname'];
-$connection->disconnect();
-$emailErr = "L'indirizzo email inserito risulta gi&agrave; associato ad un utente";
-}
-
-//difficoltà
-if (empty($_POST["difficolta"])) {
-$difficoltaErr = "La difficolt&agrave; non pu&ograve; essere vuota";
-} else {
-$difficolta = test_input($_POST["difficolta"]);
-$min = 1;
-$max = 5;
-
-if (filter_var($difficolta, FILTER_VALIDATE_INT, array("options" => array("min_range"=>$min, "max_range"=>$max))) === false) {
-$difficoltaErr = "L'intervallo valido &egrave; tra 1 e 5";
-} else {
-$difficoltaErr = "";
-}
-}
-
-}*/
+// quando accedo controlla che la password è uguale a quella presente nel db
