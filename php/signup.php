@@ -36,13 +36,13 @@ if (key_exists("wrong-signup", $_SESSION) && $_SESSION["wrong-signup"]) {
     $content = str_replace("<emailPlaceholder />", $_SESSION["email"], $content);
     $content = str_replace("<password1Placeholder />", $_SESSION["password"], $content);
     
-    if ($_SESSION["errorNickname"] !== "") {
+    if ($_SESSION["errorNickname"] != "") {
         $content = str_replace("<errorNicknamePlaceholder />", $_SESSION["errorNickname"], $content);
     }    
-    if ($_SESSION["errorEmail"] !== "") {
+    if ($_SESSION["errorEmail"] != "") {
         $content = str_replace("<errorEmailPlaceholder />", $_SESSION["errorEmail"], $content);
     }    
-    if ($_SESSION["errorPassword"] !== "") {
+    if ($_SESSION["errorPassword"] != "") {
         $content = str_replace("<errorPasswordPlaceholder />", $_SESSION["errorPassword"], $content);
     }   
 
@@ -55,6 +55,8 @@ if (key_exists("wrong-signup", $_SESSION) && $_SESSION["wrong-signup"]) {
     $content = str_replace("<emailPlaceholder />", "", $content);
     $content = str_replace("<password1Placeholder />", "", $content);
     $content = str_replace("<errorNicknamePlaceholder />", "", $content);
+    $content = str_replace("<errorEmailPlaceholder />", "", $content);
+    $content = str_replace("<errorPasswordPlaceholder />", "", $content);
 }
 
 $handler->setContent($content);

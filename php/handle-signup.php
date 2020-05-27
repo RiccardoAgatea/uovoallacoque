@@ -13,7 +13,7 @@ $_SESSION["errorNickname"] = checkNickname("nickname"); //richiamo della funzion
 $_SESSION["errorEmail"] = checkEmail("email");
 $_SESSION["errorPassword"] = checkPassword("password1", "password2");
 
-if ($_SESSION["errorNickname"] !== "" || $_SESSION["erroremail"] !== "") { //c'è almeno un errore
+if ($_SESSION["errorNickname"] !== "" || $_SESSION["errorEmail"] !== "") { //c'è almeno un errore
     $_SESSION["wrong-signup"] = true; //qualcosa è andato storto
     header("Location: ./signup.php"); //rimango nella pagina di signup
     exit;

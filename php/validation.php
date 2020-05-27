@@ -9,7 +9,7 @@ function test_input($data)
     return $data;
 }
 
-function checkNickname($stringNickname)
+function checkNickname($stringNickname) {
     $nicknameErr = $nickname = "";
     $connection = new DBConnection(); // oggetto che rappresenta il database
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -38,7 +38,7 @@ function checkEmail($stringEmail)
             $emailErr = "La mail non pu&ograve; essere vuota";
         } else {
             $email = test_input($_POST[$stringEmail]);
-            if (!preg_match("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$", $email)) {
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $emailErr = "Email incorretta";
             }
             if ($connection->query(" SELECT email FROM utenti WHERE email=\"$email\" ")->fetch_row() != null) {
@@ -52,14 +52,14 @@ function checkEmail($stringEmail)
 
 function checkPassword($stringPassword, $stringPasswordCofirm)
 {
-	$passwordErr = $password = "";
+	$passwordErr = $password = $passwordConfirm = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST[$stringPassword])) {
             $passwordErr = "La password non pu&ograve; essere un campo vuoto";
         } else {
             $password = test_input($_POST[$stringPassword]);
             $passwordConfirm = test_input($_POST[$stringPasswordConfirm]);
-            if ($password !== $passwordConfirm) {
+            if ($password != $passwordConfirm) {
                 $passwordErr = "Le password non coincidono";
             }
         }
@@ -76,7 +76,7 @@ function checkNomeRicetta($stringNomeRicetta)
             $nomeRicettaErr = "Il nome non pu&ograve; essere un campo vuoto";
         } else {
             $nomeRicetta = test_input($_POST[$stringNomeRicetta]);
-            if (!preg_match("^[a-zA-Z0-9]{3,55}$", $nomeRicetta)) {
+            if (!preg_match("/^[a-zA-Z0-9]{3,55}$/", $nomeRicetta)) {
                 $nomeRicettaErr = "La lunghezza &egrave; tra 3 e 55 caratteri alfanumerici";
             }
             if ($connection->query(" SELECT nome FROM ricette WHERE nome=\"$nomeRicetta\" ")->fetch_row() != null) {
@@ -96,7 +96,7 @@ function checkDifficolta($stringDifficolta)
             $difficoltaErr = "La difficolt&agrave; non pu&ograve; essere un campo vuoto";
         } else {
             $difficolta = test_input($_POST[$stringDifficolta]);
-            if (!preg_match("^[1-5]$", $difficolta)) {
+            if (!preg_match("/^[1-5]$/", $difficolta)) {
                 $difficoltaErr = "L'intervallo valido &egrave; tra 1 e 5";
             }
         }
@@ -112,7 +112,7 @@ function checkTempo($stringTempo)
             $tempoErr = "Il tempo non pu&ograve; essere un campo vuoto";
         } else {
             $tempo = test_input($_POST[$stringtempo]);
-            if (!preg_match("^[1-9][0-9]*$", $tempo)) {
+            if (!preg_match("/^[1-9][0-9]*$/", $tempo)) {
                 $tempoErr = "Sono ammessi solo valori interi positivi";
             }
         }
