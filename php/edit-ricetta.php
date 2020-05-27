@@ -36,6 +36,7 @@ $content = file_get_contents(__DIR__ . "/components/edit-ricetta-content.php");
 
 $connection = new DBConnection();
 $id = $_GET["id"];
+$content = str_replace("<idPlaceholder/>", $id, $content);
 
 if(key_exists("pagina", $_GET)) {
     if (intval($_GET["pagina"]<1)) {
@@ -72,9 +73,13 @@ if (!$result) {
             $percorsoBread,
             file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
         )
-    );
-
-    $content = str_replace("<nomeRicettaPlaceholder />", "iuvabfiaub", $content);
+    );   
+    $content = str_replace("<nomeRicettaPlaceholder/>", $nome, $content);
+    $content = str_replace("<imgSrcPlaceholder/>", $img, $content);
+    $content = str_replace("<difficoltaPlaceholder/>", $difficolta, $content);
+    $content = str_replace("<tempoPlaceholder/>", $tempo, $content);
+    $content = str_replace("<ingredientiPlaceholder/>", $ingredienti, $content);
+    $content = str_replace("<proceduraPlaceholder/>", $procedimento, $content);
 }
 
 $handler->setContent($content);

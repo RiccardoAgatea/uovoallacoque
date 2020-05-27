@@ -39,6 +39,16 @@ $handler->setBreadcrumb(
     )
 );
 
+if (key_exists("wrong-add", $_SESSION) && $_SESSION["wrong-add"]) {
+    // if ($_SESSION["error"] !== "") {
+    //     $content = str_replace("<errorPlaceholder />", $_SESSION["error"], $content);
+    // }   
+
+    $_SESSION["wrong-add"] = false;
+} else {
+    // $content = str_replace("<errorPlaceholder />", "", $content);
+}
+
 $content = file_get_contents(__DIR__ . "/components/add-ricetta-content.php");
 
 $handler->setContent($content);

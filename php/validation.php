@@ -115,22 +115,6 @@ function checkTempo($stringTempo){
   }
 }
 
-function checkPassword($stringPassword, $stringPasswordCofirm){
-  if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    if(empty($_POST["REQUEST_METHOD"])){
-      $passwordErr = "La password non pu&ograve; essere un campo vuoto";
-    }
-    else{
-      $password = test_input($_POST[$stringPassword]);
-      $passwordConfirm = test_input($_POST[$stringPasswordConfirm]);
-      if(!preg_match($password, $passwordConfirm)){
-        $passwordErr = "Le password non coincidono";
-      }
-    }
-    return $passwordErr;
-  }
-}
-
 /*
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   

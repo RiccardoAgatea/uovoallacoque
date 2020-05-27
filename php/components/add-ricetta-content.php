@@ -1,6 +1,6 @@
 <div id="content">
        <h1>Aggiungi ricetta</h1>
-       <form action="#"
+       <form action="<rootFolder />/php/handle-add-ricetta.php"
              name="add-form"
              method="POST"
              id="form-add" >
@@ -26,7 +26,7 @@
                                    <input class="barra-input"
                                           type="file"
                                           id="add-immagine"
-                                          name="add-immagine"
+                                          name="immagine"
                                           placeholder="Immagine ricetta"
                                           required="required" />
                                    <span id="add-immagine-message"
@@ -76,24 +76,22 @@
 			       <li class="form-element">
                                    <label class="form-label"
                                           for="add-ingredienti"> Ingredienti: </label>
-                                   <input class="barra-input"
+                                   <textarea wrap="hard"
+                                          class="barra-input"
                                           id="add-ingredienti"
-                                          type="textArea"
                                           name="ingredienti"
-                                          placeholder="Elenca tutti gli ingredienti separati da una virgola"
-                                          required="required" />
+                                          required="required"> </textarea>
                                    <span id="add-ingredienti-message"
                                          class="warning"> </span>
                             </li>
 			       <li class="form-element">
                                    <label class="form-label"
                                           for="add-procedura"> Procedura: </label>
-                                   <input class="barra-input"
+                                   <textarea wrap="hard"
+                                          class="barra-input"
                                           id="add-procedura"
-                                          type="textArea"
                                           name="procedura"
-                                          placeholder="Descrivi tutti i passi da seguire per comporre la ricetta"
-                                          required="required" />
+                                          required="required"> </textarea>
                                    <span id="add-procedura-message"
                                          class="warning"> </span>
                             </li>

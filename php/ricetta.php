@@ -83,7 +83,7 @@ if (!$result) {
     if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
 
         $queryVoto = $connection->query("SELECT voto FROM voti WHERE voti.utente={$_SESSION["user"]->getId()} AND voti.ricetta=$id");
-        
+
         if($queryVoto && $queryVoto->num_rows!=0) {
             $row = $queryVoto->fetch_assoc()["voto"];
             $tastiVoto ="<p>Il tuo voto per questa ricetta &egrave; " . strval($row) ."/5</p>";
@@ -95,10 +95,10 @@ if (!$result) {
                 <label for=\"pulsante-voto-3\">3 Stelle</label><input type=\"radio\" id=\"pulsante-voto-3\" name=\"pulsante-voto\" value=\"3\" />
                 <label for=\"pulsante-voto-4\">4 Stelle</label><input type=\"radio\" id=\"pulsante-voto-4\" name=\"pulsante-voto\" value=\"4\" />
                 <label for=\"pulsante-voto-5\">5 Stelle</label><input type=\"radio\" id=\"pulsante-voto-5\" name=\"pulsante-voto\" value=\"5\" />
-                <input type=\"submit\" value= \"vota\"/> 
+                <input type=\"submit\" value= \"vota\"/>
             </form>";
         }
-        
+
 
         $pagina = intval($_GET["pagina"]);
         $num = 10;
@@ -193,7 +193,7 @@ if (!$result) {
     }
 
     $content = str_replace("<nomeRicettaPlaceholder />", $nome, $content);
-    
+
     $content = str_replace("<imgSrcPlaceholder />", $img, $content);
     $content = str_replace("<difficoltàPlaceholder />", $difficolta, $content);
     $content = str_replace("<tempoPlaceholder />", "$tempo minuti", $content);
@@ -207,6 +207,10 @@ if(key_exists("logged", $_SESSION) && $_SESSION["logged"] && $_SESSION["user"]->
     $editPath = "<rootFolder />/php/edit-ricetta.php?id=$id";
     $content = str_replace("<editPlaceholder />", "<a href=\"$editPath\"> Modifica la ricetta </a> ", $content);
     // <removePlaceholder />
+}
+else{
+    $content = str_replace("<editPlaceholder />", "", $content);
+    $content = str_replace("<removePlaceholder />", "", $content);
 }
 
 $handler->setContent($content);
