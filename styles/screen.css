@@ -267,7 +267,12 @@ ul{
     justify-content: flex-start;
     margin-bottom: 1em;
 }
-
+.info-attuale{
+    margin-top: 2em;
+}
+#link-modifica-dati{
+    margin:2em 0em 2em 0em;
+}
 
 /*fine pagina utente*/
 
