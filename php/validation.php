@@ -50,7 +50,7 @@ function checkEmail($stringEmail)
     }
 }
 
-function checkPassword($stringPassword, $stringPasswordCofirm)
+function comparePassword($stringPassword, $stringPasswordCofirm) 
 {
 	$passwordErr = $password = $passwordConfirm = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -64,6 +64,23 @@ function checkPassword($stringPassword, $stringPasswordCofirm)
             }
         }
         return $passwordErr;
+    }
+}
+
+function checkPassword($stringPassword, $stringEmail) { // quando accedo controlla che la password è uguale a quella presente nel db
+    $passwordErr = $password = $email = "";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST[$stringPassword])) {
+            $passwordErr = "La password non pu&ograve; essere un campo vuoto";
+        } else {
+            $password = test_input($_POST[$stringPassword]);
+            $email = test_input($_POST[$stringEmail]);
+            $connection = new DBConnection();
+            if ($email != "" && $connection->query(" SELECT passw FROM utenti WHERE email=\"$email\" ")->fetch_row() != null) {
+                $passwordErr = "La password non &egrave; corretta";
+                $connection->disconnect();
+            }
+        }
     }
 }
 
@@ -119,5 +136,3 @@ function checkTempo($stringTempo)
         return $tempoErr;
     }
 }
-
-// quando accedo controlla che la password è uguale a quella presente nel db

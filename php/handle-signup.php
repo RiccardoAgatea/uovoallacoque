@@ -11,9 +11,9 @@ $_SESSION["nickname"] = $_POST['nickname'];
 
 $_SESSION["errorNickname"] = checkNickname("nickname"); //richiamo della funzione in validation.php
 $_SESSION["errorEmail"] = checkEmail("email");
-$_SESSION["errorPassword"] = checkPassword("password1", "password2");
+$_SESSION["errorPassword"] = comparePassword("password1", "password2");
 
-if ($_SESSION["errorNickname"] !== "" || $_SESSION["errorEmail"] !== "") { //c'è almeno un errore
+if ($_SESSION["errorNickname"] !== "" || $_SESSION["errorEmail"] !== "" || $_SESSION["errorPassword"]) { //c'è almeno un errore
     $_SESSION["wrong-signup"] = true; //qualcosa è andato storto
     header("Location: ./signup.php"); //rimango nella pagina di signup
     exit;
