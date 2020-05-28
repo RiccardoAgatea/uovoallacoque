@@ -1,6 +1,5 @@
 <div id="content">
     <h1>Accedi</h1>
-    <errorPlaceholder />
     <form action="<rootFolder />/php/handle-login.php"
           method="post"
           id="form-login">
@@ -17,7 +16,7 @@
                            placeholder="E-mail"
                            value="<emailPlaceholder />" />
                     <span id="login-email-message"
-                          class="warning"> </span>
+                          class="warning"> <errorEmailPlaceholder /> </span>
                 </li>
                 <li class="form-element">
                     <label class="form-label"
@@ -29,7 +28,7 @@
                            placeholder="Password"
                            value="<passwordPlaceholder />" /> <span id="
                            login-password-message"
-                          class="warning"> </span>
+                          class="warning"> <errorPasswordPlaceholder /> </span>
                 </li>
                 <li class="form-element">
                     <input class="submit"
