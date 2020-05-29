@@ -33,17 +33,20 @@
 				                    <li> 
                                    <span> Tipo della ricetta: </span>
                                    <ul> 
-                                          <li> 
-                                                 <input type="radio" id="primo" name="tipo" value="primo">
-                                                 <label for="primo">Primo</label> 
+                                          <li class="item-radio-container">
+                                                 <label for="primo">Primo</label>  
+                                                 <input class="radio-ricetta" type="radio" id="primo" name="tipo" value="primo"/>
+                                                 
                                           </li>
-                                          <li> 
-                                                 <input type="radio" id="secondo" name="tipo" value="secondo">
+                                          <li class="item-radio-container">   
                                                  <label for="secondo">Secondo</label> 
+                                                 <input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="secondo"/>
+                                                 
                                           </li>
-                                          <li> 
-                                                 <input type="radio" id="dolce" name="tipo" value="dolce">
+                                          <li class="item-radio-container">   
                                                  <label for="dolce">Dolce</label>
+                                                 <input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="dolce"/>
+                                                 
                                           </li>
                                    </ul>
                             </li>
@@ -94,16 +97,5 @@
                      </ul>
               </fieldset>
        </form>
-
-       <form action="<rootFolder />/php/utente.php"
-          method="post"
-          id="annulla-modifiche">
-        <fieldset class="form-fieldset annulla-modifiche-ricetta">
-            <legend class="legend">Annulla la ricetta</legend>
-            <input class="submit"
-                     type="submit"
-                     value="Annulla" />
-        </fieldset>
-    </form>
        <backToTopPlaceholder />
 </div>
