@@ -97,16 +97,5 @@
                      </ul>
               </fieldset>
        </form>
-
-       <form action="<rootFolder />/php/utente.php"
-          method="post"
-          id="annulla-modifiche">
-        <fieldset class="form-fieldset annulla-modifiche-ricetta">
-            <legend class="legend">Annulla la ricetta</legend>
-            <input class="submit"
-                     type="submit"
-                     value="Annulla" />
-        </fieldset>
-    </form>
        <backToTopPlaceholder />
 </div>

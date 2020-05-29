@@ -101,16 +101,5 @@
                      </ul>
               </fieldset>
        </form>
-       <form action="<rootFolder />/php/ricetta.php?id=<idPlaceholder/>&amp;pagina=<paginaPlaceholder/>"
-          method="post"
-          id="annulla-modifiche"
-        >
-        <fieldset class="form-fieldset annulla-modifiche-ricetta">
-            <legend class="legend">Annulla le modifiche</legend>
-            <input class="submit"
-                        type="submit"
-                        value="Annulla" />
-        </fieldset>
-    </form>
        <backToTopPlaceholder />
 </div>
