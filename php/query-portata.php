@@ -34,7 +34,7 @@ function contentPortata($portata, $min, $num)
             $livello = 2;
 
             $risultato .=
-            '<li class=elenco-elemento>' .
+            '<li class="elenco-elemento">' .
             schedaRicetta($immagine, $nome, $difficolta, $tempo, $voto, $link, $livello) .
                 '</li>';
         }
@@ -79,7 +79,7 @@ function contentRicerca($termine, $min, $num)
             $link = "<rootFolder />/php/ricetta.php?id=$id&amp;pagina=1";
 
             $risultato .=
-            '<li class=elenco-elemento>' .
+            '<li class="elenco-elemento">' .
             schedaRicetta($immagine, $nome, $difficolta, $tempo, $voto, $link, $livello) .
                 '</li>';
         }
@@ -117,7 +117,7 @@ function piattoMigliore($portata)
             $link = "<rootFolder />/php/ricetta.php?id=$id&amp;pagina=1";
 
             $risultato = $risultato .
-            '<div class=elenco-elemento>' .
+            '<div class="elenco-elemento">' .
             schedaRicetta($immagine, $nome, $difficolta, $tempo, $voto, $link, $livello) .
                 '</div>';
         }
