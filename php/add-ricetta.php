@@ -39,6 +39,8 @@ $handler->setBreadcrumb(
     )
 );
 
+$content = file_get_contents(__DIR__ . "/components/add-ricetta-content.php");
+
 if (key_exists("wrong-add", $_SESSION) && $_SESSION["wrong-add"]) {
     $content = str_replace("<nomePlaceholder />", $_SESSION["nome"], $content);
     $content = str_replace("<imgPlaceholder />", $_SESSION["immagine"], $content);
@@ -73,8 +75,6 @@ if (key_exists("wrong-add", $_SESSION) && $_SESSION["wrong-add"]) {
     $content = str_replace("<errorDifficoltaPlaceholder />", "", $content);
     $content = str_replace("<errorTempoPlaceholder />", "", $content);
 }
-
-$content = file_get_contents(__DIR__ . "/components/add-ricetta-content.php");
 
 $handler->setContent($content);
 

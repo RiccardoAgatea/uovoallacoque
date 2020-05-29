@@ -35,8 +35,6 @@ $handler->setNav(
 $content = file_get_contents(__DIR__ . "/components/edit-ricetta-content.php");
 
 $connection = new DBConnection();
-$id = $_GET["id"];
-$content = str_replace("<idPlaceholder/>", $id, $content);
 
 if(key_exists("pagina", $_GET)) {
     if (intval($_GET["pagina"]<1)) {
@@ -44,6 +42,10 @@ if(key_exists("pagina", $_GET)) {
         exit;
     }
 }
+
+$id = $_GET["id"];
+$content = str_replace("<idPlaceholder/>", $id, $content);
+$content = str_replace("<paginaPlaceholder/>", $_GET['pagina'], $content);
 
 $result = $connection->query("SELECT * FROM ricette WHERE id={$id}")->fetch_assoc();
 if (!$result) {

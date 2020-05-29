@@ -204,7 +204,8 @@ if (!$result) {
 }
 
 if(key_exists("logged", $_SESSION) && $_SESSION["logged"] && $_SESSION["user"]->getAdmin()){
-    $editPath = "<rootFolder />/php/edit-ricetta.php?id=$id";
+    $nrPagina = $_GET['pagina'];
+    $editPath = "<rootFolder />/php/edit-ricetta.php?id=$id&amp;pagina=$nrPagina";
     $content = str_replace("<editPlaceholder />", "<a href=\"$editPath\"> Modifica la ricetta </a> ", $content);
     $content = str_replace("<removePlaceholder />", "<a href=\"<rootFolder />/php/handle-rimuovi-ricetta.php?removeId=$id&amp;portata=$portata\"> Elimina la ricetta </a> ", $content);
 } else {

@@ -98,7 +98,7 @@
                      </ul>
               </fieldset>
        </form>
-       <form action="<rootFolder />/php/edit-ricetta.php"
+       <form action="<rootFolder />/php/ricetta.php?id=<idPlaceholder/>&amp;pagina=<paginaPlaceholder/>"
           method="post"
           id="annulla-modifiche"
         >
