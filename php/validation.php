@@ -67,20 +67,37 @@ function comparePassword($stringPassword, $stringPasswordCofirm)
     }
 }
 
-function checkPassword($stringPassword, $stringEmail) { // quando accedo controlla che la password è uguale a quella presente nel db
-    $passwordErr = $password = $email = "";
+function checkLogin($stringPassword, $stringEmail) { // quando accedo controlla che la password è uguale a quella presente nel db
+    $err = $email = $password = "";
+    $connection = new DBConnection();
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST[$stringPassword])) {
-            $passwordErr = "La password non pu&ograve; essere un campo vuoto";
+        if (empty($_POST[$stringEmail])) { //se la mail è vuota
+            $err = "La mail non pu&ograve; essere vuota";
         } else {
-            $password = test_input($_POST[$stringPassword]);
-            $email = test_input($_POST[$stringEmail]);
-            $connection = new DBConnection();
-            if ($email != "" && $connection->query(" SELECT passw FROM utenti WHERE email=\"$email\" ")->fetch_row() != null) {
-                $passwordErr = "La password non &egrave; corretta";
-                $connection->disconnect();
+            $email = test_input($_POST[$stringEmail]); 
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { //se la mail non valida
+                $err = "Email incorretta";
+            }
+            if (empty($_POST[$stringPassword])) { //se la password è vuota
+                $err = "La password non pu&ograve; essere un campo vuoto";
+            } else {
+                $password = test_input($_POST[$stringPassword]);
+                $result = $connection->query("SELECT passw FROM utenti WHERE email=\"{$email}\"");
+                if (!$result) {
+                // if ($connection->query(" SELECT passw FROM utenti WHERE email=\"{$email}\" ")->fetch_row() != null) {
+                    $err = "L'utente non esiste";
+                    $connection->disconnect();
+                } else {
+                    $user_row = $result->fetch_assoc();
+                    if($user_row['passw'] != $password) {
+                        $err = "La password non &egrave; corretta";
+                    }
+                    
+                }
             }
         }
+        return $err;
     }
 }
 

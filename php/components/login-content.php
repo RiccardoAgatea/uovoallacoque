@@ -16,7 +16,7 @@
                            placeholder="E-mail"
                            value="<emailPlaceholder />" />
                     <span id="login-email-message"
-                          class="warning"> <errorEmailPlaceholder /> </span>
+                          class="warning"> </span>
                 </li>
                 <li class="form-element">
                     <label class="form-label"
@@ -28,7 +28,7 @@
                            placeholder="Password"
                            value="<passwordPlaceholder />" /> <span id="
                            login-password-message"
-                          class="warning"> <errorPasswordPlaceholder /> </span>
+                          class="warning"> <errorPlaceholder /> </span>
                 </li>
                 <li class="form-element">
                     <input class="submit"
