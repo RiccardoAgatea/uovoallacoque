@@ -76,12 +76,47 @@ if (!$result) {
             file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
         )
     );   
-    $content = str_replace("<nomeRicettaPlaceholder/>", $nome, $content);
-    $content = str_replace("<imgSrcPlaceholder/>", $img, $content);
-    $content = str_replace("<difficoltaPlaceholder/>", $difficolta, $content);
-    $content = str_replace("<tempoPlaceholder/>", $tempo, $content);
-    $content = str_replace("<ingredientiPlaceholder/>", $ingredienti, $content);
-    $content = str_replace("<proceduraPlaceholder/>", $procedimento, $content);
+
+    if (key_exists("wrong-edit", $_SESSION) && $_SESSION["wrong-edit"]) {
+        $content = str_replace("<nomeRicettaPlaceholder/>", $_SESSION["nome"], $content);
+        $content = str_replace("<imgSrcPlaceholder/>", $_SESSION["immagine"], $content);
+        $content = str_replace("<difficoltaPlaceholder/>", $_SESSION["difficolta"], $content);
+        $content = str_replace("<tempoPlaceholder/>", $_SESSION["tempo"], $content);
+        $content = str_replace("<ingredientiPlaceholder/>", $_SESSION["ingredienti"], $content);
+        $content = str_replace("<proceduraPlaceholder/>", $_SESSION["procedura"], $content);
+
+        if ($_SESSION["errorNome"] != "") {
+            $content = str_replace("<errorNomePlaceholder />", $_SESSION["errorNome"], $content);
+        }   
+        if ($_SESSION["errorImg"] != "") {
+            $content = str_replace("<errorImgPlaceholder />", $_SESSION["errorImg"], $content);
+        } 
+        if ($_SESSION["errorDifficolta"] != "") {
+            $content = str_replace("<errorDifficoltaPlaceholder />", $_SESSION["errorDifficolta"], $content);
+        } 
+        if ($_SESSION["errorTempo"] != "") {
+            $content = str_replace("<errorTempoPlaceholder />", $_SESSION["errorTempo"], $content);
+        } 
+
+        $_SESSION["wrong-edit"] = false;
+        $_SESSION["immagine"] = "";
+        $_SESSION["difficolta"] = "";
+        $_SESSION["nome"] = "";
+        $_SESSION["tempo"] = "";
+        $_SESSION["ingredienti"] = "";
+        $_SESSION["procedura"] = "";
+    } else {
+        $content = str_replace("<nomeRicettaPlaceholder/>", $nome, $content);
+        $content = str_replace("<imgSrcPlaceholder/>", $img, $content);
+        $content = str_replace("<difficoltaPlaceholder/>", $difficolta, $content);
+        $content = str_replace("<tempoPlaceholder/>", $tempo, $content);
+        $content = str_replace("<ingredientiPlaceholder/>", $ingredienti, $content);
+        $content = str_replace("<proceduraPlaceholder/>", $procedimento, $content);
+        $content = str_replace("<errorNomePlaceholder />", "", $content);
+        $content = str_replace("<errorImgPlaceholder />", "", $content);
+        $content = str_replace("<errorDifficoltaPlaceholder />", "", $content);
+        $content = str_replace("<errorTempoPlaceholder />", "", $content);
+    }
 }
 
 $handler->setContent($content);

@@ -1,6 +1,6 @@
 <div id="content">
        <h1>Modifica ricetta </h1>
-       <form action="<rootFolder />/php/handle-edit-ricetta.php?id=<idPlaceholder/>"
+       <form action="<rootFolder />/php/handle-edit-ricetta.php?id=<idPlaceholder/>&amp;pagina=<paginaPlaceholder/>"
              name="edit-form"
              method="post"
              id="form-edit">
@@ -29,7 +29,7 @@
                                           name="immagine"
                                           value="<imgSrcPlaceholder/>" />
                                    <span id="edit-immagine-message"
-                                          class="warning"> </span>
+                                          class="warning"> <errorImgPlaceholder /></span>
                             </li>
 				<li> 
                                    <span> Modifica tipo della ricetta: </span>
@@ -57,7 +57,7 @@
                                           name="difficolta"
                                           value="<difficoltaPlaceholder/>" />
                                    <span id="edit-difficolta-message"
-                                         class="warning"> </span>
+                                         class="warning"> <errorDifficoltaPlaceholder />  </span>
                             </li>
                             <li class="form-element">
                                    <label class="form-label"
@@ -68,7 +68,7 @@
                                           name="tempo"
                                           value="<tempoPlaceholder/>" />
                                    <span id="edit-tempo-message"
-                                         class="warning"> </span>
+                                         class="warning"> <errorTempoPlaceholder /></span>
                             </li>
 			       <li class="form-element">
                                    <label class="form-label"

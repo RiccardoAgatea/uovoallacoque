@@ -8,12 +8,12 @@ $_SESSION["tempo"] = $_POST['tempo'];
 $_SESSION["difficolta"] = $_POST['difficolta'];
 $_SESSION["immagine"] = $_POST['immagine'];
 
-$_SESSION["errorNome"] = checkNomeRicetta();
+$_SESSION["errorNome"] = checkNomeRicetta("nome");
 $_SESSION["errorImg"] = "";
-$_SESSION["errorDifficolta"] = checkDifficolta();
-$_SESSION["errorTempo"] = checkTempo();
+$_SESSION["errorDifficolta"] = checkDifficolta("difficolta");
+$_SESSION["errorTempo"] = checkTempo("tempo");
 
-if ($_SESSION["errorNome"] != "" || $_SESSION["errorImg"] || $_SESSION["errorDifficolta"] !=  "" || $_SESSION["errorTempo"] != "") { 
+if ($_SESSION["errorNome"] != "" || $_SESSION["errorImg"] != "" || $_SESSION["errorDifficolta"] !=  "" || $_SESSION["errorTempo"] != "") { 
     $_SESSION["wrong-add"] = true; 
    header("Location: ./add-ricetta.php"); 
     exit;
