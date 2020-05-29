@@ -34,17 +34,20 @@
 				<li> 
                                    <span> Modifica tipo della ricetta: </span>
                                    <ul> 
-                                          <li> 
-                                                 <input type="radio" id="primo" name="tipo" value="primo"/>
-                                                 <label for="primo">Primo</label> 
+                                          <li class="item-radio-container">
+                                                 <label for="primo">Primo</label>  
+                                                 <input class="radio-ricetta" type="radio" id="primo" name="tipo" value="primo"/>
+                                                 
                                           </li>
-                                          <li> 
-                                                 <input type="radio" id="secondo" name="tipo" value="secondo"/>
+                                          <li class="item-radio-container">   
                                                  <label for="secondo">Secondo</label> 
+                                                 <input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="secondo"/>
+                                                 
                                           </li>
-                                          <li> 
-                                                 <input type="radio" id="dolce" name="tipo" value="dolce"/>
+                                          <li class="item-radio-container">   
                                                  <label for="dolce">Dolce</label>
+                                                 <input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="dolce"/>
+                                                 
                                           </li>
                                    </ul>
                             </li>
