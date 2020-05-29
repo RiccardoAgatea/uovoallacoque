@@ -60,6 +60,11 @@ class TemplateHandler
         $this->page = str_replace("<backToTopPlaceholder />", $backToTopSnippet, $this->page);
     }
 
+    public function setAnnulla(string $annullaSnippet)
+    {
+        $this->page = str_replace("<annullaPlaceholder />", $annullaSnippet, $this->page);
+    }
+
     public function setFooter(string $footerSnippet)
     {
         $this->page = str_replace("<footerPlaceholder />", $footerSnippet, $this->page);
