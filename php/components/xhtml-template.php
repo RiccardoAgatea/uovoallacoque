@@ -33,7 +33,8 @@
 			  media="print"
 			  href="<rootFolder />/styles/print.css"
 			  type="text/css" />
-		<script defer
+		<script defer="defer"
+				type="text/javascript"
 				src="<rootFolder />/js/script.js"></script>
 	</head>
 
