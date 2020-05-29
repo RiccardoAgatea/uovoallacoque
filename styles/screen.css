@@ -253,6 +253,13 @@ ul{
 .cambio-info{
     display: block;
 }
+#visualizza-dati{
+    /*text-align: center;*/
+    border-style: dashed;
+    border-width: 0.07em;
+    padding: 0em 1em;
+    margin-top: 1em;
+}
 .foto-utente {
     width: 5em;
     height: 5em;

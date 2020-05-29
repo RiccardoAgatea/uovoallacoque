@@ -8,30 +8,26 @@
         </h1>
         <errorPlaceholder />
     </div>
-
     <addPlaceholder />
-
-    <!-- visualizzazione img -->
-    <p class="info-attuale">Immagine attuale:</p>
-    <img class="foto-utente"
-         src="<PlaceholderImmagineUtente />"
-         alt="la tua immagine del profilo" />
-    
-    <!-- visualizzazione nickname -->
-    <p class="info-attuale">Nickname attuale:
-        <PlaceholderNicknameUtente />
-    </p>
-   
-
-    <!-- visualizzazione email -->
-    <p class="info-attuale">E-mail attuale:
-        <PlaceholderEmailUtente />
-    </p>
-    <!-- link modifica dati -->
-    <p id="link-modifica-dati">
-    Per modificare i tuoi dati vai su:
-    <a href="<rootFolder />/php/modifica-utente.php">Modifica dati</a>
-    </p> 
+    <div id="visualizza-dati">
+      <p class="info-attuale">Immagine attuale:</p>
+      <img class="foto-utente"
+           src="<PlaceholderImmagineUtente />"
+           alt="la tua immagine del profilo" />
+      <!-- visualizzazione nickname -->
+      <p class="info-attuale">Nickname attuale:
+          <PlaceholderNicknameUtente />
+      </p>
+      <!-- visualizzazione email -->
+      <p class="info-attuale">E-mail attuale:
+          <PlaceholderEmailUtente />
+      </p>
+      <!-- link modifica dati -->
+      <p id="link-modifica-dati">
+      Per modificare i tuoi dati vai su:
+      <a href="<rootFolder />/php/modifica-utente.php">Modifica dati</a>
+      </p> 
+    </div>
 
     <!--Eliminazione account-->
     <form id="form-elimina-account"
