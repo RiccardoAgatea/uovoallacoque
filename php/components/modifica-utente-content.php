@@ -72,7 +72,7 @@
             </ul>
         </fieldset>
     </form>
-
+    <backToTopPlaceholder />
     <!-- form email -->
     <form action="<rootFolder />/php/handle-modifica-utente.php?item=email"
           method="post"
@@ -107,7 +107,7 @@
             </ul>
         </fieldset>
     </form>
-    
+    <backToTopPlaceholder />
     <!-- form password -->
     <form action="<rootFolder />/php/handle-modifica-utente.php?item=psw"
           method="post"
@@ -153,17 +153,17 @@
             </ul>
         </fieldset>
     </form>
-
+    <backToTopPlaceholder />
     <form action="<rootFolder />/php/utente.php"
           method="post"
           id="annulla-modifiche"
         >
         <fieldset class="form-fieldset annulla-modifiche-utente">
             <legend class="legend">Annulla le modifiche</legend>
-            <input class="annulla"
+            <input class="submit"
                         type="submit"
                         value="Annulla" />
         </fieldset>
     </form>
-
+    <backToTopPlaceholder />
 </div>
