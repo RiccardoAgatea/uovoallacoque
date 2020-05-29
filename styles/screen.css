@@ -207,16 +207,16 @@ ul{
         background-color: #0c2752;
 }
 /* torna su */
-#torna-su {
+.torna-su {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
-#torna-su-link{
+.torna-su-link{
     color: black;
     margin: 1em;
 }
-#torna-su-link:hover{
+.torna-su-link:hover{
     background-color:#FF9F29;
 }
 /*introduzione*/
