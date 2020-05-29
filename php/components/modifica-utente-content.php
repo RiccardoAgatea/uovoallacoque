@@ -154,4 +154,16 @@
         </fieldset>
     </form>
 
+    <form action="<rootFolder />/php/utente.php"
+          method="post"
+          id="annulla-modifiche"
+        >
+        <fieldset class="form-fieldset annulla-modifiche-utente">
+            <legend class="legend">Annulla le modifiche</legend>
+            <input class="annulla"
+                        type="submit"
+                        value="Annulla" />
+        </fieldset>
+    </form>
+
 </div>
