@@ -4,7 +4,7 @@ function schedaRicetta(string $immagine, string $nome, string $difficolta, strin
 {
     return "<img class=\"elenco-immagine\" src=\"$immagine\" alt = \"immagine di $nome\" />
 
-        <h$livello class=elenco-titolo>$nome</h$livello>
+        <h$livello class=\"elenco-titolo\">$nome</h$livello>
             <dl class=\"elenco-attributi\">
                 <dt> Difficolt&agrave; </dt> <dd>$difficolta</dd>
                 <dt>Tempo</dt> <dd>$tempo minuti</dd>
