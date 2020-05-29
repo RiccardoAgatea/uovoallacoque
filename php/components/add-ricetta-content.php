@@ -16,9 +16,9 @@
                                           id="add-nome"
                                           type="text"
                                           name="nome"
-                                          placeholder="Nome ricetta" />
+                                          value = "<nomePlaceholder />" />
                                    <span id="add-nome-message"
-                                         class="warning"> </span>
+                                         class="warning"> <errorNomePlaceholder /> </span>
                             </li>
                             <li class="form-element">
                                    <label for="add-immagine"> Immagine:</label>
@@ -26,11 +26,11 @@
                                           type="file"
                                           id="add-immagine"
                                           name="immagine"
-                                          placeholder="Immagine ricetta" />
+                                          value = "<imgPlaceholder />" />
                                    <span id="add-immagine-message"
-                                          class="warning"> </span>
+                                          class="warning"> <errorImgPlaceholder /> </span>
                             </li>
-				<li> 
+				                    <li> 
                                    <span> Tipo della ricetta: </span>
                                    <ul> 
                                           <li> 
@@ -54,9 +54,9 @@
                                           id="add-difficolta"
                                           type="text"
                                           name="difficolta"
-                                          placeholder="Difficolta ricetta" />
+                                          value = "<difficoltaPlaceholder />" />
                                    <span id="add-difficolta-message"
-                                         class="warning"> </span>
+                                         class="warning"> <errorDifficoltaPlaceholder /> </span>
                             </li>
                             <li class="form-element">
                                    <label class="form-label"
@@ -65,29 +65,25 @@
                                           id="add-tempo"
                                           type="text"
                                           name="tempo"
-                                          placeholder="Tempo in minuti" />
+                                          value = "<tempoPlaceholder />" />
                                    <span id="add-tempo-message"
-                                         class="warning"> </span>
+                                         class="warning"> <errorTempoPlaceholder /> </span>
                             </li>
-			       <li class="form-element">
+			                     <li class="form-element">
                                    <label class="form-label"
                                           for="add-ingredienti"> Ingredienti: </label>
                                    <textarea wrap="hard"
                                           class="barra-input"
                                           id="add-ingredienti"
                                           name="ingredienti"> </textarea>
-                                   <span id="add-ingredienti-message"
-                                         class="warning"> </span>
                             </li>
-			       <li class="form-element">
+			                       <li class="form-element">
                                    <label class="form-label"
                                           for="add-procedura"> Procedura: </label>
                                    <textarea wrap="hard"
                                           class="barra-input"
                                           id="add-procedura"
                                           name="procedura"> </textarea>
-                                   <span id="add-procedura-message"
-                                         class="warning"> </span>
                             </li>
                             <li class="form-element">
                                    <input class="submit"

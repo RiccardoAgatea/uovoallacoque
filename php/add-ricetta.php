@@ -11,7 +11,7 @@ $handler->setDescription("");
 $handler->setKeywords("");
 $handler->setAuthor("");
 
-if (!key_exists("logged", $_SESSION)||(!$_SESSION["logged"]))
+if (!key_exists("logged", $_SESSION) || (!$_SESSION["logged"]))
 {
     header("Location: ../401.php");
 }
@@ -40,13 +40,38 @@ $handler->setBreadcrumb(
 );
 
 if (key_exists("wrong-add", $_SESSION) && $_SESSION["wrong-add"]) {
-    // if ($_SESSION["error"] !== "") {
-    //     $content = str_replace("<errorPlaceholder />", $_SESSION["error"], $content);
-    // }   
+    $content = str_replace("<nomePlaceholder />", $_SESSION["nome"], $content);
+    $content = str_replace("<imgPlaceholder />", $_SESSION["immagine"], $content);
+    $content = str_replace("<difficoltaPlaceholder />", $_SESSION["difficolta"], $content);
+    $content = str_replace("<tempoPlaceholder />", $_SESSION["tempo"], $content);
+
+    if ($_SESSION["error"] !== "") {
+        $content = str_replace("<errorNomePlaceholder />", $_SESSION["errorNome"], $content);
+    }   
+    if ($_SESSION["error"] !== "") {
+        $content = str_replace("<errorImgPlaceholder />", $_SESSION["errorImg"], $content);
+    } 
+    if ($_SESSION["error"] !== "") {
+        $content = str_replace("<errorDifficoltaPlaceholder />", $_SESSION["errorDifficolta"], $content);
+    } 
+    if ($_SESSION["error"] !== "") {
+        $content = str_replace("<errorTempoPlaceholder />", $_SESSION["errorTempo"], $content);
+    } 
 
     $_SESSION["wrong-add"] = false;
+    $_SESSION["immagine"] = "";
+    $_SESSION["difficolta"] = "";
+    $_SESSION["nome"] = "";
+    $_SESSION["tempo"] = "";
 } else {
-    // $content = str_replace("<errorPlaceholder />", "", $content);
+    $content = str_replace("<nomePlaceholder />", "", $content);
+    $content = str_replace("<imgPlaceholder />", "", $content);
+    $content = str_replace("<difficoltaPlaceholder />", "", $content);
+    $content = str_replace("<tempoPlaceholder />", "", $content);
+    $content = str_replace("<errorNomePlaceholder />", "", $content);
+    $content = str_replace("<errorImgPlaceholder />", "", $content);
+    $content = str_replace("<errorDifficoltaPlaceholder />", "", $content);
+    $content = str_replace("<errorTempoPlaceholder />", "", $content);
 }
 
 $content = file_get_contents(__DIR__ . "/components/add-ricetta-content.php");
