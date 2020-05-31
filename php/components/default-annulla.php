@@ -9,4 +9,3 @@
                         value="Annulla" />
         </fieldset>
     </form>
-    <backToTopPlaceholder />

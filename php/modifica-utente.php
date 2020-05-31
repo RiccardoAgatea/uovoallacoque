@@ -42,6 +42,14 @@ $content = file_get_contents(__DIR__ . "/components/modifica-utente-content.php"
 
 $handler->setContent($content);
 
+$handler->setAnnulla(
+    str_replace(
+        "<linkPlaceholder/>",
+        "<rootFolder />/php/utente.php",
+        file_get_contents(__DIR__ . "/components/default-annulla.php")
+    )
+);
+
 $handler->setBackToTop(
     file_get_contents(__DIR__ . "/components/default-tornaSu.php")
 );

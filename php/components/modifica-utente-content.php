@@ -153,6 +153,7 @@
             </ul>
         </fieldset>
     </form>
+    <annullaPlaceholder />
     <backToTopPlaceholder />
 
 </div>

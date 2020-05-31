@@ -514,9 +514,10 @@ ul li input{ /*uguale a .barra-input */
     margin: 0.5em;
 }
 textarea{
-    min-width: 15em;
-    min-height: 2em;
+    min-width: 20em;
+    min-height: 5em;
 }
+
 /*FINE PAGINA MODIFICA RICETTA*/
 .submitutente{
     width: 10em;
