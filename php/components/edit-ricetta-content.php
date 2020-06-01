@@ -79,7 +79,7 @@
                                    <textarea wrap="hard"
                                           class="barra-input"
                                           id="edit-ingredienti"
-                                          name="ingredienti"> <ingredientiPlaceholder/> </textarea>
+                                          name="ingredienti"><ingredientiPlaceholder/></textarea>
                                    <span id="edit-ingredienti-message"
                                          class="warning"> </span>
                             </li>
@@ -89,7 +89,7 @@
                                    <textarea wrap="hard"
                                           class="barra-input"
                                           id="edit-procedura"
-                                          name="procedura"> <proceduraPlaceholder/> </textarea>
+                                          name="procedura"><proceduraPlaceholder/></textarea>
                                    <span id="edit-procedura-message"
                                          class="warning"> </span>
                             </li>
