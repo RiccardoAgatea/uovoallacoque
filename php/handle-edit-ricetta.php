@@ -11,10 +11,11 @@ $_SESSION["nome"] = $_POST['nome'];
 $_SESSION["tempo"] = $_POST['tempo'];
 $_SESSION["difficolta"] = $_POST['difficolta'];
 $_SESSION["immagine"] = $_POST['immagine'];
+$_SESSION["tipo"] = $_POST['tipo'];
 $_SESSION["ingredienti"] = $_POST['ingredienti'];
 $_SESSION["procedura"] = $_POST['procedura'];
 
-$_SESSION["errorNome"] = checkNomeRicetta("nome");
+$_SESSION["errorNome"] = checkEditNomeRicetta("nome");
 $_SESSION["errorImg"] = "";
 $_SESSION["errorDifficolta"] = checkDifficolta("difficolta");
 $_SESSION["errorTempo"] = checkTempo("tempo");
@@ -25,7 +26,9 @@ if ($_SESSION["errorNome"] != "" || $_SESSION["errorImg"] != "" || $_SESSION["er
     exit;
 } else { 
     $connection = new DBConnection();
-    $queryString = " UPDATE ricette SET nome='{$_POST['nome']}', difficolta='{$_POST['difficolta']}', tempo='{$_POST['tempo']}', img='{$_POST['immagine']}', portata='1', ingredienti='{$_POST['ingredienti']}', procedimento='{$_POST['procedura']}' WHERE id='{$id}' ";
+    // query che prende l immagine vecchia e se non viene rimpiazzata usa quella 
+
+    $queryString = " UPDATE ricette SET nome='{$_POST['nome']}', difficolta='{$_POST['difficolta']}', tempo='{$_POST['tempo']}', img='{$_POST['immagine']}', portata='{$_POST['tipo']}', ingredienti='{$_POST['ingredienti']}', procedimento='{$_POST['procedura']}' WHERE id='{$id}' ";
     $connection->query($queryString);
     $connection->disconnect();
 
@@ -36,6 +39,7 @@ if ($_SESSION["errorNome"] != "" || $_SESSION["errorImg"] != "" || $_SESSION["er
     $_SESSION["immagine"] = "";
     $_SESSION["ingredienti"] = "";
     $_SESSION["procedura"] = "";
+    $_SESSION["tipo"] = "";
     header("Location: ./ricetta.php?id={$id}&pagina={$pagina}");
     exit;
 }

@@ -31,25 +31,27 @@
                                    <span id="edit-immagine-message"
                                           class="warning"> <errorImgPlaceholder /></span>
                             </li>
-				<li> 
+				                    <li> 
                                    <span> Modifica tipo della ricetta: </span>
                                    <ul> 
                                           <li class="item-radio-container">
                                                  <label for="primo">Primo</label>  
-                                                 <input class="radio-ricetta" type="radio" id="primo" name="tipo" value="primo"/>
+                                                 <input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1"/>
                                                  
                                           </li>
                                           <li class="item-radio-container">   
                                                  <label for="secondo">Secondo</label> 
-                                                 <input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="secondo"/>
+                                                 <input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2"/>
                                                  
                                           </li>
                                           <li class="item-radio-container">   
                                                  <label for="dolce">Dolce</label>
-                                                 <input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="dolce"/>
+                                                 <input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3"/>
                                                  
                                           </li>
                                    </ul>
+                                   <span id="edit-tipo-message"
+                                         class="warning"> <errorTipoPlaceholder /> </span>
                             </li>
                             <li class="form-element">
                                    <label class="form-label"

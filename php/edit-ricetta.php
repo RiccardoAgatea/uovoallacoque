@@ -86,6 +86,20 @@ if (!$result) {
         $content = str_replace("<ingredientiPlaceholder/>", $_SESSION["ingredienti"], $content);
         $content = str_replace("<proceduraPlaceholder/>", $_SESSION["procedura"], $content);
 
+        switch ($_SESSION["tipo"]) {
+          case 1:
+            $content = str_replace('<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1"/>', '<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1" checked="checked"/>', $content);
+            break;
+          case 2:
+            $content = str_replace('<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2"/>', '<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2" checked="checked"/>', $content);
+            break;
+          case 3:
+            $content = str_replace('<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3"/>', '<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3" checked="checked"/>', $content);
+            break;
+          default:
+            $content = str_replace("<errorTipoPlaceholder />", "Tipo di portata inesistente", $content);
+        } 
+
         if ($_SESSION["errorNome"] != "") {
             $content = str_replace("<errorNomePlaceholder />", $_SESSION["errorNome"], $content);
         }   
@@ -113,10 +127,26 @@ if (!$result) {
         $content = str_replace("<tempoPlaceholder/>", $tempo, $content);
         $content = str_replace("<ingredientiPlaceholder/>", $ingredienti, $content);
         $content = str_replace("<proceduraPlaceholder/>", $procedimento, $content);
+
+        switch ($portata) {
+          case 1:
+            $content = str_replace('<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1"/>', '<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1" checked="checked"/>', $content);
+            break;
+          case 2:
+            $content = str_replace('<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2"/>', '<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2" checked="checked"/>', $content);
+            break;
+          case 3:
+            $content = str_replace('<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3"/>', '<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3" checked="checked"/>', $content);
+            break;
+          default:
+            $content = str_replace("<errorTipoPlaceholder />", "Tipo di portata inesistente", $content);
+        } 
+
         $content = str_replace("<errorNomePlaceholder />", "", $content);
         $content = str_replace("<errorImgPlaceholder />", "", $content);
         $content = str_replace("<errorDifficoltaPlaceholder />", "", $content);
         $content = str_replace("<errorTempoPlaceholder />", "", $content);
+        $content = str_replace("<errorTipoPlaceholder />", "", $content);
     }
 }
 
