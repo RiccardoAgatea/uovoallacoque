@@ -44,8 +44,9 @@ if(key_exists("pagina", $_GET)) {
 }
 
 $id = $_GET["id"];
+$pagina = $_GET['pagina'];
 $content = str_replace("<idPlaceholder/>", $id, $content);
-$content = str_replace("<paginaPlaceholder/>", $_GET['pagina'], $content);
+$content = str_replace("<paginaPlaceholder/>", $pagina, $content);
 
 $result = $connection->query("SELECT * FROM ricette WHERE id={$id}")->fetch_assoc();
 if (!$result) {
@@ -124,7 +125,7 @@ $handler->setContent($content);
 $handler->setAnnulla(
     str_replace(
         "<linkPlaceholder/>",
-        "<rootFolder />/php/handle-edit-ricetta.php?id=<idPlaceholder/>&amp;pagina=<paginaPlaceholder/>",
+        "<rootFolder />/php/ricetta.php?id=$id&amp;pagina=$pagina",
         file_get_contents(__DIR__ . "/components/default-annulla.php")
     )
 );
