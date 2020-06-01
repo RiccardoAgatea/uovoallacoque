@@ -25,8 +25,8 @@ function checkNickname($stringNickname) {
                 $connection->disconnect();
             }
         }
-        return $nicknameErr;
     }
+    return $nicknameErr;
 }
 
 function checkEmail($stringEmail)
@@ -46,8 +46,8 @@ function checkEmail($stringEmail)
                 $connection->disconnect();
             }
         }
-        return $emailErr;
     }
+    return $emailErr;
 }
 
 function comparePassword($stringPassword, $stringPasswordCofirm) 
@@ -63,8 +63,8 @@ function comparePassword($stringPassword, $stringPasswordCofirm)
                 $passwordErr = "Le password non coincidono";
             }
         }
-        return $passwordErr;
     }
+    return $passwordErr;
 }
 
 function checkLogin($stringPassword, $stringEmail) { // quando accedo controlla che la password è uguale a quella presente nel db
@@ -97,16 +97,16 @@ function checkLogin($stringPassword, $stringEmail) { // quando accedo controlla 
                 }
             }
         }
-        return $err;
     }
+    return $err;
 }
 
-function checkNomeRicetta($stringNomeRicetta)
+function checkAddNomeRicetta($stringNomeRicetta)
 {
 	$nomeRicettaErr = $nomeRicetta = "";
     $connection = new DBConnection();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["REQUEST_METHOD"])) {
+        if (empty($_POST[$stringNomeRicetta])) {
             $nomeRicettaErr = "Il nome non pu&ograve; essere un campo vuoto";
         } else {
             $nomeRicetta = test_input($_POST[$stringNomeRicetta]);
@@ -118,15 +118,32 @@ function checkNomeRicetta($stringNomeRicetta)
                 $connection->disconnect();
             }
         }
-        return $nomeRicettaErr;
     }
+    return $nomeRicettaErr;
+}
+
+function checkEditNomeRicetta($stringNomeRicetta)
+{
+    $nomeRicettaErr = $nomeRicetta = "";
+    $connection = new DBConnection();
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST[$stringNomeRicetta])) {
+            $nomeRicettaErr = "Il nome non pu&ograve; essere un campo vuoto";
+        } else {
+            $nomeRicetta = test_input($_POST[$stringNomeRicetta]);
+            if (!preg_match("/^[a-zA-Z0-9]{3,55}$/", $nomeRicetta)) {
+                $nomeRicettaErr = "La lunghezza &egrave; tra 3 e 55 caratteri alfanumerici";
+            }
+        }
+    }
+    return $nomeRicettaErr;
 }
 
 function checkDifficolta($stringDifficolta)
 {
 	$difficoltaErr = $difficolta = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["REQUEST_METHOD"])) {
+        if (empty($_POST[$stringDifficolta])) {
             $difficoltaErr = "La difficolt&agrave; non pu&ograve; essere un campo vuoto";
         } else {
             $difficolta = test_input($_POST[$stringDifficolta]);
@@ -134,22 +151,22 @@ function checkDifficolta($stringDifficolta)
                 $difficoltaErr = "L'intervallo valido &egrave; tra 1 e 5";
             }
         }
-        return $difficoltaErr;
     }
+    return $difficoltaErr;
 }
 
 function checkTempo($stringTempo)
 {
 	$tempoErr = $tempo = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST["REQUEST_METHOD"])) {
+        if (empty($_POST[$stringTempo])) {
             $tempoErr = "Il tempo non pu&ograve; essere un campo vuoto";
         } else {
-            $tempo = test_input($_POST[$stringtempo]);
+            $tempo = test_input($_POST[$stringTempo]);
             if (!preg_match("/^[1-9][0-9]*$/", $tempo)) {
                 $tempoErr = "Sono ammessi solo valori interi positivi";
             }
         }
-        return $tempoErr;
     }
+    return $tempoErr;
 }
