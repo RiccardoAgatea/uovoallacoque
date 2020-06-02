@@ -16,7 +16,7 @@ $_SESSION["ingredienti"] = $_POST['ingredienti'];
 $_SESSION["procedura"] = $_POST['procedura'];
 
 $_SESSION["errorNome"] = checkEditNomeRicetta("nome");
-$_SESSION["errorImg"] = "";
+$_SESSION["errorImg"] = checkImage("immagine");
 $_SESSION["errorDifficolta"] = checkDifficolta("difficolta");
 $_SESSION["errorTempo"] = checkTempo("tempo");
 
@@ -26,9 +26,22 @@ if ($_SESSION["errorNome"] != "" || $_SESSION["errorImg"] != "" || $_SESSION["er
     exit;
 } else { 
     $connection = new DBConnection();
-    // query che prende l immagine vecchia e se non viene rimpiazzata usa quella 
 
-    $queryString = " UPDATE ricette SET nome='{$_POST['nome']}', difficolta='{$_POST['difficolta']}', tempo='{$_POST['tempo']}', img='{$_POST['immagine']}', portata='{$_POST['tipo']}', ingredienti='{$_POST['ingredienti']}', procedimento='{$_POST['procedura']}' WHERE id='{$id}' ";
+    $path = "";
+    $basename = basename($_FILES['immagine']['name']);
+    // if($basename == ""){ 
+    //     $result = $connection->query(" SELECT img FROM ricette WHERE id=$id ");   
+    //     if ($result) {
+    //         $row = $result->fetch_assoc(); 
+    //         $path = $row['img'];
+    //     }
+    // } else {
+        $uploadfile = "../img/ricette/" . $basename;
+        move_uploaded_file($_FILES['immagine']['tmp_name'], $uploadfile);
+        $path = str_replace("..", "<rootFolder />", $uploadfile);
+    // }
+
+    $queryString = " UPDATE ricette SET nome='{$_POST['nome']}', difficolta='{$_POST['difficolta']}', tempo='{$_POST['tempo']}', img='$path', portata='{$_POST['tipo']}', ingredienti='{$_POST['ingredienti']}', procedimento='{$_POST['procedura']}' WHERE id='{$id}' ";
     $connection->query($queryString);
     $connection->disconnect();
 

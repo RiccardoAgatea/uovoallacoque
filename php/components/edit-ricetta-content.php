@@ -3,7 +3,8 @@
        <form action="<rootFolder />/php/handle-edit-ricetta.php?id=<idPlaceholder/>&amp;pagina=<paginaPlaceholder/>"
              name="edit-form"
              method="post"
-             id="form-edit">
+             id="form-edit"
+             enctype="multipart/form-data">
               <fieldset class="form-fieldset">
                      <legend class="legend">
                             Modifica i dati della ricetta
