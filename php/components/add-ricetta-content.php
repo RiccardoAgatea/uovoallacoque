@@ -3,7 +3,8 @@
        <form action="<rootFolder />/php/handle-add-ricetta.php"
              name="add-form"
              method="post"
-             id="form-add" >
+             id="form-add" 
+             enctype="multipart/form-data">
               <fieldset class="form-fieldset">
                      <legend class="legend">
                             Inserisci i dati della nuova ricetta

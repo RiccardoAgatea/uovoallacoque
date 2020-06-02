@@ -23,7 +23,13 @@ if ($_SESSION["errorNome"] != "" || $_SESSION["errorImg"] != "" || $_SESSION["er
     exit;
 } else { 
     $connection = new DBConnection();
-    $connection->query("INSERT INTO ricette (nome, difficolta, tempo, img, portata, ingredienti, procedimento) VALUES (\"{$_POST['nome']}\",\"{$_POST['difficolta']}\",\"{$_POST['tempo']}\",\"{$_POST['immagine']}\",\"{$_POST['tipo']}\",\"{$_POST['ingredienti']}\",\"{$_POST['procedura']}\");");
+
+    $imageFileType = strtolower(pathinfo($_FILES['immagine']['name'], PATHINFO_EXTENSION));
+    $uploadfile = "../img/ricette/" . basename($_FILES['immagine']['name']); 
+    move_uploaded_file($_FILES['immagine']['tmp_name'], $uploadfile);
+    $path = str_replace("..", "<rootFolder />", $uploadfile);
+
+    $connection->query("INSERT INTO ricette (nome, difficolta, tempo, img, portata, ingredienti, procedimento) VALUES (\"{$_POST['nome']}\",\"{$_POST['difficolta']}\",\"{$_POST['tempo']}\",\"$path\",\"{$_POST['tipo']}\",\"{$_POST['ingredienti']}\",\"{$_POST['procedura']}\");");
 
     $connection->disconnect();
     $_SESSION["wrong-add"] = false;
