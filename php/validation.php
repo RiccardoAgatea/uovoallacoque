@@ -110,7 +110,7 @@ function checkAddNomeRicetta($stringNomeRicetta)
             $nomeRicettaErr = "Il nome non pu&ograve; essere un campo vuoto";
         } else {
             $nomeRicetta = test_input($_POST[$stringNomeRicetta]);
-            if (!preg_match("/^[a-zA-Z0-9]{3,55}$/", $nomeRicetta)) {
+            if (!preg_match("/^[a-zA-Z0-9\s]{3,55}$/", $nomeRicetta)) {
                 $nomeRicettaErr = "La lunghezza &egrave; tra 3 e 55 caratteri alfanumerici";
             }
             if ($connection->query(" SELECT nome FROM ricette WHERE nome=\"$nomeRicetta\" ")->fetch_row() != null) {
@@ -131,7 +131,7 @@ function checkEditNomeRicetta($stringNomeRicetta)
             $nomeRicettaErr = "Il nome non pu&ograve; essere un campo vuoto";
         } else {
             $nomeRicetta = test_input($_POST[$stringNomeRicetta]);
-            if (!preg_match("/^[a-zA-Z0-9]{3,55}$/", $nomeRicetta)) {
+            if (!preg_match("/^[a-zA-Z0-9\s]{3,55}$/", $nomeRicetta)) {
                 $nomeRicettaErr = "La lunghezza &egrave; tra 3 e 55 caratteri alfanumerici";
             }
         }
@@ -169,4 +169,16 @@ function checkTempo($stringTempo)
         }
     }
     return $tempoErr;
+}
+
+function checkImage($stringImage) {
+    $imageErr = "";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $extension = strtolower(pathinfo($_FILES[$stringImage]['name'], PATHINFO_EXTENSION));
+        $allowed_extensions = array("jpg","jpeg","png","svg");
+        if(!in_array($extension, $allowed_extensions)) {
+            $imageErr = "Formato immagine non valido";
+        }
+    }
+    return $imageErr;
 }
