@@ -8,12 +8,11 @@
             <ul class="form-container">
                 <li class="form-element">
                     <label class="form-label"
-                           for="login-email">Email:</label>
+                           for="login-email">E-mail:</label>
                     <input class="barra-input"
                            id="login-email"
-                           type="email"
+                           type="text"
                            name="email"
-                           placeholder="E-mail"
                            value="<emailPlaceholder />" />
                     <span id="login-email-message"
                           class="warning"> </span>
@@ -25,7 +24,6 @@
                            id="login-password"
                            type="password"
                            name="password"
-                           placeholder="Password"
                            value="<passwordPlaceholder />" /> <span id="
                            login-password-message"
                           class="warning"> <errorPlaceholder /> </span>

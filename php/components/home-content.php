@@ -17,20 +17,19 @@
             discutere con gli altri utenti nella sezione dei commenti.
         </p>
     </div>
-        <div class="elenco-migliori">
-            <div class="miglior-elemento">
-            <h2 class="titolo-migliori">Primo piatto migliore</h2>
-                <topPrimoPlaceholder />
-            </div>
-            <div class="miglior-elemento">   
-            <h2 class="titolo-migliori">Secondo piatto migliore</h2>
-                <topSecondoPlaceholder />
-            </div>
-            <div class="miglior-elemento">  
-            <h2 class="titolo-migliori">Dessert migliore</h2>
-                <topDolcePlaceholder />
-            </div>    
+    <div class="elenco-migliori">
+        <div class="miglior-elemento">
+        <h2 class="titolo-migliori">Primo piatto migliore</h2>
+            <topPrimoPlaceholder />
         </div>
+        <div class="miglior-elemento">   
+        <h2 class="titolo-migliori">Secondo piatto migliore</h2>
+            <topSecondoPlaceholder />
+        </div>
+        <div class="miglior-elemento">  
+        <h2 class="titolo-migliori">Dessert migliore</h2>
+            <topDolcePlaceholder />
+        </div>    
     </div>
     <backToTopPlaceholder />
 </div>

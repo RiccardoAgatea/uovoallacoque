@@ -12,7 +12,7 @@
 		<dd>
 			<difficoltàPlaceholder />
 		</dd>
-		<dt id=ricetta-tempo>Tempo:</dt>
+		<dt id="ricetta-tempo">Tempo:</dt>
 		<dd>
 			<tempoPlaceholder />
 		</dd>

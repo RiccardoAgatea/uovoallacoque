@@ -85,7 +85,7 @@
                     <label for="user-email">Nuova email:</label>
                     <input class="barra-input"
                            id="user-email"
-                           type="email"
+                           type="text"
                            name="user-email" />
                     <span id="user-email-message"
                           class="warning"> </span>

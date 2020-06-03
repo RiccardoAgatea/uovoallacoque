@@ -30,6 +30,11 @@ body{
 #content{
     margin: 1em;
 }
+/* form */
+.fieldset-noborder{
+    border: none; 
+}
+
 /*Footer*/
 #footer {
 	width: 100%;
@@ -291,7 +296,6 @@ ul{
     margin-top: 2em;
     margin-bottom: 2em;
     border: none; /*non mi piaceva il cornicione*/
-
 }
 .form-container {
 	display: flex;

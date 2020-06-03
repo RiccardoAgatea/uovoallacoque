@@ -138,7 +138,7 @@ function getPaginazione($totPagine, $tipo, $corrente)
         if ($corrente != 1) {
             $out .= "<li><a href=\"?";
             if ($tipo == 0) {
-                $out .= "termine_ricerca={$_GET["termine_ricerca"]}";
+                $out .= "termine-ricerca={$_GET["termine-ricerca"]}";
             } else {
                 $out .= "id=$tipo";
             }
@@ -148,7 +148,7 @@ function getPaginazione($totPagine, $tipo, $corrente)
         if ($i != $corrente) {
             $out .= "<li><a href=\"?";
             if ($tipo == 0) {
-                $out .= "termine_ricerca={$_GET["termine_ricerca"]}";
+                $out .= "termine-ricerca={$_GET["termine-ricerca"]}";
             } else {
                 $out .= "id=$tipo";
             }
@@ -160,7 +160,7 @@ function getPaginazione($totPagine, $tipo, $corrente)
     if ($corrente < $totPagine) {
         $out .= "<li><a href=\"?";
         if ($tipo == 0) {
-            $out .= "termine_ricerca={$_GET["termine_ricerca"]}";
+            $out .= "termine-ricerca={$_GET["termine-ricerca"]}";
         } else {
             $out .= "id=$tipo";
         }

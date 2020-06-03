@@ -1,6 +1,6 @@
 <div class="commento">
     <img src =
-        "<immagineUtentePlaceholder />" class="commento-immagine"/>
+        "<immagineUtentePlaceholder />" alt="Immagine profilo utente" class="commento-immagine"/>
     <h4> 
         <nomeUtentePlaceholder />
     </h4>

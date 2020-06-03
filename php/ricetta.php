@@ -89,14 +89,14 @@ if (!$result) {
             $tastiVoto ="<p>Il tuo voto per questa ricetta &egrave; " . strval($row) ."/5</p>";
         }
         else {
-            $tastiVoto = "<form action=\"<rootFolder />/php/handle-voto.php?ricetta={$id}\" method=\"post\">
+            $tastiVoto = "<form action=\"<rootFolder />/php/handle-voto.php?ricetta={$id}\" method=\"post\"><fieldset class=\"fieldset-noborder\">
                 <label for=\"pulsante-voto-1\">1 Stella</label><input type=\"radio\" id=\"pulsante-voto-1\" name=\"pulsante-voto\" value=\"1\" />
                 <label for=\"pulsante-voto-2\">2 Stelle</label><input type=\"radio\" id=\"pulsante-voto-2\" name=\"pulsante-voto\" value=\"2\" />
                 <label for=\"pulsante-voto-3\">3 Stelle</label><input type=\"radio\" id=\"pulsante-voto-3\" name=\"pulsante-voto\" value=\"3\" />
                 <label for=\"pulsante-voto-4\">4 Stelle</label><input type=\"radio\" id=\"pulsante-voto-4\" name=\"pulsante-voto\" value=\"4\" />
                 <label for=\"pulsante-voto-5\">5 Stelle</label><input type=\"radio\" id=\"pulsante-voto-5\" name=\"pulsante-voto\" value=\"5\" />
                 <input type=\"submit\" value= \"vota\"/>
-            </form>";
+            </fieldset></form>";
         }
 
 
@@ -168,8 +168,8 @@ if (!$result) {
                 $commentiContent = str_replace("<editedPlaceholder />", $edited, $commentiContent);
 
                 if ($idUtente == $_SESSION['user']->getId()) {
-                    $commentiContent = str_replace("<modificaCommentoPlaceholder />", "<form method=\"POST\" action=\"<rootFolder />/php/setup-modifica-commento.php?ricetta={$_GET["id"]}&idcommento=$idcommento&amp;pagina=$corrente\"><input type=\"submit\" value=\"Modifica\"/></form>", $commentiContent);
-                    $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "<form method=\"POST\" action=\"<rootFolder />/php/handle-elimina-commento.php?ricetta={$_GET["id"]}&idcommento=$idcommento\"><input type=\"submit\" value=\"Elimina\"/></form>", $commentiContent);
+                    $commentiContent = str_replace("<modificaCommentoPlaceholder />", "<form method=\"post\" action=\"<rootFolder />/php/setup-modifica-commento.php?ricetta={$_GET["id"]}&amp;idcommento=$idcommento&amp;pagina=$corrente\"><fieldset class=\"fieldset-noborder\"><input type=\"submit\" value=\"Modifica\"/></fieldset></form>", $commentiContent);
+                    $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "<form method=\"post\" action=\"<rootFolder />/php/handle-elimina-commento.php?ricetta={$_GET["id"]}&amp;idcommento=$idcommento\"><fieldset class=\"fieldset-noborder\"><input type=\"submit\" value=\"Elimina\"/></fieldset></form>", $commentiContent);
                 } else {
                     $commentiContent = str_replace("<modificaCommentoPlaceholder />", "", $commentiContent);
                     $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "", $commentiContent);

@@ -1,7 +1,6 @@
 <div id="content">
        <h1>Modifica ricetta </h1>
        <form action="<rootFolder />/php/handle-edit-ricetta.php?id=<idPlaceholder/>&amp;pagina=<paginaPlaceholder/>"
-             name="edit-form"
              method="post"
              id="form-edit"
              enctype="multipart/form-data">
@@ -17,7 +16,6 @@
                                           id="edit-nome"
                                           type="text"
                                           name="nome"
-                                          placeholder="Nome della ricetta"
                                           value="<nomeRicettaPlaceholder/>" />
                                    <span id="edit-nome-message"
                                          class="warning"> <errorNomePlaceholder /> </span>
@@ -79,7 +77,7 @@
 			       <li class="form-element">
                                    <label class="form-label"
                                           for="edit-ingredienti"> Modifica ingredienti: </label>
-                                   <textarea wrap="hard"
+                                   <textarea rows="" cols=""
                                           class="barra-input"
                                           id="edit-ingredienti"
                                           name="ingredienti"><ingredientiPlaceholder/></textarea>
@@ -89,7 +87,7 @@
 			       <li class="form-element">
                                    <label class="form-label"
                                           for="edit-procedura"> Modifica procedura: </label>
-                                   <textarea wrap="hard"
+                                   <textarea rows="" cols=""
                                           class="barra-input"
                                           id="edit-procedura"
                                           name="procedura"><proceduraPlaceholder/></textarea>

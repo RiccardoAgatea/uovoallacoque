@@ -1,7 +1,6 @@
 <div id="content">
        <h1>Aggiungi ricetta</h1>
        <form action="<rootFolder />/php/handle-add-ricetta.php"
-             name="add-form"
              method="post"
              id="form-add" 
              enctype="multipart/form-data">
@@ -78,7 +77,7 @@
 			                     <li class="form-element">
                                    <label class="form-label"
                                           for="add-ingredienti"> Ingredienti: </label>
-                                   <textarea wrap="hard"
+                                   <textarea rows="" cols=""
                                           class="barra-input"
                                           id="add-ingredienti"
                                           name="ingredienti"><ingredientiPlaceholder /></textarea>
@@ -86,7 +85,7 @@
 			                       <li class="form-element">
                                    <label class="form-label"
                                           for="add-procedura"> Procedura: </label>
-                                   <textarea wrap="hard"
+                                   <textarea rows="" cols=""
                                           class="barra-input"
                                           id="add-procedura"
                                           name="procedura"><proceduraPlaceholder /></textarea>

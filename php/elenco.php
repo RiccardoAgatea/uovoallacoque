@@ -62,6 +62,8 @@ if ($tipo != 0) {
             file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
         )
     );
+} else {
+    $handler->setBreadcrumb("");
 }
 
 $handler->setNav($nav);
@@ -76,7 +78,7 @@ $primoElemento = ($pagina - 1) * $perPagina;
 $temp =
 $tipo != 0 ?
 contentPortata($tipo, $primoElemento, $perPagina) :
-contentRicerca($_GET["termine_ricerca"], $primoElemento, $perPagina);
+contentRicerca($_GET["termine-ricerca"], $primoElemento, $perPagina);
 
 $risultato = $temp[0];
 $totPagine = $temp[1];

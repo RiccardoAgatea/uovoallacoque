@@ -1,7 +1,6 @@
 <div id="content">
        <h1>Registrati</h1>
        <form action="<rootFolder />/php/handle-signup.php"
-             name="signup"
              method="post"
              id="form-signup">
               <fieldset class="form-fieldset">
@@ -15,7 +14,6 @@
                                           id="signup-nick" 
                                           type="text"
                                           name="nickname"
-                                          placeholder="Nickname"
                                           value="<nicknamePlaceholder />" />
                                    <span id="signup-nick-message"
                                          class="warning"> <errorNicknamePlaceholder /> </span>
@@ -25,9 +23,8 @@
                                           for="signup-email">Email:</label>
                                    <input class="barra-input"
                                           id="signup-email"
-                                          type="email"
+                                          type="text"
                                           name="email"
-                                          placeholder="E-mail"
                                           value="<emailPlaceholder />" />
                                    <span id="signup-email-message"
                                          class="warning"> <errorEmailPlaceholder /> </span>
@@ -39,7 +36,6 @@
                                           id="signup-password1"
                                           type="password"
                                           name="password1"
-                                          placeholder="Password"
                                           value="<password1Placeholder />" />
                             </li>
                             <li class="form-element">
@@ -49,8 +45,7 @@
                                    <input class="barra-input"
                                           id="signup-password2"
                                           type="password"
-                                          name="password2"
-                                          placeholder="Password" />
+                                          name="password2" />
                                    <span id="signup-password2-message"
                                          class="warning"> <errorPasswordPlaceholder /> </span>
                             </li>
