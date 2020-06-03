@@ -27,4 +27,4 @@ $connection->query("INSERT INTO commenti(utente, ricetta, contenuto, dataeora) V
 
 $connection->disconnect();
 
-header("Location: ricetta.php?id=$idRicetta&amp;pagina=1#sezione-commenti");
+header("Location: ricetta.php?id=$idRicetta&pagina=1#sezione-commenti");

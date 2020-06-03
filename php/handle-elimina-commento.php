@@ -34,4 +34,4 @@ $connection->query("DELETE FROM commenti WHERE commenti.id=$idCommento");
 
 $connection->disconnect();
 
-header("Location: ricetta.php?id=$idRicetta&amp;pagina=1#sezione-commenti");
+header("Location: ricetta.php?id=$idRicetta&pagina=1#sezione-commenti");

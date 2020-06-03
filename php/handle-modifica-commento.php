@@ -46,4 +46,4 @@ $connection->query("UPDATE commenti SET commenti.contenuto = \"$testo\", comment
 
 $connection->disconnect();
 
-header("Location: ricetta.php?id=$idRicetta&amp;pagina=$pagina#sezione-commenti");
+header("Location: ricetta.php?id=$idRicetta&pagina=$pagina#sezione-commenti");

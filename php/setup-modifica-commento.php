@@ -8,4 +8,4 @@ $idRicetta = $_GET['ricetta'];
 $idCommento = $_GET['idcommento'];
 $pagina = $_GET['pagina'];
 
-header("Location: ricetta.php?id=$idRicetta&amp;pagina=$pagina&amp;idcommento=$idCommento#sezione-commenti");
+header("Location: ricetta.php?id=$idRicetta&pagina=$pagina&idcommento=$idCommento#sezione-commenti");
