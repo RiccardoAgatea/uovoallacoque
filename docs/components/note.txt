@@ -1,0 +1,54 @@
+php
+- template
+- validazione 
+- 40* 
+- paginazione negli elenchi
+- encoding
+
+pagine
+- index [Ri]
+- elenco [Re]
+- piatto (ricetta?) [E]
+- utente [E]
+- login [S]
+- sign up [S]
+
+accessibilità
+- colori AAA #
+- link torna su
+- sfondo
+- link non circolari
+- breadcrumb
+- bottoni annulla
+- lingua
+
+css
+- mobile
+- stampa
+
+js
+- commenti
+- voti (?)
+- validazione
+
+db
+- ricette, commenti, utenti, voti
+
+admin
+- aggiunta, modifica, elimina ricette
+user loggato
+- commenti, voti
+user non registrato
+- visualizza
+
+
+--------------
+
+mobile: 
+descrizione delle immagini sormonta il titolo della ricetta (elenco) 
+ricerca nascosta dalla tastiera nel menu
+eliminazione account non va a capo (css?)
+commenti css 
+stelle sui voti -> vota: ()()()()()
+commenta -> non funziona da mobile 404
+tasto ESCI 
