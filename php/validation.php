@@ -50,11 +50,11 @@ function checkEmail($stringEmail)
     return $emailErr;
 }
 
-function comparePassword($stringPassword, $stringPasswordCofirm) 
+function comparePassword($stringPassword, $stringPasswordConfirm) 
 {
 	$passwordErr = $password = $passwordConfirm = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST[$stringPassword])) {
+        if (empty($_POST[$stringPassword]) || empty($_POST[$stringPasswordConfirm])) {
             $passwordErr = "La password non pu&ograve; essere un campo vuoto";
         } else {
             $password = test_input($_POST[$stringPassword]);

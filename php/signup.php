@@ -30,7 +30,7 @@ $handler->setBreadcrumb(
 );
 
 $content = file_get_contents(__DIR__ . "/components/signup-content.php");
-//------nickname-----------
+
 if (key_exists("wrong-signup", $_SESSION) && $_SESSION["wrong-signup"]) {
     $content = str_replace("<nicknamePlaceholder />", $_SESSION["nickname"], $content);
     $content = str_replace("<emailPlaceholder />", $_SESSION["email"], $content);

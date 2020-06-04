@@ -10,7 +10,7 @@ if (!key_exists("logged", $_SESSION) || (!$_SESSION["logged"])) {
 switch ($_GET["item"]) {
     case "img":if ($_POST["user-password-immagine"] == $_SESSION["user"]->getPassword()) {
             $imageFileType = strtolower(pathinfo($_FILES['user-immagine']['name'], PATHINFO_EXTENSION));
-            $uploadfile = "../img/utenti/" . $_SESSION["user"]->getId() . "." . $imageFileType;
+            $uploadfile = "../img/utenti/" . basename($_FILES['user-immagine']['name']);
             move_uploaded_file($_FILES['user-immagine']['tmp_name'], $uploadfile);
             $path = str_replace("..", "<rootFolder />", $uploadfile);
 
