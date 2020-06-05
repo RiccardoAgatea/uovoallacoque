@@ -1,18 +1,27 @@
 \section{Fase di implementazione}
 \label{sec:fase_di_implementazione}
-\subsection{HTML}
-% tutte le pagine sono in xhtml, escluse ?
+\subsection{Linguaggi}
+\paragraph{HTML}
+Tutte le pagine del sito sono state realizzate utilizzando come linguaggio di markup XHTML piuttosto che HTML5, per garantire un certo grado di qualità del codice e alta compatibilità con i browser più obsoleti. In particolare le differenze più importanti che ci hanno portato a preferire XHTML ad HTML5 sono:
+\begin{itemize}
+    \item I tag <html>, <head>, <title> e <body> sono obbligatori;
+    \item Gli elementi devono essere nidificati correttamente;
+    \item Gli elementi devono essere sempre chiusi;
+    \item Gli elementi devono essere sempre in minuscolo;
+    \item I nomi degli attributi devono essere sempre in minuscolo;
+\end{itemize}
+Per le form di registrazione e accesso, abbiamo scelto di utilizzare come input per le e-mail il tipo \texttt{text}, che grazie ad opportuni controlli specificati nelle sezioni \ref{par:php} e \ref{par:javascript}, si comporta quasi similmente al tipo \texttt{email} di HTML5. % la stessa cosa è stata fatta per il tipo search per la ricerca, number per tempo, range per difficoltà
 
-\subsection{CSS}
+\paragraph{CSS}
 
-\subsection{PHP}
+\paragraph{PHP}\ref{par:php}
 % la struttura principale di ogni pagina è organizzata secondo un template, nello specifico una classe wrapper che fornisce i metodi setter per costruire una pagina. Più in dettaglio, i metodi sono: setBlabla()
 % pagine 40* ed eventuali errori
 % validazione
 % funzionalità di ricerca
 % query portata
 
-\subsection{Javascript}
+\paragraph{Javascript}\ref{par:javascript}
 % commenti, voti, validazione
 
 % section fase_di_implementazione (end)
