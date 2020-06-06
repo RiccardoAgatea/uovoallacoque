@@ -49,6 +49,9 @@ $nav = file_get_contents(__DIR__ . "/components/default-nav.php");
 
 
 switch ($tipo) {
+    case 0: $handler->setDescription("Elenco delle ricette il cui nome contiene il termine ricercato");
+            $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette\" />");
+    break;
     case 1: $handler->setDescription("Elenco delle ricette di primi piatti disponibili");
             $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette, primi piatti\" />");
     break;

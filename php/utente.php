@@ -67,3 +67,4 @@ $handler->setFooter(
 );
 
 $handler->send();
+$handler->save("prova.html");

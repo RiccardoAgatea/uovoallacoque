@@ -9,6 +9,7 @@ $handler = new TemplateHandler(".", "xhtml");
 $handler->setTitle("Non autorizzato | Uovo alla Coque");
 $handler->setAuthor("Agatea Riccardo, Bosinceanu Ecaterina, Righetto Sara, Schiavon Rebecca");
 $handler->setDescription("");
+$handler->setOtherMeta("<meta name=\"robots\" content=\"noindex, nofollow\" />");
 
 $login = "";
 

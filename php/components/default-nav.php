@@ -29,6 +29,7 @@
 		  action="<rootFolder />/php/elenco.php?id=0"
 		  id="form-barra-ricerca">
 		  <fieldset class="fieldset-noborder">
+			<legend id="legend-ricerca">Ricerca</legend>
 			<label for="termine-ricerca">Cerca:</label>
 			<input type="text"
 				   id="termine-ricerca"

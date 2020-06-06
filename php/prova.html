@@ -1,0 +1,210 @@
+<!DOCTYPE html
+		  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xml:lang="it"
+	  lang="it">
+
+	<head>
+		<title>
+			Utente | Uovo alla Coque
+		</title>
+		<meta name="viewport"
+			  content="width=device-width, initial-scale=1.0" />
+		<meta name="title"
+			  content="Utente | Uovo alla Coque" />
+		<meta name="description"
+			  content="Pagina per visualizzare e modificare le informazioni dell'utente" />
+		<meta name="language"
+			  content="italian it" />
+		<meta name="author"
+			  content="Agatea Riccardo, Bosinceanu Ecaterina, Righetto Sara, Schiavon Rebecca" />
+		<meta http-equiv="Content-type"
+			  content="text/html; charset=utf-8" />
+		<meta name="robots" content="noindex, nofollow" />
+		<link rel="icon"
+			  href="../img/logo/logo-head.jpg"
+			  type="image/x-icon" />
+		<link rel="stylesheet"
+			  media="screen"
+			  href="../styles/screen.css"
+			  type="text/css" />
+		<link rel="stylesheet"
+			  media="print"
+			  href="../styles/print.css"
+			  type="text/css" />
+		<script defer="defer"
+				type="text/javascript"
+				src="../js/script.js"></script>
+	</head>
+
+	<body>
+		<div id="header">
+			<div id="screenReaderHelper">
+				<a href="#content" tabindex="0">Vai al contenuto</a>
+				<a href="#menu" tabindex="0">Vai al menu</a>
+				<a href="#barra-ricerca" tabindex="0">Vai alla barra di ricerca</a>
+			</div>
+			<img id="immagine-logo"
+				 src="../img/logo/coque_scritta_long.png"
+				 alt="Uovo alla coque" />
+			<span class="apri-nav">
+				<img class="open-button"
+					 src="../img/icone/hamburger.png"
+					 alt="apri menu" />
+			</span>
+			<div class="nav">
+				<span class="chiudi-nav"> 
+					<img class="close-button"  src="../img/icone/exit.png" alt="esci dal menu"/>
+				</span>
+				<p id="messaggio-utente">
+    Ciao
+    Ciao
+    !
+    <a id="messaggio-utente-esci"
+       href="../php/handle-logout.php">
+        Esci
+    </a>
+</p>
+
+				<ul id="menu">
+	<li id="home"
+		class="elemento-menu">
+		<a href="../index.php">
+			Home
+		</a>
+	</li>
+	<li id="primi"
+		class="elemento-menu">
+		<a href="../php/elenco.php?id=1">
+			Primi Piatti
+		</a>
+	</li>
+	<li id="secondi"
+		class="elemento-menu">
+		<a href="../php/elenco.php?id=2">
+			Secondi Piatti
+		</a>
+	</li>
+	<li id="dolci"
+		class="elemento-menu">
+		<a href="../php/elenco.php?id=3">
+			Dolci
+		</a>
+	</li>
+</ul>
+<div id="barra-ricerca">
+	<form method="get"
+		  action="../php/elenco.php?id=0"
+		  id="form-barra-ricerca">
+		  <fieldset class="fieldset-noborder">
+			<legend id="legend-ricerca">Ricerca</legend>
+			<label for="termine-ricerca">Cerca:</label>
+			<input type="text"
+				   id="termine-ricerca"
+				   class="barra-cerca"
+				   name="termine-ricerca" />
+			<input type="image"
+				   id="immagine-lente"
+				   src="../img/icone/lente-ingrandimento.png"
+				   alt="cerca" />
+		  </fieldset>
+	</form>
+</div>
+
+			</div>
+			<div id="breadcrumb">
+    <p>Ti trovi in: <a href="../index.php">Home</a> &gt; Utente </p>
+</div>
+		</div>
+
+		<div id="content">
+    <div class="foto-nome">
+        <img class="foto-utente"
+             src="../img/utenti/def1.png"
+             alt="la tua immagine del profilo" />
+        <h1 class="nome-utente">
+            Ciao
+        </h1>
+        
+    </div>
+    <a id="aggiungi-ricetta-link" href=" ../php/add-ricetta.php" > Aggiungi nuova ricetta </a> 
+    <div id="visualizza-dati">
+      <p class="info-attuale">Immagine attuale:</p>
+      <img class="foto-utente"
+           src="../img/utenti/def1.png"
+           alt="la tua immagine del profilo" />
+      <!-- visualizzazione nickname -->
+      <p class="info-attuale">Nickname attuale:
+          Ciao
+      </p>
+      <!-- visualizzazione email -->
+      <p class="info-attuale">E-mail attuale:
+          admin@gmail.com
+      </p>
+      <!-- link modifica dati -->
+      <p id="link-modifica-dati">
+      Per modificare i tuoi dati vai su:
+      <a href="../php/modifica-utente.php">Modifica dati</a>
+      </p> 
+    </div>
+
+    <!--Eliminazione account-->
+    <form id="form-elimina-account"
+          method="post"
+          action="../php/handle-elimina-account.php"
+          class="cambio-info">
+        <fieldset class="form-fieldset fieldset-elimina-account">
+            <legend class="legend">Eliminazione Account</legend>
+            <label for="user-password-elimina">Password:</label>
+            <input type="password"
+                   id="user-password-elimina"
+                   name="user-password-elimina"
+                   class="barra-input" />
+            <input type="submit"
+                   value="Elimina account"
+                   class="submitutente" />
+        </fieldset>
+        <p id="attenzione-elimina-account">
+            <strong>Attenzione!</strong> L&apos;eliminazione
+            dell&apos;account non &egrave; reversibile, e comporta
+            la rimozione di tutti i commenti e i voti associati.
+        </p>
+    </form>
+    <div class="torna-su">
+    <a class="torna-su-link" href="#">Torna su</a>
+</div>
+              
+</div>
+
+
+		<div id="footer">
+	<p id="messaggio-footer-copyright"
+	   class="messaggio-footer">
+		Copyright Uovo alla coque 2020 - Tutti i diritti
+		riservati ©
+	</p>
+
+	<ul id="nomi-contatti">
+		<li>Agatea Riccardo</li>
+		<li>Bosinceanu Ecaterina</li>
+		<li>Righetto Sara</li>
+		<li>Schiavon Rebecca</li>
+	</ul>
+
+	<ul id="immagine-footer">
+		<li class="logo-footer">
+			<img id="immagine-html"
+				 src="../img/icone/validXHTML.png"
+				 alt="HTML valido" />
+		</li>
+		<li class="logo-footer">
+			<img id="immagine-css"
+				 src="../img/icone/validCSS.png"
+				 alt="CSS valido" />
+		</li>
+	</ul>
+</div>
+
+	</body>
+
+</html>

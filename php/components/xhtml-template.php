@@ -39,14 +39,14 @@
 
 	<body>
 		<div id="header">
+			<div id="screenReaderHelper">
+				<a href="#content" tabindex="0">Vai al contenuto</a>
+				<a href="#menu" tabindex="0">Vai al menu</a>
+				<a href="#barra-ricerca" tabindex="0">Vai alla barra di ricerca</a>
+			</div>
 			<img id="immagine-logo"
 				 src="<rootFolder />/img/logo/coque_scritta_long.png"
 				 alt="Uovo alla coque" />
-				 <div id="screenReaderHelper">
-					<a href="#content" tabindex="0">Vai al contenuto</a>
-					<a href="#menu" tabindex="0">Vai al menu</a>
-					<a href="#barra-ricerca" tabindex="0">Vai alla barra di ricerca</a>
-				</div>
 			<span class="apri-nav">
 				<img class="open-button"
 					 src="<rootFolder />/img/icone/hamburger.png"
