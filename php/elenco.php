@@ -50,15 +50,12 @@ $nav = file_get_contents(__DIR__ . "/components/default-nav.php");
 switch ($tipo) {
     case 1: $handler->setDescription("Elenco delle ricette di primi piatti disponibili");
             $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette, primi piatti\" />");
-            $handler->setAuthor("");
     break;
     case 2: $handler->setDescription("Elenco delle ricette di secondi piatti disponibili");
             $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette, secondi piatti\" />");
-            $handler->setAuthor("");
     break;
     case 3: $handler->setDescription("Elenco delle ricette dei dolci disponibili");
             $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette, dolci, dessert\" />");
-            $handler->setAuthor("");
     break;
 }
 
