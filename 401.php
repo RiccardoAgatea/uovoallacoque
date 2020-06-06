@@ -8,8 +8,6 @@ $handler = new TemplateHandler(".", "xhtml");
 
 $handler->setTitle("Non autorizzato | Uovo alla Coque");
 $handler->setDescription("");
-$handler->setKeywords("");
-$handler->setAuthor("");
 
 $login = "";
 

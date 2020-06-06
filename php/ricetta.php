@@ -9,8 +9,6 @@ $handler = new TemplateHandler("..", "xhtml");
 
 $handler->setTitle("Uovo alla Coque");
 $handler->setDescription("");
-$handler->setKeywords("");
-$handler->setAuthor("");
 
 $login = "";
 

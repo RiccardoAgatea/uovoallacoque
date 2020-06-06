@@ -6,7 +6,7 @@ session_start();
 $handler = new TemplateHandler("..", "xhtml");
 
 $handler->setTitle("Registrati | Uovo alla Coque");
-$handler->setDescription("");
+$handler->setDescription("Pagina per registrarsi al sito");
 $handler->setKeywords("");
 $handler->setAuthor("");
 

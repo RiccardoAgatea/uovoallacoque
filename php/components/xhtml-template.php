@@ -14,14 +14,11 @@
 			  content="<titlePlaceholder />" />
 		<meta name="description"
 			  content="<descriptionPlaceholder />" />
-		<meta name="keywords"
-			  content="<keywordsPlaceholder />" />
 		<meta name="language"
 			  content="italian it" />
-		<meta name="author"
-			  content="<authorPlaceholder />" />
 		<meta http-equiv="Content-type"
 			  content="text/html; charset=utf-8" />
+		<metaPlaceholder />
 		<link rel="icon"
 			  href="<rootFolder />/img/logo/logo-head.jpg"
 			  type="image/x-icon" />
