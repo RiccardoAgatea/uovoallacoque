@@ -208,7 +208,12 @@ ul{
     padding-top: 1em;
     padding-left: 2em;
 }
-
+#breadcrumb a{
+    color:black;
+}
+#breadcrumb a:hover{
+    background-color:#FF9F29;
+}
 #header{
         color:white;
         margin-bottom: 3em;
@@ -452,8 +457,12 @@ ul li input{ /*uguale a .barra-input */
 }
 #link-modifica-ricetta, #link-elimina-ricetta {
     display: block;
+    color: black;
+    max-width:max-content;
 }
-
+#link-modifica-ricetta:hover , #link-elimina-ricetta:hover{
+    background-color:#FF9F29;
+}
 #ricetta-tempo {
     margin-left: 2em;
 }
@@ -471,6 +480,18 @@ ul li input{ /*uguale a .barra-input */
     display: block;
     margin-right: auto;
     margin-left: auto;
+}
+#aggiungi-ricetta-link{
+    color: black;
+}
+#aggiungi-ricetta-link:hover{
+    background-color:#FF9F29;
+}
+#modifica-link{
+    color: black;
+}
+#modifica-link:hover{
+    background-color:#FF9F29;
 }
     /*inizio commenti*/
     .commento {
