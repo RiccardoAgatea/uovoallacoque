@@ -7,6 +7,7 @@ session_start();
 $handler = new TemplateHandler(".", "xhtml");
 
 $handler->setTitle("Accesso negato | Uovo alla Coque");
+$handler->setAuthor("Agatea Riccardo, Bosinceanu Ecaterina, Righetto Sara, Schiavon Rebecca");
 $handler->setDescription("Accesso negato");
 $handler->setOtherMeta("<meta name=\"robots\" content=\"noindex, nofollow\" />");
 

@@ -8,6 +8,7 @@ session_start();
 $handler = new TemplateHandler(".", "xhtml");
 
 $handler->setTitle("Uovo alla Coque");
+$handler->setAuthor("Agatea Riccardo, Bosinceanu Ecaterina, Righetto Sara, Schiavon Rebecca");
 $handler->setDescription("Pagina iniziale del sito Uovo alla Coque");
 $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette, uova, piatti, primo piatto, secondo piatto, dolce\" />");
 

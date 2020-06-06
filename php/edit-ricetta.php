@@ -8,6 +8,7 @@ session_start();
 $handler = new TemplateHandler("..", "xhtml"); 
 
 $handler->setTitle("Modifica ricetta | Uovo alla Coque");
+$handler->setAuthor("Agatea Riccardo, Bosinceanu Ecaterina, Righetto Sara, Schiavon Rebecca");
 $handler->setDescription("Pagina per modificare una ricetta");
 $handler->setOtherMeta("<meta name=\"robots\" content=\"noindex, nofollow\" />");
 

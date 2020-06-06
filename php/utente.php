@@ -12,6 +12,7 @@ if(!key_exists("logged", $_SESSION) || !$_SESSION["logged"]) {
 $handler = new TemplateHandler("..", "xhtml");
 
 $handler->setTitle("Utente | Uovo alla Coque");
+$handler->setAuthor("Agatea Riccardo, Bosinceanu Ecaterina, Righetto Sara, Schiavon Rebecca");
 $handler->setDescription("Pagina per visualizzare e modificare le informazioni dell'utente");
 $handler->setOtherMeta("<meta name=\"robots\" content=\"noindex, nofollow\" />");
 

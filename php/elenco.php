@@ -44,6 +44,7 @@ if ($tipo < 0 || $tipo >= 4) {
 }
 
 $handler->setTitle("$tipi[$tipo] | Uovo alla Coque");
+$handler->setAuthor("Agatea Riccardo, Bosinceanu Ecaterina, Righetto Sara, Schiavon Rebecca");
 $nav = file_get_contents(__DIR__ . "/components/default-nav.php");
 
 

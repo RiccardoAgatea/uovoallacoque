@@ -16,6 +16,8 @@
 			  content="<descriptionPlaceholder />" />
 		<meta name="language"
 			  content="italian it" />
+		<meta name="author"
+			  content="<authorPlaceholder />" />
 		<meta http-equiv="Content-type"
 			  content="text/html; charset=utf-8" />
 		<metaPlaceholder />
