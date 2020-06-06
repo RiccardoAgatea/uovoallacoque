@@ -7,9 +7,9 @@ session_start();
 $handler = new TemplateHandler("..", "xhtml"); 
 
 $handler->setTitle("Aggiungi ricetta | Utente | Uovo alla Coque");
-$handler->setDescription("");
-$handler->setKeywords("");
-$handler->setAuthor("");
+$handler->setAuthor("Agatea Riccardo, Bosinceanu Ecaterina, Righetto Sara, Schiavon Rebecca");
+$handler->setDescription("Pagina per aggiungere una ricetta");
+$handler->setOtherMeta("<meta name=\"robots\" content=\"noindex, nofollow\" />");
 
 if (!key_exists("logged", $_SESSION) || (!$_SESSION["logged"]))
 {

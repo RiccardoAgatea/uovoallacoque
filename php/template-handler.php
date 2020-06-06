@@ -23,16 +23,15 @@ class TemplateHandler
     {
         $this->page = str_replace("<descriptionPlaceholder />", $description, $this->page);
     }
-
-    public function setKeywords(string $keywords)
-    {
-        $this->page = str_replace("<keywordsPlaceholder />", $keywords, $this->page);
-    }
-
+    
     public function setAuthor(string $author)
     {
         $this->page = str_replace("<authorPlaceholder />", $author, $this->page);
+    }
 
+    public function setOtherMeta(string $tags)
+    {
+        $this->page = str_replace("<metaPlaceholder />", $tags, $this->page);
     }
 
     public function setLogin(string $loginSnippet)

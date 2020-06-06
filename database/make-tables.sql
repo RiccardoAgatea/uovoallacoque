@@ -8,6 +8,9 @@ CREATE TABLE ricette (
   portata TINYINT UNSIGNED NOT NULL,
   ingredienti TEXT NOT NULL,
   procedimento TEXT NOT NULL,
+  descript VARCHAR(256) NOT NULL,
+  keywords VARCHAR(256) NOT NULL,
+  author VARCHAR(256) NOT NULL,
   PRIMARY KEY (id),
   UNIQUE (nome)
 );

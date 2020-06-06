@@ -7,9 +7,7 @@ session_start();
 
 $handler = new TemplateHandler("..", "xhtml");
 
-$handler->setDescription("");
-$handler->setKeywords("");
-$handler->setAuthor("");
+
 
 $login = "";
 
@@ -46,7 +44,24 @@ if ($tipo < 0 || $tipo >= 4) {
 }
 
 $handler->setTitle("$tipi[$tipo] | Uovo alla Coque");
+$handler->setAuthor("Agatea Riccardo, Bosinceanu Ecaterina, Righetto Sara, Schiavon Rebecca");
 $nav = file_get_contents(__DIR__ . "/components/default-nav.php");
+
+
+switch ($tipo) {
+    case 0: $handler->setDescription("Elenco delle ricette il cui nome contiene il termine ricercato");
+            $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette\" />");
+    break;
+    case 1: $handler->setDescription("Elenco delle ricette di primi piatti disponibili");
+            $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette, primi piatti\" />");
+    break;
+    case 2: $handler->setDescription("Elenco delle ricette di secondi piatti disponibili");
+            $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette, secondi piatti\" />");
+    break;
+    case 3: $handler->setDescription("Elenco delle ricette dei dolci disponibili");
+            $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette, dolci, dessert\" />");
+    break;
+}
 
 if ($tipo != 0) {
     $nav = preg_replace(

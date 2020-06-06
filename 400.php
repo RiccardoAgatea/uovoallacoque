@@ -7,10 +7,9 @@ session_start();
 $handler = new TemplateHandler(".", "xhtml");
 
 $handler->setTitle("Richiesta errata | Uovo alla Coque");
-$handler->setDescription("");
-$handler->setKeywords("");
-$handler->setAuthor("");
-
+$handler->setAuthor("Agatea Riccardo, Bosinceanu Ecaterina, Righetto Sara, Schiavon Rebecca");
+$handler->setDescription("Richiesta non valida");
+$handler->setOtherMeta("<meta name=\"robots\" content=\"noindex, nofollow\" />");
 $login = "";
 
 if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {

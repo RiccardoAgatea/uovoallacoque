@@ -138,6 +138,10 @@ ul{
     width: 25em;
     height: 2em;
 }
+#legend-ricerca {
+    height:0;
+    overflow: hidden;
+}
 #immagine-lente{
     background-color: rgb(242, 242, 242);
     width: 1.2em;
@@ -199,7 +203,7 @@ ul{
 }
 
 #breadcrumb{
-    background-color: rgba(211, 224, 245);
+    background-color: rgb(211, 224, 245);
     color: black;
     padding-top: 1em;
     padding-left: 2em;
@@ -281,6 +285,7 @@ ul{
 }
 .info-attuale{
     margin-top: 2em;
+    max-width: 100%;
 }
 #link-modifica-dati{
     margin:2em 0em 2em 0em;
@@ -378,6 +383,7 @@ ul li input{ /*uguale a .barra-input */
     padding-right: 1em;
     padding-bottom: 0.5em;
     text-align: center;
+    max-width: 100%;
 }
 
 .elenco-immagine {
@@ -426,6 +432,7 @@ ul li input{ /*uguale a .barra-input */
     float: left;
     margin-right: 2em;
     margin-bottom: 1em;
+    margin-top: 1em;
 }
 .ingredienti {
     list-style-type: disc;
@@ -439,6 +446,9 @@ ul li input{ /*uguale a .barra-input */
     margin-top: 1em;
     margin-bottom: 1em;
 }
+#link-modifica-ricetta, #link-elimina-ricetta {
+    display: block;
+}
 
 #ricetta-tempo {
     margin-left: 2em;
@@ -446,6 +456,11 @@ ul li input{ /*uguale a .barra-input */
 
 #ricetta-procedura {
     clear: left;
+}
+
+.pulsante-voto {
+    margin-left:0.5em;
+    margin-bottom:2em;
 }
     /*inizio commenti*/
     .commento {
@@ -483,11 +498,6 @@ ul li input{ /*uguale a .barra-input */
         height: 6em;
         margin-top: 1em;
         margin-bottom: 1em;
-    }
-
-    .commento-submit {
-        margin-top: 0.5em;
-        margin-left: 90%;
     }
 
     .tasti-commento {
@@ -620,6 +630,17 @@ textarea{
         transition: 0.5s;
         background: #04142e;
     }
+    .nome-utente {
+        word-break: break-all;
+    }
+    #messaggio-utente {
+        width: 12em;
+        display: block;
+        word-break: break-all;
+    }
+    #messaggio-utente-esci {
+        word-break: normal;
+    }
     #form-barra-ricerca {
         justify-content: flex-start;
     }
@@ -691,7 +712,7 @@ textarea{
     /*INIZIO PAGINA RICETTA*/
     .immagine-ricetta {
         width: 20em;
-        height: 20em;
+        height: auto;
         object-fit: contain;
     }
     .ingredienti {
@@ -706,12 +727,20 @@ textarea{
         margin-left: 0em;
     }
 
-    .commento-submit {
-        margin-top: 0.5em;
-        margin-left: 80%;
+    .label-voto {
+        float: left;
+        clear: both;
+    }
+    .pulsante-voto {
+        display: block;
+        margin-left:1em;
+        margin-bottom:1em;
     }
     /*FINE PAGINA RICETTA*/
 
+    #attenzione-elimina-account {
+        max-width: 100%;
+    }
 
 
 
