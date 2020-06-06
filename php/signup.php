@@ -7,8 +7,7 @@ $handler = new TemplateHandler("..", "xhtml");
 
 $handler->setTitle("Registrati | Uovo alla Coque");
 $handler->setDescription("Pagina per registrarsi al sito");
-$handler->setKeywords("");
-$handler->setAuthor("");
+$handler->setOtherMeta("<meta name=\"robots\" content=\"noindex, nofollow\" />");
 
 $handler->setLogin(
     preg_replace("((?s)<a href=\"<rootFolder />/php/signup\.php\">.*?</a>)",
