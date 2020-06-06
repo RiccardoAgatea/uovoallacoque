@@ -432,6 +432,7 @@ ul li input{ /*uguale a .barra-input */
     float: left;
     margin-right: 2em;
     margin-bottom: 1em;
+    margin-top: 1em;
 }
 .ingredienti {
     list-style-type: disc;
@@ -445,6 +446,9 @@ ul li input{ /*uguale a .barra-input */
     margin-top: 1em;
     margin-bottom: 1em;
 }
+#link-modifica-ricetta, #link-elimina-ricetta {
+    display: block;
+}
 
 #ricetta-tempo {
     margin-left: 2em;
@@ -452,6 +456,11 @@ ul li input{ /*uguale a .barra-input */
 
 #ricetta-procedura {
     clear: left;
+}
+
+.pulsante-voto {
+    margin-left:0.5em;
+    margin-bottom:2em;
 }
     /*inizio commenti*/
     .commento {
@@ -489,11 +498,6 @@ ul li input{ /*uguale a .barra-input */
         height: 6em;
         margin-top: 1em;
         margin-bottom: 1em;
-    }
-
-    .commento-submit {
-        margin-top: 0.5em;
-        margin-left: 90%;
     }
 
     .tasti-commento {
@@ -708,7 +712,7 @@ textarea{
     /*INIZIO PAGINA RICETTA*/
     .immagine-ricetta {
         width: 20em;
-        height: 20em;
+        height: auto;
         object-fit: contain;
     }
     .ingredienti {
@@ -723,15 +727,20 @@ textarea{
         margin-left: 0em;
     }
 
-    .commento-submit {
-        margin-top: 0.5em;
-        margin-left: 80%;
+    .label-voto {
+        float: left;
+        clear: both;
     }
-    #attenzione-elimina-account {
-        max-width: 100%;
+    .pulsante-voto {
+        display: block;
+        margin-left:1em;
+        margin-bottom:1em;
     }
     /*FINE PAGINA RICETTA*/
 
+    #attenzione-elimina-account {
+        max-width: 100%;
+    }
 
 
 

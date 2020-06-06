@@ -90,11 +90,11 @@ if (!$result) {
         }
         else {
             $tastiVoto = "<form action=\"<rootFolder />/php/handle-voto.php?ricetta={$id}\" method=\"post\"><fieldset class=\"fieldset-noborder\">
-                <label for=\"pulsante-voto-1\">1 Stella</label><input type=\"radio\" id=\"pulsante-voto-1\" name=\"pulsante-voto\" value=\"1\" />
-                <label for=\"pulsante-voto-2\">2 Stelle</label><input type=\"radio\" id=\"pulsante-voto-2\" name=\"pulsante-voto\" value=\"2\" />
-                <label for=\"pulsante-voto-3\">3 Stelle</label><input type=\"radio\" id=\"pulsante-voto-3\" name=\"pulsante-voto\" value=\"3\" />
-                <label for=\"pulsante-voto-4\">4 Stelle</label><input type=\"radio\" id=\"pulsante-voto-4\" name=\"pulsante-voto\" value=\"4\" />
-                <label for=\"pulsante-voto-5\">5 Stelle</label><input type=\"radio\" id=\"pulsante-voto-5\" name=\"pulsante-voto\" value=\"5\" />
+                <label for=\"pulsante-voto-1\" class=\"label-voto\">1 Stella</label><input type=\"radio\" id=\"pulsante-voto-1\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"1\" />
+                <label for=\"pulsante-voto-2\" class=\"label-voto\">2 Stelle</label><input type=\"radio\" id=\"pulsante-voto-2\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"2\" />
+                <label for=\"pulsante-voto-3\" class=\"label-voto\">3 Stelle</label><input type=\"radio\" id=\"pulsante-voto-3\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"3\" />
+                <label for=\"pulsante-voto-4\" class=\"label-voto\">4 Stelle</label><input type=\"radio\" id=\"pulsante-voto-4\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"4\" />
+                <label for=\"pulsante-voto-5\" class=\"label-voto\">5 Stelle</label><input type=\"radio\" id=\"pulsante-voto-5\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"5\" />
                 <input type=\"submit\" value= \"vota\"/>
             </fieldset></form>";
         }
@@ -206,8 +206,8 @@ if (!$result) {
 if(key_exists("logged", $_SESSION) && $_SESSION["logged"] && $_SESSION["user"]->getAdmin()){
     $nrPagina = $_GET['pagina'];
     $editPath = "<rootFolder />/php/edit-ricetta.php?id=$id&amp;pagina=$nrPagina";
-    $content = str_replace("<editPlaceholder />", "<a href=\"$editPath\"> Modifica la ricetta </a> ", $content);
-    $content = str_replace("<removePlaceholder />", "<a href=\"<rootFolder />/php/handle-rimuovi-ricetta.php?removeId=$id&amp;portata=$portata\"> Elimina la ricetta </a> ", $content);
+    $content = str_replace("<editPlaceholder />", "<a id=\"link-modifica-ricetta\" href=\"$editPath\"> Modifica la ricetta </a> ", $content);
+    $content = str_replace("<removePlaceholder />", "<a id=\"link-elimina-ricetta\" href=\"<rootFolder />/php/handle-rimuovi-ricetta.php?removeId=$id&amp;portata=$portata\"> Elimina la ricetta </a> ", $content);
 } else {
     $content = str_replace("<editPlaceholder />", "", $content);
     $content = str_replace("<removePlaceholder />", "", $content);
