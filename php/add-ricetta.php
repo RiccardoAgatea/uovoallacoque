@@ -14,9 +14,11 @@ $handler->setOtherMeta("<meta name=\"robots\" content=\"noindex, nofollow\" />")
 if (!key_exists("logged", $_SESSION) || (!$_SESSION["logged"]))
 {
     header("Location: ../401.php");
+    exit;
 }
 else if (!$_SESSION["user"]->getAdmin()) {
     header("Location: ../403.php");
+    exit;
 }
 
 $login = "";

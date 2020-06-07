@@ -1,5 +1,16 @@
 <?php
 require_once __DIR__ . "/db-connection.php";
+require_once __DIR__ . "/user.php";
+session_start();
+
+if (!key_exists("logged", $_SESSION) || !$_SESSION["logged"]) {
+    header("Location: ../401.php");
+    exit;
+}
+if (!$_SESSION["user"]->getAdmin()) {
+    header("Location: ../403.php");
+    exit;
+}
 
 $removeId = intval($_GET['removeId']);
 $connection = new DBConnection();
