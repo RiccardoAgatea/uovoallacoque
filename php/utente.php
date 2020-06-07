@@ -48,13 +48,6 @@ if(key_exists("logged", $_SESSION) && $_SESSION["logged"] && $_SESSION["user"]->
     $content = str_replace("<addPlaceholder />", "<a id=\"aggiungi-ricetta-link\" href=\" <rootFolder />/php/add-ricetta.php\" > Aggiungi nuova ricetta </a> ", $content);
 }
 
-if (key_exists("wrong", $_SESSION)) {
-    $content = str_replace("<errorPlaceholder />", "<p>Password errata</p>", $content);
-
-    unset($_SESSION["wrong"]);
-} else {
-    $content = str_replace("<errorPlaceholder />", "", $content);
-}
 
 $handler->setContent($content);
 
@@ -67,4 +60,3 @@ $handler->setFooter(
 );
 
 $handler->send();
-$handler->save("prova.html");

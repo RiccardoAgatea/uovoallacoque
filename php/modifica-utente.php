@@ -39,6 +39,13 @@ $handler->setBreadcrumb(
 );
 
 $content = file_get_contents(__DIR__ . "/components/modifica-utente-content.php");
+if (key_exists("wrong", $_SESSION)) {
+    $content = str_replace("<errorPlaceholder />", "<p>Password errata</p>", $content);
+
+    unset($_SESSION["wrong"]);
+} else {
+    $content = str_replace("<errorPlaceholder />", "", $content);
+}
 
 $handler->setContent($content);
 

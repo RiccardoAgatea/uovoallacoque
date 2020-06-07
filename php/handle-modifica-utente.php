@@ -56,4 +56,4 @@ switch ($_GET["item"]) {
 }
 
 $_SESSION["user"]->update();
-header("Location: ./utente.php");
+header("Location: ./modifica-utente.php");

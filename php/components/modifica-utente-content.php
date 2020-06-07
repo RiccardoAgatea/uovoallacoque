@@ -1,5 +1,5 @@
 <div id="content">
-
+    <errorPlaceholder />
 <!-- form img -->
 <form action="<rootFolder />/php/handle-modifica-utente.php?item=img"
           method="post"

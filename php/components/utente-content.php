@@ -6,7 +6,6 @@
         <h1 class="nome-utente">
             <PlaceholderNicknameUtente />
         </h1>
-        <errorPlaceholder />
     </div>
     <addPlaceholder />
     <div id="visualizza-dati">
