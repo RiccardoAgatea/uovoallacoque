@@ -24,7 +24,7 @@
       <!-- link modifica dati -->
       <p id="link-modifica-dati">
       Per modificare i tuoi dati vai su:
-      <a href="<rootFolder />/php/modifica-utente.php">Modifica dati</a>
+      <a id="modifica-link" href="<rootFolder />/php/modifica-utente.php">Modifica dati</a>
       </p> 
     </div>
 
