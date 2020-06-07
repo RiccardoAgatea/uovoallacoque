@@ -3,6 +3,7 @@ require_once __DIR__ . "/template-handler.php";
 require_once __DIR__ . "/query-portata.php";
 require_once __DIR__ . "/user.php";
 
+
 session_start();
 
 $handler = new TemplateHandler("..", "xhtml");

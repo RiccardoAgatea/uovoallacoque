@@ -185,6 +185,11 @@ ul{
     color: white;
 }
 
+#messaggio-utente-nome {
+    word-break: break-all;
+    max-width: 12em;
+}
+
 #accedi_scritta{
     padding-right: 0.5em;
 }
@@ -637,6 +642,9 @@ textarea{
         flex-direction: row;
         justify-content: space-around;
         font-size: 1.2em;
+    }
+    #messaggio-utente-esci {
+        word-break: normal;
     }
 
     .barra-cerca{

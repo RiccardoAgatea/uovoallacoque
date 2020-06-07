@@ -1,7 +1,7 @@
 <?php
-
+require_once __DIR__ . "/conversioni.php";
 function schedaRicetta(string $immagine, string $nome, string $difficolta, string $tempo, string $voto, string $link, int $livello)
-{
+{   $nome = inserimentoLingua($nome);
     return "<img class=\"elenco-immagine\" src=\"$immagine\" alt = \"immagine di $nome\" />
 
         <h$livello class=\"elenco-titolo\">$nome</h$livello>

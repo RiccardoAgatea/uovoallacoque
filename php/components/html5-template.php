@@ -19,7 +19,7 @@
 			  content="<authorPlaceholder />" />
 		<meta charset="utf-8" />
 		<link rel="icon"
-			  href="<rootFolder />/img/logo/logo-head.jpg"
+			  href="<rootFolder />/img/logo/coque.png"
 			  type="image/x-icon" />
 		<link rel="stylesheet"
 			  media="screen"
