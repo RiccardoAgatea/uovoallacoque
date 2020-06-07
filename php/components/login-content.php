@@ -5,7 +5,7 @@
           id="form-login">
         <fieldset class="form-fieldset">
             <legend class="legend">Inserisci le tue credenziali</legend>
-            <ul class="form-container">
+            <ul class="form-container form-centered">
                 <li class="form-element">
                     <label class="form-label"
                            for="login-email">E-mail:</label>

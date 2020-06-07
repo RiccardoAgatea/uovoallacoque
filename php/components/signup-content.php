@@ -6,7 +6,7 @@
               <fieldset class="form-fieldset">
                      <legend class="legend">Inserisci i tuoi dati
                      </legend>
-                     <ul class="form-container">
+                     <ul class="form-container form-centered">
                             <li class="form-element">
                                    <label class="form-label"
                                           for="signup-nick">Nickname:</label>

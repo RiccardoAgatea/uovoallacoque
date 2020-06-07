@@ -8,7 +8,7 @@
           enctype="multipart/form-data">
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio immagine</legend>
-            <ul class="form-container">
+            <ul class="form-container form-centered">
                 <li class="form-element">
                     <label for="user-immagine">Nuova immagine:</label>
                     <input class="barra-input"

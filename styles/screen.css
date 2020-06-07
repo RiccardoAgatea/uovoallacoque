@@ -5,7 +5,8 @@
 }
 
 html, body {
-	max-width: 1024px;
+    max-width: 1024px;
+    min-height: 100vh;
     margin: 0em auto;
     padding: 0em 0em;
 }
@@ -266,7 +267,6 @@ ul{
 }
 /*pagina utente*/
 .legend{
-    text-align: center;
     margin-bottom: 1.5em;
 }
 .cambio-info{
@@ -304,9 +304,6 @@ ul{
 /*fine pagina utente*/
 
 /*Login*/
-.legend{
-    margin-left: 1em;
-}
 .form-fieldset{
     margin-top: 2em;
     margin-bottom: 2em;
@@ -315,7 +312,15 @@ ul{
 .form-container {
 	display: flex;
     flex-direction: column;
+}
+.form-centered {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+}
+.form-centered li {
+    width: auto;
+    display: block;
 }
 
 #form-elimina-account{
@@ -340,10 +345,6 @@ ul{
 }
 
 .barra-input{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
     width: 15em;
     height: 2em;
     -wedkit-border-radius:0.5em;
@@ -359,7 +360,7 @@ ul{
 }
 ul li input{ /*uguale a .barra-input */
     display: block;
-    margin: 0 auto 0 auto;
+    margin-left: 1em;
 }
 .submit{
     font-size: medium;
@@ -557,16 +558,32 @@ ul li input{ /*uguale a .barra-input */
    display: flex;
    flex-direction: row;
    justify-content: space-between;
+   align-items: center;
    margin-bottom: 1em;
    max-width: 10em;
 }
 .radio-ricetta{
     margin: 0.5em;
 }
-#add-procedura {
-    max-width: 40em;
-    height: 5em;
-
+#add-procedura, #add-ingredienti, #edit-procedura, #edit-ingredienti {
+    width:100%;
+    margin-top: 0.5em;
+    padding: 0.5em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}
+#add-procedura, #edit-procedura {
+    height:15em;
+}
+#add-difficolta, #add-tempo, #edit-difficolta, #edit-tempo {
+    width: 2em;
+    padding:0.2em;
+}
+.add-edit-ricetta-info {
+    margin-top: 1em;
+}
+.add-edit-ricetta-annulla {
+    margin: 0;
 }
 
 /*FINE PAGINA MODIFICA RICETTA*/
@@ -574,18 +591,20 @@ ul li input{ /*uguale a .barra-input */
     width: 10em;
     height: 2em;
     margin-top: 1em;
+    display: block;
 }
 
-
-.apri-nav{
-    display: none;
-}
-.chiudi-nav {
+.apri-nav, .chiudi-nav{
     display: none;
 }
 /*pagina utente*/
 .form-element {
-    width: 12em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom:1em;
 }
 
 /*mobile*/

@@ -1,6 +1,6 @@
 <div id="content">
        <h1>Aggiungi ricetta</h1>
-       <p>Si invita l'amministratore ad aggiungere eventuali parole straniere con la seguente sintassi: [lingua=parola]. Esempio: [fr=<span xml:lang="fr">coque</span>]</p>
+       <p class= "add-edit-ricetta-info">Si invita l'amministratore ad aggiungere eventuali parole straniere con la seguente sintassi: [lingua=parola]. Esempio: [fr=<span xml:lang="fr">coque</span>]</p>
        <p>I campi contrassegnati con * sono obbligatori.</p>
        <form action="<rootFolder />/php/handle-add-ricetta.php"
              method="post"
@@ -13,7 +13,7 @@
                      <ul class="form-container">
                             <li class="form-element">
                                    <label class="form-label"
-                                          for="add-nome"> Nome della ricetta: </label>
+                                          for="add-nome"> Nome della ricetta*: </label>
                                    <input class="barra-input"
                                           id="add-nome"
                                           type="text"
@@ -33,7 +33,7 @@
                                           class="warning"> <errorImgPlaceholder /> </span>
                             </li>
 				                    <li> 
-                                   <span> Tipo della ricetta: </span>
+                                   <span> Tipo della ricetta*: </span>
                                    <ul> 
                                           <li class="item-radio-container">
                                                  <label for="primo">Primo</label>  
@@ -56,7 +56,7 @@
                             </li>
                             <li class="form-element">
                                    <label class="form-label"
-                                          for="add-difficolta"> Difficolt&agrave; della ricetta (da 1 a 5): </label> 
+                                          for="add-difficolta"> Difficolt&agrave; della ricetta (da 1 a 5)*: </label> 
                                    <input class="barra-input"
                                           id="add-difficolta"
                                           type="text"
@@ -67,7 +67,7 @@
                             </li>
                             <li class="form-element">
                                    <label class="form-label"
-                                          for="add-tempo"> Tempo (in minuti): </label>
+                                          for="add-tempo"> Tempo (in minuti)*: </label>
                                    <input class="barra-input"
                                           id="add-tempo"
                                           type="text"
@@ -78,7 +78,7 @@
                             </li>
 			                     <li class="form-element">
                                    <label class="form-label"
-                                          for="add-ingredienti"> Ingredienti (separati da virgola): </label>
+                                          for="add-ingredienti"> Ingredienti (separati da virgola)*: </label>
                                    <textarea rows="" cols=""
                                           class="barra-input"
                                           id="add-ingredienti"
@@ -86,7 +86,7 @@
                             </li>
 			                       <li class="form-element">
                                    <label class="form-label"
-                                          for="add-procedura"> Procedura: </label>
+                                          for="add-procedura"> Procedura*: </label>
                                    <textarea rows="" cols=""
                                           class="barra-input"
                                           id="add-procedura"

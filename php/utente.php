@@ -22,7 +22,7 @@ $login .= file_get_contents(__DIR__ . "/components/personal-login.php");
 
 $login = preg_replace("((?s)<a.*?href=\"<rootFolder />/php/utente\.php\">.*?</a>)", "<nomeUtentePlaceholder />", $login);
 
-$login = str_replace("<nomeUtentePlaceholder />", $_SESSION["user"]->getNickname(), $login);
+$login = str_replace("<nomeUtentePlaceholder />", "<span id=\"messaggio-utente-nome\">".$_SESSION["user"]->getNickname()."</span>", $login);
 
 $handler->setLogin($login);
 

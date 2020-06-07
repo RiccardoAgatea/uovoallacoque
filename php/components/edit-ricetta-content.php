@@ -1,5 +1,7 @@
 <div id="content">
        <h1>Modifica ricetta </h1>
+       <p class= "add-edit-ricetta-info">Si invita l'amministratore ad aggiungere eventuali parole straniere con la seguente sintassi: [lingua=parola]. Esempio: [fr=<span xml:lang="fr">coque</span>]</p>
+       <p>I campi contrassegnati con * sono obbligatori.</p>
        <form action="<rootFolder />/php/handle-edit-ricetta.php?id=<idPlaceholder/>&amp;pagina=<paginaPlaceholder/>"
              method="post"
              id="form-edit"
@@ -11,7 +13,7 @@
                      <ul class="form-container">
                             <li class="form-element">
                                    <label class="form-label"
-                                          for="edit-nome"> Modifica nome della ricetta: </label>
+                                          for="edit-nome"> Modifica nome della ricetta*: </label>
                                    <input class="barra-input"
                                           id="edit-nome"
                                           type="text"
@@ -31,7 +33,7 @@
                                           class="warning"> <errorImgPlaceholder /></span>
                             </li>
 				                    <li> 
-                                   <span> Modifica tipo della ricetta: </span>
+                                   <span> Modifica tipo della ricetta*: </span>
                                    <ul> 
                                           <li class="item-radio-container">
                                                  <label for="primo">Primo</label>  
@@ -54,7 +56,7 @@
                             </li>
                             <li class="form-element">
                                    <label class="form-label"
-                                          for="edit-difficolta"> Modifica difficolt&agrave; della ricetta: </label> 
+                                          for="edit-difficolta"> Modifica difficolt&agrave; della ricetta (da 1 a 5)*: </label> 
                                    <input class="barra-input"
                                           id="edit-difficolta"
                                           type="text"
@@ -65,7 +67,7 @@
                             </li>
                             <li class="form-element">
                                    <label class="form-label"
-                                          for="edit-tempo"> Modifica tempo: </label>
+                                          for="edit-tempo"> Modifica tempo(in minuti)*: </label>
                                    <input class="barra-input"
                                           id="edit-tempo"
                                           type="text"
@@ -76,7 +78,7 @@
                             </li>
 			       <li class="form-element">
                                    <label class="form-label"
-                                          for="edit-ingredienti"> Modifica ingredienti: </label>
+                                          for="edit-ingredienti"> Modifica ingredienti (separati da virgola)*: </label>
                                    <textarea rows="" cols=""
                                           class="barra-input"
                                           id="edit-ingredienti"
@@ -86,7 +88,7 @@
                             </li>
 			       <li class="form-element">
                                    <label class="form-label"
-                                          for="edit-procedura"> Modifica procedura: </label>
+                                          for="edit-procedura"> Modifica procedura*: </label>
                                    <textarea rows="" cols=""
                                           class="barra-input"
                                           id="edit-procedura"
