@@ -9,7 +9,8 @@ function test_input($data)
     return $data;
 }
 
-function checkNickname($stringNickname) {
+function checkNickname($stringNickname)
+{
     $nicknameErr = $nickname = "";
     $connection = new DBConnection(); // oggetto che rappresenta il database
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -19,6 +20,9 @@ function checkNickname($stringNickname) {
             $nickname = test_input($_POST[$stringNickname]);
             if (!preg_match("/^[A-Za-z0-9]+$/", $nickname)) {
                 $nicknameErr = "Il nickname deve contenere solo lettere e numeri";
+            }
+            if (strlen($stringNickname) > 20) {
+                $nicknameErr = "Il nickname non può essere più lungo di 20 caratteri";
             }
             if ($connection->query(" SELECT nickname FROM utenti WHERE nickname=\"$nickname\" ")->fetch_row() != null) {
                 $nicknameErr = "Il nickname inserito &egrave; gi&agrave; utilizzato";
@@ -50,9 +54,9 @@ function checkEmail($stringEmail)
     return $emailErr;
 }
 
-function comparePassword($stringPassword, $stringPasswordConfirm) 
+function comparePassword($stringPassword, $stringPasswordConfirm)
 {
-	$passwordErr = $password = $passwordConfirm = "";
+    $passwordErr = $password = $passwordConfirm = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST[$stringPassword]) || empty($_POST[$stringPasswordConfirm])) {
             $passwordErr = "La password non pu&ograve; essere un campo vuoto";
@@ -67,7 +71,8 @@ function comparePassword($stringPassword, $stringPasswordConfirm)
     return $passwordErr;
 }
 
-function checkLogin($stringPassword, $stringEmail) { // quando accedo controlla che la password è uguale a quella presente nel db
+function checkLogin($stringPassword, $stringEmail)
+{ // quando accedo controlla che la password è uguale a quella presente nel db
     $err = $email = $password = "";
     $connection = new DBConnection();
 
@@ -75,7 +80,7 @@ function checkLogin($stringPassword, $stringEmail) { // quando accedo controlla 
         if (empty($_POST[$stringEmail])) { //se la mail è vuota
             $err = "La mail non pu&ograve; essere vuota";
         } else {
-            $email = test_input($_POST[$stringEmail]); 
+            $email = test_input($_POST[$stringEmail]);
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { //se la mail non valida
                 $err = "Email incorretta";
             }
@@ -85,15 +90,15 @@ function checkLogin($stringPassword, $stringEmail) { // quando accedo controlla 
                 $password = test_input($_POST[$stringPassword]);
                 $result = $connection->query("SELECT passw FROM utenti WHERE email=\"{$email}\"");
                 if (!$result) {
-                // if ($connection->query(" SELECT passw FROM utenti WHERE email=\"{$email}\" ")->fetch_row() != null) {
+                    // if ($connection->query(" SELECT passw FROM utenti WHERE email=\"{$email}\" ")->fetch_row() != null) {
                     $err = "L'utente non esiste";
                     $connection->disconnect();
                 } else {
                     $user_row = $result->fetch_assoc();
-                    if($user_row['passw'] != $password) {
+                    if ($user_row['passw'] != $password) {
                         $err = "La password non &egrave; corretta";
                     }
-                    
+
                 }
             }
         }
@@ -103,15 +108,15 @@ function checkLogin($stringPassword, $stringEmail) { // quando accedo controlla 
 
 function checkAddNomeRicetta($stringNomeRicetta)
 {
-	$nomeRicettaErr = $nomeRicetta = "";
+    $nomeRicettaErr = $nomeRicetta = "";
     $connection = new DBConnection();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST[$stringNomeRicetta])) {
             $nomeRicettaErr = "Il nome non pu&ograve; essere un campo vuoto";
         } else {
             $nomeRicetta = test_input($_POST[$stringNomeRicetta]);
-            if (!preg_match("/^[a-zA-Z0-9\s]{3,55}$/", $nomeRicetta)) {
-                $nomeRicettaErr = "La lunghezza &egrave; tra 3 e 55 caratteri alfanumerici";
+            if (!preg_match("/^.{3,55}$/", $nomeRicetta)) {
+                $nomeRicettaErr = "La lunghezza &egrave; tra 3 e 55 caratteri";
             }
             if ($connection->query(" SELECT nome FROM ricette WHERE nome=\"$nomeRicetta\" ")->fetch_row() != null) {
                 $nomeRicettaErr = "Questa ricetta &egrave; gi&agrave; presente";
@@ -131,8 +136,8 @@ function checkEditNomeRicetta($stringNomeRicetta)
             $nomeRicettaErr = "Il nome non pu&ograve; essere un campo vuoto";
         } else {
             $nomeRicetta = test_input($_POST[$stringNomeRicetta]);
-            if (!preg_match("/^[a-zA-Z0-9\s]{3,55}$/", $nomeRicetta)) {
-                $nomeRicettaErr = "La lunghezza &egrave; tra 3 e 55 caratteri alfanumerici";
+            if (!preg_match("/^.{3,55}$/", $nomeRicetta)) {
+                $nomeRicettaErr = "La lunghezza &egrave; tra 3 e 55 caratteri";
             }
         }
     }
@@ -141,7 +146,7 @@ function checkEditNomeRicetta($stringNomeRicetta)
 
 function checkDifficolta($stringDifficolta)
 {
-	$difficoltaErr = $difficolta = "";
+    $difficoltaErr = $difficolta = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST[$stringDifficolta])) {
             $difficoltaErr = "La difficolt&agrave; non pu&ograve; essere un campo vuoto";
@@ -157,7 +162,7 @@ function checkDifficolta($stringDifficolta)
 
 function checkTempo($stringTempo)
 {
-	$tempoErr = $tempo = "";
+    $tempoErr = $tempo = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST[$stringTempo])) {
             $tempoErr = "Il tempo non pu&ograve; essere un campo vuoto";
@@ -171,12 +176,13 @@ function checkTempo($stringTempo)
     return $tempoErr;
 }
 
-function checkImage($stringImage) {
+function checkImage($stringImage)
+{
     $imageErr = "";
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!$stringImage == "" && $_SERVER["REQUEST_METHOD"] == "POST") {
         $extension = strtolower(pathinfo($_FILES[$stringImage]['name'], PATHINFO_EXTENSION));
-        $allowed_extensions = array("jpg","jpeg","png","svg");
-        if(!in_array($extension, $allowed_extensions)) {
+        $allowed_extensions = array("jpg", "jpeg", "png", "svg");
+        if (!in_array($extension, $allowed_extensions)) {
             $imageErr = "Formato immagine non valido";
         }
     }
