@@ -6,7 +6,7 @@
 	<removePlaceholder />
 	<img class="immagine-ricetta"
 		 src="<imgSrcPlaceholder />"
-		 alt="Uovo alla coque" />
+		 alt="<imgAltPlaceholder /> />
 	<dl class="difficolta-tempo">
 		<dt>Difficolt&agrave;:</dt>
 		<dd>

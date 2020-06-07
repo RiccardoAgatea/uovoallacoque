@@ -2,6 +2,7 @@
 require_once "./template-handler.php";
 require_once __DIR__ . "/db-connection.php";
 require_once __DIR__ . "/user.php";
+require_once __DIR__ . "/conversioni.php";
 
 session_start();
 
@@ -47,13 +48,14 @@ if (!$result) {
     header("Location: ../404.php");
     exit;
 } else {
-    $nome = $result["nome"];
+    $nome = inserimentoLingua($result["nome"]);
+    $imgAlt = "immagine di " . rimozioneLingua($result["nome"]);
     $portata = $result["portata"];
     $difficolta = $result["difficolta"];
     $tempo = $result["tempo"];
     $img = $result["img"];
-    $ingredienti = $result["ingredienti"];
-    $procedimento = $result["procedimento"];
+    $ingredienti = inserimentoLingua($result["ingredienti"]);
+    $procedimento = inserimentoLingua($result["procedimento"]);
 
     $portate = [
         "Primi piatti",
@@ -192,9 +194,9 @@ if (!$result) {
     } else {
         $commenti .= "<p>Per visualizzare e inserire i commenti, <a href=\"<rootFolder />/php/login.php\">accedi</a> o <a href=\"<rootFolder />/php/signup.php\">registrati</a>.</p>";
     }
-
+    
     $content = str_replace("<nomeRicettaPlaceholder />", $nome, $content);
-
+    $content = str_replace("<imgAltPlaceholder />", $imgAlt, $content);
     $content = str_replace("<imgSrcPlaceholder />", $img, $content);
     $content = str_replace("<difficoltàPlaceholder />", $difficolta, $content);
     $content = str_replace("<tempoPlaceholder />", "$tempo minuti", $content);

@@ -563,9 +563,10 @@ ul li input{ /*uguale a .barra-input */
 .radio-ricetta{
     margin: 0.5em;
 }
-textarea{
-    min-width: 20em;
-    min-height: 5em;
+#add-procedura {
+    max-width: 40em;
+    height: 5em;
+
 }
 
 /*FINE PAGINA MODIFICA RICETTA*/

@@ -8,3 +8,11 @@ function inserimentoLingua($testo)
         }
         return $testo;
     }
+
+    function rimozioneLingua($testo)
+    {
+        while (preg_match('/\[([A-Za-z]{2}?)=(.*?)\]/', $testo, $output)) {
+            $testo = str_replace($output[0], $output[2], $testo);
+        }
+        return $testo;
+    }

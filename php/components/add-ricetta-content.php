@@ -1,5 +1,7 @@
 <div id="content">
        <h1>Aggiungi ricetta</h1>
+       <p>Si invita l'amministratore ad aggiungere eventuali parole straniere con la seguente sintassi: [lingua=parola]. Esempio: [fr=<span xml:lang="fr">coque</span>]</p>
+       <p>I campi contrassegnati con * sono obbligatori.</p>
        <form action="<rootFolder />/php/handle-add-ricetta.php"
              method="post"
              id="form-add" 
@@ -54,7 +56,7 @@
                             </li>
                             <li class="form-element">
                                    <label class="form-label"
-                                          for="add-difficolta"> Difficolt&agrave; della ricetta: </label> 
+                                          for="add-difficolta"> Difficolt&agrave; della ricetta (da 1 a 5): </label> 
                                    <input class="barra-input"
                                           id="add-difficolta"
                                           type="text"
@@ -65,7 +67,7 @@
                             </li>
                             <li class="form-element">
                                    <label class="form-label"
-                                          for="add-tempo"> Tempo: </label>
+                                          for="add-tempo"> Tempo (in minuti): </label>
                                    <input class="barra-input"
                                           id="add-tempo"
                                           type="text"
@@ -76,7 +78,7 @@
                             </li>
 			                     <li class="form-element">
                                    <label class="form-label"
-                                          for="add-ingredienti"> Ingredienti: </label>
+                                          for="add-ingredienti"> Ingredienti (separati da virgola): </label>
                                    <textarea rows="" cols=""
                                           class="barra-input"
                                           id="add-ingredienti"

@@ -35,9 +35,9 @@ function checkImage(image) { //image=stringa"user-immagine"
 // validazione del nome della ricetta, lunghezza massima 55
 function checkTitolo(titolo) {
 	let test = document.getElementById(titolo).value;
-	let regex = new RegExp("^[a-zA-Z0-9\\s]{3,55}$");
+	let regex = new RegExp("^.{3,55}$");
 	let result = (regex.test(test)) && !(test === "");
-	printError(result, titolo.toString() + "-message", "La lunghezza massima &egrave; di 55 caratteri alfanumerici");
+	printError(result, titolo.toString() + "-message", "La lunghezza massima &egrave; di 55 caratteri ciao");
 	return result;
 }
 
