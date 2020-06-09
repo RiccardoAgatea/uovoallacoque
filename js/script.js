@@ -23,13 +23,14 @@ function checkNickname(nickname) {
 	return result;
 }
 
-// validazione immagine -> .png .jpg ; dimensione dell'immagine (da fare)
 function checkImage(image) { //image=stringa"user-immagine"
 	let test = document.getElementById(image).value;
+	let fileSize = document.getElementById(image).files[0].size;
 	let extensions = ['png', 'jpg', 'jpeg', 'svg'];
 	let isImage = extensions.includes(test.split('.').pop()); //split taglia dove c'è il punto e pop prende in considerazione quello che c'è dopo il punto
-	printError(isImage, image.toString() + "-message", "Il formato non &egrave; valido");
-	return isImage;
+	let result = isImage && fileSize < 153600; 
+	printError(result, image.toString() + "-message", "Il formato non &egrave; valido"); //isImage && size < 153600
+	return result;
 }
 
 // validazione del nome della ricetta, lunghezza massima 55
