@@ -6,7 +6,7 @@ class TemplateHandler
 
     public function __construct(string $root, string $standard)
     {
-        if ($standard != "xhtml" && $standard != "html5") {
+        if ($standard != "xhtml") {
             throw new UnexpectedValueException("Unrecognized standard declared", 1);
         }
 
@@ -23,7 +23,7 @@ class TemplateHandler
     {
         $this->page = str_replace("<descriptionPlaceholder />", $description, $this->page);
     }
-    
+
     public function setAuthor(string $author)
     {
         $this->page = str_replace("<authorPlaceholder />", $author, $this->page);
