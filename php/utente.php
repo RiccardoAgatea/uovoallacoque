@@ -4,7 +4,7 @@ require_once __DIR__ . "/user.php";
 
 session_start();
 
-if(!key_exists("logged", $_SESSION) || !$_SESSION["logged"]) {
+if (!key_exists("logged", $_SESSION) || !$_SESSION["logged"]) {
     header("Location: ../401.php");
     exit;
 }
@@ -44,10 +44,15 @@ $content = str_replace("<PlaceholderImmagineUtente />", $_SESSION["user"]->getPi
 $content = str_replace("<PlaceholderNicknameUtente />", $_SESSION["user"]->getNickname(), $content);
 $content = str_replace("<PlaceholderEmailUtente />", $_SESSION["user"]->getEmail(), $content);
 
-if(key_exists("logged", $_SESSION) && $_SESSION["logged"] && $_SESSION["user"]->getAdmin()){
+if (key_exists("logged", $_SESSION) && $_SESSION["logged"] && $_SESSION["user"]->getAdmin()) {
     $content = str_replace("<addPlaceholder />", "<a id=\"aggiungi-ricetta-link\" href=\" <rootFolder />/php/add-ricetta.php\" > Aggiungi nuova ricetta </a> ", $content);
 }
 
+if (key_exists("wrong", $_SESSION)) {
+    $content = str_replace("<errorPlaceholder />", "Password errata", $content);
+
+    unset($_SESSION["wrong"]);
+}
 
 $handler->setContent($content);
 
