@@ -78,25 +78,24 @@ function checkLogin($stringPassword, $stringEmail)
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST[$stringEmail])) { //se la mail è vuota
-            $err = "La mail non pu&ograve; essere vuota";
+            $err = "Credenziali errate";
         } else {
             $email = test_input($_POST[$stringEmail]);
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { //se la mail non valida
-                $err = "Email incorretta";
+                $err = "Credenziali errate";
             }
             if (empty($_POST[$stringPassword])) { //se la password è vuota
-                $err = "La password non pu&ograve; essere un campo vuoto";
+                $err = "Credenziali errate";
             } else {
                 $password = test_input($_POST[$stringPassword]);
-                $result = $connection->query("SELECT passw FROM utenti WHERE email=\"{$email}\"");
+                $result = $connection->query("SELECT passw FROM utenti WHERE email=\"{$email}\""); //se c'è la mail nel db
                 if (!$result) {
-                    // if ($connection->query(" SELECT passw FROM utenti WHERE email=\"{$email}\" ")->fetch_row() != null) {
-                    $err = "L'utente non esiste";
+                    $err = "Credenziali errate";
                     $connection->disconnect();
                 } else {
                     $user_row = $result->fetch_assoc();
-                    if ($user_row['passw'] != $password) {
-                        $err = "La password non &egrave; corretta";
+                    if ($user_row['passw'] != $password) { //se la password non corrisponde
+                        $err = "Credenziali errate";
                     }
 
                 }

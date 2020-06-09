@@ -38,7 +38,9 @@ $content = file_get_contents(__DIR__ . "/components/login-content.php");
 if (key_exists("wrong-login", $_SESSION) && $_SESSION["wrong-login"]) {
     $content = str_replace("<emailPlaceholder />", $_SESSION["email"], $content);
     $content = str_replace("<passwordPlaceholder />", "", $content);
-    $content = str_replace("<errorPlaceholder />", $_SESSION["error"], $content);
+    if($_SESSION["error"] != "") {
+    	$content = str_replace("<errorPlaceholder />", $_SESSION["error"], $content);
+    }
 
     $_SESSION["wrong-login"] = false;
     $_SESSION["email"] = "";
