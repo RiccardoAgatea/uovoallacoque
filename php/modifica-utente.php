@@ -33,7 +33,7 @@ $handler->setNav(
 $handler->setBreadcrumb(
     str_replace(
         "<percorsoPlaceholder />",
-        "<a href=\"<rootFolder />/index.php\">Home</a> &gt; <a href=\"<rootFolder />/php/utente.php\">Utente</a>  &gt; Modifica utente",
+        "<a href=\"<rootFolder />/php/utente.php\">Utente</a>  &gt; Modifica utente",
         file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
     )
 );
