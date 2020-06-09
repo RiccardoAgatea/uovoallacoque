@@ -40,10 +40,14 @@ $handler->setBreadcrumb(
 
 $content = file_get_contents(__DIR__ . "/components/modifica-utente-content.php");
 if (key_exists("wrong", $_SESSION)) {
-    $content = str_replace("<errorPlaceholder />", "<p>Password errata</p>", $content);
+    $content = str_replace("<errorPlaceholder />", "<p>".$_SESSION["wrong"]."</p>", $content);
 
     unset($_SESSION["wrong"]);
-} else {
+} else if (key_exists("complete", $_SESSION) && $_SESSION["complete"]){
+    $content = str_replace("<errorPlaceholder />", "<p>Modifica completata con successo</p>", $content);
+
+    unset($_SESSION["complete"]);
+}else{
     $content = str_replace("<errorPlaceholder />", "", $content);
 }
 
