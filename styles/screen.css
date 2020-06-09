@@ -499,58 +499,58 @@ ul li input{ /*uguale a .barra-input */
 #modifica-link:hover{
     background-color:#FF9F29;
 }
-    /*inizio commenti*/
-    .commento {
-        background-color: #0c2752;
-        margin: 1em;
-        color: white;
-        border-radius: 2em;
-        padding: 1em;
-    }
+/*inizio commenti*/
+.commento {
+    background-color: #0c2752;
+    margin: 1em;
+    color: white;
+    border-radius: 2em;
+    padding: 1em;
+}
 
-    .commento-immagine {
-        width: 4em;
-        float: left;
-        margin-right: 1em;
-    }
+.commento-immagine {
+    width: 4em;
+    float: left;
+    margin-right: 1em;
+}
 
-    .commento-dataora {
-        font-size: 0.8em;
-        margin-top: 1em;
-        text-align: right;
-    }
+.commento-dataora {
+    font-size: 0.8em;
+    margin-top: 1em;
+    text-align: right;
+}
 
-    #inserimento-commento {
-        background-color: #0c2752;
-        margin: 1em;
-        color: white;
-        border-radius: 1em;
-        padding: 1em;
-        display: flex;
-        flex-direction: column;
-    }
+#inserimento-commento {
+    background-color: #0c2752;
+    margin: 1em;
+    color: white;
+    border-radius: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
 
-    #scrivi-commento, #modifica-commento {
-        width: 100%;
-        height: 6em;
-        margin-top: 1em;
-        margin-bottom: 1em;
-    }
+#scrivi-commento, #modifica-commento {
+    width: 100%;
+    height: 6em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
 
-    .tasti-commento {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-end;
-    }
+.tasti-commento {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
 
-    .tasti-commento form {
-        margin-top: 1em;
-        margin-left: 0.5em;
-    }
+.tasti-commento form {
+    margin-top: 1em;
+    margin-left: 0.5em;
+}
 
 
-    /*fine commenti*/
+/*fine commenti*/
 /*FINE PAGINA RICETTA*/
 /*INIZIO PAGINA MODIFICA RICETTA*/
 
