@@ -3,7 +3,7 @@ CREATE TABLE ricette (
   nome VARCHAR(65) NOT NULL,
   difficolta TINYINT UNSIGNED NOT NULL,
   tempo SMALLINT UNSIGNED NOT NULL,
-  -- url dell'immagine, embeddata come <img>:
+  -- url dell 'immagine, embeddata come <img>:
   img VARCHAR(256) NOT NULL DEFAULT "<rootFolder />/img/ricette/default.png",
   portata TINYINT UNSIGNED NOT NULL,
   ingredienti TEXT NOT NULL,
@@ -16,8 +16,8 @@ CREATE TABLE ricette (
 );
 CREATE TABLE utenti (
   id INT AUTO_INCREMENT,
-  -- url della foto dell'utente, embeddata come <img>:
-  img VARCHAR(256),
+  -- url della foto dell' utente, embeddata come < img >:
+  img VARCHAR(256) NOT NULL DEFAULT "<rootFolder />/img/utenti/def1.png",
   email VARCHAR(50) NOT NULL,
   passw VARCHAR(256) NOT NULL,
   nickname VARCHAR(30) NOT NULL,
