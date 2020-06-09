@@ -78,13 +78,13 @@
         </li>
         <li class="form-element">
           <label class="form-label"
-            for="edit-keyword"> Keywords: </label>
+            for="edit-keywords"> Keywords: </label>
           <input class="barra-input"
-            id="edit-keyword"
+            id="edit-keywords"
             type="text"
-            name="keyword"
-            value = "<keywordPlaceholder />" />
-          <span id="edit-keyword-message"
+            name="keywords"
+            value = "<keywordsPlaceholder />" />
+          <span id="edit-keywords-message"
                 class="warning"> <errorKeywordsPlaceholder /> </span>
         </li>
         <li class="form-element">

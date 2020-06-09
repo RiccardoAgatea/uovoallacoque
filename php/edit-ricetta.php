@@ -61,6 +61,7 @@ if (!$result) {
     $img = $result["img"];
     $ingredienti = $result["ingredienti"];
     $procedimento = $result["procedimento"];
+    $keywords = $result["keywords"];
 
     $portate = [
         "Primi piatti",
@@ -112,6 +113,9 @@ if (!$result) {
         if ($_SESSION["errorTempo"] != "") {
             $content = str_replace("<errorTempoPlaceholder />", $_SESSION["errorTempo"], $content);
         } 
+        if ($_SESSION["errorKeywords"] != "") {
+            $content = str_replace("<errorKeywordsPlaceholder />", $_SESSION["errorKeywords"], $content);
+        } 
 
         $_SESSION["wrong-edit"] = false;
         $_SESSION["immagine"] = "";
@@ -120,6 +124,7 @@ if (!$result) {
         $_SESSION["tempo"] = "";
         $_SESSION["ingredienti"] = "";
         $_SESSION["procedura"] = "";
+        $_SESSION["keywords"] = "";
     } else {
         $content = str_replace("<nomeRicettaPlaceholder/>", $nome, $content);
         $content = str_replace("<imgSrcPlaceholder/>", $img, $content);
@@ -127,6 +132,7 @@ if (!$result) {
         $content = str_replace("<tempoPlaceholder/>", $tempo, $content);
         $content = str_replace("<ingredientiPlaceholder/>", $ingredienti, $content);
         $content = str_replace("<proceduraPlaceholder/>", $procedimento, $content);
+        $content = str_replace("<keywordsPlaceholder/>", $keywords, $content);
 
         switch ($portata) {
           case 1:
@@ -147,6 +153,7 @@ if (!$result) {
         $content = str_replace("<errorDifficoltaPlaceholder />", "", $content);
         $content = str_replace("<errorTempoPlaceholder />", "", $content);
         $content = str_replace("<errorTipoPlaceholder />", "", $content);
+        $content = str_replace("<errorKeywordsPlaceholder />", "", $content);
     }
 }
 

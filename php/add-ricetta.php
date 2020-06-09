@@ -76,6 +76,9 @@ if (key_exists("wrong-add", $_SESSION) && $_SESSION["wrong-add"]) {
     if ($_SESSION["errorTempo"] != "") {
         $content = str_replace("<errorTempoPlaceholder />", $_SESSION["errorTempo"], $content);
     } 
+    if ($_SESSION["errorKeywords"] != "") {
+        $content = str_replace("<errorKeywordsPlaceholder />", $_SESSION["errorKeywords"], $content);
+    } 
 
     $_SESSION["wrong-add"] = false;
     $_SESSION["immagine"] = "";
@@ -85,6 +88,7 @@ if (key_exists("wrong-add", $_SESSION) && $_SESSION["wrong-add"]) {
     $_SESSION["tipo"] = "";
     $_SESSION["ingredienti"] = "";
     $_SESSION["procedura"] = "";
+    $_SESSION["keywords"] = "";
 } else {
     $content = str_replace("<nomePlaceholder />", "", $content);
     $content = str_replace("<imgPlaceholder />", "", $content);
@@ -92,11 +96,13 @@ if (key_exists("wrong-add", $_SESSION) && $_SESSION["wrong-add"]) {
     $content = str_replace("<tempoPlaceholder />", "", $content);
     $content = str_replace("<ingredientiPlaceholder />", "", $content);
     $content = str_replace("<proceduraPlaceholder />", "", $content);
+    $content = str_replace("<keywordsPlaceholder />", "", $content);
     $content = str_replace("<errorNomePlaceholder />", "", $content);
     $content = str_replace("<errorImgPlaceholder />", "", $content);
     $content = str_replace("<errorDifficoltaPlaceholder />", "", $content);
     $content = str_replace("<errorTempoPlaceholder />", "", $content);
     $content = str_replace("<errorTipoPlaceholder />", "", $content);
+    $content = str_replace("<errorKeywordsPlaceholder />", "", $content);
 }
 
 $handler->setContent($content);

@@ -60,6 +60,14 @@ function checkTempo(tempo) {
 	return result;
 }
 
+function checkKeywords(keywords) {
+	let test = document.getElementById(keywords).value;
+	let regex = new RegExp("^[A-Za-z0-9]+$");
+	let result = (regex.test(test)) && !(test === "");
+	printError(result, keywords.toString() + "-message", "Le keywords devono contenere solo lettere e numeri");
+	return result;
+}
+
 function printError(condition, id, message) { // se condition è true significa che matcha la regex, passo l'id dell'elemento che voglio stampare, passo il messaggio da settare nel caso di errori
 	if (condition) {
 		document.getElementById(id).innerHTML = ""; //mi serve perchè se non ho errori devo nascondere il messaggio di errore se esiste
@@ -82,12 +90,13 @@ function signupValidator(nickname, email, password, passwordConfirm) {
 	return (nicknameChecked && emailChecked && passwordChecked); //se matchano tutte ritorno true
 }
 //function ricetta validator
-function ricettaValidator(titolo, difficolta, tempo, image) {
+function ricettaValidator(titolo, difficolta, tempo, image, keywords) {
 	let titoloChecked = checkTitolo(titolo);
 	let difficoltaChecked = checkDifficolta(difficolta);
 	let tempoChecked = checkTempo(tempo);
 	let imageChecked = checkImage(image);
-	return (titoloChecked && difficoltaChecked && tempoChecked && imageChecked);
+	let keywordsChecked = checkKeywords(keywords);
+	return (titoloChecked && difficoltaChecked && tempoChecked && imageChecked && keywordsChecked);
 }
 
 // --------- MENU --------
@@ -139,7 +148,7 @@ if (signupForm) {
 const ricettaForm = document.getElementById("form-add");
 if (ricettaForm) {
 	ricettaForm.addEventListener("submit", function (event) {
-		if (!ricettaValidator('add-nome', 'add-difficolta', 'add-tempo', 'add-immagine')) {
+		if (!ricettaValidator('add-nome', 'add-difficolta', 'add-tempo', 'add-immagine', 'add-keywords')) {
 			event.preventDefault();
 		}
 	});
@@ -148,7 +157,7 @@ if (ricettaForm) {
 const editRicettaForm = document.getElementById("form-edit");
 if (editRicettaForm) {
 	editRicettaForm.addEventListener("submit", function (event) {
-		if (!ricettaValidator('edit-nome', 'edit-difficolta', 'edit-tempo', 'edit-immagine')) {
+		if (!ricettaValidator('edit-nome', 'edit-difficolta', 'edit-tempo', 'edit-immagine', 'edit-keywords')) {
 			event.preventDefault();
 		}
 	});

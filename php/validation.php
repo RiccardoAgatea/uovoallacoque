@@ -176,6 +176,23 @@ function checkTempo($stringTempo)
     return $tempoErr;
 }
 
+function checkKeywords($stringKeywords)
+{
+    $keywordsErr = $keywords = "";
+    $connection = new DBConnection(); // oggetto che rappresenta il database
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST[$stringKeywords])) {
+            $keywordsErr = "Il campo non pu&ograve; essere vuoto";
+        } else {
+            $keywords = test_input($_POST[$stringKeywords]);
+            if (!preg_match("/^[A-Za-z0-9]+$/", $keywords)) {
+                $keywordsErr = "Le keywords devono contenere solo lettere e numeri";
+            }
+        }
+    }
+    return $keywordsErr;
+}
+
 function checkImage($stringImage)
 {
     $imageErr = "";
