@@ -184,7 +184,7 @@ function checkKeywords($stringKeywords)
             $keywordsErr = "Il campo non pu&ograve; essere vuoto";
         } else {
             $keywords = test_input($_POST[$stringKeywords]);
-            if (!preg_match("/^[A-Za-z0-9]+$/", $keywords)) {
+            if (!preg_match("/^[A-Za-z0-9,\s]+$/", $keywords)) {
                 $keywordsErr = "Le keywords devono contenere solo lettere e numeri";
             }
         }
@@ -195,7 +195,7 @@ function checkKeywords($stringKeywords)
 function checkImage($stringImage)
 {
     $imageErr = "";
-    if (!$stringImage == "" && $_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && file_exists($_FILES[$stringImage]['tmp_name'])) {
         $extension = strtolower(pathinfo($_FILES[$stringImage]['name'], PATHINFO_EXTENSION));
         $allowed_extensions = array("jpg", "jpeg", "png", "svg");
         if (!in_array($extension, $allowed_extensions)) {

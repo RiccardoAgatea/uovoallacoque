@@ -10,6 +10,7 @@ session_start();
 $_SESSION["nome"] = $_POST['nome'];
 $_SESSION["tempo"] = $_POST['tempo'];
 $_SESSION["difficolta"] = $_POST['difficolta'];
+$_SESSION["portata"] = $_POST['tipo'];
 $_SESSION["immagine"] = $_POST['immagine'];
 $_SESSION["tipo"] = $_POST['tipo'];
 $_SESSION["ingredienti"] = $_POST['ingredienti'];
@@ -22,29 +23,29 @@ $_SESSION["errorDifficolta"] = checkDifficolta("difficolta");
 $_SESSION["errorTempo"] = checkTempo("tempo");
 $_SESSION["errorKeywords"] = checkKeywords("keywords");
 
-if ($_SESSION["errorNome"] != "" || 
-    $_SESSION["errorImg"] != "" || 
-    $_SESSION["errorDifficolta"] !=  "" || 
-    $_SESSION["errorTempo"] != "" || 
-    $_SESSION["errorKeywords"] != "" ) { 
-    $_SESSION["wrong-edit"] = true; 
-   header("Location: ./edit-ricetta.php?id={$id}&pagina={$pagina}"); 
+if ($_SESSION["errorNome"] != "" ||
+    $_SESSION["errorImg"] != "" ||
+    $_SESSION["errorDifficolta"] != "" ||
+    $_SESSION["errorTempo"] != "" ||
+    $_SESSION["errorKeywords"] != "") {
+    $_SESSION["wrong-edit"] = true;
+    header("Location: ./edit-ricetta.php?id={$id}&pagina={$pagina}");
     exit;
-} else { 
+} else {
     $connection = new DBConnection();
 
     $path = "";
     $basename = basename($_FILES['immagine']['name']);
-    // if($basename == ""){ 
-    //     $result = $connection->query(" SELECT img FROM ricette WHERE id=$id ");   
+    // if($basename == ""){
+    //     $result = $connection->query(" SELECT img FROM ricette WHERE id=$id ");
     //     if ($result) {
-    //         $row = $result->fetch_assoc(); 
+    //         $row = $result->fetch_assoc();
     //         $path = $row['img'];
     //     }
     // } else {
-        $uploadfile = "../img/ricette/" . $basename;
-        move_uploaded_file($_FILES['immagine']['tmp_name'], $uploadfile);
-        $path = str_replace("..", "<rootFolder />", $uploadfile);
+    $uploadfile = "../img/ricette/" . $basename;
+    move_uploaded_file($_FILES['immagine']['tmp_name'], $uploadfile);
+    $path = str_replace("..", "<rootFolder />", $uploadfile);
     // }
 
     $queryString = " UPDATE ricette SET nome='{$_POST['nome']}', difficolta='{$_POST['difficolta']}', tempo='{$_POST['tempo']}', img='$path', portata='{$_POST['tipo']}', ingredienti='{$_POST['ingredienti']}', procedimento='{$_POST['procedura']}' WHERE id='{$id}' ";
@@ -54,6 +55,7 @@ if ($_SESSION["errorNome"] != "" ||
     $_SESSION["wrong-edit"] = false;
     $_SESSION["nome"] = "";
     $_SESSION["tempo"] = "";
+    $_SESSION["portata"] = "";
     $_SESSION["difficolta"] = "";
     $_SESSION["immagine"] = "";
     $_SESSION["ingredienti"] = "";
