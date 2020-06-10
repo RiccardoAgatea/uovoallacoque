@@ -3,17 +3,14 @@ require_once __DIR__ . "/template-handler.php";
 require_once __DIR__ . "/query-portata.php";
 require_once __DIR__ . "/user.php";
 
-
 session_start();
 
 $handler = new TemplateHandler("..", "xhtml");
 
-
-
 $login = "";
 
-if(key_exists("pagina", $_GET)) {
-    if (intval($_GET["pagina"]<1)) {
+if (key_exists("pagina", $_GET)) {
+    if (intval($_GET["pagina"] < 1)) {
         header("Location: ../404.php");
         exit;
     }
@@ -48,20 +45,19 @@ $handler->setTitle("$tipi[$tipo] | Uovo alla Coque");
 $handler->setAuthor("Agatea Riccardo, Bosinceanu Ecaterina, Righetto Sara, Schiavon Rebecca");
 $nav = file_get_contents(__DIR__ . "/components/default-nav.php");
 
-
 switch ($tipo) {
-    case 0: $handler->setDescription("Elenco delle ricette il cui nome contiene il termine ricercato");
-            $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette\" />");
-    break;
-    case 1: $handler->setDescription("Elenco delle ricette di primi piatti disponibili");
-            $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette, primi piatti\" />");
-    break;
-    case 2: $handler->setDescription("Elenco delle ricette di secondi piatti disponibili");
-            $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette, secondi piatti\" />");
-    break;
-    case 3: $handler->setDescription("Elenco delle ricette dei dolci disponibili");
-            $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette, dolci, dessert\" />");
-    break;
+    case 0:$handler->setDescription("Elenco delle ricette il cui nome contiene il termine ricercato");
+        $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette\" />");
+        break;
+    case 1:$handler->setDescription("Elenco delle ricette di primi piatti disponibili");
+        $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette, primi piatti\" />");
+        break;
+    case 2:$handler->setDescription("Elenco delle ricette di secondi piatti disponibili");
+        $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette, secondi piatti\" />");
+        break;
+    case 3:$handler->setDescription("Elenco delle ricette dei dolci disponibili");
+        $handler->setOtherMeta("<meta name=\"keywords\" content=\"ricette, dolci, dessert\" />");
+        break;
 }
 
 if ($tipo != 0) {
@@ -85,7 +81,14 @@ if ($tipo != 0) {
 $handler->setNav($nav);
 
 $content = file_get_contents(__DIR__ . "/components/elenco-content.php");
-$content = str_replace("<categoriaPlaceholder />", $tipi[$tipo], $content);
+
+$categoria = $tipi[$tipo];
+
+if ($tipo == 0) {
+    $categoria .= ": " . $_GET["termine-ricerca"];
+}
+
+$content = str_replace("<categoriaPlaceholder />", $categoria, $content);
 
 $perPagina = 6;
 $pagina = (key_exists("pagina", $_GET)) ? intval($_GET['pagina']) : 1;

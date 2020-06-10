@@ -8,11 +8,6 @@ session_start();
 
 $handler = new TemplateHandler("..", "xhtml");
 
-$handler->setTitle("Uovo alla Coque");
-$handler->setAuthor("Agatea Riccardo, Bosinceanu Ecaterina, Righetto Sara, Schiavon Rebecca");
-$handler->setDescription("");
-$handler->setOtherMeta("");
-
 $login = "";
 
 if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
@@ -35,8 +30,8 @@ $content = file_get_contents(__DIR__ . "/components/ricetta-content.php");
 $connection = new DBConnection();
 $id = $_GET["id"];
 
-if(key_exists("pagina", $_GET)) {
-    if (intval($_GET["pagina"]<1)) {
+if (key_exists("pagina", $_GET)) {
+    if (intval($_GET["pagina"] < 1)) {
         header("Location: ../404.php");
         exit;
     }
@@ -49,6 +44,7 @@ if (!$result) {
     exit;
 } else {
     $nome = inserimentoLingua($result["nome"]);
+    $nomeClean = rimozioneLingua($result["nome"]);
     $imgAlt = "immagine di " . rimozioneLingua($result["nome"]);
     $portata = $result["portata"];
     $difficolta = $result["difficolta"];
@@ -63,6 +59,13 @@ if (!$result) {
     $img = $result["img"];
     $ingredienti = inserimentoLingua($result["ingredienti"]);
     $procedimento = inserimentoLingua($result["procedimento"]);
+    $keywords = $result["keywords"];
+    $author = $result["author"];
+
+    $handler->setTitle($nomeClean . " | Uovo alla Coque");
+    $handler->setAuthor($author);
+    $handler->setDescription("Pagina che presenta la ricetta $nomeClean");
+    $handler->setOtherMeta("<meta name=\"keywords\" content=\"$keywords\" />");
 
     $portate = [
         "Primi piatti",
@@ -93,11 +96,10 @@ if (!$result) {
 
         $queryVoto = $connection->query("SELECT voto FROM voti WHERE voti.utente={$_SESSION["user"]->getId()} AND voti.ricetta=$id");
 
-        if($queryVoto && $queryVoto->num_rows!=0) {
+        if ($queryVoto && $queryVoto->num_rows != 0) {
             $row = $queryVoto->fetch_assoc()["voto"];
-            $tastiVoto ="<p>Il tuo voto per questa ricetta &egrave; " . strval($row) ."/5</p>";
-        }
-        else {
+            $tastiVoto = "<p>Il tuo voto per questa ricetta &egrave; " . strval($row) . "/5</p>";
+        } else {
             $tastiVoto = "<form action=\"<rootFolder />/php/handle-voto.php?ricetta={$id}\" method=\"post\"><fieldset class=\"fieldset-noborder print-hide\">
                 <legend>Vota questa ricetta</legend>
                 <ul class=\"tasti-voto\">
@@ -121,7 +123,6 @@ if (!$result) {
             </fieldset></form>";
         }
 
-
         $pagina = intval($_GET["pagina"]);
         $num = 10;
         $min = ($pagina - 1) * $num;
@@ -135,7 +136,7 @@ if (!$result) {
             $idcommento = $_GET['idcommento'];
             $commentoResult = $connection->query("SELECT commenti.contenuto AS testo, commenti.utente AS idutente FROM commenti WHERE commenti.id=$idcommento");
 
-            if (!$commentoResult || $commentoResult->num_rows==0) {
+            if (!$commentoResult || $commentoResult->num_rows == 0) {
                 $connection->disconnect();
                 header("Location: ../404.php");
                 exit;
@@ -190,10 +191,8 @@ if (!$result) {
                 $commentiContent = str_replace("<editedPlaceholder />", $edited, $commentiContent);
 
                 if ($idUtente == $_SESSION['user']->getId()) {
-                    $commentiContent = str_replace("<modificaCommentoPlaceholder />", "<form class=\"print-hide\" method=\"post\" action=\"<rootFolder />/php/setup-modifica-commento.php?ricetta={$_GET["id"]}&amp;idcommento=$idcommento&amp;pagina=$corrente\"><fieldset class=\"fieldset-noborder\"><input class=\"commento-tasto-modifica\" type=\"submit\" value=\"Modifica\"/></fieldset></form>", $commentiContent);
-                    $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "<form class=\"print-hide\" method=\"post\" action=\"<rootFolder />/php/handle-elimina-commento.php?ricetta={$_GET["id"]}&amp;idcommento=$idcommento\"><fieldset class=\"fieldset-noborder\"><input class=\"commento-tasto-elimina\" type=\"submit\" value=\"Elimina\"/></fieldset></form>", $commentiContent);
+                    $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "<form class=\"print-hide\" method=\"post\" action=\"<rootFolder />/php/handle-elimina-commento.php?ricetta={$_GET["id"]}&amp;idcommento=$idcommento\"><fieldset class=\"fieldset-noborder\"><input type=\"submit\" value=\"Elimina\"/></fieldset></form>", $commentiContent);
                 } else {
-                    $commentiContent = str_replace("<modificaCommentoPlaceholder />", "", $commentiContent);
                     $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "", $commentiContent);
                 }
 
@@ -203,17 +202,18 @@ if (!$result) {
             $commenti .= getPaginazione($corrente, $totPagine, $id);
 
         } else {
-            if($corrente != 1) {
+            if ($corrente != 1) {
                 $commenti .= "<p class=\"print-hide\">Sei andato troppo avanti! Non ci sono commenti qui.</p>";
+            } else {
+                $commenti .= "<p class=\"print-hide\">Scrivi il primo commento per questa ricetta!</p>";
             }
-            else
-            $commenti .= "<p class=\"print-hide\">Scrivi il primo commento per questa ricetta!</p>";
+
         }
 
     } else {
         $commenti .= "<p class=\"commenti-avviso print-hide\">Per visualizzare e inserire i commenti, <a href=\"<rootFolder />/php/login.php\">accedi</a> o <a href=\"<rootFolder />/php/signup.php\">registrati</a>.</p>";
     }
-    
+
     $content = str_replace("<nomeRicettaPlaceholder />", $nome, $content);
     $content = str_replace("<imgAltPlaceholder />", $imgAlt, $content);
     $content = str_replace("<imgSrcPlaceholder />", $img, $content);
@@ -226,7 +226,7 @@ if (!$result) {
     $content = str_replace("<votoPlaceholder />", $tastiVoto, $content);
 }
 
-if(key_exists("logged", $_SESSION) && $_SESSION["logged"] && $_SESSION["user"]->getAdmin()){
+if (key_exists("logged", $_SESSION) && $_SESSION["logged"] && $_SESSION["user"]->getAdmin()) {
     $nrPagina = $_GET['pagina'];
     $editPath = "<rootFolder />/php/edit-ricetta.php?id=$id&amp;pagina=$nrPagina";
     $content = str_replace("<editPlaceholder />", "<a id=\"link-modifica-ricetta\" class=\"print-hide\" href=\"$editPath\"> Modifica la ricetta </a> ", $content);
@@ -279,4 +279,3 @@ function getPaginazione($corrente, $totPagine, $id)
 
     return $out;
 }
-

@@ -5,18 +5,16 @@ require_once __DIR__ . "/user.php";
 
 session_start();
 
-$handler = new TemplateHandler("..", "xhtml"); 
+$handler = new TemplateHandler("..", "xhtml");
 
 $handler->setTitle("Modifica ricetta | Uovo alla Coque");
 $handler->setAuthor("Agatea Riccardo, Bosinceanu Ecaterina, Righetto Sara, Schiavon Rebecca");
 $handler->setDescription("Pagina per modificare una ricetta");
 $handler->setOtherMeta("<meta name=\"robots\" content=\"noindex, nofollow\" />");
 
-if (!key_exists("logged", $_SESSION)||(!$_SESSION["logged"]))
-{
+if (!key_exists("logged", $_SESSION) || (!$_SESSION["logged"])) {
     header("Location: ../401.php");
-}
-else if (!$_SESSION["user"]->getAdmin()) {
+} else if (!$_SESSION["user"]->getAdmin()) {
     header("Location: ../403.php");
 }
 
@@ -36,8 +34,8 @@ $content = file_get_contents(__DIR__ . "/components/edit-ricetta-content.php");
 
 $connection = new DBConnection();
 
-if(key_exists("pagina", $_GET)) {
-    if (intval($_GET["pagina"]<1)) {
+if (key_exists("pagina", $_GET)) {
+    if (intval($_GET["pagina"] < 1)) {
         header("Location: ../404.php");
         exit;
     }
@@ -45,8 +43,8 @@ if(key_exists("pagina", $_GET)) {
 
 $id = $_GET["id"];
 $pagina = $_GET['pagina'];
-$content = str_replace("<idPlaceholder/>", $id, $content);
-$content = str_replace("<paginaPlaceholder/>", $pagina, $content);
+$content = str_replace("<idPlaceholder />", $id, $content);
+$content = str_replace("<paginaPlaceholder />", $pagina, $content);
 
 $result = $connection->query("SELECT * FROM ricette WHERE id={$id}")->fetch_assoc();
 if (!$result) {
@@ -55,7 +53,7 @@ if (!$result) {
     exit;
 } else {
     $nome = $result["nome"];
-    $portata = $result["portata"];
+    $portata = intval($result["portata"]);
     $difficolta = $result["difficolta"];
     $tempo = $result["tempo"];
     $img = $result["img"];
@@ -77,45 +75,35 @@ if (!$result) {
             $percorsoBread,
             file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
         )
-    );   
+    );
 
     if (key_exists("wrong-edit", $_SESSION) && $_SESSION["wrong-edit"]) {
-        $content = str_replace("<nomeRicettaPlaceholder/>", $_SESSION["nome"], $content);
-        $content = str_replace("<imgSrcPlaceholder/>", $_SESSION["immagine"], $content);
-        $content = str_replace("<difficoltaPlaceholder/>", $_SESSION["difficolta"], $content);
-        $content = str_replace("<tempoPlaceholder/>", $_SESSION["tempo"], $content);
-        $content = str_replace("<ingredientiPlaceholder/>", $_SESSION["ingredienti"], $content);
-        $content = str_replace("<proceduraPlaceholder/>", $_SESSION["procedura"], $content);
+        $content = str_replace("<nomeRicettaPlaceholder />", $_SESSION["nome"], $content);
+        $content = str_replace("<imgSrcPlaceholder />", $_SESSION["immagine"], $content);
+        $content = str_replace("<difficoltaPlaceholder />", $_SESSION["difficolta"], $content);
+        $content = str_replace("<tempoPlaceholder />", $_SESSION["tempo"], $content);
+        $content = str_replace("<ingredientiPlaceholder />", $_SESSION["ingredienti"], $content);
+        $content = str_replace("<proceduraPlaceholder />", $_SESSION["procedura"], $content);
+        $content = str_replace("<keywordsPlaceholder />", $_SESSION['keywords'], $content);
 
-        switch ($_SESSION["tipo"]) {
-          case 1:
-            $content = str_replace('<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1"/>', '<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1" checked="checked"/>', $content);
-            break;
-          case 2:
-            $content = str_replace('<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2"/>', '<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2" checked="checked"/>', $content);
-            break;
-          case 3:
-            $content = str_replace('<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3"/>', '<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3" checked="checked"/>', $content);
-            break;
-          default:
-            $content = str_replace("<errorTipoPlaceholder />", "Tipo di portata inesistente", $content);
-        } 
+        $content = str_replace("<checked" . $_SESSION["portata"] . "Placeholder />", "checked=\"checked\"", $content);
+        $content = preg_replace("(checked.Placeholder />)", "", $content);
 
         if ($_SESSION["errorNome"] != "") {
             $content = str_replace("<errorNomePlaceholder />", $_SESSION["errorNome"], $content);
-        }   
+        }
         if ($_SESSION["errorImg"] != "") {
             $content = str_replace("<errorImgPlaceholder />", $_SESSION["errorImg"], $content);
-        } 
+        }
         if ($_SESSION["errorDifficolta"] != "") {
             $content = str_replace("<errorDifficoltaPlaceholder />", $_SESSION["errorDifficolta"], $content);
-        } 
+        }
         if ($_SESSION["errorTempo"] != "") {
             $content = str_replace("<errorTempoPlaceholder />", $_SESSION["errorTempo"], $content);
-        } 
+        }
         if ($_SESSION["errorKeywords"] != "") {
             $content = str_replace("<errorKeywordsPlaceholder />", $_SESSION["errorKeywords"], $content);
-        } 
+        }
 
         $_SESSION["wrong-edit"] = false;
         $_SESSION["immagine"] = "";
@@ -126,27 +114,30 @@ if (!$result) {
         $_SESSION["procedura"] = "";
         $_SESSION["keywords"] = "";
     } else {
-        $content = str_replace("<nomeRicettaPlaceholder/>", $nome, $content);
-        $content = str_replace("<imgSrcPlaceholder/>", $img, $content);
-        $content = str_replace("<difficoltaPlaceholder/>", $difficolta, $content);
-        $content = str_replace("<tempoPlaceholder/>", $tempo, $content);
-        $content = str_replace("<ingredientiPlaceholder/>", $ingredienti, $content);
-        $content = str_replace("<proceduraPlaceholder/>", $procedimento, $content);
-        $content = str_replace("<keywordsPlaceholder/>", $keywords, $content);
+        $content = str_replace("<nomeRicettaPlaceholder />", $nome, $content);
+        $content = str_replace("<imgSrcPlaceholder />", $img, $content);
+
+        $content = str_replace("<checked" . $portata . "Placeholder />", "checked=\"checked\"", $content);
+        $content = preg_replace("(checked.Placeholder />)", "", $content);
+        $content = str_replace("<difficoltaPlaceholder />", $difficolta, $content);
+        $content = str_replace("<tempoPlaceholder />", $tempo, $content);
+        $content = str_replace("<ingredientiPlaceholder />", $ingredienti, $content);
+        $content = str_replace("<proceduraPlaceholder />", $procedimento, $content);
+        $content = str_replace("<keywordsPlaceholder />", $keywords, $content);
 
         switch ($portata) {
-          case 1:
-            $content = str_replace('<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1"/>', '<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1" checked="checked"/>', $content);
-            break;
-          case 2:
-            $content = str_replace('<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2"/>', '<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2" checked="checked"/>', $content);
-            break;
-          case 3:
-            $content = str_replace('<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3"/>', '<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3" checked="checked"/>', $content);
-            break;
-          default:
-            $content = str_replace("<errorTipoPlaceholder />", "Tipo di portata inesistente", $content);
-        } 
+            case 1:
+                $content = str_replace('<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1"/>', '<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1" checked="checked"/>', $content);
+                break;
+            case 2:
+                $content = str_replace('<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2"/>', '<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2" checked="checked"/>', $content);
+                break;
+            case 3:
+                $content = str_replace('<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3"/>', '<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3" checked="checked"/>', $content);
+                break;
+            default:
+                $content = str_replace("<errorTipoPlaceholder />", "Tipo di portata inesistente", $content);
+        }
 
         $content = str_replace("<errorNomePlaceholder />", "", $content);
         $content = str_replace("<errorImgPlaceholder />", "", $content);
@@ -161,7 +152,7 @@ $handler->setContent($content);
 
 $handler->setAnnulla(
     str_replace(
-        "<linkPlaceholder/>",
+        "<linkPlaceholder />",
         "<rootFolder />/php/ricetta.php?id=$id&amp;pagina=$pagina",
         file_get_contents(__DIR__ . "/components/default-annulla.php")
     )
