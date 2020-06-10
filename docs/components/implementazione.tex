@@ -14,14 +14,33 @@ Per le form di registrazione e accesso, abbiamo scelto di utilizzare come input 
 
 \paragraph{CSS}
 
+\paragraph{SQL}
+
 \paragraph{PHP}\ref{par:php}
 % la struttura principale di ogni pagina è organizzata secondo un template, nello specifico una classe wrapper che fornisce i metodi setter per costruire una pagina. Più in dettaglio, i metodi sono: setBlabla()
 % pagine 40* ed eventuali errori
-% validazione
 % funzionalità di ricerca
 % query portata
+Le funzioni di validazione lato server sono contenute all'interno del file \texttt{validation.php}. Sono disponibili:
+\begin{itemize}
+	\item 
+\end{itemize}
 
 \paragraph{Javascript}\ref{par:javascript}
 % commenti, voti, validazione
+Il linguaggio Javascript è stato utilizzato per implementare il comportamento dinamico lato client di alcune pagine del sito, nello specifico i commenti e i voti nella pagina delle ricette, il menu ad hamburger presente nella visualizzazione mobile.
+Poiché è possibile che non tutti gli utenti dispongano della tecnologia adatta, le funzionalità implementate in Javascript sono minime. \newline
+I controlli lato client che sono stati implementati sono: 
+\begin{itemize}
+	\item \texttt{checkEmail(email)} che, passato come parametro la stringa che rappresenta l'id relativo alla mail presente nella form in esame, controlla sia se l'input inserito dall'utente è una stringa vuota, sia se non corrisponde all'espressione regolare che identifica le e-mail.
+	\item \texttt{checkNickname(nickname)} che, passato come parametro la stringa che rappresenta l'id relativo al nickname presente nella form in esame, controlla se l'input inserito dall'utente è una stringa vuota e se non corrisponde all'espressione regolare che identifica stringhe contenti solo lettere e numeri di lunghezza tra 3 e 20 caratteri.
+	\item \texttt{isPasswordEqual(password, passwordConfirm)} che, passati come parametri le stringhe gli id che identificano l'input relativo alla password e la conferma della password, controlla se le due password sono uguali tra loro.
+	\item \texttt{checkImage(image)} che, data la stringa che rappresenta l'id per l'inserimento del file, controlla se l'estensione del file appartiene alle estensioni delle immagini accettate e se la dimensione del file è minore di 150KB.
+	\item \texttt{checkTitolo(titolo)} che, passato come parametro la stringa che rappresenta l'id relativo al titolo di una ricetta, controlla se l'input inserito dall'utente è una stringa vuota e se la lunghezza della stringa è tra 3 e 55 caratteri.
+	\item \texttt{checkDifficolta(difficolta)} che, passato come parametro la stringa che rappresenta l'id relativo alla difficoltà di una ricetta, controlla se l'input inserito dall'utente è una stringa vuota e se corrisponde ad un numero tra 1 e 5.
+	\item \texttt{checkTempo(tempo)} che, passato come parametro la stringa che rappresenta l'id relativo al titolo di una ricetta, controlla se l'input inserito dall'utente è una stringa vuota e se corrisponde ad un intero positivo, escluso lo 0.
+	\item \texttt{checkKeywords(keywords)}
+\end{itemize}
+Nel caso in cui Javascript non sia disponibile o sia disabilitato, la validazione degli input è effettuata lato server grazie alle funzioni PHP sopra descritte.
 
 % section fase_di_implementazione (end)
