@@ -11,6 +11,17 @@ html, body {
     padding: 0em 0em;
 }
 
+a {
+    color: white;
+}
+a:visited {
+    color:  #faf600;
+}
+a:hover {
+    background-color:#FF9F29;
+    color: black;
+}
+
 /*sfondo e stile*/
 
 html {
@@ -100,10 +111,6 @@ ul{
     flex-direction: row;
 }
 
-#menu a:visited {
-    color: #faf600;
-}
-
 .elemento-menu{
     text-align: center;
     display: block;
@@ -115,13 +122,8 @@ ul{
 .elemento-menu a {
     display: block;
     font-size: 1em;
-    color: white;
 }
 
-#menu a:hover {
-    background-color:#FF9F29;
-    color: black;
-}
 
 /*fine menu*/
 /*logo*/
@@ -157,12 +159,6 @@ ul{
     background-color: #FF9F29;
 }
 
-
-#lista_accesso a:visited, #messaggio-utente-nome:visited, #messaggio-utente-esci:visited{
-    color: #faf600;
-}
-
-
 /*accesso*/
 #lista_accesso, #messaggio-utente{
     display: flex;
@@ -173,17 +169,11 @@ ul{
 
 }
 #lista_accesso li a{
-    color: white;
     margin: 0.5em;
 
 }
-#lista_accesso li a:hover, #messaggio-utente-nome:hover, #messaggio-utente-esci:hover{
-    color: black;
-    background-color:#FF9F29; /*istruzione ridondante perchè non mi faceva l'hover su accedi e registra*/
-}
 #messaggio-utente-nome, #messaggio-utente-esci{
     margin-left:1em;
-    color: white;
 }
 
 #messaggio-utente-nome {
@@ -199,6 +189,7 @@ ul{
     flex-direction: column;
     justify-content: space-evenly;
     padding-bottom: 1em;
+    margin-bottom: 1em;
 }
 #form-barra-ricerca {
     display: flex;
@@ -210,15 +201,18 @@ ul{
 
 #breadcrumb{
     background-color: rgb(211, 224, 245);
-    color: black;
-    padding-top: 1em;
+    color: white;
+    padding-top: 2em;
     padding-left: 2em;
 }
-#breadcrumb a{
-    color:black;
-}
-#breadcrumb a:hover{
-    background-color:#FF9F29;
+#breadcrumb p {
+    display: inline;
+    background-color: #0c2752;
+    -wedkit-border-radius:1em;
+    -moz-border-radius:1em;
+    border-radius: 1em;
+    padding: 1em;
+    
 }
 #header{
         color:white;
@@ -233,23 +227,29 @@ ul{
     justify-content: flex-end;
 }
 .torna-su-link{
-    color: black;
+    padding: 1em;
+    background-color: #0c2752;
+    -wedkit-border-radius:1em;
+    -moz-border-radius:1em;
+    border-radius: 1em;
+    color: white;
     margin: 1em;
-}
-.torna-su-link:hover{
-    background-color:#FF9F29;
 }
 /*introduzione*/
 #introduction{
-    border-style: dashed;
-    border-width: 0.07em;
     padding: 1em;
+    background-color: #0c2752;
+    -wedkit-border-radius:2em;
+    -moz-border-radius:2em;
+    border-radius: 2em;
+    color: white;
 }
 /*piatti migliori*/
 .elenco-migliori {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     margin-top: 1em;
 }
@@ -277,12 +277,14 @@ ul{
     border-style: dashed;
     border-width: 0.07em;
     padding: 0em 1em;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 .foto-utente {
     width: 5em;
     height: 5em;
     object-fit: contain;
+    -wedkit-border-radius:2em;
+    -moz-border-radius:2em;
     border-radius: 2em;
     margin-right: 2em;
 }
@@ -291,7 +293,7 @@ ul{
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 .info-attuale{
     margin-top: 2em;
@@ -321,6 +323,17 @@ ul{
 .form-centered li {
     width: auto;
     display: block;
+}
+#registrazione a {
+    padding: 1em;
+    background-color: #0c2752;
+    -wedkit-border-radius:1em;
+    -moz-border-radius:1em;
+    border-radius: 1em;
+    margin: 1em;
+}
+#registrazione a:hover, #modifica-link:hover, #aggiungi-ricetta-link:hover {
+    background-color: #FF9F29;
 }
 
 #form-elimina-account{
@@ -413,24 +426,19 @@ ul li input{ /*uguale a .barra-input */
 .elenco-testo {
     margin: 1em;
 }
-.link-apri {
-    color: white;
-}
-
-.link-apri:visited {
-    color: #faf600;
-}
-.link-apri:hover {
-    background-color:#FF9F29;
-    color: black;
-}
 
 .paginazione {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 1em;
+    padding: 1em;
+    background-color: #0c2752;
+    -wedkit-border-radius:1em;
+    -moz-border-radius:1em;
+    border-radius: 1em;
+    color: white;
+    margin: 1em;
 }
 
 .paginazione li {
@@ -462,12 +470,17 @@ ul li input{ /*uguale a .barra-input */
     margin-bottom: 1em;
 }
 #link-modifica-ricetta, #link-elimina-ricetta {
-    display: block;
-    color: black;
+    display: inline-block;
+    margin:1em;
+    padding: 1em;
+    background-color: #0c2752;
+    -wedkit-border-radius:2em;
+    -moz-border-radius:2em;
+    border-radius: 2em;
     max-width:max-content;
 }
-#link-modifica-ricetta:hover , #link-elimina-ricetta:hover{
-    background-color:#FF9F29;
+#link-modifica-ricetta:hover, #link-elimina-ricetta:hover {
+    background-color: #FF9F29;
 }
 #ricetta-tempo {
     margin-left: 2em;
@@ -488,17 +501,22 @@ ul li input{ /*uguale a .barra-input */
     margin-left: auto;
 }
 #aggiungi-ricetta-link{
-    color: black;
-}
-#aggiungi-ricetta-link:hover{
-    background-color:#FF9F29;
+    padding: 1em;
+    background-color: #0c2752;
+    -wedkit-border-radius:1em;
+    -moz-border-radius:1em;
+    border-radius: 1em;
+    margin: 1em;
 }
 #modifica-link{
-    color: black;
+    padding: 1em;
+    background-color: #0c2752;
+    -wedkit-border-radius:1em;
+    -moz-border-radius:1em;
+    border-radius: 1em;
+    margin: 1em;
 }
-#modifica-link:hover{
-    background-color:#FF9F29;
-}
+
 /*inizio commenti*/
 .commento {
     background-color: #0c2752;
@@ -623,14 +641,6 @@ ul li input{ /*uguale a .barra-input */
    #immagine-logo{
         height: 4em;
     }
-
-    .elenco-migliori {
-        flex-direction: column;
-    }
-    #elenco-content {
-        flex-direction: column;
-        justify-content: flex-start;
-    }
    .elenco-elemento {
        min-width: 18em;
     }
@@ -717,10 +727,6 @@ ul li input{ /*uguale a .barra-input */
     }
     .nav a {
         color: white;
-    }
-
-    .nav a:visited {
-        color: #faf600;
     }
 
     .menu-active {
