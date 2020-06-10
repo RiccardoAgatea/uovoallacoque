@@ -87,7 +87,7 @@ if (!$result) {
     }
 
     $commenti = "";
-    $tastiVoto = "<p><a href=\"<rootFolder />/php/login.php\">Accedi</a> o <a href=\"<rootFolder />/php/signup.php\">registrati</a> per votare questa ricetta.</p>";
+    $tastiVoto = "<p class=\"tasti-voto-avviso\"><a href=\"<rootFolder />/php/login.php\">Accedi</a> o <a href=\"<rootFolder />/php/signup.php\">registrati</a> per votare questa ricetta.</p>";
 
     if (key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
 
@@ -199,7 +199,7 @@ if (!$result) {
         }
 
     } else {
-        $commenti .= "<p>Per visualizzare e inserire i commenti, <a href=\"<rootFolder />/php/login.php\">accedi</a> o <a href=\"<rootFolder />/php/signup.php\">registrati</a>.</p>";
+        $commenti .= "<p class=\"commenti-avviso\">Per visualizzare e inserire i commenti, <a href=\"<rootFolder />/php/login.php\">accedi</a> o <a href=\"<rootFolder />/php/signup.php\">registrati</a>.</p>";
     }
     
     $content = str_replace("<nomeRicettaPlaceholder />", $nome, $content);
