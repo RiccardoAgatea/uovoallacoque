@@ -17,7 +17,7 @@ function checkEmail(email) { //passo l'id della mail che voglio controllare, per
 
 function checkNickname(nickname) {
 	let test = document.getElementById(nickname).value;
-	let regex = new RegExp("^[A-Za-z0-9]+$");
+	let regex = new RegExp("^[A-Za-z0-9]{3,20}$");
 	let result = (regex.test(test)) && !(test === "");
 	printError(result, nickname.toString() + "-message", "Il nickname deve contenere solo lettere e numeri");
 	return result;
@@ -29,7 +29,7 @@ function checkImage(image) { //image=stringa"user-immagine"
 	let extensions = ['png', 'jpg', 'jpeg', 'svg'];
 	let isImage = extensions.includes(test.split('.').pop()); //split taglia dove c'è il punto e pop prende in considerazione quello che c'è dopo il punto
 	let result = isImage && fileSize < 153600; 
-	printError(result, image.toString() + "-message", "Il formato non &egrave; valido"); //isImage && size < 153600
+	printError(result, image.toString() + "-message", "Il formato non &egrave; valido o la dimensione egrave; superiore a 150KB"); 
 	return result;
 }
 
