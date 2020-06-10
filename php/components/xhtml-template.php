@@ -39,7 +39,7 @@
 
 	<body>
 		<div id="header">
-			<div id="screenReaderHelper">
+			<div id="screenReaderHelper" class="print-hide">
 				<a href="#content" tabindex="0">Vai al contenuto</a>
 				<a href="#menu" tabindex="0">Vai al menu</a>
 				<a href="#barra-ricerca" tabindex="0">Vai alla barra di ricerca</a>

@@ -8,10 +8,28 @@ a:link:after, a:visited:after {
     height: 4em;
 }
 
-.chiudi-nav, .apri-nav, .nav, .elenco-immagine, .torna-su-link, #footer, .paginazione, .immagine-ricetta, #link-modifica-ricetta, #link-elimina-ricetta, #sezione-commenti, #inserimento-commento, .print-hide {
+.chiudi-nav, .apri-nav, .nav, .elenco-immagine, .torna-su-link, .paginazione, .immagine-ricetta, #link-modifica-ricetta, #link-elimina-ricetta, #inserimento-commento, .print-hide {
     display: none;
 }
 
 .elenco-migliori {
     list-style: none;
 }
+
+.elenco-titolo {
+    margin:0;
+}
+
+.commenti, #elenco-content{
+    list-style-type: none;
+}
+.commento, .elenco-elemento {
+    border: black solid;
+    border-width: 1px;
+    margin: 1em;
+    padding: 1em;
+}
+.commento-dataora {
+    font-size: 80%;
+}
+
