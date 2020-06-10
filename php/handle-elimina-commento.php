@@ -17,7 +17,7 @@ $result = $connection->query("SELECT commenti.utente AS idutente, commenti.ricet
 if ($result) {
     $row = $result->fetch_assoc();
 
-    if ($row['idutente'] != $_SESSION['user']->getID()) {
+    if ($row['idutente'] != $_SESSION['user']->getID() && !$_SESSION['user']->getAdmin()) {
         $connection->disconnect();
         header("Location: ../403.php");
         exit;

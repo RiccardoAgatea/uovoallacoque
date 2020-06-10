@@ -4,7 +4,7 @@
   <p>I campi contrassegnati con * sono obbligatori.</p>
   <form action="<rootFolder />/php/handle-add-ricetta.php"
         method="post"
-        id="form-add" 
+        id="form-add"
         enctype="multipart/form-data">
     <fieldset class="form-fieldset">
       <legend class="legend">
@@ -32,23 +32,23 @@
           <span id="add-immagine-message"
             class="warning"> <errorImgPlaceholder /> </span>
         </li>
-           <li> 
+           <li>
           <span> Tipo della ricetta*: </span>
-          <ul> 
+          <ul>
             <li class="item-radio-container">
-              <label for="primo">Primo</label>  
+              <label for="primo">Primo</label>
               <input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1"/>
-              
+
             </li>
-            <li class="item-radio-container">   
-              <label for="secondo">Secondo</label> 
+            <li class="item-radio-container">
+              <label for="secondo">Secondo</label>
               <input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2"/>
-              
+
             </li>
-            <li class="item-radio-container">   
+            <li class="item-radio-container">
               <label for="dolce">Dolce</label>
               <input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3"/>
-              
+
             </li>
           </ul>
           <span id="add-tipo-message"
@@ -56,7 +56,7 @@
         </li>
         <li class="form-element">
           <label class="form-label"
-            for="add-difficolta"> Difficolt&agrave; della ricetta (da 1 a 5)*: </label> 
+            for="add-difficolta"> Difficolt&agrave; della ricetta (da 1 a 5)*: </label>
           <input class="barra-input"
             id="add-difficolta"
             type="text"
@@ -78,7 +78,7 @@
         </li>
         <li class="form-element">
           <label class="form-label"
-            for="add-keywords"> Keywords: </label>
+            for="add-keywords"> Keywords (separate da virgola): </label>
           <input class="barra-input"
             id="add-keywords"
             type="text"
@@ -106,7 +106,7 @@
         <li class="form-element">
           <input class="submit"
             type="submit"
-            value="Aggiungi" /> 
+            value="Aggiungi" />
 
         </li>
       </ul>
