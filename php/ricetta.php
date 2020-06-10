@@ -100,11 +100,23 @@ if (!$result) {
         else {
             $tastiVoto = "<form action=\"<rootFolder />/php/handle-voto.php?ricetta={$id}\" method=\"post\"><fieldset class=\"fieldset-noborder print-hide\">
                 <legend>Vota questa ricetta</legend>
-                <label for=\"pulsante-voto-1\" class=\"label-voto\">1 Stella</label><input type=\"radio\" id=\"pulsante-voto-1\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"1\" />
-                <label for=\"pulsante-voto-2\" class=\"label-voto\">2 Stelle</label><input type=\"radio\" id=\"pulsante-voto-2\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"2\" />
-                <label for=\"pulsante-voto-3\" class=\"label-voto\">3 Stelle</label><input type=\"radio\" id=\"pulsante-voto-3\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"3\" />
-                <label for=\"pulsante-voto-4\" class=\"label-voto\">4 Stelle</label><input type=\"radio\" id=\"pulsante-voto-4\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"4\" />
-                <label for=\"pulsante-voto-5\" class=\"label-voto\">5 Stelle</label><input type=\"radio\" id=\"pulsante-voto-5\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"5\" />
+                <ul class=\"tasti-voto\">
+                <li>
+                    <label for=\"pulsante-voto-1\" class=\"label-voto\">1 Stella</label><input type=\"radio\" id=\"pulsante-voto-1\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"1\" />
+                </li>
+                <li>
+                    <label for=\"pulsante-voto-2\" class=\"label-voto\">2 Stelle</label><input type=\"radio\" id=\"pulsante-voto-2\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"2\" />
+                </li>
+                <li>
+                    <label for=\"pulsante-voto-3\" class=\"label-voto\">3 Stelle</label><input type=\"radio\" id=\"pulsante-voto-3\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"3\" />
+                </li>
+                <li>
+                    <label for=\"pulsante-voto-4\" class=\"label-voto\">4 Stelle</label><input type=\"radio\" id=\"pulsante-voto-4\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"4\" />
+                </li>
+                <li>
+                    <label for=\"pulsante-voto-5\" class=\"label-voto\">5 Stelle</label><input type=\"radio\" id=\"pulsante-voto-5\" class=\"pulsante-voto\" checked=\"checked\" name=\"pulsante-voto\" value=\"5\" />
+                </li>
+                </ul>
                 <input type=\"submit\" value= \"vota\"/>
             </fieldset></form>";
         }
@@ -178,8 +190,8 @@ if (!$result) {
                 $commentiContent = str_replace("<editedPlaceholder />", $edited, $commentiContent);
 
                 if ($idUtente == $_SESSION['user']->getId()) {
-                    $commentiContent = str_replace("<modificaCommentoPlaceholder />", "<form method=\"post\" action=\"<rootFolder />/php/setup-modifica-commento.php?ricetta={$_GET["id"]}&amp;idcommento=$idcommento&amp;pagina=$corrente\"><fieldset class=\"fieldset-noborder\"><input type=\"submit\" value=\"Modifica\"/></fieldset></form>", $commentiContent);
-                    $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "<form method=\"post\" action=\"<rootFolder />/php/handle-elimina-commento.php?ricetta={$_GET["id"]}&amp;idcommento=$idcommento\"><fieldset class=\"fieldset-noborder\"><input type=\"submit\" value=\"Elimina\"/></fieldset></form>", $commentiContent);
+                    $commentiContent = str_replace("<modificaCommentoPlaceholder />", "<form class=\"print-hide\" method=\"post\" action=\"<rootFolder />/php/setup-modifica-commento.php?ricetta={$_GET["id"]}&amp;idcommento=$idcommento&amp;pagina=$corrente\"><fieldset class=\"fieldset-noborder\"><input class=\"commento-tasto-modifica\" type=\"submit\" value=\"Modifica\"/></fieldset></form>", $commentiContent);
+                    $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "<form class=\"print-hide\" method=\"post\" action=\"<rootFolder />/php/handle-elimina-commento.php?ricetta={$_GET["id"]}&amp;idcommento=$idcommento\"><fieldset class=\"fieldset-noborder\"><input class=\"commento-tasto-elimina\" type=\"submit\" value=\"Elimina\"/></fieldset></form>", $commentiContent);
                 } else {
                     $commentiContent = str_replace("<modificaCommentoPlaceholder />", "", $commentiContent);
                     $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "", $commentiContent);
@@ -192,14 +204,14 @@ if (!$result) {
 
         } else {
             if($corrente != 1) {
-                $commenti .= "<p>Sei andato troppo avanti! Non ci sono commenti qui.</p>";
+                $commenti .= "<p class=\"print-hide\">Sei andato troppo avanti! Non ci sono commenti qui.</p>";
             }
             else
-            $commenti .= "<p>Scrivi il primo commento per questa ricetta!</p>";
+            $commenti .= "<p class=\"print-hide\">Scrivi il primo commento per questa ricetta!</p>";
         }
 
     } else {
-        $commenti .= "<p class=\"commenti-avviso\">Per visualizzare e inserire i commenti, <a href=\"<rootFolder />/php/login.php\">accedi</a> o <a href=\"<rootFolder />/php/signup.php\">registrati</a>.</p>";
+        $commenti .= "<p class=\"commenti-avviso print-hide\">Per visualizzare e inserire i commenti, <a href=\"<rootFolder />/php/login.php\">accedi</a> o <a href=\"<rootFolder />/php/signup.php\">registrati</a>.</p>";
     }
     
     $content = str_replace("<nomeRicettaPlaceholder />", $nome, $content);
@@ -217,8 +229,8 @@ if (!$result) {
 if(key_exists("logged", $_SESSION) && $_SESSION["logged"] && $_SESSION["user"]->getAdmin()){
     $nrPagina = $_GET['pagina'];
     $editPath = "<rootFolder />/php/edit-ricetta.php?id=$id&amp;pagina=$nrPagina";
-    $content = str_replace("<editPlaceholder />", "<a id=\"link-modifica-ricetta\" href=\"$editPath\"> Modifica la ricetta </a> ", $content);
-    $content = str_replace("<removePlaceholder />", "<a id=\"link-elimina-ricetta\" href=\"<rootFolder />/php/handle-rimuovi-ricetta.php?removeId=$id&amp;portata=$portata\"> Elimina la ricetta </a> ", $content);
+    $content = str_replace("<editPlaceholder />", "<a id=\"link-modifica-ricetta\" class=\"print-hide\" href=\"$editPath\"> Modifica la ricetta </a> ", $content);
+    $content = str_replace("<removePlaceholder />", "<a id=\"link-elimina-ricetta\" class=\"print-hide\" href=\"<rootFolder />/php/handle-rimuovi-ricetta.php?removeId=$id&amp;portata=$portata\"> Elimina la ricetta </a> ", $content);
 } else {
     $content = str_replace("<editPlaceholder />", "", $content);
     $content = str_replace("<removePlaceholder />", "", $content);

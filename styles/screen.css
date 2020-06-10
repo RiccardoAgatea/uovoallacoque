@@ -22,6 +22,11 @@ a:hover {
     color: black;
 }
 
+input {
+    font-size: 1em;
+    padding: 0.2em;
+}
+
 /*sfondo e stile*/
 
 html {
@@ -272,13 +277,6 @@ ul{
 .cambio-info{
     display: block;
 }
-#visualizza-dati{
-    /*text-align: center;*/
-    border-style: dashed;
-    border-width: 0.07em;
-    padding: 0em 1em;
-    margin-top: 2em;
-}
 .foto-utente {
     width: 5em;
     height: 5em;
@@ -294,10 +292,11 @@ ul{
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 2em;
+    flex-wrap: wrap;
 }
 .info-attuale{
-    margin-top: 2em;
     max-width: 100%;
+    margin-left: 1em;
 }
 #link-modifica-dati{
     margin:2em 0em 2em 0em;
@@ -372,7 +371,7 @@ ul{
     margin: 0 auto 0 auto;
     text-align: center;
 }
-ul li input{ /*uguale a .barra-input */
+.barra-input input{ /*uguale a .barra-input */
     display: block;
     margin-left: 1em;
 }
@@ -484,17 +483,49 @@ ul li input{ /*uguale a .barra-input */
     background-color: #FF9F29;
 }
 #ricetta-tempo {
-    margin-left: 2em;
+    
 }
 
 #ricetta-procedura {
     clear: left;
 }
+.tasti-voto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+.tasti-voto li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #0c2752;
+    -wedkit-border-radius:3em;
+    -moz-border-radius:3em;
+    border-radius: 3em;
+    color: white;
+    margin-left: 2em; 
+}
+.tasti-voto li:hover {
+    color: black;
+    background-color: #FF9F29;
+}
+.label-voto {
+    padding: 1em;
+    cursor: pointer;
+}
 
 .pulsante-voto {
-    margin-left:0.5em;
-    margin-bottom:2em;
+    visibility: hidden;
+    cursor: pointer;
+    width: 0;
 }
+.pulsante-voto:checked {
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+}
+
 
 .submit{
     display: block;
@@ -578,6 +609,10 @@ ul li input{ /*uguale a .barra-input */
 .tasti-commento form {
     margin-top: 1em;
     margin-left: 0.5em;
+}
+.commento-tasto-modifica, .commento-tasto-elimina {
+    font-size: 1em;
+    padding: 0.2em;
 }
 
 
@@ -800,15 +835,17 @@ ul li input{ /*uguale a .barra-input */
     #ricetta-tempo {
         margin-left: 0em;
     }
-
-    .label-voto {
-        float: left;
-        clear: both;
+    .tasti-voto {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
     }
-    .pulsante-voto {
-        display: block;
-        margin-left:1em;
-        margin-bottom:1em;
+    .tasti-voto li {
+        display: flex;
+        flex-direction: row;
+        margin:0.5em;
     }
     /*FINE PAGINA RICETTA*/
 
