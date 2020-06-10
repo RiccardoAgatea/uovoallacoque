@@ -53,6 +53,13 @@ if (!$result) {
     $portata = $result["portata"];
     $difficolta = $result["difficolta"];
     $tempo = $result["tempo"];
+    $votoMedio = $connection->query("SELECT media({$_GET['id']})")->fetch_row()[0];
+    if(intval($votoMedio)==0) {
+        $votoMedio = "-";
+    }
+    else {
+        $votoMedio = number_format($votoMedio, 1);
+    }
     $img = $result["img"];
     $ingredienti = inserimentoLingua($result["ingredienti"]);
     $procedimento = inserimentoLingua($result["procedimento"]);
@@ -200,6 +207,7 @@ if (!$result) {
     $content = str_replace("<imgSrcPlaceholder />", $img, $content);
     $content = str_replace("<difficoltàPlaceholder />", $difficolta, $content);
     $content = str_replace("<tempoPlaceholder />", "$tempo minuti", $content);
+    $content = str_replace("<votoMedioRicettaPlaceholder />", "$votoMedio /5", $content);
     $content = str_replace("<ingredientiPlaceholder />", $listaIngredienti, $content);
     $content = str_replace("<proceduraPlaceholder />", $procedimento, $content);
     $content = str_replace("<commentiPlaceholder />", $commenti, $content);
@@ -231,7 +239,7 @@ $handler->send();
 
 function getPaginazione($corrente, $totPagine, $id)
 {
-    if ($totPagine == 1) {
+    if ($totPagine <= 1) {
         $out = "";
     } else {
         $out = "<ul class=\"paginazione\">";

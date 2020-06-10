@@ -130,7 +130,7 @@ function piattoMigliore($portata)
 
 function getPaginazione($totPagine, $tipo, $corrente)
 {
-    if ($totPagine==1) {
+    if ($totPagine<=1) {
         $out="";
     }
     else {

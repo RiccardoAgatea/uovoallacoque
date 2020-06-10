@@ -16,6 +16,10 @@
 		<dd>
 			<tempoPlaceholder />
 		</dd>
+		<dt id="ricetta-voto-medio">Voto medio:</dt>
+		<dd>
+			<votoMedioRicettaPlaceholder />
+		</dd>
 	</dl>
 	<h2>Ingredienti</h2>
 	<ul class="ingredienti">
