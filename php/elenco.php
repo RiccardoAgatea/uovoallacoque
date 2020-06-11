@@ -2,6 +2,7 @@
 require_once __DIR__ . "/template-handler.php";
 require_once __DIR__ . "/query-portata.php";
 require_once __DIR__ . "/user.php";
+require_once __DIR__ . "/paginazione.php";
 
 session_start();
 
@@ -107,7 +108,7 @@ contentRicerca($_GET["termine-ricerca"], $primoElemento, $perPagina);
 $risultato = $temp[0];
 $totPagine = $temp[1];
 
-$risultato .= getPaginazione($totPagine, $tipo, $pagina);
+$risultato .= getPaginazioneRicette($totPagine, $tipo, $pagina);
 
 $content = str_replace("<elencoPlaceholder />", $risultato, $content);
 

@@ -3,6 +3,7 @@ require_once "./template-handler.php";
 require_once __DIR__ . "/db-connection.php";
 require_once __DIR__ . "/user.php";
 require_once __DIR__ . "/conversioni.php";
+require_once __DIR__ . "/paginazione.php";
 
 session_start();
 
@@ -133,7 +134,7 @@ if (!$result) {
         else {
             $pagina = 1;
         }
-        $num = 10;
+        $num = 5;
         $min = ($pagina - 1) * $num;
         $corrente = $pagina;
 
@@ -215,7 +216,7 @@ if (!$result) {
                 $commenti .= "<li class=\"commento\">" . $commentiContent . "</li>";
             }
             $commenti .= "</ul>";
-            $commenti .= getPaginazione($corrente, $totPagine, $id);
+            $commenti .= getPaginazioneCommenti($corrente, $totPagine, $id);
 
         } else {
             if ($corrente != 1) {
@@ -266,33 +267,3 @@ $connection->disconnect();
 
 $handler->send();
 
-function getPaginazione($corrente, $totPagine, $id)
-{
-    if ($totPagine <= 1) {
-        $out = "";
-    } else {
-        $out = "<ul class=\"paginazione\">";
-        if ($corrente != 1) {
-            $out .= "<li><a href=\"?";
-            $out .= "id=$id";
-            $out .= "&amp;pagina=" . strval($corrente - 1) . "\">Precedente</a></li>";
-        }
-        for ($i = 1; $i <= $totPagine; $i++) {
-            if ($i != $corrente) {
-                $out .= "<li><a href=\"?";
-                $out .= "id=$id";
-                $out .= "&amp;pagina=" . $i . "\">" . $i . "</a></li>";
-            } else {
-                $out .= "<li>$i</li>";
-            }
-        }
-        if ($corrente < $totPagine) {
-            $out .= "<li><a href=\"?";
-            $out .= "id=$id";
-            $out .= "&amp;pagina=" . strval($corrente + 1) . "\">Successiva</a></li>";
-        }
-        $out .= "</ul>";
-    }
-
-    return $out;
-}
