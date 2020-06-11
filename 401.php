@@ -37,7 +37,7 @@ $handler->setBreadcrumb(
     ""
 );
 
-$content = "<p>Hai cercato di fare qualcosa per cui serve l'autenticazione! Esegui l'<a href=\"<rootFolder />/php/login.php\">accesso</a>, poi riprova.</p>";
+$content = "<h1>Non autorizzato</h1><p>Hai cercato di fare qualcosa per cui serve l'autenticazione! Esegui l'<a href=\"<rootFolder />/php/login.php\">accesso</a>, poi riprova.</p>";
 
 $handler->setContent($content);
 

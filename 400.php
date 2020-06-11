@@ -36,7 +36,7 @@ $handler->setBreadcrumb(
     ""
 );
 
-$content = "<p>Attenzione alle richieste che fai! Probabilmente hai commesso un errore.</p>";
+$content = "<h1>Richiesta errata</h1> <p>Attenzione alle richieste che fai! Probabilmente hai commesso un errore.</p>";
 
 $handler->setContent($content);
 

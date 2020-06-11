@@ -31,8 +31,10 @@
 	</p>
 	<backToTopPlaceholder />
 	<votoPlaceholder />
-	<h2 id="sezione-commenti">Commenti</h2>
+	<div class="div-sezione-commenti<printHidePlaceholder />">
+		<h2 id="sezione-commenti">Commenti</h2>
 		<commentiPlaceholder />
+	</div>
 
 	<backToTopPlaceholder />
 </div>

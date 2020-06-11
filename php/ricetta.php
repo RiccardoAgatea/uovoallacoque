@@ -28,6 +28,11 @@ $handler->setNav(
 $content = file_get_contents(__DIR__ . "/components/ricetta-content.php");
 
 $connection = new DBConnection();
+
+if (!key_exists("id", $_GET)) {
+    header("Location: ../400.php");
+    exit;
+}
 $id = $_GET["id"];
 
 if (key_exists("pagina", $_GET)) {
@@ -122,11 +127,16 @@ if (!$result) {
                 <input class=\"pulsante-voto-submit\" type=\"submit\" value= \"vota\"/>
             </fieldset></form>";
         }
-
-        $pagina = intval($_GET["pagina"]);
+        $pagina = 0;
+        if (key_exists("pagina", $_GET)) {
+            $pagina = intval($_GET["pagina"]);
+        }
+        else {
+            $pagina = 1;
+        }
         $num = 10;
         $min = ($pagina - 1) * $num;
-        $corrente = $_GET["pagina"];
+        $corrente = $pagina;
 
         if (!key_exists("idcommento", $_GET)) {
             $nuovoCommento = file_get_contents(__DIR__ . "/components/inserimento-commento.php");
@@ -165,7 +175,8 @@ if (!$result) {
         $resultCommenti = $connection->query("SELECT commenti.modificato AS edited, commenti.id AS id, utenti.id AS idutente, utenti.img AS img, utenti.nickname AS nick, commenti.contenuto AS testo, commenti.dataeora AS dataora FROM commenti, utenti WHERE commenti.ricetta={$_GET["id"]} and utenti.id=commenti.utente ORDER BY dataora DESC LIMIT $min, $num");
         $totPagine = ceil($connection->query("SELECT COUNT(*) FROM commenti WHERE commenti.ricetta={$_GET["id"]}")->fetch_row()[0] / $num);
 
-        if ($resultCommenti) {
+        if ($resultCommenti && $resultCommenti->num_rows) {
+            $content = str_replace("<printHidePlaceholder />", "", $content);
             $commenti .= "<ul class=\"commenti\">";
 
             while ($row = $resultCommenti->fetch_assoc()) {
@@ -196,7 +207,7 @@ if (!$result) {
                     $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "", $commentiContent);
                 }
 
-                $commenti .= "<li>" . $commentiContent . "</li>";
+                $commenti .= "<li class=\"commento\">" . $commentiContent . "</li>";
             }
             $commenti .= "</ul>";
             $commenti .= getPaginazione($corrente, $totPagine, $id);
@@ -207,6 +218,7 @@ if (!$result) {
             } else {
                 $commenti .= "<p class=\"print-hide\">Scrivi il primo commento per questa ricetta!</p>";
             }
+            $content = str_replace("<printHidePlaceholder />", " print-hide", $content);
 
         }
 
@@ -227,7 +239,7 @@ if (!$result) {
 }
 
 if (key_exists("logged", $_SESSION) && $_SESSION["logged"] && $_SESSION["user"]->getAdmin()) {
-    $nrPagina = $_GET['pagina'];
+    $nrPagina = $pagina;
     $editPath = "<rootFolder />/php/edit-ricetta.php?id=$id&amp;pagina=$nrPagina";
     $content = str_replace("<editPlaceholder />", "<a id=\"link-modifica-ricetta\" class=\"print-hide\" href=\"$editPath\"> Modifica la ricetta </a> ", $content);
     $content = str_replace("<removePlaceholder />", "<a id=\"link-elimina-ricetta\" class=\"print-hide\" href=\"<rootFolder />/php/handle-rimuovi-ricetta.php?removeId=$id&amp;portata=$portata\"> Elimina la ricetta </a> ", $content);

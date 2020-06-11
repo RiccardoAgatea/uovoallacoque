@@ -37,7 +37,7 @@ $handler->setBreadcrumb(
     ""
 );
 
-$content = "<p>Non abbiamo trovato quello che cercavi. Accipicchia!!</p>";
+$content = "<h1>Pagina non trovata</h1><p>Non abbiamo trovato quello che cercavi. Accipicchia!!</p>";
 
 $handler->setContent($content);
 

@@ -36,6 +36,11 @@ $tipi = [
 
 $tipo = array_key_exists('id', $_GET) ? $_GET['id'] : 0;
 
+if ($tipo == 0 && !key_exists("termine-ricerca", $_GET)) {
+    header("Location: ../400.php");
+    exit;
+}
+
 if ($tipo < 0 || $tipo >= 4) {
     header("Location: ../404.php");
     exit;

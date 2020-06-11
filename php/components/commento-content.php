@@ -1,9 +1,8 @@
-<div class="commento">
     <img src =
         "<immagineUtentePlaceholder />" alt="Immagine profilo utente" class="commento-immagine print-hide"/>
-    <h4> 
+    <h3> 
         <nomeUtentePlaceholder />
-    </h4>
+    </h3>
     <p>
         <testoCommentoPlaceholder />
     </p>
@@ -15,5 +14,3 @@
         <modificaCommentoPlaceholder />
         <eliminaCommentoPlaceholder />
     </div>
-        
-</div>

@@ -37,7 +37,7 @@ $handler->setBreadcrumb(
     ""
 );
 
-$content = "<p>Hai cercato di fare qualcosa per cui non hai l'autorizzazione!</p>";
+$content = "<h1>Accesso negato</h1><p>Hai cercato di fare qualcosa per cui non hai l'autorizzazione!</p>";
 
 $handler->setContent($content);
 
