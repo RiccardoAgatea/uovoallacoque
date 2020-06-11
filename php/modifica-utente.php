@@ -4,7 +4,7 @@ require_once __DIR__ . "/user.php";
 
 session_start();
 
-if(!key_exists("logged", $_SESSION) || !$_SESSION["logged"]) {
+if (!key_exists("logged", $_SESSION) || !$_SESSION["logged"]) {
     header("Location: ../401.php");
     exit;
 }
@@ -19,8 +19,6 @@ $handler->setOtherMeta("<meta name=\"robots\" content=\"noindex, nofollow\" />")
 $login = "";
 
 $login .= file_get_contents(__DIR__ . "/components/personal-login.php");
-
-$login = preg_replace("((?s)<a.*?href=\"<rootFolder />/php/utente\.php\">.*?</a>)", "<nomeUtentePlaceholder />", $login);
 
 $login = str_replace("<nomeUtentePlaceholder />", $_SESSION["user"]->getNickname(), $login);
 
@@ -40,14 +38,14 @@ $handler->setBreadcrumb(
 
 $content = file_get_contents(__DIR__ . "/components/modifica-utente-content.php");
 if (key_exists("wrong", $_SESSION)) {
-    $content = str_replace("<errorPlaceholder />", "<p>".$_SESSION["wrong"]."</p>", $content);
+    $content = str_replace("<errorPlaceholder />", "<p>" . $_SESSION["wrong"] . "</p>", $content);
 
     unset($_SESSION["wrong"]);
-} else if (key_exists("complete", $_SESSION) && $_SESSION["complete"]){
+} else if (key_exists("complete", $_SESSION) && $_SESSION["complete"]) {
     $content = str_replace("<errorPlaceholder />", "<p>Modifica completata con successo</p>", $content);
 
     unset($_SESSION["complete"]);
-}else{
+} else {
     $content = str_replace("<errorPlaceholder />", "", $content);
 }
 
