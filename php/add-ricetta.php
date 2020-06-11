@@ -4,19 +4,17 @@ require_once __DIR__ . "/user.php";
 
 session_start();
 
-$handler = new TemplateHandler("..", "xhtml"); 
+$handler = new TemplateHandler("..", "xhtml");
 
 $handler->setTitle("Aggiungi ricetta | Utente | Uovo alla Coque");
 $handler->setAuthor("Agatea Riccardo, Bosinceanu Ecaterina, Righetto Sara, Schiavon Rebecca");
 $handler->setDescription("Pagina per aggiungere una ricetta");
 $handler->setOtherMeta("<meta name=\"robots\" content=\"noindex, nofollow\" />");
 
-if (!key_exists("logged", $_SESSION) || (!$_SESSION["logged"]))
-{
+if (!key_exists("logged", $_SESSION) || (!$_SESSION["logged"])) {
     header("Location: ../401.php");
     exit;
-}
-else if (!$_SESSION["user"]->getAdmin()) {
+} else if (!$_SESSION["user"]->getAdmin()) {
     header("Location: ../403.php");
     exit;
 }
@@ -50,35 +48,37 @@ if (key_exists("wrong-add", $_SESSION) && $_SESSION["wrong-add"]) {
     $content = str_replace("<tempoPlaceholder />", $_SESSION["tempo"], $content);
     $content = str_replace("<ingredientiPlaceholder />", $_SESSION["ingredienti"], $content);
     $content = str_replace("<proceduraPlaceholder />", $_SESSION["procedura"], $content);
+    $content = str_replace("<keywordsPlaceholder />", $_SESSION["keywords"], $content);
+
     switch (intval($_SESSION["tipo"])) {
-      case 1:
-        $content = str_replace('<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1"/>', '<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1" checked="checked"/>', $content);
-        break;
-      case 2:
-        $content = str_replace('<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2"/>', '<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2" checked="checked"/>', $content);
-        break;
-      case 3:
-        $content = str_replace('<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3"/>', '<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3" checked="checked"/>', $content);
-        break;
-      default:
-        $content = str_replace("<errorTipoPlaceholder />", "Tipo di portata inesistente", $content);
-    } 
+        case 1:
+            $content = str_replace('<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1"/>', '<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1" checked="checked"/>', $content);
+            break;
+        case 2:
+            $content = str_replace('<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2"/>', '<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2" checked="checked"/>', $content);
+            break;
+        case 3:
+            $content = str_replace('<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3"/>', '<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3" checked="checked"/>', $content);
+            break;
+        default:
+            $content = str_replace("<errorTipoPlaceholder />", "Tipo di portata inesistente", $content);
+    }
 
     if ($_SESSION["errorNome"] != "") {
         $content = str_replace("<errorNomePlaceholder />", $_SESSION["errorNome"], $content);
-    }   
+    }
     if ($_SESSION["errorImg"] != "") {
         $content = str_replace("<errorImgPlaceholder />", $_SESSION["errorImg"], $content);
-    } 
+    }
     if ($_SESSION["errorDifficolta"] != "") {
         $content = str_replace("<errorDifficoltaPlaceholder />", $_SESSION["errorDifficolta"], $content);
-    } 
+    }
     if ($_SESSION["errorTempo"] != "") {
         $content = str_replace("<errorTempoPlaceholder />", $_SESSION["errorTempo"], $content);
-    } 
+    }
     if ($_SESSION["errorKeywords"] != "") {
         $content = str_replace("<errorKeywordsPlaceholder />", $_SESSION["errorKeywords"], $content);
-    } 
+    }
 
     $_SESSION["wrong-add"] = false;
     $_SESSION["immagine"] = "";
@@ -109,12 +109,11 @@ $handler->setContent($content);
 
 $handler->setAnnulla(
     str_replace(
-        "<linkPlaceholder/>",
+        "<linkPlaceholder />",
         "<rootFolder />/php/utente.php",
         file_get_contents(__DIR__ . "/components/default-annulla.php")
     )
 );
-
 
 $handler->setBackToTop(
     file_get_contents(__DIR__ . "/components/default-tornaSu.php")
