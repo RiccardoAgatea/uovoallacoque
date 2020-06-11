@@ -50,10 +50,9 @@ if (!$result) {
     $difficolta = $result["difficolta"];
     $tempo = $result["tempo"];
     $votoMedio = $connection->query("SELECT media({$_GET['id']})")->fetch_row()[0];
-    if(intval($votoMedio)==0) {
+    if (intval($votoMedio) == 0) {
         $votoMedio = "-";
-    }
-    else {
+    } else {
         $votoMedio = number_format($votoMedio, 1);
     }
     $img = $result["img"];
@@ -191,7 +190,13 @@ if (!$result) {
                 $commentiContent = str_replace("<editedPlaceholder />", $edited, $commentiContent);
 
                 if ($idUtente == $_SESSION['user']->getId()) {
-                    $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "<form class=\"print-hide\" method=\"post\" action=\"<rootFolder />/php/handle-elimina-commento.php?ricetta={$_GET["id"]}&amp;idcommento=$idcommento\"><fieldset class=\"fieldset-noborder\"><input type=\"submit\" value=\"Elimina\"/></fieldset></form>", $commentiContent);
+                    $commentiContent = str_replace("<modificaCommentoPlaceholder />", "<form class=\"print-hide\" method=\"post\" action=\"<rootFolder />/php/setup-modifica-commento.php?ricetta={$_GET["id"]}&amp;idcommento=$idcommento&amp;pagina=$corrente\"><fieldset class=\"fieldset-noborder\"><input class=\"commento-tasto-modifica\" type=\"submit\" value=\"Modifica\"/></fieldset></form>", $commentiContent);
+                } else {
+                    $commentiContent = str_replace("<modificaCommentoPlaceholder />", "", $commentiContent);
+                }
+
+                if ($idUtente == $_SESSION['user']->getId() || $_SESSION['user']->getAdmin()) {
+                    $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "<form class=\"print-hide\" method=\"post\" action=\"<rootFolder />/php/handle-elimina-commento.php?ricetta={$_GET["id"]}&amp;idcommento=$idcommento\"><fieldset class=\"fieldset-noborder\"><input class=\"commento-tasto-elimina\" type=\"submit\" value=\"Elimina\"/></fieldset></form>", $commentiContent);
                 } else {
                     $commentiContent = str_replace("<eliminaCommentoPlaceholder />", "", $commentiContent);
                 }
