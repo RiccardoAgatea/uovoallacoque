@@ -119,7 +119,7 @@ if (!$result) {
                     <label for=\"pulsante-voto-5\" class=\"label-voto\">5 Stelle</label><input type=\"radio\" id=\"pulsante-voto-5\" class=\"pulsante-voto\" checked=\"checked\" name=\"pulsante-voto\" value=\"5\" />
                 </li>
                 </ul>
-                <input type=\"submit\" value= \"vota\"/>
+                <input class=\"pulsante-voto-submit\" type=\"submit\" value= \"vota\"/>
             </fieldset></form>";
         }
 
