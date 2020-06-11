@@ -482,9 +482,6 @@ ul{
 #link-modifica-ricetta:hover, #link-elimina-ricetta:hover {
     background-color: #FF9F29;
 }
-#ricetta-tempo {
-    
-}
 
 #ricetta-procedura {
     clear: left;
@@ -506,8 +503,8 @@ ul{
     border-radius: 4em;
     color: white;
     margin-left: 2em; 
-    width: 8em;
-    max-height: 8em;
+    width: 6em;
+    max-height: 6em;
 }
 .tasti-voto li:hover {
     color: black;
@@ -534,6 +531,7 @@ ul{
 .pulsante-voto-submit {
     width: 8em;
     height: 2em;
+    display: inline;
 }
 
 .submit{
