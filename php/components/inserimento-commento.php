@@ -8,5 +8,10 @@
 	        <textarea rows="" cols="" id="scrivi-commento" name="scrivi-commento"></textarea>
 	        <input class="commento-submit" type="submit" value="Commenta"/>
 	    </fieldset>
-    </form>
+	</form>
+	<form id="annulla-commento" method="post" action="<rootFolder />/php/ricetta.php?id=<ricettaPlaceholder />&pagina=<paginaRicettaPlaceholder />#sezione-commenti">
+		<fieldset class="fieldset-noborder">
+			<input class="commenti-input-annulla" type="submit" value="Annulla">
+		</fieldset>
+	</form>
 </div>

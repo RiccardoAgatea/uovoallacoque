@@ -141,6 +141,7 @@ if (!$result) {
         if (!key_exists("idcommento", $_GET)) {
             $nuovoCommento = file_get_contents(__DIR__ . "/components/inserimento-commento.php");
             $nuovoCommento = str_replace("<ricettaPlaceholder />", $_GET["id"], $nuovoCommento);
+            $nuovoCommento = str_replace("<paginaRicettaPlaceholder />", $corrente, $nuovoCommento);
             $commenti .= $nuovoCommento;
         } else {
             $idcommento = $_GET['idcommento'];
@@ -166,6 +167,7 @@ if (!$result) {
 
             $modificaCommento = file_get_contents(__DIR__ . "/components/modifica-commento.php");
             $modificaCommento = str_replace("<ricettaPlaceholder />", $_GET["id"], $modificaCommento);
+            $modificaCommento = str_replace("<paginaRicettaPlaceholder />", $corrente, $modificaCommento);
             $modificaCommento = str_replace("<idCommentoPlaceholder />", $idcommento, $modificaCommento);
             $modificaCommento = str_replace("<paginaPlaceholder />", $corrente, $modificaCommento);
             $modificaCommento = str_replace("<testoCommentoDaModificarePlaceholder />", $testo, $modificaCommento);
