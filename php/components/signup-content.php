@@ -1,5 +1,8 @@
 <div id="content">
        <h1>Registrati</h1>
+       <h2 id="termini-di-servizio">Termini di servizio</h2>
+       <p>Con la registrazione avrai accesso alle funzionalit&agrave; riservate del sito. In particolare potrai visualizzare e scrivere i commenti e votare le ricette.</p>
+       <p>Su questo sito non sono permessi insulti o spam quindi se un tuo commento ne contiene verr&agrave; eliminato dagli amministratori.</p>
        <form action="<rootFolder />/php/handle-signup.php"
              method="post"
              id="form-signup">
