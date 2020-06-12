@@ -145,6 +145,7 @@ ul{
 .barra-cerca{
     width: 25em;
     height: 2em;
+    margin: 0.2em;
 }
 #legend-ricerca {
     height:0;
@@ -383,6 +384,11 @@ ul{
     margin-bottom: 1em;
     margin-top: 1em;
 }
+/*INIZIO PAGINA ACCEDI*/
+#termini-di-servizio {
+    margin-top: 1em;
+}
+/*FINE PAGINA ACCEDI*/
 
 /*inizio pagina elenco*/
 #elenco-content {
@@ -628,7 +634,16 @@ ul{
     font-size: 1em;
     padding: 0.2em;
 }
-
+.commenti-input-annulla {
+    display: block;
+    margin: auto;
+    margin-bottom: 0.5em;
+}
+.commento-submit {
+    display: block;
+    margin: auto;
+    margin-bottom: 0.5em;
+}
 
 /*fine commenti*/
 /*FINE PAGINA RICETTA*/
@@ -765,7 +780,7 @@ ul{
         word-break: break-all;
     }
     #messaggio-utente {
-        width: 12em;
+        max-width: 12em;
         display: block;
         word-break: break-all;
     }
@@ -774,6 +789,7 @@ ul{
     }
     #form-barra-ricerca {
         justify-content: flex-start;
+        max-width: min-content;
     }
 
     #menu {
