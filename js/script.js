@@ -19,7 +19,7 @@ function checkNickname(nickname) {
 	let test = document.getElementById(nickname).value;
 	let regex = new RegExp("^[A-Za-z0-9]{3,20}$");
 	let result = (regex.test(test)) && !(test === "");
-	printError(result, nickname.toString() + "-message", "Il nickname deve contenere solo lettere e numeri");
+	printError(result, nickname.toString() + "-message", "Il nickname deve contenere solo lettere e numeri e la sua lunghezza deve essere compresa tra 3 e 20 caratteri");
 	return result;
 }
 
@@ -76,9 +76,11 @@ function printError(condition, id, message) { // se condition è true significa 
 	}
 }
 
-function loginValidator(email) {
-	let emailChecked = checkEmail(email);
-	return emailChecked;
+function loginValidator(nickname) {
+	echo("loginValidator");
+	let nicknameChecked = nickname.lenght();
+	if (nicknameChecked === 0) return false;
+	else return true;
 }
 
 function signupValidator(nickname, email, password, passwordConfirm) {
@@ -128,7 +130,7 @@ openSideNav();
 const loginForm = document.getElementById("form-login");
 if (loginForm) {
 	loginForm.addEventListener("submit", function (event) {
-		if (!loginValidator("login-email")) {
+		if (!loginValidator("login-nickname")) {
 			event.preventDefault();
 		}
 	});

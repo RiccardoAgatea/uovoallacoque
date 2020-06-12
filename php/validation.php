@@ -71,24 +71,21 @@ function comparePassword($stringPassword, $stringPasswordConfirm)
     return $passwordErr;
 }
 
-function checkLogin($stringPassword, $stringEmail)
+function checkLogin($stringPassword, $nickname)
 { // quando accedo controlla che la password è uguale a quella presente nel db
     $err = $email = $password = "";
     $connection = new DBConnection();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST[$stringEmail])) { //se la mail è vuota
+        if (empty($_POST[$nickname])) { //se il nickname è vuoto
             $err = "Credenziali errate";
         } else {
-            $email = test_input($_POST[$stringEmail]);
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) { //se la mail non valida
-                $err = "Credenziali errate";
-            }
+            $nick = test_input($_POST[$nickname]);
             if (empty($_POST[$stringPassword])) { //se la password è vuota
                 $err = "Credenziali errate";
             } else {
                 $password = test_input($_POST[$stringPassword]);
-                $result = $connection->query("SELECT passw FROM utenti WHERE email=\"{$email}\""); //se c'è la mail nel db
+                $result = $connection->query("SELECT passw FROM utenti WHERE nickname=\"{$nick}\""); //se c'è il nickname nel db
                 if (!$result) {
                     $err = "Credenziali errate";
                     $connection->disconnect();

@@ -10,10 +10,10 @@ class User
     private $picture;
     private $admin;
 
-    public function __construct(string $email)
+    public function __construct(string $nickname)
     {
         $connection = new DBConnection();
-        $result = $connection->query("SELECT id, nickname, img, passw, ad FROM utenti WHERE email=\"{$email}\"");
+        $result = $connection->query("SELECT id, email, img, passw, ad FROM utenti WHERE nickname=\"{$nickname}\"");
 
         if (!$result) {
             throw new Exception("User doesn't exist", 1);
@@ -23,9 +23,9 @@ class User
         $user_row = $result->fetch_assoc();
 
         $this->id = intval($user_row['id']);
-        $this->nickname = $user_row['nickname'];
+        $this->nickname = $nickname;
         $this->password = $user_row['passw'];
-        $this->email = $email;
+        $this->email = $user_row['email'];
         $this->picture = $user_row['img'];
         $this->admin = boolval($user_row['ad']);
 

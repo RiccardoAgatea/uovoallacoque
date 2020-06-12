@@ -8,11 +8,11 @@
             <ul class="form-container form-centered">
                 <li class="form-element">
                     <label class="form-label"
-                           for="login-email">E-mail:</label>
+                           for="login-email">Nickname:</label>
                     <input class="barra-input"
-                           id="login-email"
+                           id="login-nickname"
                            type="text"
-                           name="email"
+                           name="nickname"
                            value="<emailPlaceholder />" />
                     <span id="login-email-message"
                           class="warning"> </span>

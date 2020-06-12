@@ -36,7 +36,7 @@ $handler->setBreadcrumb(
 $content = file_get_contents(__DIR__ . "/components/login-content.php");
 
 if (key_exists("wrong-login", $_SESSION) && $_SESSION["wrong-login"]) {
-    $content = str_replace("<emailPlaceholder />", $_SESSION["email"], $content);
+    $content = str_replace("<emailPlaceholder />", $_SESSION["nickname"], $content);
     $content = str_replace("<passwordPlaceholder />", "", $content);
     if($_SESSION["error"] != "") {
     	$content = str_replace("<errorPlaceholder />", $_SESSION["error"], $content);
