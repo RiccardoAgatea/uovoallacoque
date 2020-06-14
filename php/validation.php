@@ -158,7 +158,6 @@ function checkTempo($stringTempo)
 function checkKeywords($stringKeywords)
 {
     $keywordsErr = $keywords = "";
-    $connection = new DBConnection(); // oggetto che rappresenta il database
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST[$stringKeywords])) {
             $keywordsErr = "Il campo non pu&ograve; essere vuoto";
@@ -183,4 +182,12 @@ function checkImage($stringImage)
         }
     }
     return $imageErr;
+}
+
+function checkCommento($testo) {
+    $commentoErr = "";
+    if (!preg_match("/^.+$/", $testo)) { //non uso empty perchè "0" lo vede come vuoto, quando invece c'è almeno un carattere
+        $commentoErr = "Il commento non può essere vuoto";
+    }
+    return $commentoErr;
 }
