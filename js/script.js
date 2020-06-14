@@ -68,6 +68,14 @@ function checkKeywords(keywords) {
 	return result;
 }
 
+function checkCommento(commento) {
+	let test = document.getElementById(commento).value;
+	let regex = new RegExp("^.$");
+	let result = (regex.test(test)) && !(test === "");
+	printError(result, commento.toString() + "-message", "Non puoi lasciare vuoto il commento");
+	return result;
+}
+
 function printError(condition, id, message) { // se condition è true significa che matcha la regex, passo l'id dell'elemento che voglio stampare, passo il messaggio da settare nel caso di errori
 	if (condition) {
 		document.getElementById(id).innerHTML = ""; //mi serve perchè se non ho errori devo nascondere il messaggio di errore se esiste
@@ -77,7 +85,6 @@ function printError(condition, id, message) { // se condition è true significa 
 }
 
 function loginValidator(nickname) {
-	echo("loginValidator");
 	let nicknameChecked = nickname.lenght();
 	if (nicknameChecked === 0) return false;
 	else return true;
