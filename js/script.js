@@ -70,7 +70,7 @@ function checkKeywords(keywords) {
 
 function checkCommento(commento) {
 	let test = document.getElementById(commento).value;
-	let regex = new RegExp("^.$");
+	let regex = new RegExp("^.+$");
 	let result = (regex.test(test)) && !(test === "");
 	printError(result, commento.toString() + "-message", "Non puoi lasciare vuoto il commento");
 	return result;
@@ -167,6 +167,25 @@ const editRicettaForm = document.getElementById("form-edit");
 if (editRicettaForm) {
 	editRicettaForm.addEventListener("submit", function (event) {
 		if (!ricettaValidator('edit-nome', 'edit-difficolta', 'edit-tempo', 'edit-immagine', 'edit-keywords')) {
+			event.preventDefault();
+		}
+	});
+}
+
+//------- COMMENTI -------
+const inserisciCommenti = document.getElementById("inserisci-commento-form");
+if (inserisciCommenti) {
+	inserisciCommenti.addEventListener("submit", function (event) {
+		if (!checkCommento('scrivi-commento')) {
+			event.preventDefault();
+		}
+	});
+}
+
+const modificaCommenti = document.getElementById("modifica-commento-form");
+if (modificaCommenti) {
+	modificaCommenti.addEventListener("submit", function (event) {
+		if (!checkCommento('modifica-commento')) {
 			event.preventDefault();
 		}
 	});
