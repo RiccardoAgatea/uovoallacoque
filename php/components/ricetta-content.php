@@ -6,7 +6,7 @@
 	<removePlaceholder />
 	<img class="immagine-ricetta"
 		 src="<imgSrcPlaceholder />"
-		 alt="<imgAltPlaceholder /> />
+		 alt="<imgAltPlaceholder />" />
 	<dl class="difficolta-tempo">
 		<dt>Difficolt&agrave;:</dt>
 		<dd>

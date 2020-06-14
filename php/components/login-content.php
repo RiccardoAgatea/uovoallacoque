@@ -8,13 +8,13 @@
             <ul class="form-container form-centered">
                 <li class="form-element">
                     <label class="form-label"
-                           for="login-email">Nickname:</label>
+                           for="login-nickname">Nickname:</label>
                     <input class="barra-input"
                            id="login-nickname"
                            type="text"
                            name="nickname"
                            value="<emailPlaceholder />" />
-                    <span id="login-email-message"
+                    <span id="login-nickname-message"
                           class="warning"> </span>
                 </li>
                 <li class="form-element">
@@ -24,8 +24,8 @@
                            id="login-password"
                            type="password"
                            name="password"
-                           value="<passwordPlaceholder />" /> <span id="
-                           login-password-message"
+                           value="<passwordPlaceholder />" /> 
+                           <span id="login-password-message"
                           class="warning"> <errorPlaceholder /> </span>
                 </li>
                 <li class="form-element">
