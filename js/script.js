@@ -85,7 +85,7 @@ function printError(condition, id, message) { // se condition è true significa 
 }
 
 function loginValidator(nickname) {
-	let nicknameChecked = nickname.lenght();
+	let nicknameChecked = document.getElementById(nickname).value.length;
 	if (nicknameChecked === 0) return false;
 	else return true;
 }
