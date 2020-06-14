@@ -13,7 +13,7 @@ $_SESSION["ingredienti"] = $_POST['ingredienti'];
 $_SESSION["procedura"] = $_POST['procedura'];
 $_SESSION["keywords"] = $_POST['keywords'];
 
-$_SESSION["errorNome"] = checkAddNomeRicetta("nome");
+$_SESSION["errorNome"] = checkNomeRicetta("nome", true);
 $_SESSION["errorImg"] = checkImage("immagine");
 $_SESSION["errorDifficolta"] = checkDifficolta("difficolta");
 $_SESSION["errorTempo"] = checkTempo("tempo");

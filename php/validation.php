@@ -102,7 +102,7 @@ function checkLogin($stringPassword, $nickname)
     return $err;
 }
 
-function checkAddNomeRicetta($stringNomeRicetta)
+function checkNomeRicetta($stringNomeRicetta, $dbCondition) //se dbCondition true allora è la add form (devo controllare anche il db), altrimenti è edit.
 {
     $nomeRicettaErr = $nomeRicetta = "";
     $connection = new DBConnection();
@@ -114,26 +114,9 @@ function checkAddNomeRicetta($stringNomeRicetta)
             if (!preg_match("/^.{3,55}$/", $nomeRicetta)) {
                 $nomeRicettaErr = "La lunghezza &egrave; tra 3 e 55 caratteri";
             }
-            if ($connection->query(" SELECT nome FROM ricette WHERE nome=\"$nomeRicetta\" ")->fetch_row() != null) {
+            if ($dbCondition && $connection->query(" SELECT nome FROM ricette WHERE nome=\"$nomeRicetta\" ")->fetch_row() != null) {
                 $nomeRicettaErr = "Questa ricetta &egrave; gi&agrave; presente";
                 $connection->disconnect();
-            }
-        }
-    }
-    return $nomeRicettaErr;
-}
-
-function checkEditNomeRicetta($stringNomeRicetta)
-{
-    $nomeRicettaErr = $nomeRicetta = "";
-    $connection = new DBConnection();
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST[$stringNomeRicetta])) {
-            $nomeRicettaErr = "Il nome non pu&ograve; essere un campo vuoto";
-        } else {
-            $nomeRicetta = test_input($_POST[$stringNomeRicetta]);
-            if (!preg_match("/^.{3,55}$/", $nomeRicetta)) {
-                $nomeRicettaErr = "La lunghezza &egrave; tra 3 e 55 caratteri";
             }
         }
     }
