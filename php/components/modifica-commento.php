@@ -6,6 +6,7 @@
 	            Modifica il tuo commento
 	        </label>
 	        <textarea rows="" cols="" id="modifica-commento" name="modifica-commento"><testoCommentoDaModificarePlaceholder /></textarea>
+	        <span id="modifica-commento-message" class="warning"> <errorCommentoPlaceholder /> </span>
 	        <input class="commento-submit" type="submit" value="Modifica"/>
 	    </fieldset>
 	</form>

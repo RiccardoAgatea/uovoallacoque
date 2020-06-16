@@ -2,6 +2,7 @@
 
 require_once __DIR__ . "/db-connection.php";
 require_once __DIR__ . "/user.php";
+require_once __DIR__ . "/validation.php";
 
 session_start();
 $connection = new DBConnection();

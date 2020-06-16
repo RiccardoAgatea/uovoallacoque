@@ -244,6 +244,12 @@ if (!$result) {
     $content = str_replace("<proceduraPlaceholder />", $procedimento, $content);
     $content = str_replace("<commentiPlaceholder />", $commenti, $content);
     $content = str_replace("<votoPlaceholder />", $tastiVoto, $content);
+
+    if(key_exists("errorTesto", $_SESSION) && $_SESSION["errorTesto"] != ""){ // dovrebbe funzionare sia per insert che edit
+        $content = str_replace("<errorCommentoPlaceholder />", $_SESSION["errorTesto"], $content);
+    } else {
+        $content = str_replace("<errorCommentoPlaceholder />", "", $content);
+    }
 }
 
 if (key_exists("logged", $_SESSION) && $_SESSION["logged"] && $_SESSION["user"]->getAdmin()) {
