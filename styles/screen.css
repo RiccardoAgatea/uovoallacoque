@@ -472,12 +472,15 @@ ul{
 }
 
 .difficolta-tempo {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    display: inline-block;
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
+.elemento-difficolta-tempo{
+    display: inline;
+}
+
 #link-modifica-ricetta, #link-elimina-ricetta {
     display: inline-block;
     margin:1em;
@@ -861,9 +864,6 @@ ul{
         display: block;
     }
 
-    #ricetta-tempo {
-        margin-left: 0em;
-    }
     .tasti-voto {
         display: flex;
         flex-direction: column;
