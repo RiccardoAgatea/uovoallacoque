@@ -53,7 +53,7 @@ $handler->setContent($content);
 
 $handler->setAnnulla(
     str_replace(
-        "<linkPlaceholder/>",
+        "<linkPlaceholder />",
         "<rootFolder />/php/utente.php",
         file_get_contents(__DIR__ . "/components/default-annulla.php")
     )
