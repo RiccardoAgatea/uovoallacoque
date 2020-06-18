@@ -10,13 +10,13 @@ Tutte le pagine del sito sono state realizzate utilizzando come linguaggio di ma
     \item Gli elementi devono essere sempre in minuscolo;
     \item I nomi degli attributi devono essere sempre in minuscolo;
 \end{itemize}
-Per le form di registrazione e accesso, abbiamo scelto di utilizzare come input per le e-mail il tipo \texttt{text}, che grazie ad opportuni controlli specificati nelle sezioni \ref{par:php} e \ref{par:javascript}, si comporta quasi similmente al tipo \texttt{email} di HTML5. % la stessa cosa è stata fatta per il tipo search per la ricerca, number per tempo, range per difficoltà
+Per le form di registrazione e accesso, abbiamo scelto di utilizzare come input per le e-mail il tipo \texttt{text}, che grazie ad opportuni controlli specificati nei paragrafi \S\ref{par:php} e \S\ref{par:javascript}, si comporta quasi similmente al tipo \texttt{email} di HTML5. % la stessa cosa è stata fatta per il tipo search per la ricerca, number per tempo, range per difficoltà
 
 \paragraph{CSS}
 
 \paragraph{SQL}
 
-\paragraph{PHP}\ref{par:php}
+\paragraph{PHP}\label{par:php}
 % la struttura principale di ogni pagina è organizzata secondo un template, nello specifico una classe wrapper che fornisce i metodi setter per costruire una pagina. Più in dettaglio, i metodi sono: setBlabla()
 % pagine 40* ed eventuali errori
 % funzionalità di ricerca
@@ -26,7 +26,7 @@ Le funzioni di validazione lato server sono contenute all'interno del file \text
 	\item 
 \end{itemize}
 
-\paragraph{Javascript}\ref{par:javascript}
+\paragraph{Javascript}\label{par:javascript}
 % commenti, voti, validazione
 Il linguaggio Javascript è stato utilizzato per implementare il comportamento dinamico lato client di alcune pagine del sito, nello specifico i commenti e i voti nella pagina delle ricette, il menu ad hamburger presente nella visualizzazione mobile.
 Poiché è possibile che non tutti gli utenti dispongano della tecnologia adatta, le funzionalità implementate in Javascript sono minime. \newline
