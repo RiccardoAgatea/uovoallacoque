@@ -44,7 +44,7 @@
           class="cambio-info">
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio nickname</legend>
-            <ul class="form-container">
+            <ul class="form-container form-centered">
                 <li class="form-element">
                     <label for="user-nickname">Nuovo nickname:</label>
                     <input class="barra-input"
@@ -80,7 +80,7 @@
           class="cambio-info">
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio e-mail</legend>
-            <ul class="form-container">
+            <ul class="form-container form-centered">
                 <li class="form-element">
                     <label for="user-email">Nuova email:</label>
                     <input class="barra-input"
@@ -115,7 +115,7 @@
           class="cambio-info">
         <fieldset class="form-fieldset">
             <legend class="legend">Cambio password</legend>
-            <ul class="form-container">
+            <ul class="form-container form-centered">
                 <li class="form-element">
                     <label for="user-password-password">Password
                         attuale:</label>
