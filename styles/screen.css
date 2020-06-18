@@ -444,6 +444,8 @@ display: inline-block;
     -moz-border-radius:1em;
     border-radius: 1em;
     color: white;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     margin: auto;
     margin-top: 1.5em;
@@ -476,9 +478,15 @@ display: inline-block;
     margin-bottom: 1em;
 }
 
-.elemento-difficolta-tempo{
-    display: inline;
+.difficolta-tempo dt{
+    float: left;
+    clear: both;
+    margin-right: 0.2em;
 }
+.difficolta-tempo dd {
+    white-space: nowrap;
+}
+
 
 #link-modifica-ricetta, #link-elimina-ricetta {
     display: inline-block;
@@ -526,8 +534,6 @@ display: inline-block;
     cursor: pointer;
     text-align: center;
 }
-.pulsante-voto {
-}
 
 .pulsante-voto-submit {
     width: 8em;
@@ -549,6 +555,8 @@ display: inline-block;
     text-align: center;
     display: block;
     margin: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     align-self: center;
 }
@@ -794,6 +802,8 @@ display: inline-block;
     }
    
     .menu-active {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
         right: 0;
     }

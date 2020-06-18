@@ -8,12 +8,12 @@
 		 src="<imgSrcPlaceholder />"
 		 alt="<imgAltPlaceholder />" />
 	<dl class="difficolta-tempo">
-		<dt class="elemento-difficolta-tempo"> Difficolt&agrave;: </dt>
-		<dd class="elemento-difficolta-tempo"> <difficoltàPlaceholder /> </dd>
-		<dt class="elemento-difficolta-tempo"> Tempo: </dt>
-		<dd class="elemento-difficolta-tempo"> <tempoPlaceholder /> </dd>
-		<dt class="elemento-difficolta-tempo"> Voto medio: </dt>
-		<dd class="elemento-difficolta-tempo"> <votoMedioRicettaPlaceholder /> </dd>
+		<dt> Difficolt&agrave;: </dt>
+		<dd> <difficoltàPlaceholder /> </dd>
+		<dt> Tempo: </dt>
+		<dd> <tempoPlaceholder /> </dd>
+		<dt> Voto medio: </dt>
+		<dd> <votoMedioRicettaPlaceholder /> </dd>
 	</dl>
 	<h2>Ingredienti</h2>
 	<ul class="ingredienti">
