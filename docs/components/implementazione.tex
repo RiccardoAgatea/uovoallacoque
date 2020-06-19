@@ -1,36 +1,36 @@
 \section{Fase di implementazione}
 \label{sec:fase_di_implementazione}
 \subsection{Linguaggi}
-\paragraph{HTML}
+\subsubsection{HTML}
 Tutte le pagine del sito sono state realizzate utilizzando come linguaggio di markup XHTML piuttosto che HTML5, per garantire un certo grado di qualità del codice e alta compatibilità con i browser più obsoleti. In particolare le differenze più importanti che ci hanno portato a preferire XHTML ad HTML5 sono:
 \begin{itemize}
-    \item I tag <html>, <head>, <title> e <body> sono obbligatori;
-    \item Gli elementi devono essere nidificati correttamente;
-    \item Gli elementi devono essere sempre chiusi;
-    \item Gli elementi devono essere sempre in minuscolo;
-    \item I nomi degli attributi devono essere sempre in minuscolo;
+	\item I tag <html>, <head>, <title> e <body> sono obbligatori;
+	\item Gli elementi devono essere nidificati correttamente;
+	\item Gli elementi devono essere sempre chiusi;
+	\item Gli elementi devono essere sempre in minuscolo;
+	\item I nomi degli attributi devono essere sempre in minuscolo;
 \end{itemize}
-Per le form di registrazione e accesso, abbiamo scelto di utilizzare come input per le e-mail il tipo \texttt{text}, che grazie ad opportuni controlli specificati nei paragrafi \S\ref{par:php} e \S\ref{par:javascript}, si comporta quasi similmente al tipo \texttt{email} di HTML5. % la stessa cosa è stata fatta per il tipo search per la ricerca, number per tempo, range per difficoltà
+Per le form di registrazione e accesso, abbiamo scelto di utilizzare come input per le e-mail il tipo \texttt{text}, che grazie ad opportuni controlli specificati nelle sezioni \S\ref{subs:php} e \S\ref{subs:javascript}, si comporta quasi similmente al tipo \texttt{email} di HTML5. % la stessa cosa è stata fatta per il tipo search per la ricerca, number per tempo, range per difficoltà
 
-\paragraph{CSS}
+\subsubsection{CSS}
 
-\paragraph{SQL}
+\subsubsection{SQL}
 
-\paragraph{PHP}\label{par:php}
+\subsubsection{PHP}\label{subs:php}
 % la struttura principale di ogni pagina è organizzata secondo un template, nello specifico una classe wrapper che fornisce i metodi setter per costruire una pagina. Più in dettaglio, i metodi sono: setBlabla()
 % pagine 40* ed eventuali errori
 % funzionalità di ricerca
 % query portata
 Le funzioni di validazione lato server sono contenute all'interno del file \texttt{validation.php}. Sono disponibili:
 \begin{itemize}
-	\item 
+	\item
 \end{itemize}
 
-\paragraph{Javascript}\label{par:javascript}
+\subsubsection{Javascript}\label{subs:javascript}
 % commenti, voti, validazione
 Il linguaggio Javascript è stato utilizzato per implementare il comportamento dinamico lato client di alcune pagine del sito, nello specifico i commenti e i voti nella pagina delle ricette, il menu ad hamburger presente nella visualizzazione mobile.
 Poiché è possibile che non tutti gli utenti dispongano della tecnologia adatta, le funzionalità implementate in Javascript sono minime. \newline
-I controlli lato client che sono stati implementati sono: 
+I controlli lato client che sono stati implementati sono:
 \begin{itemize}
 	\item \texttt{checkEmail(email)} che, passato come parametro la stringa che rappresenta l'id relativo alla mail presente nella form in esame, controlla sia se l'input inserito dall'utente è una stringa vuota, sia se non corrisponde all'espressione regolare che identifica le e-mail.
 	\item \texttt{checkNickname(nickname)} che, passato come parametro la stringa che rappresenta l'id relativo al nickname presente nella form in esame, controlla se l'input inserito dall'utente è una stringa vuota e se non corrisponde all'espressione regolare che identifica stringhe contenti solo lettere e numeri di lunghezza tra 3 e 20 caratteri.

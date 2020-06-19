@@ -1,44 +1,53 @@
 \section{Fase di progettazione}
 \label{sec:fase_di_progettazione}
 \subsection{Struttura}
-%Parliamo dello schema che è ambiguo, perchè ci sono film che sono di più generi, e persone che sono sia attori che registi. La struttura è ibrida, principalmente gerarchica, con elementi di ipertesto. L'utente può visitare la parte informativa del sito utilizzando esclusivamente la parte gerarchica, mentre la parte di ipertesto è indispensabile solo per la parte interattiva. Inoltre, permette di seguire degli shortcut, comodi ma non necessari, fra pagine su rami diversi della gerarchia.
-% all'inizio è stato fatto il template in php, poi le pagine php/html aggiungendo il css ed infine il js
 \label{sub:struttura}
 \subsubsection{Header}
 \label{ssub:header}
-L'header contiene logo, nav, breadcrumb e due link per il login e il signup. Il logo, situato in alto a sinistra, non rimanda a nessuna pagina in quanto il link per la homepage è già contenuto nel menù sotto la voce Home. I due pulsanti per il login e il signup sono rispettivamente "Accedi" e "Registrati" e saranno entrambi presentati solo nel caso in cui l'utente non abbia ancora effettuato l'accesso. Una volta effettuato l'accesso, al posto dei due link ci sarà il nickname dell'utente e il link "esci" che scollega l'utente e porta alla home.
+L'header contiene logo, nav, breadcrumb e due link per il login e il signup. Il logo, situato in alto a sinistra, non rimanda a nessuna pagina in quanto il link per la homepage è già contenuto nel menu sotto la voce Home. I due pulsanti per il login e il signup sono rispettivamente ``Accedi'' e ``Registrati'' e sono entrambi presenti solo nel caso in cui l'utente non abbia ancora effettuato l'accesso. Una volta effettuato l'accesso, al posto dei due link c'è il nickname dell'utente e il link ``esci'' che scollega l'utente e lo porta alla home.
 % subsubsection header (end)
-\subsubsection{Nav}
-\label{ssub:nav}
-Il nav del sito contiene il menù e la barra di ricerca.
-Il menù occupa la posizione centrale del header e contiene i link alle pagine principali del sito:
+\paragraph{Nav}
+\label{par:nav}
+Il nav del sito contiene il menu e la barra di ricerca.
+Il menu occupa la posizione centrale dell'header e contiene i link alle pagine principali del sito:
 \begin{itemize}
 	\item Home page;
-	\item Pagina relativa ai primi;
-	\item Pagina relativa ai secondi;
+	\item Pagina relativa ai primi piatti;
+	\item Pagina relativa ai secondi piatti;
 	\item Pagina relativa ai dolci;
 \end{itemize}
-La barra di ricerca è situata sotto il menù in posizione centrale ed è ben visibile per permettere agli utenti di cercare le ricette di cui hanno bisogno.
-% subsubsection nav (end)
-\subsubsection{Breadcrumb}
-\label{ssub:breadcrumb}
+La barra di ricerca è situata sotto il menu in posizione centrale ed è ben visibile per permettere agli utenti di cercare le ricette di cui hanno bisogno.
+% paragraph nav (end)
+\paragraph{Breadcrumb}
+\label{par:breadcrumb}
 Il breadcrumb è posizionato a sinistra sotto la barra di ricerca e serve a identificare la posizione dell'utente all'interno del sito. L'ultimo campo corrisponde alla pagina corrente e, per evitare link circolari, è un testo.
-Il breadcrumb è presente in tutte le pagine tranne in quella di signup e login, in quanto sono raggiungibili da qualsiasi pagina del sito.
-% subsubsection breadcrumb (end)
+% paragraph breadcrumb (end)
 \subsubsection{Content}
 \label{ssub:content}
-Lo scopo principale del sito è cercare e leggere le ricette interessate.
-\begin{itemize}
-	\item Pagina Home: è la prima pagina ad essere visualizzata quando un utente visita il sito ed è presente una breve desrizione per far capire agli utenti cosa possono trovare all'interno del sito.
-	Sono poi presenti le tre ricette (una per portata) col voto più alto.
+Lo scopo principale del sito è cercare e consultare le ricette a cui si è interessati.
 
-	\item Pagina delle ricette: è la pagina in cui viene presentata la ricetta selezionata. Per prima cosa, è visibile il titolo della ricetta, l'immagine del piatto e sulla destra la lista degli ingredienti, la difficoltà e la durata della ricetta. Sotto è descritto il procedimento della ricetta. Alla fine di ogni ricetta è possibile darle un voto da 1 a 5. Infine c'è la sezione dei commenti in cui è possibile inserire un commento relativo alla ricetta e leggere i commenti degli altri utenti.
-	\item Pagina delle portate: la pagina dei primi, secondi e dolci hanno la stessa struttara: in ogni pagina viene presentata la lista di tutte le ricette relative alla portata selezionata. Le ricette sono presentate in riquadri contenenti l'immagine del piatto, il nome, la difficoltà, il tempo, il voto medio e il link "apri" che porta alla pagina della ricetta selezionata.
-	\item Pagina Login e Signup: l'utente ha la possibilità di registrarsi o accedere con le proprie credenziali tramite le pagine di login e signup. Nella pagina signup sono presenti i form per inserire la mail, il nickname e la password (sarà necessario inserirla in due form diversi per verificarne la correttezza). Per il login basterà inserire solo il nickname e la password.
-	\item Pagina Utente: una volta effettuato l'accesso, l'utente può visitare la propria area personale e verificare le proprie informazioni correnti. C'è la possibilità di eliminare l'account inserendo la propria password nel form apposito in fondo alla pagina.
-	\item Pagina Modifica Utente: dalla pagina utente è possibile arrivare alla pagina modifica utente in cui sono presenti tutti i form necessari per cambiare tutte le informazioni dell'utente (immagine, nickname, email e password). Ogni dopo ogni modifica sarà necessario inserire la password per confermare l'operazione. Nel caso si vogliano annullare le modifiche, lo si può fare mediante il tasto annulla, in fondo alla pagina.
-	\item Pagina Aggiungi e Modifica ricetta: queste pagine sono raggiungibili solo se si è admin. In entrambe le pagine sono presenti i form per l'inserimento delle informazioni relative alla ricetta che poi compariranno nella pagina della ricetta. Nella pagina "modifica ricetta" i form sono già compilati e sarà possibile apportare modifiche. Nel caso si decidano di annullare le modifiche, è presente il pulsante annulla in fondo alla pagina.
-\end{itemize}
+\paragraph{Pagina Home}
+È la prima pagina ad essere visualizzata quando un utente visita il sito, contiene una breve descrizione dei contenuti.
+Sono poi presenti le tre ricette (una per portata) con il voto più alto.
+
+\paragraph{Pagine delle portate}
+Le pagine con gli elenchi dei primi piatti, i secondi piatti e i dolci hanno la stessa struttura: in ogni pagina viene presentata la lista di tutte le ricette relative alla portata selezionata. Le ricette sono presentate in riquadri contenenti l'immagine del piatto, il nome, la difficoltà, il tempo necessario allo svolgimento, il voto medio e il link ``apri'' che porta alla pagina della ricetta selezionata.
+
+\paragraph{Pagine delle ricette}
+È la pagina in cui viene presentata la ricetta selezionata. Per prima cosa, è visibile il titolo della ricetta, l'immagine del piatto e sulla destra la lista degli ingredienti, la difficoltà e la durata della ricetta; in seguito è descritto il procedimento, seguito da un form che permette di assegnare alla ricetta un voto da 1 a 5. Infine c'è la sezione dei commenti in cui è possibile inserire un commento relativo alla ricetta e leggere i commenti degli altri utenti.
+
+\paragraph{Pagine di Login e Signup}
+L'utente ha la possibilità di registrarsi o accedere con le proprie credenziali tramite le pagine di login e signup. Nella pagina signup sono presenti dei campi per inserire l'indirizzo email, il nickname e la password (quest'ultima da inserire due volte per confermare la correttezza). Per il login è necessario inserire  il nickname e la password.
+
+\paragraph{Pagina Utente}
+Una volta effettuato l'accesso, l'utente può visitare la propria area personale e verificare le proprie informazioni correnti. C'è la possibilità di eliminare l'account inserendo la propria password nel form apposito in fondo alla pagina.
+
+\paragraph{Pagina Modifica Utente}
+Dalla pagina utente è possibile aprire la pagina modifica utente in cui sono presenti tutti i form necessari per cambiare le informazioni dell'utente (immagine, nickname, email e password). Ciascun form permette la modifica di un unica informazione, e deve essere confermato inserendo la password attuale. Nel caso si vogliano annullare le modifiche, lo si può fare mediante il pulsante ``Annulla'', in fondo alla pagina.
+
+\paragraph{Pagine Aggiungi e Modifica ricetta}
+Queste pagine sono raggiungibili solo dagli utenti con permessi amministratore. In entrambe le pagine sono presenti i form per l'inserimento delle informazioni che poi compariranno nella pagina della ricetta. Nella pagina ``modifica ricetta'' i form sono già compilati con le informazioni attuali. Anche in questo caso, per annullare le modifiche è presente il pulsante ``Annulla'' in fondo alla pagina.
+
 % subsubsection content (end)
 \subsubsection{Footer}
 \label{ssub:footer}
