@@ -12,6 +12,9 @@ if (!$_SESSION["user"]->getAdmin()) {
     exit;
 }
 
+$filePattern = "../img/ricette/" . $_GET['removeId'] . ".*";
+array_map("unlink", glob($filePattern));
+
 $removeId = intval($_GET['removeId']);
 $connection = new DBConnection();
 $connection->query(" DELETE FROM ricette WHERE ricette.id=\"{$removeId}\" ");	

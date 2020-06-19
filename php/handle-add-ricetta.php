@@ -1,13 +1,13 @@
 <?php
 require_once "./db-connection.php";
 require_once "./validation.php";
+require_once "./user.php";
 
 session_start();
 
 $_SESSION["nome"] = $_POST['nome'];
 $_SESSION["tempo"] = $_POST['tempo'];
 $_SESSION["difficolta"] = $_POST['difficolta'];
-$_SESSION["immagine"] = $_POST['immagine'];
 $_SESSION["tipo"] = $_POST['tipo'];
 $_SESSION["ingredienti"] = $_POST['ingredienti'];
 $_SESSION["procedura"] = $_POST['procedura'];
@@ -28,16 +28,24 @@ if ($_SESSION["errorNome"] != "" ||
     header("Location: ./add-ricetta.php");
     exit;
 } else {
-    $connection = new DBConnection();
-
-    $imageFileType = strtolower(pathinfo($_FILES['immagine']['name'], PATHINFO_EXTENSION));
-    $uploadfile = "../img/ricette/" . basename($_FILES['immagine']['name']);
-    move_uploaded_file($_FILES['immagine']['tmp_name'], $uploadfile);
-    $path = str_replace("..", "<rootFolder />", $uploadfile);
-
+    $connection = new DBConnection(); 
     $nickname = $_SESSION['user']->getNickname();
 
-    $connection->query("INSERT INTO ricette (nome, difficolta, tempo, img, portata, ingredienti, procedimento, keywords, author) VALUES (\"{$_POST['nome']}\",\"{$_POST['difficolta']}\",\"{$_POST['tempo']}\",\"$path\",\"{$_POST['tipo']}\",\"{$_POST['ingredienti']}\",\"{$_POST['procedura']}\",\"{$_POST['keywords']}\", \"$nickname\");");
+    
+    $connection->query("INSERT INTO ricette (nome, difficolta, tempo, portata, ingredienti, procedimento, keywords, author) VALUES (\"{$_POST['nome']}\",\"{$_POST['difficolta']}\",\"{$_POST['tempo']}\",\"{$_POST['tipo']}\",\"{$_POST['ingredienti']}\",\"{$_POST['procedura']}\",\"{$_POST['keywords']}\", \"$nickname\");");
+
+    if(key_exists("immagine", $_FILES)) {
+        $ricettaRow = $connection->query("SELECT id FROM ricette WHERE nome=\"{$_POST['nome']}\"");
+        if($ricettaRow) {
+            $idRicetta = $ricettaRow->fetch_assoc()['id'];
+            $imageFileType = strtolower(pathinfo($_FILES['immagine']['name'], PATHINFO_EXTENSION));
+            $uploadfile = "../img/ricette/" . $idRicetta . "." . $imageFileType;
+            move_uploaded_file($_FILES['immagine']['tmp_name'], $uploadfile);
+            $path = str_replace("..", "<rootFolder />", $uploadfile);
+
+            $connection->query("UPDATE ricette SET ricette.img = \"{$path}\" WHERE ricette.id={$idRicetta}");
+        }
+    }
 
     $connection->disconnect();
     $_SESSION["wrong-add"] = false;

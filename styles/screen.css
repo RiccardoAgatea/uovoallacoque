@@ -472,21 +472,10 @@ display: inline-block;
     margin-left: 32em;
 }
 
-.difficolta-tempo {
-    display: inline-block;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
 .difficolta-tempo dt{
     float: left;
-    clear: both;
     margin-right: 0.2em;
 }
-.difficolta-tempo dd {
-    white-space: nowrap;
-}
-
 
 #link-modifica-ricetta, #link-elimina-ricetta {
     display: inline-block;
@@ -569,7 +558,7 @@ display: inline-block;
     border-radius: 1em;
     margin: 1em;
 }
-.tasti-voto-avviso a, .commenti-avviso a{
+.tasti-voto-avviso a, .commenti-avviso a, .pagina-errore-accedi{
     display: inline-block;
     padding: 0.8em;
     background-color: #0c2752;

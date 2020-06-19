@@ -10,9 +10,9 @@
 	        <input class="commento-submit" type="submit" value="Commenta"/>
 	    </fieldset>
 	</form>
-	<form id="annulla-commento" method="post" action="<rootFolder />/php/ricetta.php?id=<ricettaPlaceholder />&pagina=<paginaRicettaPlaceholder />#sezione-commenti">
+	<form id="annulla-commento" method="post" action="<rootFolder />/php/ricetta.php?id=<ricettaPlaceholder />&amp;pagina=<paginaRicettaPlaceholder />#sezione-commenti">
 		<fieldset class="fieldset-noborder">
-			<input class="commenti-input-annulla" type="submit" value="Annulla">
+			<input class="commenti-input-annulla" type="submit" value="Annulla" />
 		</fieldset>
 	</form>
 </div>
