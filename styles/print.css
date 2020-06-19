@@ -1,8 +1,6 @@
-a:link:after, a:visited:after {
-    content: " [www.uovaallacoque.it" attr(href) "] ";
-    font-size:90%;
-    }
-
+body {
+    font-family: Georgia, "Times New Roman", serif;
+}
 
 #immagine-logo {
     height: 4em;

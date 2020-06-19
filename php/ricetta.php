@@ -109,7 +109,7 @@ if (!$result) {
                 <legend>Vota questa ricetta</legend>
                 <ul class=\"tasti-voto\">
                 <li>
-                    <label for=\"pulsante-voto-1\" class=\"label-voto\">1 Stella</label><input type=\"radio\" id=\"pulsante-voto-1\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"1\" />
+                    <label for=\"pulsante-voto-1\" class=\"label-voto\">1 Stella</label><input type=\"radio\" id=\"pulsante-voto-1\" class=\"pulsante-voto\" checked=\"checked\" name=\"pulsante-voto\" value=\"1\" />
                 </li>
                 <li>
                     <label for=\"pulsante-voto-2\" class=\"label-voto\">2 Stelle</label><input type=\"radio\" id=\"pulsante-voto-2\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"2\" />
@@ -121,7 +121,7 @@ if (!$result) {
                     <label for=\"pulsante-voto-4\" class=\"label-voto\">4 Stelle</label><input type=\"radio\" id=\"pulsante-voto-4\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"4\" />
                 </li>
                 <li>
-                    <label for=\"pulsante-voto-5\" class=\"label-voto\">5 Stelle</label><input type=\"radio\" id=\"pulsante-voto-5\" class=\"pulsante-voto\" checked=\"checked\" name=\"pulsante-voto\" value=\"5\" />
+                    <label for=\"pulsante-voto-5\" class=\"label-voto\">5 Stelle</label><input type=\"radio\" id=\"pulsante-voto-5\" class=\"pulsante-voto\" name=\"pulsante-voto\" value=\"5\" />
                 </li>
                 </ul>
                 <input class=\"pulsante-voto-submit\" type=\"submit\" value= \"vota\"/>
@@ -231,6 +231,7 @@ if (!$result) {
         }
 
     } else {
+        $content = str_replace("<printHidePlaceholder />", " print-hide", $content);
         $commenti .= "<p class=\"commenti-avviso print-hide\">Per visualizzare e inserire i commenti, <a href=\"<rootFolder />/php/login.php\">accedi</a> o <a href=\"<rootFolder />/php/signup.php\">registrati</a>.</p>";
     }
 
