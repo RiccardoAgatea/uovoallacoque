@@ -78,7 +78,7 @@
         </li>
         <li class="form-element">
           <label class="form-label"
-            for="add-keywords"> Keywords (separate da virgola): </label>
+            for="add-keywords"> Keywords (separate da virgola)*: </label>
           <input class="barra-input"
             id="add-keywords"
             type="text"
