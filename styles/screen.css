@@ -95,11 +95,11 @@ ul{
 /*menu*/
 
 .nav {
-text-align: center;
+    text-align: center;
 }
 
 #menu {
-display: inline-block;
+    display: inline-block;
     padding: 0.5em;
 }
 
@@ -213,10 +213,10 @@ display: inline-block;
     
 }
 #header{
-        color:white;
-        margin-bottom: 3em;
-        padding-top: 1em;
-        background-color: #0c2752;
+    color:white;
+    margin-bottom: 3em;
+    padding-top: 1em;
+    background-color: #0c2752;
 }
 /* torna su */
 .torna-su {
@@ -754,7 +754,9 @@ display: inline-block;
         -webkit-transition: 0.5s;
         transition: 0.5s;
         background: #04142e;
+        text-align: left;
     }
+
     .nome-utente {
         word-break: break-all;
     }
@@ -794,7 +796,8 @@ display: inline-block;
         cursor: pointer;
         display: block;
         z-index: 1;
-        margin-bottom: 1em;
+        margin-bottom: 2.8em;
+        text-align: right;
     }
 
     .chiudi-nav img {
