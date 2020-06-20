@@ -27,20 +27,30 @@ Le funzioni di validazione lato server sono contenute all'interno del file \text
 \end{itemize}
 
 \subsubsection{Javascript}\label{subs:javascript}
-% commenti, voti, validazione
-Il linguaggio Javascript è stato utilizzato per implementare il comportamento dinamico lato client di alcune pagine del sito, nello specifico i commenti e i voti nella pagina delle ricette, il menu ad hamburger presente nella visualizzazione mobile.
+% menu hamburger, validazione
+Il linguaggio Javascript è stato utilizzato per implementare il comportamento dinamico lato client di alcune pagine del sito, nello specifico il menu ad hamburger presente nella visualizzazione mobile e la validazione lato client delle form presenti nelle pagine di accesso, registrazione, modifica dati utente, aggiunta e modifica di una ricetta, aggiunta e modifica di un commento.
 Poiché è possibile che non tutti gli utenti dispongano della tecnologia adatta, le funzionalità implementate in Javascript sono minime. \newline
-I controlli lato client che sono stati implementati sono:
+Per quanto riguarda la validazione della form relativa alla registrazione, sono stati implementati i seguenti controlli:
 \begin{itemize}
-	\item \texttt{checkEmail(email)} che, passato come parametro la stringa che rappresenta l'id relativo alla mail presente nella form in esame, controlla sia se l'input inserito dall'utente è una stringa vuota, sia se non corrisponde all'espressione regolare che identifica le e-mail.
 	\item \texttt{checkNickname(nickname)} che, passato come parametro la stringa che rappresenta l'id relativo al nickname presente nella form in esame, controlla se l'input inserito dall'utente è una stringa vuota e se non corrisponde all'espressione regolare che identifica stringhe contenti solo lettere e numeri di lunghezza tra 3 e 20 caratteri.
+	\item \texttt{checkEmail(email)} che, passato come parametro la stringa che rappresenta l'id relativo alla mail presente nella form in esame, controlla sia se l'input inserito dall'utente è una stringa vuota, sia se non corrisponde all'espressione regolare che identifica le e-mail.
 	\item \texttt{isPasswordEqual(password, passwordConfirm)} che, passati come parametri le stringhe gli id che identificano l'input relativo alla password e la conferma della password, controlla se le due password sono uguali tra loro.
+\end{itemize}
+Per la validazione degli input nella form di login, si è deciso di controllare grazie alla funzione \texttt{loginValidator(campo)} che entrambi i campi passati come paramentri, ossia il nickname e la password inseriti, non siano vuoti. \newline
+Per la validazione delle form presenti nella pagina di modifica dati dell'utente, sono stati riutilizzati i controlli \texttt{checkNickname(nickname)}, \texttt{checkEmail(email)}, \texttt{isPasswordEqual(password, passwordConfirm)} ed è stato implementato il controllo per la validazione dell'immagine:
+\begin{itemize}
 	\item \texttt{checkImage(image)} che, data la stringa che rappresenta l'id per l'inserimento del file, controlla se l'estensione del file appartiene alle estensioni delle immagini accettate e se la dimensione del file è minore di 150KB.
+\end{itemize}
+Per le form delle pagine di aggiunta e modifica di una ricetta è stato riutilizzato il controllo sull'immagine e inoltre sono stati implementati i seguenti controlli:
+\begin{itemize}
+	\item 
 	\item \texttt{checkTitolo(titolo)} che, passato come parametro la stringa che rappresenta l'id relativo al titolo di una ricetta, controlla se l'input inserito dall'utente è una stringa vuota e se la lunghezza della stringa è tra 3 e 55 caratteri.
 	\item \texttt{checkDifficolta(difficolta)} che, passato come parametro la stringa che rappresenta l'id relativo alla difficoltà di una ricetta, controlla se l'input inserito dall'utente è una stringa vuota e se corrisponde ad un numero tra 1 e 5.
 	\item \texttt{checkTempo(tempo)} che, passato come parametro la stringa che rappresenta l'id relativo al titolo di una ricetta, controlla se l'input inserito dall'utente è una stringa vuota e se corrisponde ad un intero positivo, escluso lo 0.
-	\item \texttt{checkKeywords(keywords)}
+	\item \texttt{checkKeywords(keywords)} che, data la stringa che identifica l'input del commento, controlla se contiene solo caratteri alfanumerici e che non sia vuoto.
 \end{itemize}
+Per quanto riguarda la validazione nell'inserimento e modifica dei commenti, è stata implementata la funzione \texttt{checkCommento(commento)} che, passato come parametro la stringa che identifica l'input della form, controlla che il commento non sia vuoto. \newline
+Per la stampa degli eventuali messaggi di errore che possono incorrere in seguito alla validazione dei campi, è stato creato un metodo generico \texttt{printError(condition, id, message)} che passato come parametri \textit{condition}, ossia se il campo soddisfa i controlli effettuati, \textit{id} che identifica l'input del campo controllato, di cui verrà aggiunto in coda "-message" che identifica lo span dove stampare il messaggio d'errore e \textit{message} che contiene il messaggio da stampare.
 Nel caso in cui Javascript non sia disponibile o sia disabilitato, la validazione degli input è effettuata lato server grazie alle funzioni PHP sopra descritte.
 
 % section fase_di_implementazione (end)
