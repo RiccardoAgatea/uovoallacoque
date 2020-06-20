@@ -10,8 +10,7 @@
             ricerca per trovare un piatto specifico.
         </p>
         <p>
-            <a id="testo-signup"
-               href="<rootFolder />/php/signup.php">Registrandoti</a>
+            <registrandotiPlaceholder/> 
             avrai la possibilità di votare le tue ricette preferite,
             facendole apparire in prima pagina! Inoltre, potrai
             discutere con gli altri utenti nella sezione dei commenti.
