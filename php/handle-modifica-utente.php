@@ -10,10 +10,12 @@ if (!key_exists("logged", $_SESSION) || (!$_SESSION["logged"])) {
 
 switch ($_GET["item"]) {
     case "img":
-        if ((!file_exists($_FILES['user-immagine']['tmp_name']) || !is_uploaded_file($_FILES['user-immagine']['tmp_name']))) {
+        $check = checkImage("user-immagine");
+        if($check != "") {
+            $_SESSION["wrong"] = $check;
+        } else if ((!file_exists($_FILES['user-immagine']['tmp_name']) || 
+                    !is_uploaded_file($_FILES['user-immagine']['tmp_name']))) {
             $_SESSION["wrong"] = "Seleziona un file";
-        } else if ($_FILES['user-immagine']['size'] > 153600) { //150KB
-            $_SESSION["wrong"] = "L'immagine non deve superare i 150KB";
         } else if ($_POST["user-password-immagine"] == $_SESSION["user"]->getPassword()) {
             $imageFileType = strtolower(pathinfo($_FILES['user-immagine']['name'], PATHINFO_EXTENSION));
             $uploadfile = "../img/utenti/" . $_SESSION["user"]->getId() . "." . $imageFileType;
