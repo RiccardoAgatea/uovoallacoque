@@ -83,9 +83,9 @@ function checkCommento(commento) {
 }
 
 function loginValidator(campo) {
-	let campoChecked = document.getElementById(campo).value.length;
-	let result = campoChecked === 0;
-	printError(result, campo, "Questo campo non pu&ograve; essere vuoto");
+	let campoString = document.getElementById(campo).value;
+	let result = campoString.toString().length !== 0;
+	printError(result, campo, "Questo campo non pu&ograve; essere vuoto"); 
 	return result;
 }
 
@@ -135,7 +135,7 @@ openSideNav();
 const loginForm = document.getElementById("form-login");
 if (loginForm) {
 	loginForm.addEventListener("submit", function (event) {
-		if (!loginValidator("login-nickname")|!loginValidator("login-password")) {
+		if (!loginValidator("login-nickname") || !loginValidator("login-password")) {
 			event.preventDefault();
 		}
 	});
