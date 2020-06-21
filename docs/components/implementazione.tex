@@ -24,6 +24,38 @@ Oltre alle chiavi primarie, abbiamo imposto un vincolo di unicità sul nome dell
 Per prevenire riferimenti a contenuti rimossi, all'eliminazione di una ricetta o un utente vengono eliminati anche i rispettivi commenti e voti.
 
 \subsubsection{PHP}\label{subs:php}
+\paragraph{Costruzione delle pagine}
+Tutte le pagine del sito sono costruite dinamicamente.
+Abbiamo definito la struttura essenziale comune a tutte le pagine attraverso un template, utilizzando degli elementi vuoti invalidi (i cui tag sono riconoscibili immediatamente grazie al suffisso \htmlcode{Placeholder}) per rappresentare porzioni dell'albero XML diverse fra le pagine.
+Queste porzioni dinamiche sono definite in appositi file separati; le funzioni \phpcode{file_get_contents(\$filename)} e \phpcode{str_replace(\$search,\$replace,\$subject)} permettono di inserire il contenuto di tali file in sostituzione ai tag invalidi, ottenendo un documento completo e valido.
+In alcuni casi, per semplificare la costruzione delle pagine, anche i file parziali contengono tag invalidi, i quali vengono sostituiti applicando ricorsivamente la stessa procedura.
+Abbiamo scelto di utilizzare l'estensione \textit{.php} per tutti i file contenenti tag invalidi, per evidenziare la loro non completezza e non validità.
+Fra i tag invalidi, due sono di particolare rilevanza:
+\begin{itemize}
+	\item \htmlcode{<rootFolder />} viene utilizzato per indicare un path relativo alla pagina corrente della radice del sito.
+	\item \htmlcode{<backToTopPlaceholder />} indica la posizione di un link \textit{Torna Su}.
+\end{itemize}
+Questi due tag possono essere utilizzati in tutti i file, e vengono sostituiti con il rispettivo codice valido solo al termine di tutte le altre sostituzioni.
+
+Per una comoda gestione del template principale, abbiamo definito una classe \phpcode{DBConnection}.
+Ogni script che deve ritornare una pagina al client istanzia questa classe, ed invocando i suoi metodi la costruisce.
+Sono disponibili i metodi:
+\begin{itemize}
+	\item \phpcode{__construct(\$root,\$standard)} per costruire un'istanza della classe. \phpcode{\$root} deve essere il path relativo alla directory corrente della directory radice del sito, cioè quella contenente il file \texttt{index.php}. \phpcode{\$standard} deve essere la stringa \phpcode{"xhtml"}. In origine era prevista la possibilità di scelta fra gli standard XHTML e HTML5 in base alla pagina attraverso questo parametro; dopo avere scelto di utilizzare solo XHTML, abbiamo comunque mantenuto questo parametro a fini di  manutenibilità ed estensibilità.
+	\item \phpcode{setTitle(\$title)} per inserire il titolo della pagina, sia nel tag \htmlcode{title} sia nel tag \htmlcode{meta} con \htmlcode{name="title"}.
+	\item \phpcode{setDescription(\$description)} per inserire la descrizione della pagina nel tag \htmlcode{meta} con \htmlcode{name="description"}.
+	\item \phpcode{setAuthor(\$author)} per inserire il nome dell'autore della pagina nel tag \htmlcode{meta} con \htmlcode{name="author"}.
+	\item \phpcode{setOtherMeta(\$tags)} per inserire altri tag \htmlcode{meta}.
+	\item \phpcode{setLogin(\$loginSnippet)} per inserire i link alle pagine di login e signup se l'utente non è autenticato, oppure un messaggio di benvenuto, il link alla pagina utente ed il link per il logout se è autenticato.
+	\item \phpcode{setNav(\$navSnippet)} per inserire il menu, i cui link possono venire rimossi per evitare riferimenti circolari.
+	\item \phpcode{setBreadcrumb(\$breadcrumbSnippet)} per inserire il breadcrumb specifico per ogni pagina.
+	\item \phpcode{setContent(\$contentSnippet)} per inserire il contenuto della pagina.
+	\item \phpcode{setBackToTop(\$backToTopSnippet)} per inserire i link \textit{Torna Su}.
+	\item \phpcode{setAnnulla(\$annullaSnippet)} per inserire i pulsanti \textit{Annulla}.
+	\item \phpcode{setFooter(\$footerSnippet)} per inserire il footer del sito
+	\item \phpcode{send()} per completare l'elaborazione ed inviare la pagina completa al client.
+	\item \phpcode{save(\$file)} per completare l'elaborazione e salvare la pagina completa su file.
+\end{itemize}
 % pagine 40* ed eventuali errori
 % funzionalità di ricerca
 % query portata
