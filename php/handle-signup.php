@@ -21,7 +21,7 @@ if ($_SESSION["errorNickname"] !== "" || $_SESSION["errorEmail"] !== "" || $_SES
     $connection = new DBConnection();
     $connection->query("INSERT INTO utenti (email, passw, nickname) VALUES (\"{$_POST['email']}\",\"{$_POST['password1']}\",\"{$_POST['nickname']}\");");
 
-    $user = new User($_POST['email']);
+    $user = new User($_POST['nickname']);
     $_SESSION['user'] = $user;
     $_SESSION["logged"] = true;
     $_SESSION["wrong-signup"] = false;
