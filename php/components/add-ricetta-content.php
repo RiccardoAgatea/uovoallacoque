@@ -37,17 +37,17 @@
           <ul>
             <li class="item-radio-container">
               <label for="primo">Primo</label>
-              <input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1"/>
+              <input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1" <checked1Placeholder />/>
 
             </li>
             <li class="item-radio-container">
               <label for="secondo">Secondo</label>
-              <input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2"/>
+              <input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2" <checked2Placeholder />/>
 
             </li>
             <li class="item-radio-container">
               <label for="dolce">Dolce</label>
-              <input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3"/>
+              <input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3" <checked3Placeholder />/>
 
             </li>
           </ul>
