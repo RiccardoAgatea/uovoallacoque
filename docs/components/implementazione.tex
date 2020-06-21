@@ -34,6 +34,7 @@ Le funzioni di validazione degli input lato server sono contenute all'interno de
 	\item \texttt{checkImage(\$stringImage)} verifica che il file caricato sia effettivamente un'immagine controllando la sua estensione, e che la sua dimensione non superi 150KB.
 	\item \texttt{checkCommento(\$testo)} che controlla grazie all'espressione regolare, che il testo del commento non sia vuoto. Non è stato utilizzato la funzione \texttt{empty} perchè la stringa \texttt{"0"} veniva considerata come vuota, mentre contiene un carattere.
 \end{itemize}
+Inoltre è stata implementata una funzione ausiliaria \texttt{test_input(\$data)} che rimuove sia gli spazi che gli slash di escape, e trasforma in html i caratteri speciali, per esempio \texttt{à} diventa \texttt{&agrave;}
 
 \subsubsection{Javascript}\label{subs:javascript}
 % menu hamburger, validazione
