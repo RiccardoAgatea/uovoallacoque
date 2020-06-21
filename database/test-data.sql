@@ -6,7 +6,6 @@ INSERT INTO ricette (
     portata,
     ingredienti,
     procedimento,
-    descript,
     keywords,
     author
   )
