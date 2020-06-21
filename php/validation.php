@@ -71,25 +71,25 @@ function comparePassword($stringPassword, $stringPasswordConfirm)
     return $passwordErr;
 }
 
-function checkLogin($stringPassword, $nickname)
-{ // quando accedo controlla che la password è uguale a quella presente nel db
-    $err = $email = $password = "";
+function checkLogin($stringPassword, $stringNickname)
+{ 
+    $err = $nickname = $password = "";
     $connection = new DBConnection();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (empty($_POST[$nickname])) { //se il nickname è vuoto
+        if (empty($_POST[$stringNickname])) { //se il nickname è vuoto
             $err = "Credenziali errate";
         } else {
-            $nick = test_input($_POST[$nickname]);
             if (empty($_POST[$stringPassword])) { //se la password è vuota
                 $err = "Credenziali errate";
             } else {
-                $password = test_input($_POST[$stringPassword]);
-                $result = $connection->query("SELECT passw FROM utenti WHERE nickname=\"{$nick}\""); //se c'è il nickname nel db
+                $nickname = test_input($_POST[$stringNickname]);
+                $result = $connection->query("SELECT passw FROM utenti WHERE nickname=\"{$nickname}\""); //se c'è il nickname nel db
                 if (!$result) {
                     $err = "Credenziali errate";
                     $connection->disconnect();
                 } else {
+                    $password = test_input($_POST[$stringPassword]);
                     $user_row = $result->fetch_assoc();
                     if ($user_row['passw'] != $password) { //se la password non corrisponde
                         $err = "Credenziali errate";
@@ -179,6 +179,9 @@ function checkImage($stringImage)
         $allowed_extensions = array("jpg", "jpeg", "png", "svg");
         if (!in_array($extension, $allowed_extensions)) {
             $imageErr = "Formato immagine non valido";
+        }
+        if ($_FILES[$stringImage]['size'] > 153600) { 
+            $imageErr = "L'immagine non deve superare i 150KB";
         }
     }
     return $imageErr;

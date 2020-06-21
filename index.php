@@ -43,6 +43,12 @@ $handler->setBreadcrumb(
 
 $content = file_get_contents(__DIR__ . "/php/components/home-content.php");
 
+if(key_exists("logged", $_SESSION) && $_SESSION["logged"]) {
+    $content = str_replace("<registrandotiPlaceholder/>", "Registrandoti", $content);
+} else {
+    $content = str_replace("<registrandotiPlaceholder/>", "<a id=\"testo-signup\" href=\"<rootFolder />/php/signup.php\">Registrandoti</a>", $content);
+}
+
 $risultato1 = piattoMigliore(1);
 $risultato2 = piattoMigliore(2);
 $risultato3 = piattoMigliore(3);

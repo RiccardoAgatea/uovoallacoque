@@ -79,7 +79,6 @@ if (!$result) {
 
     if (key_exists("wrong-edit", $_SESSION) && $_SESSION["wrong-edit"]) {
         $content = str_replace("<nomeRicettaPlaceholder />", $_SESSION["nome"], $content);
-        $content = str_replace("<imgSrcPlaceholder />", $_SESSION["immagine"], $content);
         $content = str_replace("<difficoltaPlaceholder />", $_SESSION["difficolta"], $content);
         $content = str_replace("<tempoPlaceholder />", $_SESSION["tempo"], $content);
         $content = str_replace("<ingredientiPlaceholder />", $_SESSION["ingredienti"], $content);
@@ -106,7 +105,6 @@ if (!$result) {
         }
 
         $_SESSION["wrong-edit"] = false;
-        $_SESSION["immagine"] = "";
         $_SESSION["difficolta"] = "";
         $_SESSION["nome"] = "";
         $_SESSION["tempo"] = "";
@@ -115,8 +113,6 @@ if (!$result) {
         $_SESSION["keywords"] = "";
     } else {
         $content = str_replace("<nomeRicettaPlaceholder />", $nome, $content);
-        $content = str_replace("<imgSrcPlaceholder />", $img, $content);
-
         $content = str_replace("<checked" . $portata . "Placeholder />", "checked=\"checked\"", $content);
         $content = preg_replace("(checked.Placeholder />)", "", $content);
         $content = str_replace("<difficoltaPlaceholder />", $difficolta, $content);
@@ -124,20 +120,6 @@ if (!$result) {
         $content = str_replace("<ingredientiPlaceholder />", $ingredienti, $content);
         $content = str_replace("<proceduraPlaceholder />", $procedimento, $content);
         $content = str_replace("<keywordsPlaceholder />", $keywords, $content);
-
-        switch ($portata) {
-            case 1:
-                $content = str_replace('<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1"/>', '<input class="radio-ricetta" type="radio" id="primo" name="tipo" value="1" checked="checked"/>', $content);
-                break;
-            case 2:
-                $content = str_replace('<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2"/>', '<input class="radio-ricetta" type="radio" id="secondo" name="tipo" value="2" checked="checked"/>', $content);
-                break;
-            case 3:
-                $content = str_replace('<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3"/>', '<input class="radio-ricetta" type="radio" id="dolce" name="tipo" value="3" checked="checked"/>', $content);
-                break;
-            default:
-                $content = str_replace("<errorTipoPlaceholder />", "Tipo di portata inesistente", $content);
-        }
 
         $content = str_replace("<errorNomePlaceholder />", "", $content);
         $content = str_replace("<errorImgPlaceholder />", "", $content);

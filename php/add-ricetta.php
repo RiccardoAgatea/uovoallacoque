@@ -43,12 +43,13 @@ $content = file_get_contents(__DIR__ . "/components/add-ricetta-content.php");
 
 if (key_exists("wrong-add", $_SESSION) && $_SESSION["wrong-add"]) {
     $content = str_replace("<nomePlaceholder />", $_SESSION["nome"], $content);
-    $content = str_replace("<imgPlaceholder />", $_SESSION["immagine"], $content);
     $content = str_replace("<difficoltaPlaceholder />", $_SESSION["difficolta"], $content);
     $content = str_replace("<tempoPlaceholder />", $_SESSION["tempo"], $content);
     $content = str_replace("<ingredientiPlaceholder />", $_SESSION["ingredienti"], $content);
     $content = str_replace("<proceduraPlaceholder />", $_SESSION["procedura"], $content);
     $content = str_replace("<keywordsPlaceholder />", $_SESSION["keywords"], $content);
+    $content = str_replace("<checked" . $_SESSION["tipo"] . "Placeholder />", "checked=\"checked\"", $content);
+    $content = preg_replace("(checked.Placeholder />)", "", $content);
 
     switch (intval($_SESSION["tipo"])) {
         case 1:
@@ -81,7 +82,6 @@ if (key_exists("wrong-add", $_SESSION) && $_SESSION["wrong-add"]) {
     }
 
     $_SESSION["wrong-add"] = false;
-    $_SESSION["immagine"] = "";
     $_SESSION["difficolta"] = "";
     $_SESSION["nome"] = "";
     $_SESSION["tempo"] = "";
@@ -91,7 +91,8 @@ if (key_exists("wrong-add", $_SESSION) && $_SESSION["wrong-add"]) {
     $_SESSION["keywords"] = "";
 } else {
     $content = str_replace("<nomePlaceholder />", "", $content);
-    $content = str_replace("<imgPlaceholder />", "", $content);
+    $content = str_replace("<checked1Placeholder />", "checked=\"checked\"", $content);
+    $content = preg_replace("(checked.Placeholder />)", "", $content);
     $content = str_replace("<difficoltaPlaceholder />", "", $content);
     $content = str_replace("<tempoPlaceholder />", "", $content);
     $content = str_replace("<ingredientiPlaceholder />", "", $content);

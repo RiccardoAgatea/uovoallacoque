@@ -11,7 +11,6 @@ $_SESSION["nome"] = $_POST['nome'];
 $_SESSION["tempo"] = $_POST['tempo'];
 $_SESSION["difficolta"] = $_POST['difficolta'];
 $_SESSION["portata"] = $_POST['tipo'];
-$_SESSION["immagine"] = $_POST['immagine'];
 $_SESSION["tipo"] = $_POST['tipo'];
 $_SESSION["ingredienti"] = $_POST['ingredienti'];
 $_SESSION["procedura"] = $_POST['procedura'];
@@ -36,13 +35,6 @@ if ($_SESSION["errorNome"] != "" ||
 
     $path = "";
     $basename = basename($_FILES['immagine']['name']);
-    // if($basename == ""){
-    //     $result = $connection->query(" SELECT img FROM ricette WHERE id=$id ");
-    //     if ($result) {
-    //         $row = $result->fetch_assoc();
-    //         $path = $row['img'];
-    //     }
-    // } else {
     $uploadfile = "../img/ricette/" . $basename;
     move_uploaded_file($_FILES['immagine']['tmp_name'], $uploadfile);
     $path = str_replace("..", "<rootFolder />", $uploadfile);
@@ -57,7 +49,6 @@ if ($_SESSION["errorNome"] != "" ||
     $_SESSION["tempo"] = "";
     $_SESSION["portata"] = "";
     $_SESSION["difficolta"] = "";
-    $_SESSION["immagine"] = "";
     $_SESSION["ingredienti"] = "";
     $_SESSION["procedura"] = "";
     $_SESSION["tipo"] = "";

@@ -52,7 +52,6 @@ if ($_SESSION["errorNome"] != "" ||
     $_SESSION["nome"] = "";
     $_SESSION["tempo"] = "";
     $_SESSION["difficolta"] = "";
-    $_SESSION["immagine"] = "";
     $_SESSION["ingredienti"] = "";
     $_SESSION["procedura"] = "";
     $_SESSION["tipo"] = "";
