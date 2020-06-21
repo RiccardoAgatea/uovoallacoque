@@ -10,11 +10,18 @@ Tutte le pagine del sito sono state realizzate utilizzando come linguaggio di ma
 	\item Gli elementi devono essere sempre in minuscolo;
 	\item I nomi degli attributi devono essere sempre in minuscolo;
 \end{itemize}
-Per le form di registrazione e accesso, abbiamo scelto di utilizzare come input per le e-mail il tipo \texttt{text}, che grazie ad opportuni controlli specificati nelle sezioni \S\ref{subs:php} e \S\ref{subs:javascript}, si comporta quasi similmente al tipo \texttt{email} di HTML5. Allo stesso modo, anche gli input che riguardano il tempo di una ricetta, la difficoltà di una ricetta e la barra di ricerca, sono tutti di tipo \texttt{text} al posto dei tipi \texttt{number}, \texttt{range} e \texttt{search}. 
+Per le form di registrazione e accesso, abbiamo scelto di utilizzare come input per le e-mail il tipo \texttt{text}, che grazie ad opportuni controlli specificati nelle sezioni \S\ref{subs:php} e \S\ref{subs:javascript}, si comporta quasi similmente al tipo \texttt{email} di HTML5. Allo stesso modo, anche gli input che riguardano il tempo di una ricetta, la difficoltà di una ricetta e la barra di ricerca, sono tutti di tipo \texttt{text} al posto dei tipi \texttt{number}, \texttt{range} e \texttt{search}.
 
 \subsubsection{CSS}
 
 \subsubsection{SQL}
+Il database mantiene le informazioni strutturali sulle ricette, comprese metainformazioni come l'autore della pagina, e le informazioni di accesso sugli utenti.
+Inoltre, mantiene i voti e i commenti degli utenti.
+Le chiavi primarie delle tabelle sono degli identificatori numerici autoincrementali, eccetto per \sqlcode{voti}, per la quale la chiave primaria è data dall'utente che ha dato il voto e la ricetta che è stata votata, entrambi chiavi esterne.
+Essendo plausibili più commenti dello stesso utente alla stessa ricetta, non abbiamo potuto utilizzare la stessa soluzione per la tabella \sqlcode{commenti}, per la quale sarebbe stato necessario includere anche l'orario, possibilità preclusa da \textit{MariaDB}.
+
+Oltre alle chiavi primarie, abbiamo imposto un vincolo di unicità sul nome delle ricette e su nome utente ed email degli utenti, per evitare inutili confusioni in caso di ripetizioni.
+Per prevenire riferimenti a contenuti eliminati, all'eliminazione di una ricetta o un utente vengono eliminati anche i rispettivi commenti e voti.
 
 \subsubsection{PHP}\label{subs:php}
 % la struttura principale di ogni pagina è organizzata secondo un template, nello specifico una classe wrapper che fornisce i metodi setter per costruire una pagina. Più in dettaglio, i metodi sono: setBlabla()
@@ -25,7 +32,7 @@ Le funzioni di validazione degli input lato server sono contenute all'interno de
 \begin{itemize}
 	\item \texttt{checkNickname(\$stringNickname)} che oltre a controllare se l'input inserito dall'utente contiene non più di 20 caratteri alfanumerici, controlla anche che il nome non sia già presente nel database.
 	\item \texttt{checkEmail(\$stringEmail)} che valida la mail grazie al filtro offerto da PHP e inoltre controlla che la mail non sia già presente nel database.
-	\item \texttt{comparePassword(\$stringPassword, \$stringPasswordConfirm)} che verifica, se entrambi i campi non sono vuoti, che le due password siano uguali tra loro. 
+	\item \texttt{comparePassword(\$stringPassword, \$stringPasswordConfirm)} che verifica, se entrambi i campi non sono vuoti, che le due password siano uguali tra loro.
 	\item \texttt{checkLogin(\$stringPassword, \$stringNickname)} controlla che sia il nickname che la password inseriti dall'utente non siano stringhe vuote, che il nickname inserito sia presente nel database e che ad esso corrisponda la passowrd immessa dall'utente.
 	\item \texttt{checkNomeRicetta(\$stringNomeRicetta, \$dbCondition)} che varifica se la stringa rispetta la lunghezza di massimo 55 caratteri alfanumerici e, se la variabile \texttt{dbCondition} è true, anche che il nome non sia già presente nel database. Quest'ultimo controllo viene fatto solo nel caso si sia aggiungendo una nuova ricetta, mentre non viene fatto se si vuole modificare una ricetta senza cambiarne il nome.
 	\item \texttt{checkDifficolta(\$stringDifficolta)} controlla che la stringa che rappresenta la difficoltà sia un numero tra 1 e 5.
