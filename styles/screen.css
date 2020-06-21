@@ -202,6 +202,7 @@ ul{
     color: white;
     padding-top: 2em;
     padding-left: 2em;
+    margin-bottom: -1em;
 }
 #breadcrumb p {
     display: inline;
@@ -273,7 +274,7 @@ ul{
 .foto-utente {
     width: 5em;
     height: 5em;
-    object-fit: contain;
+    object-fit: cover;
     -wedkit-border-radius:2em;
     -moz-border-radius:2em;
     border-radius: 2em;
@@ -437,6 +438,7 @@ ul{
     -moz-border-radius:1em;
     border-radius: 1em;
     color: white;
+    max-width: 35em;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -459,6 +461,9 @@ ul{
     margin-right: 2em;
     margin-bottom: 1em;
     margin-top: 1em;
+}
+.nome-ricetta {
+    margin-bottom: 0.5em;
 }
 .ingredienti {
     list-style-type: disc;
@@ -537,6 +542,7 @@ ul{
     text-align: center;
     display: block;
     margin: auto;
+    max-width: 15em;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -574,8 +580,11 @@ ul{
 
 .commento-immagine {
     width: 4em;
+    height: 4em;
+    object-fit: cover;
     float: left;
     margin-right: 1em;
+    border-radius: 2em;
 }
 
 .commento-dataora {
@@ -786,6 +795,7 @@ ul{
     }
    
     .menu-active {
+        width: 22em;
         width: -webkit-fit-content;
         width: -moz-fit-content;
         width: fit-content;
@@ -836,7 +846,7 @@ ul{
     .immagine-ricetta {
         width: 100%;
         height: auto;
-        object-fit: contain;
+        object-fit: cover;
     }
     .ingredienti {
         margin-left: 1em;
