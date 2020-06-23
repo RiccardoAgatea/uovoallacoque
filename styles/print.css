@@ -1,5 +1,9 @@
 body {
     font-family: Georgia, "Times New Roman", serif;
+    color: black;
+}
+a {
+    color: black;
 }
 
 #immagine-logo {
@@ -16,6 +20,7 @@ body {
 
 .elenco-titolo {
     margin:0;
+    font-size: 1em;
 }
 
 .commenti, #elenco-content{
@@ -26,7 +31,12 @@ body {
     border-width: 1px;
     margin: 1em;
     padding: 1em;
+    padding-bottom: 0em;
 }
+.commento {
+    padding-top: 0em;
+}
+
 .commento-dataora {
     font-size: 80%;
 }

@@ -34,7 +34,7 @@ if ($_SESSION["errorNome"] != "" ||
     
     $connection->query("INSERT INTO ricette (nome, difficolta, tempo, portata, ingredienti, procedimento, keywords, author) VALUES (\"{$_POST['nome']}\",\"{$_POST['difficolta']}\",\"{$_POST['tempo']}\",\"{$_POST['tipo']}\",\"{$_POST['ingredienti']}\",\"{$_POST['procedura']}\",\"{$_POST['keywords']}\", \"$nickname\");");
 
-    if(key_exists("immagine", $_FILES)) {
+    if(key_exists("immagine", $_FILES) && $_FILES['immagine']['name']!="") {
         $ricettaRow = $connection->query("SELECT id FROM ricette WHERE nome=\"{$_POST['nome']}\"");
         if($ricettaRow) {
             $idRicetta = $ricettaRow->fetch_assoc()['id'];
