@@ -13,6 +13,9 @@ Tutte le pagine del sito sono state realizzate utilizzando come linguaggio di ma
 Per le form di registrazione e accesso, abbiamo scelto di utilizzare come input per le e-mail il tipo \htmlcode{text}, che grazie ad opportuni controlli specificati nelle sezioni \S\ref{subs:php} e \S\ref{subs:javascript}, si comporta quasi similmente al tipo \htmlcode{email} di HTML5. Allo stesso modo, anche gli input che riguardano il tempo di una ricetta, la difficoltà di una ricetta e la barra di ricerca, sono tutti di tipo \htmlcode{text} al posto dei tipi \htmlcode{number}, \htmlcode{range} e \htmlcode{search}.
 
 \subsubsection{CSS}
+Per la definizione della presentazione del sito è stato utilizzato CSS3 puro. Per mantenere la separazione tra contenuto e presentazione, non sono stati utilizzati tag di stile in XHTML ma sono stati utilizzati fogli di stile esterni. \\
+Le regole utilizzate sono state valutate in base alla compatibilità con i diversi browser, eventuali regole applicate non compatibili con Internet Explorer (in particolare \textit{object-fit}) non compromettono le funzionalità del sito o l'esperienza dell'utente. \\
+Per mantenere un design fluido e scalabile sono state preferite le unità di misura relative a quelle assolute ed è stato utilizzato il Flexbox Layout per garantire flessibilità al design.
 
 \subsubsection{SQL}
 Il database mantiene le informazioni strutturali sulle ricette, comprese metainformazioni come l'autore della pagina, e le informazioni di accesso sugli utenti.
