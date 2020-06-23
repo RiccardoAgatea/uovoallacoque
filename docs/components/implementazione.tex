@@ -56,7 +56,19 @@ Sono disponibili i metodi:
 	\item \phpcode{send()} per completare l'elaborazione ed inviare la pagina completa al client.
 	\item \phpcode{save($file)} per completare l'elaborazione e salvare la pagina completa su file.
 \end{itemize}
-% pagine 40* ed eventuali errori
+
+\paragraph{Pagine di errore}
+
+Per segnalare all'utente errori nelle richieste al server, causati ad esempio dall'inserimento di un URL incorretto, abbiamo implementato delle pagine di errore corrispondenti ai codici HTTP rilevanti per il sito, in particolare per gli errori lato client.
+Ogni pagina di errore è implementata in un file nella radice del sito, nominato \texttt{XXX.php}, dove \texttt{XXX} è il rispettivo codice HTTP\@.
+
+\begin{itemize}
+	\item Errore \textit{400 BAD REQUEST}: ritornato nel caso l'URL della richiesta non rispetti vincoli di coerenza, ad esempio l'esecuzione di una ricerca priva del termine della ricerca nella query.
+	\item Errore \textit{401 UNAUTHORIZED}: ritornato nel caso in cui sia necessaria un'autenticazione non fornita, ad esempio cercando di inserire un commento prima di aver eseguito il login.
+	\item Errore \textit{403 FORBIDDEN}: ritornato nel caso in cui l'utente sia autenticato, ma non abbia i permessi necessari ad eseguire l'operazione richiesta, ad esempio cercando di inserire una nuova ricetta senza essere un amministratore.
+	\item Errore \textit{404 NOT FOUND}: ritornato nel caso in cui la richiesta abbia una sintassi non riconosciuta, ad esempio se l'URL individua un file non esistente.
+\end{itemize}
+
 % funzionalità di ricerca
 % query portata
 \paragraph{Validazione lato server}\label{par:validazione_lato_server}
@@ -77,7 +89,7 @@ Inoltre è stata implementata una funzione ausiliaria \phpcode{test_input($data)
 
 \subsubsection{Javascript}\label{subs:javascript}
 Il linguaggio Javascript è stato utilizzato per implementare il comportamento dinamico lato client di alcune pagine del sito, nello specifico il menu ad hamburger presente nella visualizzazione mobile e la validazione lato client delle form presenti nelle pagine di accesso, registrazione, modifica dati utente, aggiunta e modifica di una ricetta, aggiunta e modifica di un commento.
-Poiché è possibile che non tutti gli utenti dispongano della tecnologia adatta, le funzionalità implementate in Javascript sono minime. 
+Poiché è possibile che non tutti gli utenti dispongano della tecnologia adatta, le funzionalità implementate in Javascript sono minime.
 \paragraph{Menu mobile}\label{par:menu_mobile}
 \paragraph{Validazione lato client}\label{par:validazione_lato_client}
 Per quanto riguarda la validazione della form relativa alla registrazione, sono stati implementati i seguenti controlli:
