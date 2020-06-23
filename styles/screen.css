@@ -211,6 +211,7 @@ ul{
     -moz-border-radius:1em;
     border-radius: 1em;
     padding: 1em;
+    white-space: nowrap;
     
 }
 #header{
@@ -702,7 +703,7 @@ ul{
     #header {
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
     }
@@ -723,7 +724,8 @@ ul{
     }
 
     #breadcrumb {
-        display: none;
+        display: block;
+        width: 100%;
     }
     #lista_accesso{
         display: flex;
