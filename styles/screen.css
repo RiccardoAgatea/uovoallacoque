@@ -40,6 +40,9 @@ body{
     background-color: rgb(211, 224, 245);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 100%;
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -54,7 +57,10 @@ body{
 
 /*Footer*/
 #footer {
-	width: 100%;
+    width: 100%;
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
 	display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -104,6 +110,9 @@ ul{
 }
 
 #menu-pagine {
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
 }
@@ -159,6 +168,9 @@ ul{
 
 /*accesso*/
 #lista_accesso, #messaggio-utente{
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -183,6 +195,9 @@ ul{
     padding-right: 0.5em;
 }
 #nav{
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -190,6 +205,9 @@ ul{
     margin-bottom: 1em;
 }
 #form-barra-ricerca {
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     justify-content: center;
 }
@@ -222,6 +240,9 @@ ul{
 }
 /* torna su */
 .torna-su {
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -246,6 +267,9 @@ ul{
 }
 /*piatti migliori*/
 .elenco-migliori {
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -258,6 +282,9 @@ ul{
 }
 .miglior-elemento{
     align-self: baseline;
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -282,6 +309,9 @@ ul{
     margin-right: 2em;
 }
 .foto-nome {
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -307,10 +337,16 @@ ul{
     border: none; /*non mi piaceva il cornicione*/
 }
 .form-container {
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
 	display: flex;
     flex-direction: column;
 }
 .form-centered {
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -333,6 +369,9 @@ ul{
 }
 
 #form-elimina-account{
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
 	display: flex;
     flex-direction: column;
     align-items: center;
@@ -343,6 +382,9 @@ ul{
     margin-right: auto;
 }
 .fieldset-elimina-account{
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
 	display: flex;
     flex-direction: column;
     align-items: center;
@@ -386,12 +428,18 @@ ul{
 
 /*inizio pagina elenco*/
 #elenco-content {
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 .elenco-elemento {
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -429,6 +477,9 @@ ul{
 }
 
 .paginazione {
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -494,6 +545,9 @@ ul{
     clear: left;
 }
 .tasti-voto {
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -501,6 +555,9 @@ ul{
     margin-bottom: 0.5em;
 }
 .tasti-voto li {
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -600,6 +657,9 @@ ul{
     color: white;
     border-radius: 1em;
     padding: 1em;
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
 }
@@ -612,6 +672,9 @@ ul{
 }
 
 .tasti-commento {
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -642,6 +705,9 @@ ul{
 /*INIZIO PAGINA MODIFICA RICETTA*/
 
 .item-radio-container{
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
    display: flex;
    flex-direction: row;
    justify-content: space-between;
@@ -687,6 +753,9 @@ ul{
 /*pagina utente*/
 .form-element {
     width: 100%;
+    display: -webkit-box;   
+    display: -ms-flexbox;  
+    display: -webkit-flex;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -701,6 +770,9 @@ ul{
     }
 
     #header {
+        display: -webkit-box;   
+        display: -ms-flexbox;  
+        display: -webkit-flex;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -728,6 +800,9 @@ ul{
         width: 100%;
     }
     #lista_accesso{
+        display: -webkit-box;   
+        display: -ms-flexbox;  
+        display: -webkit-flex;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -738,6 +813,9 @@ ul{
     }
 
     #messaggio-utente {
+        display: -webkit-box;   
+        display: -ms-flexbox;  
+        display: -webkit-flex;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -752,6 +830,9 @@ ul{
     }
 
     .nav{
+        display: -webkit-box;   
+        display: -ms-flexbox;  
+        display: -webkit-flex;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -785,6 +866,9 @@ ul{
     }
 
     #menu {
+        display: -webkit-box;   
+        display: -ms-flexbox;  
+        display: -webkit-flex;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -859,6 +943,9 @@ ul{
     }
 
     .tasti-voto {
+        display: -webkit-box;   
+        display: -ms-flexbox;  
+        display: -webkit-flex;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -866,6 +953,9 @@ ul{
         margin-bottom: 0.5em;
     }
     .tasti-voto li {
+        display: -webkit-box;   
+        display: -ms-flexbox;  
+        display: -webkit-flex;
         display: flex;
         flex-direction: row;
         margin:0.5em;

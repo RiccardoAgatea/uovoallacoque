@@ -110,9 +110,9 @@ function ricettaValidator(titolo, difficolta, tempo, image, keywords) {
 
 function openSideNav() {
 
-	const apriNav = document.querySelector('.open-button');
-	const chiudiNav = document.querySelector('.chiudi-nav');
-	const nav = document.querySelector('.nav');
+	var apriNav = document.querySelector('.open-button');
+	var chiudiNav = document.querySelector('.chiudi-nav');
+	var nav = document.querySelector('.nav');
 
 	apriNav.addEventListener("click", function () {
 		nav.classList.add("menu-active");
@@ -132,7 +132,7 @@ function openSideNav() {
 openSideNav();
 
 //------ LOGIN ---------
-const loginForm = document.getElementById("form-login");
+var loginForm = document.getElementById("form-login");
 if (loginForm) {
 	loginForm.addEventListener("submit", function (event) {
 		if (!loginValidator("login-nickname") || !loginValidator("login-password")) {
@@ -142,7 +142,7 @@ if (loginForm) {
 }
 
 //------ SIGN UP ---------
-const signupForm = document.getElementById("form-signup");
+var signupForm = document.getElementById("form-signup");
 if (signupForm) {
 	signupForm.addEventListener("submit", function (event) {
 		if (!signupValidator('signup-nick', 'signup-email', 'signup-password1', 'signup-password2')) {
@@ -152,7 +152,7 @@ if (signupForm) {
 }
 
 //------RICETTA------
-const ricettaForm = document.getElementById("form-add");
+var ricettaForm = document.getElementById("form-add");
 if (ricettaForm) {
 	ricettaForm.addEventListener("submit", function (event) {
 		if (!ricettaValidator('add-nome', 'add-difficolta', 'add-tempo', 'add-immagine', 'add-keywords')) {
@@ -161,7 +161,7 @@ if (ricettaForm) {
 	});
 }
 
-const editRicettaForm = document.getElementById("form-edit");
+var editRicettaForm = document.getElementById("form-edit");
 if (editRicettaForm) {
 	editRicettaForm.addEventListener("submit", function (event) {
 		if (!ricettaValidator('edit-nome', 'edit-difficolta', 'edit-tempo', 'edit-immagine', 'edit-keywords')) {
@@ -171,7 +171,7 @@ if (editRicettaForm) {
 }
 
 //------- COMMENTI -------
-const inserisciCommenti = document.getElementById("inserisci-commento-form");
+var inserisciCommenti = document.getElementById("inserisci-commento-form");
 if (inserisciCommenti) {
 	inserisciCommenti.addEventListener("submit", function (event) {
 		if (!checkCommento('scrivi-commento')) {
@@ -180,7 +180,7 @@ if (inserisciCommenti) {
 	});
 }
 
-const modificaCommenti = document.getElementById("modifica-commento-form");
+var modificaCommenti = document.getElementById("modifica-commento-form");
 if (modificaCommenti) {
 	modificaCommenti.addEventListener("submit", function (event) {
 		if (!checkCommento('modifica-commento')) {
@@ -190,7 +190,7 @@ if (modificaCommenti) {
 }
 
 //------- CAMBIO ATTRIBUTI UTENTE-------
-const passwordUtente = document.getElementById("form-user-password");
+var passwordUtente = document.getElementById("form-user-password");
 if (passwordUtente) {
 	passwordUtente.addEventListener("submit", function (event) {
 		if (!isPasswordEqual('user-password1', 'user-password2')) {
@@ -198,7 +198,7 @@ if (passwordUtente) {
 		}
 	});
 }
-const formUtenteEmail = document.getElementById("form-utente-email");
+var formUtenteEmail = document.getElementById("form-utente-email");
 if (formUtenteEmail) {
 	formUtenteEmail.addEventListener("submit", function (event) {
 		if (!checkEmail('user-email')) {
@@ -207,7 +207,7 @@ if (formUtenteEmail) {
 	});
 }
 
-const formUtenteNick = document.getElementById("form-utente-nick");
+var formUtenteNick = document.getElementById("form-utente-nick");
 if (formUtenteNick) {
 	formUtenteNick.addEventListener("submit", function (event) {
 		if (!checkNickname('user-nickname')) {
@@ -216,7 +216,7 @@ if (formUtenteNick) {
 	});
 }
 
-const formUtenteImg = document.getElementById("form-utente-img");
+var formUtenteImg = document.getElementById("form-utente-img");
 if (formUtenteImg) {
 	formUtenteImg.addEventListener("submit", function (event) {
 		if (!checkImage('user-immagine')) {
