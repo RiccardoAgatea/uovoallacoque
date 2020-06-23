@@ -20,6 +20,13 @@ Per mantenere un design fluido e scalabile sono state preferite le unità di mis
 \subsubsection{SQL}
 Il database mantiene le informazioni strutturali sulle ricette, comprese metainformazioni come l'autore della pagina, e le informazioni di accesso sugli utenti.
 Inoltre, mantiene i voti e i commenti degli utenti.
+Lo schema relazionale del database è:
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics{img/progettazione/schema-db}
+\end{figure}
+
 Le chiavi primarie delle tabelle sono degli identificatori numerici autoincrementali, eccetto per \sqlcode{voti}, per la quale la chiave primaria è data dall'utente che ha dato il voto e la ricetta che è stata votata, entrambi chiavi esterne.
 Essendo plausibili più commenti dello stesso utente alla stessa ricetta, non abbiamo potuto utilizzare la stessa soluzione per la tabella \sqlcode{commenti}, per la quale sarebbe stato necessario includere anche l'orario, possibilità preclusa da \textit{MariaDB}.
 
@@ -89,7 +96,7 @@ Le funzioni di validazione degli input lato server sono contenute all'interno de
 	\item \phpcode{checkCommento($testo)} che controlla grazie all'espressione regolare, che il testo del commento non sia vuoto. Non è stato utilizzato la funzione \phpcode{empty()} perchè la stringa \phpcode{"0"} veniva considerata come vuota, mentre contiene un carattere.
 \end{itemize}
 Inoltre è stata implementata una funzione ausiliaria \phpcode{test_input($data)} che rimuove sia gli spazi che gli slash di escape, e trasforma in html i caratteri speciali, per esempio \phpcode{à} diventa \phpcode{&agrave;}.
-Ogniqualvolta un utente digiti erroraneamente dei dati che non rispettano almeno una validazione, viene informato mediante l'opportuna stampa degli errori e i dati inseriti vengono mantenuti negli input delle form grazie al loro salvataggio nella sessione. 
+Ogniqualvolta un utente digiti erroraneamente dei dati che non rispettano almeno una validazione, viene informato mediante l'opportuna stampa degli errori e i dati inseriti vengono mantenuti negli input delle form grazie al loro salvataggio nella sessione.
 
 \subsubsection{Javascript}\label{subs:javascript}
 Il linguaggio Javascript è stato utilizzato per implementare il comportamento dinamico lato client di alcune pagine del sito, nello specifico il menu ad hamburger presente nella visualizzazione mobile e la validazione lato client delle form presenti nelle pagine di accesso, registrazione, modifica dati utente, aggiunta e modifica di una ricetta, aggiunta e modifica di un commento.
