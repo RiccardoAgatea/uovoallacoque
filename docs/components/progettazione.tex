@@ -57,22 +57,61 @@ Il footer contiene la dicitura per il copyright, i nomi degli autori del sito, e
 % subsection struttura (end)
 \subsection{Visualizzazione} %le pagine devono essere accessibili indipendentemente dalle dimensioni del dispositivo e del browser
 \label{sub:visualizzazione}
-
+La visualizzazione del sito è stata pensata in modo da rendere le pagine accessibili ad ogni categoria di utente e reattive alla tipologia di dispositivo utilizzato. Sono state quindi utilizzate unità di misura relative e colori che garantissero sempre un adeguato livello di contrasto tra le scritte e lo sfondo sottostante. \\
+Sono state previste quattro tipologie di visualizzazione del sito: desktop, tablet, mobile e stampa.
 \subsubsection{Desktop}
 \label{ssub:desktop}
-
+Nella visualizzazione desktop il layout è diviso in tre schede posizionate vericalmente. La prima presenta il logo del sito, i link per effettuare l'accesso e la registrazione, il menù e la barra di ricerca. In questo modo appena l'utente entra nel sito può facilmente raggiungere la pagina desiderata. \\
+La seconda scheda racchiude il contenuto che si adatta in base alla grandezza della schermata, in particolare gli elenchi delle ricette mostreranno da 1 a 3 ricette per fila dipendentemente dallo spazio a disposizione. \\
+La terza scheda contiene infine il footer.  
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm]{img/progettazione/desktop.jpg}
+\end{figure}
 % subsubsection desktop (end)
+\subsubsection{Tablet}
+\label{ssub:tablet}
+La visualizzazione tablet è pensata per dispositivi con meno spazio rispetto al desktop e per questo motivo lo spazio dedicato alla prima scheda viene visibilmente ridimensionato passando da un menù sempre visibile ad un menù ad hamburger, in cui è necessario premere l'apposito pulsante, in questo caso situato in alto a destra, per farlo apparire. Una volta aperto, il menù occupa la parte destra dello schermo e presenta le varie voci in verticale. Sono presenti inoltre i link per il login e il signup e la barra di ricerca posizionata sul fondo del menù. Si è deciso di inserire tutte le voci insieme alla barra di ricerca nel menù, per avere tutti gli elementi necessari per la navigazione raccolti in un unico spazio. Quando il menù è chiuso è visibile solo il logo affiancato dal tasto del menù. \\
+Il resto del design resta, invece, invariato.
+
+\begin{figure}[H]
+	\begin{minipage}[b]{8.5cm}
+		\centering
+		\includegraphics[width=8cm]{img/progettazione/tablet.jpg}
+		\caption{Pagina con la visualizzazione tablet}
+	\end{minipage}
+	\ \hspace{2mm} \hspace{3mm} \
+	\begin{minipage}[b]{8.5cm}
+		\centering
+		\includegraphics[width=8cm]{img/progettazione/tablet-menu.jpg}
+		\caption{Menù hamburger in tablet}
+	\end{minipage}
+\end{figure}
+
+% subsubsection tablet (end)
 \subsubsection{Mobile}
 \label{ssub:mobile}
-Nella visualizzazione da mobile è stato implementato il menù ad hamburger, ovvero il menù è nascosto e per farlo comparire serve premere il burger menù situato in alto a destra. Il pulsante è facilmente raggiungibile per gli utenti che usano il telefono con due mani, mentre gli utenti destri che usano il telefano con una sola mano potranno aprire comodamente il menù col pollice.
-Una volta aperto, il menù occupa quasi tutto lo schermo con le voci al centro. Sono presenti inoltre i link per il login e il signup e la barra di ricerca posizionata sul fondo del menù. Si è deciso di inserire tutte le voci insieme alla barra di ricerca nel menù, per avere tutti gli elementi necessari per la ricerca raccolti in un unico spazio. Quando il menù è chiuso è visibile solo il logo affiancato dal tasto del menù.
+Anche nella visualizzazione da mobile è stato implementato il menù ad hamburger al fine di gestire al meglio lo spazio disponibile. Il pulsante è facilmente raggiungibile per gli utenti che usano il telefono con due mani, mentre gli utenti destri che usano il telefano con una sola mano potranno aprire comodamente il menù col pollice. Una volta aperto, occupa quasi tutto lo schermo.
+\begin{figure}[H]
+	\begin{minipage}[b]{8.5cm}
+		\centering
+		\includegraphics[width=8cm]{img/progettazione/mobile.jpg}
+		\caption{Pagina con la visualizzazione mobile}
+	\end{minipage}
+	\ \hspace{2mm} \hspace{3mm} \
+	\begin{minipage}[b]{8.5cm}
+		\centering
+		\includegraphics[width=8cm]{img/progettazione/mobile-menu.jpg}
+		\caption{Menù hamburger in mobile}
+	\end{minipage}
+\end{figure}
 
 
 % subsubsection mobile (end)
 \subsubsection{Stampa}
 \label{ssub:stampa}
-Per quanto riguarda la stampa, sono stati eliminati gli elementi di presentazione (immagini e background) e sono stati tenuti solo gli elemeti necessari, ovvero il contenuto della pagina. È stato rimosso il menù, la barra di ricerca e il footer in quanto non necessari per la visualizzazione della pagina stampata, mentre sono stati tenuti il breadcrumb per specificare il percorso alla pagina selezionata, e il logo per distinguere il sito.
-Le pagine sono in bianco e nero per dare valore al contenuto anzichè alla presentazione.
+Per quanto riguarda la stampa, sono stati eliminati gli elementi di presentazione (immagini e background) e sono stati tenuti solo gli elemneti necessari, ovvero il contenuto della pagina. È stato rimosso il menù, la barra di ricerca e il footer in quanto non necessari per la visualizzazione della pagina stampata, mentre sono stati tenuti il breadcrumb per specificare il percorso alla pagina selezionata, e il logo per distinguere il sito.
+Le pagine sono in bianco e nero per dare valore al contenuto anzichè alla presentazione. Il font, che nella visualizzazione a schermo era san-serif, passa ad essere serif per una migliore leggibilità sulla carta stampata.
 % subsubsection stampa (end)
 % subsection visualizzazione (end)
 
