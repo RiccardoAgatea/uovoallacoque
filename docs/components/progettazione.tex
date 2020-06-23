@@ -110,13 +110,20 @@ Anche nella visualizzazione da mobile è stato implementato il menù ad hamburge
 % subsubsection mobile (end)
 \subsubsection{Stampa}
 \label{ssub:stampa}
-Per quanto riguarda la stampa, sono stati eliminati gli elementi di presentazione (immagini e background) e sono stati tenuti solo gli elemneti necessari, ovvero il contenuto della pagina. È stato rimosso il menù, la barra di ricerca e il footer in quanto non necessari per la visualizzazione della pagina stampata, mentre sono stati tenuti il breadcrumb per specificare il percorso alla pagina selezionata, e il logo per distinguere il sito.
+Per quanto riguarda la stampa, sono stati eliminati gli elementi di presentazione (immagini e background) e sono stati tenuti solo gli elementi necessari, ovvero il contenuto della pagina. È stato rimosso il menù, la barra di ricerca e il footer in quanto non necessari per la visualizzazione della pagina stampata, mentre sono stati tenuti il breadcrumb per specificare il percorso alla pagina selezionata, e il logo per distinguere il sito.
 Le pagine sono in bianco e nero per dare valore al contenuto anzichè alla presentazione. Il font, che nella visualizzazione a schermo era san-serif, passa ad essere serif per una migliore leggibilità sulla carta stampata.
 % subsubsection stampa (end)
 % subsection visualizzazione (end)
 
 \subsection{Accessibilità}
 \label{sub:accessibilità}
+Per garantire un alto livello di accessibilità sono state le linee guida dello standard WCAG. Comportamento, struttura e presentazione sono separate per permettere un miglior accesso al sito tramite diversi motori di ricerca e browser, inoltre, facilita l'interazione con utenti che presentano disabilità.
+\subsubsection{Comportamento}
+
+\subsubsection{Struttura}
+\subsubsection{Presentazione}
+Tramite il CSS è stato implementato il design utilizzando classi che definiscono il contenuto dell'oggetto e non il comportamento, in modo da mantenere la separazione tra comportamento e presentazione. Vengono utilizzate misure relative (em) o in percentuale per permettere una corretta visualizzazione delle pagine su schermi di dimensioni diverse. Sono presenti due fogli di stile diversi: il primo è dedicato alla stampa mentre il secondo è dedicato alla visualizzazione da dasktop e mobile.
+Il colore dominante del sito è il blu: il background è un pattern con le uova a sfondo azzurro, a contrasto col header e gli elementi del sito color blu scuro. Le scritte sono bianche per essere in contrasto col blu, oppure gialle nel caso dei link visitati.Il colore utilizzato per l' hover dei link è in contrasto sia con lo sfondo che col colore della scritta. Il rapporto tra colore di sfondo e testo superano il test WCAG AAA che richiede un rapporto di contrasto di almeno 7:1 per il testo normale e 4.5:1 per il testo in grassetto.
 % come da specifiche è stata rispettata la completa separazione tra comportamento, presentazione e struttura.
 % ricerca: già scritta nell analisi
 % torna su: poichè il menu sia nella visualizzazione desktop che quella mobile, è fisso all'inizio di ogni pagina, per raggiungerlo facilmente dopo uno scroll verticale, sono stati posizionati delle ancore "torna su", che rimandano all' header della pagina attuale.
