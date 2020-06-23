@@ -9,100 +9,100 @@ function printError(condition, id, message) { // se condition è true significa 
 
 // --------- CONTROLLI --------
 function isPasswordEqual(password, passwordConfirm) {
-	let pwd1 = document.getElementById(password);
-	let pwd2 = document.getElementById(passwordConfirm);
-	let result = pwd1.value === pwd2.value;
+	var pwd1 = document.getElementById(password);
+	var pwd2 = document.getElementById(passwordConfirm);
+	var result = pwd1.value === pwd2.value;
 	printError(result, passwordConfirm, "Password diverse");
 	return result;
 }
 
 function checkEmail(email) { //passo l'id della mail che voglio controllare, per esempio "signup-email"
-	let regex = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$"); 
-	let test = document.getElementById(email).value.toLowerCase();
-	let result = (regex.test(test)) && !(test === ""); 
+	var regex = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$"); 
+	var test = document.getElementById(email).value.toLowerCase();
+	var result = (regex.test(test)) && !(test === ""); 
 	printError(result, email, "Email non corretta");
 	return result;
 }
 
 function checkNickname(nickname) {
-	let test = document.getElementById(nickname).value;
-	let regex = new RegExp("^[A-Za-z0-9]{3,20}$");
-	let result = (regex.test(test)) && !(test === "");
+	var test = document.getElementById(nickname).value;
+	var regex = new RegExp("^[A-Za-z0-9]{3,20}$");
+	var result = (regex.test(test)) && !(test === "");
 	printError(result, nickname, "Il nickname deve contenere solo lettere e numeri e la sua lunghezza deve essere compresa tra 3 e 20 caratteri");
 	return result;
 }
 
 function checkImage(image) { 
-	let test = document.getElementById(image).value;
-	let fileSize = document.getElementById(image).files[0].size;
-	let extensions = ['png', 'jpg', 'jpeg', 'svg'];
-	let isImage = extensions.includes(test.split('.').pop()); 
-	let result = isImage && fileSize < 153600; 
+	var test = document.getElementById(image).value;
+	var fileSize = document.getElementById(image).files[0].size;
+	var extensions = ['png', 'jpg', 'jpeg', 'svg'];
+	var isImage = extensions.includes(test.split('.').pop()); 
+	var result = isImage && fileSize < 153600; 
 	printError(result, image, "Il formato non &egrave; valido o la dimensione egrave; superiore a 150KB"); 
 	return result;
 }
 
 function checkTitolo(titolo) {
-	let test = document.getElementById(titolo).value;
-	let regex = new RegExp("^.{3,55}$");
-	let result = (regex.test(test)) && !(test === "");
+	var test = document.getElementById(titolo).value;
+	var regex = new RegExp("^.{3,55}$");
+	var result = (regex.test(test)) && !(test === "");
 	printError(result, titolo, "La lunghezza massima &egrave; di 55 caratteri ciao");
 	return result;
 }
 
 function checkDifficolta(difficolta) {
-	let test = document.getElementById(difficolta).value;
-	let regex = new RegExp("^[1-5]$");
-	let result = (regex.test(test)) && !(test === "");
+	var test = document.getElementById(difficolta).value;
+	var regex = new RegExp("^[1-5]$");
+	var result = (regex.test(test)) && !(test === "");
 	printError(result, difficolta, "L'intervallo valido &egrave; tra 1 e 5");
 	return result;
 }
 
 function checkTempo(tempo) {
-	let test = document.getElementById(tempo).value;
-	let regex = new RegExp("^[1-9][0-9]*$");
-	let result = (regex.test(test)) && !(test === "");
+	var test = document.getElementById(tempo).value;
+	var regex = new RegExp("^[1-9][0-9]*$");
+	var result = (regex.test(test)) && !(test === "");
 	printError(result, tempo, "Sono ammessi solo valori interi positivi");
 	return result;
 }
 
 function checkKeywords(keywords) {
-	let test = document.getElementById(keywords).value;
-	let regex = new RegExp("^[A-Za-z0-9]+$");
-	let result = (regex.test(test)) && !(test === "");
+	var test = document.getElementById(keywords).value;
+	var regex = new RegExp("^[A-Za-z0-9]+$");
+	var result = (regex.test(test)) && !(test === "");
 	printError(result, keywords, "Le keywords devono contenere solo lettere e numeri");
 	return result;
 }
 
 function checkCommento(commento) {
-	let test = document.getElementById(commento).value;
-	let regex = new RegExp("^.+$");
-	let result = (regex.test(test)) && !(test === "");
+	var test = document.getElementById(commento).value;
+	var regex = new RegExp("^.+$");
+	var result = (regex.test(test)) && !(test === "");
 	printError(result, commento, "Non puoi lasciare vuoto il commento");
 	return result;
 }
 
 function loginValidator(campo) {
-	let campoString = document.getElementById(campo).value;
-	let result = campoString.toString().length !== 0;
+	var campoString = document.getElementById(campo).value;
+	var result = campoString.toString().length !== 0;
 	printError(result, campo, "Questo campo non pu&ograve; essere vuoto"); 
 	return result;
 }
 
 function signupValidator(nickname, email, password, passwordConfirm) {
-	let nicknameChecked = checkNickname(nickname);
-	let emailChecked = checkEmail(email);
-	let passwordChecked = isPasswordEqual(password, passwordConfirm);
+	var nicknameChecked = checkNickname(nickname);
+	var emailChecked = checkEmail(email);
+	var passwordChecked = isPasswordEqual(password, passwordConfirm);
 
 	return (nicknameChecked && emailChecked && passwordChecked); 
 }
 
 function ricettaValidator(titolo, difficolta, tempo, image, keywords) {
-	let titoloChecked = checkTitolo(titolo);
-	let difficoltaChecked = checkDifficolta(difficolta);
-	let tempoChecked = checkTempo(tempo);
-	let imageChecked = checkImage(image);
-	let keywordsChecked = checkKeywords(keywords);
+	var titoloChecked = checkTitolo(titolo);
+	var difficoltaChecked = checkDifficolta(difficolta);
+	var tempoChecked = checkTempo(tempo);
+	var imageChecked = checkImage(image);
+	var keywordsChecked = checkKeywords(keywords);
 	return (titoloChecked && difficoltaChecked && tempoChecked && imageChecked && keywordsChecked);
 }
 
