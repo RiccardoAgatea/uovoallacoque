@@ -86,14 +86,16 @@ Le funzioni di validazione degli input lato server sono contenute all'interno de
 	\item \phpcode{checkTempo($stringTempo)} verifica che il tempo non sia vuoto e che sia un intero positivo, escluso lo zero.
 	\item \phpcode{checkKeywords($stringKeywords)} controlla che la stringa inserita dall'utente non sia vuota e che contenga almeno un carattere alfanumerico.
 	\item \phpcode{checkImage($stringImage)} verifica che il file caricato sia effettivamente un'immagine controllando la sua estensione, e che la sua dimensione non superi 150KB.
-	\item \phpcode{checkCommento($testo)} che controlla grazie all'espressione regolare, che il testo del commento non sia vuoto. Non è stato utilizzato la funzione \phpcode{empty} perchè la stringa \phpcode{"0"} veniva considerata come vuota, mentre contiene un carattere.
+	\item \phpcode{checkCommento($testo)} che controlla grazie all'espressione regolare, che il testo del commento non sia vuoto. Non è stato utilizzato la funzione \phpcode{empty()} perchè la stringa \phpcode{"0"} veniva considerata come vuota, mentre contiene un carattere.
 \end{itemize}
 Inoltre è stata implementata una funzione ausiliaria \phpcode{test_input($data)} che rimuove sia gli spazi che gli slash di escape, e trasforma in html i caratteri speciali, per esempio \phpcode{à} diventa \phpcode{&agrave;}.
+Ogniqualvolta un utente digiti erroraneamente dei dati che non rispettano almeno una validazione, viene informato mediante l'opportuna stampa degli errori e i dati inseriti vengono mantenuti negli input delle form grazie al loro salvataggio nella sessione. 
 
 \subsubsection{Javascript}\label{subs:javascript}
 Il linguaggio Javascript è stato utilizzato per implementare il comportamento dinamico lato client di alcune pagine del sito, nello specifico il menu ad hamburger presente nella visualizzazione mobile e la validazione lato client delle form presenti nelle pagine di accesso, registrazione, modifica dati utente, aggiunta e modifica di una ricetta, aggiunta e modifica di un commento.
 Poiché è possibile che non tutti gli utenti dispongano della tecnologia adatta, le funzionalità implementate in Javascript sono minime.
 \paragraph{Menu mobile}\label{par:menu_mobile}
+% menu ad hamburger
 \paragraph{Validazione lato client}\label{par:validazione_lato_client}
 Per quanto riguarda la validazione della form relativa alla registrazione, sono stati implementati i seguenti controlli:
 \begin{itemize}
@@ -116,5 +118,6 @@ Per le form delle pagine di aggiunta e modifica di una ricetta è stato riutiliz
 Per quanto riguarda la validazione nell'inserimento e modifica dei commenti, è stata implementata la funzione \jscode{checkCommento(commento)} che, passato come parametro la stringa che identifica l'input della form, verifica che il commento non sia vuoto. \newline
 Per la stampa degli eventuali messaggi di errore che possono incorrere in seguito alla validazione dei campi, è stato creato un metodo generico \jscode{printError(condition, id, message)} che passato come parametri \jscode{condition}, ossia se il campo soddisfa i controlli effettuati, \jscode{id} che identifica l'input del campo controllato, di cui verrà aggiunto in coda "-message" che identifica lo span dove stampare il messaggio d'errore e \jscode{message} che contiene il messaggio da stampare.
 Nel caso in cui Javascript non sia disponibile o sia disabilitato, la validazione degli input è effettuata lato server grazie alle funzioni PHP sopra descritte.
+Per aumentare la separazione tra comportamento e struttura abbiamo deciso di non chiamare direttamente le funzioni Javascript dal codice HTML delle pagine, come ad esempio \htmlcode{<button onclick="myFunction()">Bottone</button>}, ma abbiamo deciso di utilizzare nel file \texttt{script.js} il metodo \jscode{addEventListener()} usando come oggetto d'invocazione le varie form.
 
 % section fase_di_implementazione (end)
