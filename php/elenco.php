@@ -76,7 +76,7 @@ if ($tipo != 0) {
     $handler->setBreadcrumb(
         str_replace(
             "<percorsoPlaceholder />",
-            "<a href=\"<rootFolder />/index.php\">Home</a> &gt; $tipi[$tipo]",
+            "<a xml:lang=\"en\" href=\"<rootFolder />/index.php\">Home</a> &gt; $tipi[$tipo]",
             file_get_contents(__DIR__ . "/components/default-breadcrumb.php")
         )
     );

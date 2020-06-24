@@ -1,7 +1,7 @@
 <ul id="menu">
 	<li id="home"
 		class="elemento-menu">
-		<a href="<rootFolder />/index.php">
+		<a xml:lang="en" href="<rootFolder />/index.php">
 			Home
 		</a>
 	</li>

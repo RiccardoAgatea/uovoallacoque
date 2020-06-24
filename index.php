@@ -28,7 +28,7 @@ $handler->setLogin($login);
 $handler->setNav(
     preg_replace(
         "((?s)<a href=\"<rootFolder />/index\.php\">.*?</a>)",
-        "Home",
+        "<span xml:lang=\"en\">Home</span>",
         file_get_contents(__DIR__ . "/php/components/default-nav.php")
     )
 );
@@ -36,7 +36,7 @@ $handler->setNav(
 $handler->setBreadcrumb(
     str_replace(
         "<percorsoPlaceholder />",
-        "Home",
+        "<span xml:lang=\"en\">Home</span>",
         file_get_contents(__DIR__ . "/php/components/default-breadcrumb.php")
     )
 );
