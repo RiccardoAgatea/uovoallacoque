@@ -28,14 +28,7 @@ $handler->setNav(
     file_get_contents(__DIR__ . "/php/components/default-nav.php")
 );
 
-$handler->setBreadcrumb(
-    // str_replace(
-    //     "<percorsoPlaceholder />",
-    //     "Home",
-    //     file_get_contents(__DIR__ . "/php/components/default-breadcrumb.php")
-    // )
-    ""
-);
+$handler->setBreadcrumb("");
 
 $content = "<h1>Non autorizzato</h1><p>Hai cercato di fare qualcosa per cui serve l'autenticazione! <a class=\"pagina-errore-accedi\" href=\"<rootFolder />/php/login.php\">Accedi</a>, poi riprova.</p>";
 

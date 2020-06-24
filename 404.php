@@ -28,14 +28,7 @@ $handler->setNav(
     file_get_contents(__DIR__ . "/php/components/default-nav.php")
 );
 
-$handler->setBreadcrumb(
-    // str_replace(
-    //     "<percorsoPlaceholder />",
-    //     "Home",
-    //     file_get_contents(__DIR__ . "/php/components/default-breadcrumb.php")
-    // )
-    ""
-);
+$handler->setBreadcrumb("");
 
 $content = "<h1>Pagina non trovata</h1><p>Non abbiamo trovato quello che cercavi. Accipicchia!!</p>";
 

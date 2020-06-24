@@ -27,14 +27,7 @@ $handler->setNav(
     file_get_contents(__DIR__ . "/php/components/default-nav.php")
 );
 
-$handler->setBreadcrumb(
-    // str_replace(
-    //     "<percorsoPlaceholder />",
-    //     "Home",
-    //     file_get_contents(__DIR__ . "/php/components/default-breadcrumb.php")
-    // )
-    ""
-);
+$handler->setBreadcrumb("");
 
 $content = "<h1>Richiesta errata</h1> <p>Attenzione alle richieste che fai! Probabilmente hai commesso un errore.</p>";
 
