@@ -37,7 +37,7 @@ function checkImage(image) {
 	var fileSize = document.getElementById(image).files[0].size;
 	var extensions = ['png', 'jpg', 'jpeg', 'svg'];
 	var isImage = extensions.includes(test.split('.').pop()); 
-	var result = isImage && fileSize < 153600; 
+	var result = isImage && (fileSize < 153600); 
 	printError(result, image, "Il formato non &egrave; valido o la dimensione egrave; superiore a 150KB"); 
 	return result;
 }
@@ -67,9 +67,10 @@ function checkTempo(tempo) {
 }
 
 function checkKeywords(keywords) {
-	var test = document.getElementById(keywords).value.;
-	test = test.trim();
-	var regex = new RegExp("^[A-Za-z0-9]+$");
+	var test = document.getElementById(keywords).value;
+	test = test.toString();
+	test = test.trim(); //trim rimuove gli spazi a destra e sinistra non al centro
+	var regex = new RegExp("^[A-Za-z0-9,\\s]+$");
 	var result = (regex.test(test)) && !(test === "");
 	printError(result, keywords, "Le keywords devono contenere solo lettere e numeri");
 	return result;
