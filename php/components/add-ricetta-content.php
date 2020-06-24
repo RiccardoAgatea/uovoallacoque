@@ -23,7 +23,7 @@
                 class="warning"> <errorNomePlaceholder /> </span>
         </li>
         <li class="form-element">
-          <label for="add-immagine"> Immagine fino a 150KB (per risultati migliori anche con i browser meno recenti, sono consigliate immagini con un rapporto inferiore a 2:3):</label>
+          <label for="add-immagine"> Immagine fino a 150<abbr xml:lang="en" lang="en" title="kilobyte">KB</abbr> (per risultati migliori anche con i <span xml:lang="en" lang="en">browser</span> meno recenti, sono consigliate immagini con un rapporto inferiore a <abbr title="due terzi">2:3</abbr>):</label>
           <input class="barra-input"
             type="file"
             id="add-immagine"
@@ -78,7 +78,7 @@
         </li>
         <li class="form-element">
           <label class="form-label"
-            for="add-keywords"> Keywords (separate da virgola)*: </label>
+            for="add-keywords"> <span xml:lang="en" lang="en">Keywords</span> (separate da virgola)*: </label>
           <input class="barra-input"
             id="add-keywords"
             type="text"

@@ -8,7 +8,7 @@
             <ul class="form-container form-centered">
                 <li class="form-element">
                     <label class="form-label"
-                           for="login-nickname">Nickname:</label>
+                           for="login-nickname"><span xml:lang="en" lang="en">Nickname</span>:</label>
                     <input class="barra-input"
                            id="login-nickname"
                            type="text"
@@ -19,7 +19,7 @@
                 </li>
                 <li class="form-element">
                     <label class="form-label"
-                           for="login-password">Password:</label>
+                           for="login-password"><span xml:lang="en" lang="en">Password</span>:</label>
                     <input class="barra-input"
                            id="login-password"
                            type="password"

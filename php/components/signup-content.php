@@ -2,7 +2,7 @@
        <h1>Registrati</h1>
        <h2 id="termini-di-servizio">Termini di servizio</h2>
        <p>Con la registrazione avrai accesso alle funzionalit&agrave; riservate del sito. In particolare potrai visualizzare e scrivere i commenti e votare le ricette.</p>
-       <p>Su questo sito non sono permessi insulti o spam quindi se un tuo commento ne contiene verr&agrave; eliminato dagli amministratori.</p>
+       <p>Su questo sito non sono permessi insulti o <span xml:lang="en" lang="en">spam</span> quindi se un tuo commento ne contiene verr&agrave; eliminato dagli amministratori.</p>
        <form action="<rootFolder />/php/handle-signup.php"
              method="post"
              id="form-signup">
@@ -12,7 +12,7 @@
                      <ul class="form-container">
                             <li class="form-element">
                                    <label class="form-label"
-                                          for="signup-nick">Nickname:</label>
+                                          for="signup-nick"><span xml:lang="en" lang="en">Nickname</span>:</label>
                                    <input class="barra-input"
                                           id="signup-nick" 
                                           type="text"
@@ -23,7 +23,7 @@
                             </li>
                             <li class="form-element">
                                    <label class="form-label"
-                                          for="signup-email">Email:</label>
+                                          for="signup-email"><span xml:lang="en" lang="en">Email</span>:</label>
                                    <input class="barra-input"
                                           id="signup-email"
                                           type="text"
@@ -34,7 +34,7 @@
                             </li>
                             <li class="form-element">
                                    <label class="form-label"
-                                          for="signup-password1">Password:</label>
+                                          for="signup-password1"><span xml:lang="en" lang="en">Password</span>:</label>
                                    <input class="barra-input"
                                           id="signup-password1"
                                           type="password"
@@ -44,7 +44,7 @@
                             <li class="form-element">
                                    <label class="form-label"
                                           for="signup-password2">Ripeti
-                                          Password:</label>
+                                          <span xml:lang="en" lang="en">Password</span>:</label>
                                    <input class="barra-input"
                                           id="signup-password2"
                                           type="password"

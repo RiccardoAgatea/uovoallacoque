@@ -10,7 +10,7 @@
             <legend class="legend">Cambio immagine</legend>
             <ul class="form-container form-centered">
                 <li class="form-element">
-                    <label for="user-immagine">Nuova immagine (fino a 150KB):</label>
+                    <label for="user-immagine">Nuova immagine (fino a 150<abbr xml:lang="en" lang="en" title="kilobyte">KB</abbr>):</label>
                     <input class="barra-input"
                            type="file"
                            id="user-immagine"
@@ -20,7 +20,7 @@
                 </li>
                 <li class="form-element">
                     <label
-                           for="user-password-immagine">Password:</label>
+                           for="user-password-immagine"><span xml:lang="en" lang="en">Passowrd</span>:</label>
                     <input class="barra-input"
                            id="user-password-immagine"
                            type="password"
@@ -43,10 +43,10 @@
           id="form-utente-nick"
           class="cambio-info">
         <fieldset class="form-fieldset">
-            <legend class="legend">Cambio nickname</legend>
+            <legend class="legend">Cambio <span xml:lang="en" lang="en">nickname</span></legend>
             <ul class="form-container form-centered">
                 <li class="form-element">
-                    <label for="user-nickname">Nuovo nickname:</label>
+                    <label for="user-nickname">Nuovo <span xml:lang="en" lang="en">nickname</span>:</label>
                     <input class="barra-input"
                            id="user-nickname"
                            type="text"
@@ -56,7 +56,7 @@
                 </li>
                 <li class="form-element">
                     <label
-                           for="user-password-nickname">Password:</label>
+                           for="user-password-nickname"><span xml:lang="en" lang="en">Password</span>:</label>
                     <input class="barra-input"
                            id="user-password-nickname"
                            type="password"
@@ -79,10 +79,10 @@
           id="form-utente-email"
           class="cambio-info">
         <fieldset class="form-fieldset">
-            <legend class="legend">Cambio e-mail</legend>
+            <legend class="legend">Cambio <span xml:lang="en" lang="en">e-mail</span></legend>
             <ul class="form-container form-centered">
                 <li class="form-element">
-                    <label for="user-email">Nuova email:</label>
+                    <label for="user-email">Nuova <span xml:lang="en" lang="en">email</span>:</label>
                     <input class="barra-input"
                            id="user-email"
                            type="text"
@@ -91,7 +91,7 @@
                           class="warning"> </span>
                 </li>
                 <li class="form-element">
-                    <label for="user-password-email">Password:</label>
+                    <label for="user-password-email"><span xml:lang="en" lang="en">Password</span>:</label>
                     <input class="barra-input"
                            id="user-password-email"
                            type="password"
@@ -114,10 +114,10 @@
           id="form-user-password"
           class="cambio-info">
         <fieldset class="form-fieldset">
-            <legend class="legend">Cambio password</legend>
+            <legend class="legend">Cambio <span xml:lang="en" lang="en">password</span></legend>
             <ul class="form-container form-centered">
                 <li class="form-element">
-                    <label for="user-password-password">Password
+                    <label for="user-password-password"><span xml:lang="en" lang="en">Password</span>
                         attuale:</label>
                     <input class="barra-input"
                            id="user-password-password"
@@ -127,7 +127,7 @@
                           class="warning"> </span>
                 </li>
                 <li class="form-element">
-                    <label for="user-password1">Nuova password:</label>
+                    <label for="user-password1">Nuova <span xml:lang="en" lang="en">password</span>:</label>
                     <input class="barra-input"
                            id="user-password1"
                            type="password"
@@ -137,7 +137,7 @@
                 </li>
                 <li class="form-element">
                     <label for="user-password2">Conferma nuova
-                        password:</label>
+                        <span xml:lang="en" lang="en">password</span>:</label>
                     <input class="barra-input"
                            id="user-password2"
                            type="password"

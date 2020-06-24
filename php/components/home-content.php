@@ -26,7 +26,7 @@
             <topSecondoPlaceholder />
         </div>
         <div class="miglior-elemento">  
-        <h2 class="titolo-migliori">Dessert migliore</h2>
+        <h2 class="titolo-migliori"><span xml:lang="fr" lang="fr">Dessert</span> migliore</h2>
             <topDolcePlaceholder />
         </div>    
     </div>
