@@ -102,7 +102,8 @@ Ogniqualvolta un utente digiti erroraneamente dei dati che non rispettano almeno
 Il linguaggio Javascript è stato utilizzato per implementare il comportamento dinamico lato client di alcune pagine del sito, nello specifico il menu ad hamburger presente nella visualizzazione mobile e la validazione lato client delle form presenti nelle pagine di accesso, registrazione, modifica dati utente, aggiunta e modifica di una ricetta, aggiunta e modifica di un commento.
 Poiché è possibile che non tutti gli utenti dispongano della tecnologia adatta, le funzionalità implementate in Javascript sono minime.
 \paragraph{Menu mobile}\label{par:menu_mobile}
-% menu ad hamburger
+Per gestire al meglio lo spazio limitato offerto da un dispositivo mobile, è stato deciso di implementare un menù hamburger che rimpiazzasse il menù desktop che sarebbe risultato troppo invasivo in uno schermo di piccole dimensioni.
+Attraverso il foglio di stile CSS è stato quindi reso verticale il menù ed è stato nascosto. Per renderlo visibile sarà necessario cliccare sull'apposita icona hamburger situata in alto alla destra del logo. Così facendo, attraverso l'evento "click" controllato dalla funzione \jscode{openSideNav()}, si andrà a cambiare la classe di stile applicata al menù così che risulti visualizzabile. Verranno quindi mostrate a schermo le varie voci e una X che, se premuta, andrà a chiudere il menù cambiando nuovamente la classe applicata ad esso.
 \paragraph{Validazione lato client}\label{par:validazione_lato_client}
 Per quanto riguarda la validazione della form relativa alla registrazione, sono stati implementati i seguenti controlli:
 \begin{itemize}
