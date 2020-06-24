@@ -125,13 +125,11 @@ Per facilitare la navigazione, sul fondo di ogni pagina c'è il pulsante "torna 
 I tag input sono sottoposti ad un processo di validazione per garantire il corretto inserimento dei dati richiesti. Nel caso un input non superi la validazione, viene mostrato un messaggio di errore che spiega l'errore commesso ed eventualmente come si può evitare. Il messaggio di errore non elimina il contenuto dei tag, per permettere all' utente di modificare i dati senza risciverli.
 
 \subsubsection{Struttura}
-% tutte le immagini hanno specificato la proprietà alt
-% utilizzare label per element del form, in modo da facilitate gli screen reader (fieldset)
-% non c'è testo libero, tutto è incapsulato dentro ad appositi tag descrittivi
-% Usare Access Key per i comandi rapidi alle funzioni principali.
-% Ogni link deve avere un'ancora diversa per evitare link che portano alla stessa pagina.
-% Esplicitare acronimi di abbreviazioni e sigle per screen reader e motori ricerca.
-% Tenere sempre presente il "Dove sono", "Da dove sono venuto" e "Dove posso andare".
+Ogni pagina in cui si trova l'utente, quest'ultimo è consapevole di come è arrivato ad essa grazie al breadcrumb presente all'inizio di ogni pagina, è consapevole di dove si trova attualmente sempre tramite il breadcrumb e sa quali altre pagine può esplorare attraverso i link sottolineati presenti nella pagina. 
+
+Tutte le immagini presenti nel sito sono incapsulate nel tag \htmlcode{img} di cui ne è sempre specificata la proprietà \htmlcode{alt} così da fornire una descrizione alternativa per gli screen reader. Allo stesso modo in tutte le form ogni \htmlcode{input} possiede una sua \htmlcode{label} descrittiva. Sono stati messi a disposizione dell'utente dei \htmlcode{tabindex} con cui saltare direttamente al menu, alla ricerca e al contenuto della pagina corrente. abbiamo deciso di non utilizzare nessun \htmlcode{accessKey} perché spesso creano conflitti con gli shortcut predefiniti dei browser o addirittura con quelli degli screen reader.
+
+Durante la navigazione all'interno del sito ci si può imbattere in alcune parole straniere, come per esempio il nome stesso del sito \emph{uovo alla coque}. Tutte le parole straniere sono dotate della proprietà \htmlcode{xml:lang="lingua"} e \htmlcode{lang="lingua"}, per far si che gli screen reader le leggano correttamente. Restano però escluse, per cause di forza maggiore, le descrizioni delle immagini all'interno della proprietà \htmlcode{alt}. Poiché si potrebbero trovare parole straniere anche all'interno della sezione relativa al procedimento di una ricetta, è stato creato un apposito comando che permette di racchiudere la parola o la frase in lingua straniera, in appositi tag con le proprietà sopra citate. Per l'implementazione di questa funzione si rimanda alla sezione \ref{subs:php}.
 
 \subsubsection{Presentazione}
 Tramite il CSS è stato implementato il design utilizzando classi che definiscono il contenuto dell'oggetto e non il comportamento, in modo da mantenere la separazione tra comportamento e presentazione. Vengono utilizzate misure relative (em) o in percentuale per permettere una corretta visualizzazione delle pagine su schermi di dimensioni diverse. Sono presenti due fogli di stile diversi: il primo è dedicato alla stampa mentre il secondo è dedicato alla visualizzazione da dasktop e mobile.
