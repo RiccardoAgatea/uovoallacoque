@@ -27,7 +27,7 @@ $handler->setLogin($login);
 
 $handler->setNav(
     preg_replace(
-        "((?s)<a href=\"<rootFolder />/index\.php\">.*?</a>)",
+        "((?s)<a xml:lang=\"en\" href=\"<rootFolder />/index.php\">.*?</a>)",
         "<span xml:lang=\"en\">Home</span>",
         file_get_contents(__DIR__ . "/php/components/default-nav.php")
     )
