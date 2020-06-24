@@ -33,15 +33,31 @@ if ($_SESSION["errorNome"] != "" ||
 } else {
     $connection = new DBConnection();
 
-    $path = "";
-    $basename = basename($_FILES['immagine']['name']);
-    $uploadfile = "../img/ricette/" . $basename;
-    move_uploaded_file($_FILES['immagine']['tmp_name'], $uploadfile);
-    $path = str_replace("..", "<rootFolder />", $uploadfile);
-    // }
+    if(key_exists("immagine", $_FILES) && $_FILES['immagine']['name']!="") {
 
-    $queryString = " UPDATE ricette SET nome='{$_POST['nome']}', difficolta='{$_POST['difficolta']}', tempo='{$_POST['tempo']}', img='$path', portata='{$_POST['tipo']}', ingredienti='{$_POST['ingredienti']}', procedimento='{$_POST['procedura']}' WHERE id='{$id}' ";
-    $connection->query($queryString);
+            $imageFileType = strtolower(pathinfo($_FILES['immagine']['name'], PATHINFO_EXTENSION));
+            $uploadfile = "../img/ricette/" . $id . "." . $imageFileType;
+            move_uploaded_file($_FILES['immagine']['tmp_name'], $uploadfile);
+            $path = str_replace("..", "<rootFolder />", $uploadfile);
+
+            $connection->query("UPDATE ricette SET img = \"{$path}\" WHERE ricette.id={$id}");
+        }
+
+    $nome = $_POST['nome'];
+    $difficolta = $_POST['difficolta'];
+    $tempo = $_POST['tempo'];
+    $portata = $_POST['tipo'];
+    $ingredienti = $_POST['ingredienti'];
+    $procedura = $_POST['procedura'];
+    $keywords = $_POST['keywords'];
+
+    $connection->query("UPDATE ricette SET nome=\"$nome\" WHERE ricette.id='{$id}'");
+    $connection->query("UPDATE ricette SET difficolta=\"$difficolta\" WHERE ricette.id='{$id}'");
+    $connection->query("UPDATE ricette SET tempo=\"$tempo\" WHERE ricette.id='{$id}'");
+    $connection->query("UPDATE ricette SET portata=\"$portata\" WHERE ricette.id='{$id}'");
+    $connection->query("UPDATE ricette SET ingredienti=\"$ingredienti\" WHERE ricette.id='{$id}'");
+    $connection->query("UPDATE ricette SET procedimento=\"$procedura\" WHERE ricette.id='{$id}'");
+    $connection->query("UPDATE ricette SET keywords=\"$keywords\" WHERE ricette.id='{$id}'");
     $connection->disconnect();
 
     $_SESSION["wrong-edit"] = false;

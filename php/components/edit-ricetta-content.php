@@ -15,7 +15,7 @@
       <ul class="form-container">
         <li class="form-element">
           <label class="form-label"
-                 for="edit-nome"> Modifica nome della ricetta*: </label>
+                 for="edit-nome"> Modifica nome della ricetta: </label>
           <input class="barra-input"
                  id="edit-nome"
                  type="text"
@@ -26,7 +26,7 @@
             <errorNomePlaceholder /> </span>
         </li>
         <li class="form-element">
-          <label for="edit-immagine"> Modifica Immagine:</label>
+          <label for="edit-immagine"> Modifica Immagine (per risultati migliori anche con i browser meno recenti, sono consigliate immagini con un rapporto inferiore a 2:3):</label>
           <input class="barra-input"
                  type="file"
                  id="edit-immagine"
@@ -37,7 +37,7 @@
             <errorImgPlaceholder /></span>
         </li>
         <li>
-          <span> Modifica tipo della ricetta*: </span>
+          <span> Modifica tipo della ricetta: </span>
           <ul>
             <li class="item-radio-container">
               <label for="primo">Primo</label>
@@ -77,7 +77,7 @@
         <li class="form-element">
           <label class="form-label"
                  for="edit-difficolta"> Modifica difficolt&agrave; della
-            ricetta (da 1 a 5)*: </label>
+            ricetta (da 1 a 5): </label>
           <input class="barra-input"
                  id="edit-difficolta"
                  type="text"
@@ -89,7 +89,7 @@
         </li>
         <li class="form-element">
           <label class="form-label"
-                 for="edit-tempo"> Modifica tempo(in minuti)*: </label>
+                 for="edit-tempo"> Modifica tempo(in minuti): </label>
           <input class="barra-input"
                  id="edit-tempo"
                  type="text"
@@ -114,7 +114,7 @@
         <li class="form-element">
           <label class="form-label"
                  for="edit-ingredienti"> Modifica ingredienti (separati
-            da virgola)*: </label>
+            da virgola): </label>
           <textarea rows=""
                     cols=""
                     class="barra-input"
@@ -125,7 +125,7 @@
         </li>
         <li class="form-element">
           <label class="form-label"
-                 for="edit-procedura"> Modifica procedura*: </label>
+                 for="edit-procedura"> Modifica procedura: </label>
           <textarea rows=""
                     cols=""
                     class="barra-input"
