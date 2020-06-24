@@ -86,7 +86,7 @@ if (!$result) {
         $content = str_replace("<keywordsPlaceholder />", $_SESSION['keywords'], $content);
 
         $content = str_replace("<checked" . $_SESSION["portata"] . "Placeholder />", "checked=\"checked\"", $content);
-        $content = preg_replace("(checked.Placeholder />)", "", $content);
+        $content = preg_replace("(<checked.Placeholder />)", "", $content);
 
         if ($_SESSION["errorNome"] != "") {
             $content = str_replace("<errorNomePlaceholder />", $_SESSION["errorNome"], $content);
