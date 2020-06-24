@@ -10,7 +10,7 @@
             <legend class="legend">Cambio immagine</legend>
             <ul class="form-container form-centered">
                 <li class="form-element">
-                    <label for="user-immagine">Nuova immagine:</label>
+                    <label for="user-immagine">Nuova immagine (fino a 150KB):</label>
                     <input class="barra-input"
                            type="file"
                            id="user-immagine"

@@ -23,7 +23,7 @@
                 class="warning"> <errorNomePlaceholder /> </span>
         </li>
         <li class="form-element">
-          <label for="add-immagine"> Immagine (per risultati migliori anche con i browser meno recenti, sono consigliate immagini con un rapporto inferiore a 2:3):</label>
+          <label for="add-immagine"> Immagine fino a 150KB (per risultati migliori anche con i browser meno recenti, sono consigliate immagini con un rapporto inferiore a 2:3):</label>
           <input class="barra-input"
             type="file"
             id="add-immagine"
