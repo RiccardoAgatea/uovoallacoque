@@ -67,10 +67,17 @@ Sono disponibili i metodi:
 	\item \phpcode{save($file)} per completare l'elaborazione e salvare la pagina completa su file.
 \end{itemize}
 
+\paragraph{Autenticazione}
+
+L'autenticazione è gestita attraverso il sistema delle sessioni, fornito nativamente da PHP\@.
+Un utente è rappresentato da un'istanza della classe \phpcode{User}, che acquisisce dal database i dati dell'utente al momento del login e li espone attraverso appositi metodi getter.
+Quando questa classe viene istanziata, l'oggetto risultante viene salvato nella entry \phpcode{user} della variabile superglobale \phpcode{$_SESSION}, per permetterne l'accesso da qualunque script.
+Quando l'utente esegue il logout, la sessione viene resettata attraverso le funzioni \phpcode{session_unset()} e \phpcode{session_destroy()}, che eliminano tutte le informazioni di sessione salvate.
+
 \paragraph{Pagine di errore}
 
 Per segnalare all'utente errori nelle richieste al server, causati ad esempio dall'inserimento di un URL incorretto, abbiamo implementato delle pagine di errore corrispondenti ai codici HTTP rilevanti per il sito, in particolare per gli errori lato client.
-Ogni pagina di errore è implementata in un file nella radice del sito, nominato \texttt{XXX.php}, dove \texttt{XXX} è il rispettivo codice HTTP\@.
+Ogni pagina di errore è implementata in un file nella radice del sito nominato \texttt{XXX.php}, dove \texttt{XXX} è il rispettivo codice HTTP\@.
 
 \begin{itemize}
 	\item Errore \textit{400 BAD REQUEST}: ritornato nel caso l'URL della richiesta non rispetti vincoli di coerenza, ad esempio l'esecuzione di una ricerca priva del termine della ricerca nella query.
@@ -79,9 +86,25 @@ Ogni pagina di errore è implementata in un file nella radice del sito, nominato
 	\item Errore \textit{404 NOT FOUND}: ritornato nel caso in cui la richiesta abbia una sintassi non riconosciuta, ad esempio se l'URL individua un file non esistente.
 \end{itemize}
 
-% funzionalità di ricerca
-% query portata
-% sostituizione delle parole straniere
+\paragraph{Funzionalità di ricerca}
+
+Da tutte le pagine del sito è possibile accedere alla barra di ricerca, che esegue una ricerca \textit{case insensitive} del termine ricercato in tutti i titoli delle ricette.
+
+\paragraph{Query al database}
+
+Per migliorare la modularità del codice, abbiamo implementato delle funzioni atte ad eseguire le query al database più importanti del sito, le quali costruiscono anche il rispettivo codice HTML.
+Le funzioni, raccolte nel file \texttt{query-portata.php}, sono
+\begin{itemize}
+	\item \phpcode{contentPortata($portata, $min, $num)}, che ritorna una lista di ricette della portata indicata da \phpcode{$portata}. Le ricette sono ordinate per età crescente, e vengono ritornate solo \phpcode{$num} ricette a partire dalla \phpcode{$min}-esima, per permettere la paginazione.
+	\item \phpcode{contentRicerca($termine, $min, $num)}, che ritorna, in modo completamente analogo a \phpcode{contentPortata}, una lista di ricette il cui titolo contiene il termine di ricerca.
+	\item \phpcode{piattoMigliore($portata)}, che ritorna la ricetta della portata indicata da \phpcode{$portata} con il voto (medio) più alto.
+\end{itemize}
+
+\paragraph{Moduli di inserimento e modifica}
+
+Per l'elaborazione dei dati inseriti dall'utente sono presenti degli script, contenuti in file riconoscibili per il prefisso \texttt{handle} nel nome del file.
+Per quanto riguarda l'inserimento e la modifica di ricette, prerogative degli utenti con permessi di amministratore, è disponibile una forma semplice di markup per indicare parole in lingue diverse dall'italiano.
+Le espressioni markup vengono salvate nel database, e vengono convertite a codice HTML solo al momento della costruzione della pagina da ritornare al client.
 
 \paragraph{Validazione lato server}\label{par:validazione_lato_server}
 Le funzioni di validazione degli input lato server sono contenute all'interno del file \texttt{validation.php}. I controlli implementati si comportano allo stesso modo di quelli descritti nella sezione \S\ref{subs:javascript} aggiungendo loro il controllo anche dei dati presenti nel database, nello specifico:
