@@ -118,14 +118,25 @@ Le pagine sono in bianco e nero per dare valore al contenuto anzichè alla prese
 \subsection{Accessibilità}
 \label{sub:accessibilità}
 Per garantire un alto livello di accessibilità sono state le linee guida dello standard WCAG. Comportamento, struttura e presentazione sono separate per permettere un miglior accesso al sito tramite diversi motori di ricerca e browser, inoltre, facilita l'interazione con utenti che presentano disabilità.
+
 \subsubsection{Comportamento}
 Il sito offre la possibilità di cercare ricette in modo preciso tramite la barra di ricerca, altrimenti, le ricette più votate presenti nella home rappresentano uno spunto per esplorare le ricette all'interno del sito. La suddivisione delle ricette tra le pagine dei primi, secondi e dolci facilitano l'esplorazione del sito e una ricerca più mirata. Le informazioni sono reperibili con un numero limitato di click: ad esempio per accedere ad una determinata ricetta cercata tramite la barra di ricerca, saranno sufficienti due click.
 Per facilitare la navigazione, sul fondo di ogni pagina c'è il pulsante "torna su" che permette di raggiungere l'inizio della pagina senza utilizzare lo scroll. Inoltre, in ogni pagina è presente il breadcrumb che mostra la posizione dell'utente all'interno del sito. I link circolari vengono evitati rendendo l'ultimo campo del breadcrumb (che rappresenta la pagina corrente) semplice testo; lo stesso vale per tutti i link presenti nel header: una volta raggiunta una certa pagina, il link corrispondente non sarà clickabile perchè sarà testo.
 I tag input sono sottoposti ad un processo di validazione per garantire il corretto inserimento dei dati richiesti. Nel caso un input non superi la validazione, viene mostrato un messaggio di errore che spiega l'errore commesso ed eventualmente come si può evitare. Il messaggio di errore non elimina il contenuto dei tag, per permettere all' utente di modificare i dati senza risciverli.
+
 \subsubsection{Struttura}
+% tutte le immagini hanno specificato la proprietà alt
+% utilizzare label per element del form, in modo da facilitate gli screen reader (fieldset)
+% non c'è testo libero, tutto è incapsulato dentro ad appositi tag descrittivi
+% Usare Access Key per i comandi rapidi alle funzioni principali.
+% Ogni link deve avere un'ancora diversa per evitare link che portano alla stessa pagina.
+% Esplicitare acronimi di abbreviazioni e sigle per screen reader e motori ricerca.
+% Tenere sempre presente il "Dove sono", "Da dove sono venuto" e "Dove posso andare".
+
 \subsubsection{Presentazione}
 Tramite il CSS è stato implementato il design utilizzando classi che definiscono il contenuto dell'oggetto e non il comportamento, in modo da mantenere la separazione tra comportamento e presentazione. Vengono utilizzate misure relative (em) o in percentuale per permettere una corretta visualizzazione delle pagine su schermi di dimensioni diverse. Sono presenti due fogli di stile diversi: il primo è dedicato alla stampa mentre il secondo è dedicato alla visualizzazione da dasktop e mobile.
 Il colore dominante del sito è il blu: il background è un pattern con le uova a sfondo azzurro, a contrasto col header e gli elementi del sito color blu scuro. Le scritte sono bianche per essere in contrasto col blu, oppure gialle nel caso dei link visitati.Il colore utilizzato per l' hover dei link è in contrasto sia con lo sfondo che col colore della scritta. Il rapporto tra colore di sfondo e testo superano il test WCAG AAA che richiede un rapporto di contrasto di almeno 7:1 per il testo normale e 4.5:1 per il testo in grassetto.
+
 % come da specifiche è stata rispettata la completa separazione tra comportamento, presentazione e struttura.
 % ricerca: già scritta nell analisi
 % torna su: poichè il menu sia nella visualizzazione desktop che quella mobile, è fisso all'inizio di ogni pagina, per raggiungerlo facilmente dopo uno scroll verticale, sono stati posizionati delle ancore "torna su", che rimandano all' header della pagina attuale.
@@ -133,13 +144,11 @@ Il colore dominante del sito è il blu: il background è un pattern con le uova 
 % Dare le informazioni con un numero limitato di click: con solo due click si può accedere ad una ricetta, per esempio Primi piatti > Carbonara. 
 % Non obbligare utente e reinserire i campi dei form dopo messaggi di errore. -> session di php
 % Ogni messaggio di errore deve essere corredato da "che errore è" e da "Come fare a risolvere". validazione php js
-% tutte le immagini hanno specificato la proprietà alt
-% form
-% non c'è testo libero, tutto è incapsulato dentro ad appositi tag descrittivi
 
-\subsubsection{Convenzioni interne}
-\label{ssub:convenzioni_interne}
-Una delle convenzioni interne al sito riguarda i link: sono sottolineati per permettere l'immediata individuazione, e quelli visitati diventano gialli. % non ci sono link circolari. Quando sei loggato, il registrati nel contenuto della home non è più cliccabile
+
+% \subsubsection{Convenzioni interne}
+% \label{ssub:convenzioni_interne}
+% Una delle convenzioni interne al sito riguarda i link: sono sottolineati per permettere l'immediata individuazione, e quelli visitati diventano gialli. % non ci sono link circolari. Quando sei loggato, il registrati nel contenuto della home non è più cliccabile
 % subsubsection convenzioni_interne (end)
 % fare riferimento al w3c https://www.w3.org/standards/webdesign/accessibility
 % subsection accessibilità (end)
