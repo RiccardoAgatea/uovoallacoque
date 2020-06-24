@@ -6,7 +6,7 @@
         <h1 class="nome-utente">
             <PlaceholderNicknameUtente />
         </h1>
-        <p class="info-attuale">E-mail attuale:
+        <p class="info-attuale"> <span xml:lang="en" lang="en">E-mail</span> attuale:
             <PlaceholderEmailUtente />
         </p>
     </div>
@@ -21,13 +21,12 @@
 
     <!--Eliminazione account-->
     <errorPlaceholder />
-    <form id="form-elimina-account" class="print-hide"
+    <form id="form-elimina-account" class="print-hide cambio-info"
           method="post"
-          action="<rootFolder />/php/handle-elimina-account.php"
-          class="cambio-info">
+          action="<rootFolder />/php/handle-elimina-account.php">
         <fieldset class="form-fieldset fieldset-elimina-account">
-            <legend class="legend">Eliminazione Account</legend>
-            <label for="user-password-elimina">Password:</label>
+            <legend class="legend">Eliminazione <span xml:lang="en" lang="en">Account</span></legend>
+            <label for="user-password-elimina"><span xml:lang="en" lang="en">Password</span>:</label>
             <input type="password"
                    id="user-password-elimina"
                    name="user-password-elimina"
@@ -38,7 +37,7 @@
         </fieldset>
         <p id="attenzione-elimina-account">
             <strong>Attenzione!</strong> L&apos;eliminazione
-            dell&apos;account non &egrave; reversibile, e comporta
+            dell&apos;<span xml:lang="en" lang="en">account</span> non &egrave; reversibile, e comporta
             la rimozione di tutti i commenti e i voti associati.
         </p>
     </form>

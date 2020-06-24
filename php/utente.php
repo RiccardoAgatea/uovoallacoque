@@ -52,6 +52,8 @@ if (key_exists("wrong", $_SESSION)) {
     $content = str_replace("<errorPlaceholder />", "Password errata", $content);
 
     unset($_SESSION["wrong"]);
+} else {
+    $content = str_replace("<errorPlaceholder />", "", $content);
 }
 
 $handler->setContent($content);
