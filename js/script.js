@@ -75,9 +75,9 @@ function checkKeywords(keywords) {
 }
 
 function checkCommento(commento) {
-	var test = document.getElementById(commento).value;
-	var regex = new RegExp("^.+$");
-	var result = (regex.test(test)) && !(test === "");
+	var test = document.getElementById(commento).value.toString();
+	test = test.trim();
+	var result = test.length !== 0 || !(test === "");
 	printError(result, commento, "Non puoi lasciare vuoto il commento");
 	return result;
 }

@@ -189,7 +189,8 @@ function checkImage($stringImage)
 
 function checkCommento($testo) {
     $commentoErr = "";
-    if (!preg_match("/^.+$/", $testo)) { //non uso empty perchè "0" lo vede come vuoto, quando invece c'è almeno un carattere
+    $testo = trim($testo);
+    if (strlen($testo) == 0) { //non uso empty perchè "0" lo vede come vuoto, quando invece c'è almeno un carattere
         $commentoErr = "Il commento non può essere vuoto";
     }
     return $commentoErr;
