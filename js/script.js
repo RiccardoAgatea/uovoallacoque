@@ -67,7 +67,8 @@ function checkTempo(tempo) {
 }
 
 function checkKeywords(keywords) {
-	var test = document.getElementById(keywords).value;
+	var test = document.getElementById(keywords).value.;
+	test = test.trim();
 	var regex = new RegExp("^[A-Za-z0-9]+$");
 	var result = (regex.test(test)) && !(test === "");
 	printError(result, keywords, "Le keywords devono contenere solo lettere e numeri");
@@ -77,7 +78,7 @@ function checkKeywords(keywords) {
 function checkCommento(commento) {
 	var test = document.getElementById(commento).value.toString();
 	test = test.trim();
-	var result = test.length !== 0 || !(test === "");
+	var result = (test.length !== 0) && !(test === "");
 	printError(result, commento, "Non puoi lasciare vuoto il commento");
 	return result;
 }
