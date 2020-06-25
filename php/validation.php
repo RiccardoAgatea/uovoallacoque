@@ -1,5 +1,6 @@
 <?php
 require_once "./db-connection.php";
+require_once "./conversioni.php";
 
 function test_input($data)
 {
@@ -72,7 +73,7 @@ function comparePassword($stringPassword, $stringPasswordConfirm)
 }
 
 function checkLogin($stringPassword, $stringNickname)
-{ 
+{
     $err = $nickname = $password = "";
     $connection = new DBConnection();
 
@@ -102,7 +103,7 @@ function checkLogin($stringPassword, $stringNickname)
     return $err;
 }
 
-function checkNomeRicetta($stringNomeRicetta, $dbCondition) //se dbCondition true allora è la add form (devo controllare anche il db), altrimenti è edit.
+function checkNomeRicetta($stringNomeRicetta, $dbCondition)
 {
     $nomeRicettaErr = $nomeRicetta = "";
     $connection = new DBConnection();
@@ -111,7 +112,9 @@ function checkNomeRicetta($stringNomeRicetta, $dbCondition) //se dbCondition tru
             $nomeRicettaErr = "Il nome non pu&ograve; essere un campo vuoto";
         } else {
             $nomeRicetta = test_input($_POST[$stringNomeRicetta]);
-            if (!preg_match("/^.{3,55}$/", $nomeRicetta)) {
+
+            $lunghezza = strlen(rimozioneLingua(html_entity_decode($nomeRicetta, ENT_QUOTES | ENT_XHTML)));
+            if ($lunghezza < 3 || $lunghezza > 55) {
                 $nomeRicettaErr = "La lunghezza &egrave; tra 3 e 55 caratteri";
             }
             if ($dbCondition && $connection->query(" SELECT nome FROM ricette WHERE nome=\"$nomeRicetta\" ")->fetch_row() != null) {
@@ -180,14 +183,15 @@ function checkImage($stringImage)
         if (!in_array($extension, $allowed_extensions)) {
             $imageErr = "Formato immagine non valido";
         }
-        if ($_FILES[$stringImage]['size'] > 153600) { 
+        if ($_FILES[$stringImage]['size'] > 153600) {
             $imageErr = "L'immagine non deve superare i 150KB";
         }
     }
     return $imageErr;
 }
 
-function checkCommento($testo) {
+function checkCommento($testo)
+{
     $commentoErr = "";
     $testo = trim($testo);
     if (strlen($testo) == 0) { //non uso empty perchè "0" lo vede come vuoto, quando invece c'è almeno un carattere
