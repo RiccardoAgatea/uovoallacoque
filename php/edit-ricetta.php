@@ -114,7 +114,7 @@ if (!$result) {
     } else {
         $content = str_replace("<nomeRicettaPlaceholder />", $nome, $content);
         $content = str_replace("<checked" . $portata . "Placeholder />", "checked=\"checked\"", $content);
-        $content = preg_replace("(checked.Placeholder />)", "", $content);
+        $content = preg_replace("(<checked.Placeholder />)", "", $content);
         $content = str_replace("<difficoltaPlaceholder />", $difficolta, $content);
         $content = str_replace("<tempoPlaceholder />", $tempo, $content);
         $content = str_replace("<ingredientiPlaceholder />", $ingredienti, $content);

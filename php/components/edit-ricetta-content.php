@@ -26,12 +26,15 @@
             <errorNomePlaceholder /> </span>
         </li>
         <li class="form-element">
-          <label for="edit-immagine"> Modifica Immagine (per risultati migliori anche con i <span xml:lang="en" lang="en">browser</span> meno recenti, sono consigliate immagini con un rapporto inferiore a <abbr title="due terzi">2:3</abbr>):</label>
+          <label for="edit-immagine"> Modifica Immagine (per risultati
+            migliori anche con i <span xml:lang="en"
+                  lang="en">browser</span> meno recenti, sono
+            consigliate immagini con un rapporto inferiore a <abbr
+                  title="due terzi">2:3</abbr>):</label>
           <input class="barra-input"
                  type="file"
                  id="edit-immagine"
-                 name="immagine"
-                 value="<imgSrcPlaceholder />" />
+                 name="immagine" />
           <span id="edit-immagine-message"
                 class="warning">
             <errorImgPlaceholder /></span>
@@ -101,7 +104,8 @@
         </li>
         <li class="form-element">
           <label class="form-label"
-                 for="edit-keywords"> <span xml:lang="en" lang="en">Keywords</span>: </label>
+                 for="edit-keywords"> <span xml:lang="en"
+                  lang="en">Keywords</span>: </label>
           <input class="barra-input"
                  id="edit-keywords"
                  type="text"
