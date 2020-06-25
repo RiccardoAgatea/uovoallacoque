@@ -10,7 +10,7 @@ Tutte le pagine del sito sono state realizzate utilizzando come linguaggio di ma
 	\item Gli elementi devono essere sempre in minuscolo;
 	\item I nomi degli attributi devono essere sempre in minuscolo;
 \end{itemize}
-Per le form di registrazione e accesso, abbiamo scelto di utilizzare come input per le e-mail il tipo \htmlcode{text}, che grazie ad opportuni controlli specificati nelle sezioni \S\ref{subs:php} e \S\ref{subs:javascript}, si comporta quasi similmente al tipo \htmlcode{email} di HTML5. Allo stesso modo, anche gli input che riguardano il tempo di una ricetta, la difficoltà di una ricetta e la barra di ricerca, sono tutti di tipo \htmlcode{text} al posto dei tipi \htmlcode{number}, \htmlcode{range} e \htmlcode{search}.
+Per le form di registrazione e accesso, abbiamo scelto di utilizzare come input per le e-mail il tipo \htmlcode{text} che, grazie ad opportuni controlli specificati nelle sezioni \S\ref{subs:php} e \S\ref{subs:javascript}, si comporta quasi similmente al tipo \htmlcode{email} di HTML5. Allo stesso modo, anche gli input che riguardano il tempo di una ricetta, la difficoltà di una ricetta e la barra di ricerca, sono tutti di tipo \htmlcode{text} al posto dei tipi \htmlcode{number}, \htmlcode{range} e \htmlcode{search}.
 
 \subsubsection{CSS}
 Per la definizione della presentazione del sito è stato utilizzato CSS3 puro. Per mantenere la separazione tra contenuto e presentazione, non sono stati utilizzati tag di stile in XHTML ma sono stati utilizzati fogli di stile esterni. \\
@@ -112,16 +112,16 @@ Le funzioni di validazione degli input lato server sono contenute all'interno de
 	\item \phpcode{checkNickname($stringNickname)} che oltre a controllare se l'input inserito dall'utente contiene non più di 20 caratteri alfanumerici, controlla anche che il nome non sia già presente nel database.
 	\item \phpcode{checkEmail($stringEmail)} che valida la mail grazie al filtro offerto da PHP e inoltre controlla che la mail non sia già presente nel database.
 	\item \phpcode{comparePassword($stringPassword, $stringPasswordConfirm)} che verifica, se entrambi i campi non sono vuoti, che le due password siano uguali tra loro.
-	\item \phpcode{checkLogin($stringPassword, $stringNickname)} controlla che sia il nickname che la password inseriti dall'utente non siano stringhe vuote, che il nickname inserito sia presente nel database e che ad esso corrisponda la passowrd immessa dall'utente.
-	\item \phpcode{checkNomeRicetta($stringNomeRicetta, $dbCondition)} che varifica se la stringa rispetta la lunghezza di massimo 55 caratteri alfanumerici e, se la variabile \phpcode{dbCondition} è true, anche che il nome non sia già presente nel database. Quest'ultimo controllo viene fatto solo nel caso si sia aggiungendo una nuova ricetta, mentre non viene fatto se si vuole modificare una ricetta senza cambiarne il nome.
+	\item \phpcode{checkLogin($stringPassword, $stringNickname)} controlla che sia il nickname che la password inseriti dall'utente non siano stringhe vuote, che il nickname inserito sia presente nel database e che ad esso corrisponda la password immessa dall'utente.
+	\item \phpcode{checkNomeRicetta($stringNomeRicetta, $dbCondition)} che verifica se la stringa rispetta la lunghezza di massimo 55 caratteri alfanumerici e, se la variabile \phpcode{dbCondition} è true, anche che il nome non sia già presente nel database. Quest'ultimo controllo viene fatto solo nel caso si sia aggiungendo una nuova ricetta, mentre non viene fatto se si vuole modificare una ricetta senza cambiarne il nome.
 	\item \phpcode{checkDifficolta($stringDifficolta)} controlla che la stringa che rappresenta la difficoltà sia un numero tra 1 e 5.
 	\item \phpcode{checkTempo($stringTempo)} verifica che il tempo non sia vuoto e che sia un intero positivo, escluso lo zero.
 	\item \phpcode{checkKeywords($stringKeywords)} controlla che la stringa inserita dall'utente non sia vuota e che contenga almeno un carattere alfanumerico.
 	\item \phpcode{checkImage($stringImage)} verifica che il file caricato sia effettivamente un'immagine controllando la sua estensione, e che la sua dimensione non superi 150KB.
-	\item \phpcode{checkCommento($testo)} che controlla grazie all'espressione regolare, che il testo del commento non sia vuoto. Non è stato utilizzato la funzione \phpcode{empty()} perchè la stringa \phpcode{"0"} veniva considerata come vuota, mentre contiene un carattere.
+	\item \phpcode{checkCommento($testo)} che controlla grazie all'espressione regolare, che il testo del commento non sia vuoto. Non è stato utilizzato la funzione \phpcode{empty()} perché la stringa \phpcode{"0"} veniva considerata come vuota, mentre contiene un carattere.
 \end{itemize}
 Inoltre è stata implementata una funzione ausiliaria \phpcode{test_input($data)} che rimuove sia gli spazi che gli slash di escape, e trasforma in html i caratteri speciali, per esempio \phpcode{à} diventa \phpcode{&agrave;}.
-Ogniqualvolta un utente digiti erroraneamente dei dati che non rispettano almeno una validazione, viene informato mediante l'opportuna stampa degli errori e i dati inseriti vengono mantenuti negli input delle form grazie al loro salvataggio nella sessione.
+Ogniqualvolta un utente digiti erroneamente dei dati che non rispettano almeno una validazione, viene informato mediante l'opportuna stampa degli errori e i dati inseriti vengono mantenuti negli input delle form grazie al loro salvataggio nella sessione.
 
 \subsubsection{Javascript}\label{subs:javascript}
 Il linguaggio Javascript è stato utilizzato per implementare il comportamento dinamico lato client di alcune pagine del sito, nello specifico il menu ad hamburger presente nella visualizzazione mobile e la validazione lato client delle form presenti nelle pagine di accesso, registrazione, modifica dati utente, aggiunta e modifica di una ricetta, aggiunta e modifica di un commento.
@@ -129,6 +129,7 @@ Poiché è possibile che non tutti gli utenti dispongano della tecnologia adatta
 \paragraph{Menu mobile}\label{par:menu_mobile}
 Per gestire al meglio lo spazio limitato offerto da un dispositivo mobile, è stato deciso di implementare un menù hamburger che rimpiazzasse il menù desktop che sarebbe risultato troppo invasivo in uno schermo di piccole dimensioni.
 Attraverso il foglio di stile CSS è stato quindi reso verticale il menù ed è stato nascosto. Per renderlo visibile sarà necessario cliccare sull'apposita icona hamburger situata in alto alla destra del logo. Così facendo, attraverso l'evento "click" controllato dalla funzione \jscode{openSideNav()}, si andrà a cambiare la classe di stile applicata al menù così che risulti visualizzabile. Verranno quindi mostrate a schermo le varie voci e una X che, se premuta, andrà a chiudere il menù cambiando nuovamente la classe applicata ad esso.
+
 \paragraph{Validazione lato client}\label{par:validazione_lato_client}
 Per quanto riguarda la validazione della form relativa alla registrazione, sono stati implementati i seguenti controlli:
 \begin{itemize}
@@ -136,7 +137,7 @@ Per quanto riguarda la validazione della form relativa alla registrazione, sono 
 	\item \jscode{checkEmail(email)} che, passato come parametro la stringa che rappresenta l'id relativo alla mail presente nella form in esame, verifica sia se l'input inserito dall'utente è una stringa vuota, sia se non corrisponde all'espressione regolare che identifica le e-mail.
 	\item \jscode{isPasswordEqual(password, passwordConfirm)} che, passati come parametri le stringhe gli id che identificano l'input relativo alla password e la conferma della password, controlla se le due password sono uguali tra loro.
 \end{itemize}
-Per la validazione degli input nella form di login, si è deciso di controllare grazie alla funzione \jscode{loginValidator(campo)} che entrambi i campi passati come paramentri, ossia il nickname e la password inseriti, non siano vuoti. \newline
+Per la validazione degli input nella form di login, si è deciso di controllare grazie alla funzione \jscode{loginValidator(campo)} che entrambi i campi passati come parametri, ossia il nickname e la password inseriti, non siano vuoti. \newline
 Per la validazione delle form presenti nella pagina di modifica dati dell'utente, sono stati riutilizzati i controlli \jscode{checkNickname(nickname)}, \jscode{checkEmail(email)}, \texttt{isPasswordEqual(password, passwordConfirm)} ed è stato implementato il controllo per la validazione dell'immagine:
 \begin{itemize}
 	\item \jscode{checkImage(image)} che, data la stringa che rappresenta l'id per l'inserimento del file, verifica se l'estensione del file appartiene alle estensioni delle immagini accettate e se la dimensione del file è minore di 150KB.
