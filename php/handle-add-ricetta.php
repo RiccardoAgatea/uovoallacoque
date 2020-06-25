@@ -31,13 +31,13 @@ if ($_SESSION["errorNome"] != "" ||
     $connection = new DBConnection();
     $nickname = $_SESSION['user']->getNickname();
 
-    $nome = $_POST['nome'];
-    $difficolta = $_POST['difficolta'];
-    $tempo = $_POST['tempo'];
-    $tipo = $_POST['tipo'];
-    $ingredienti = $_POST['ingredienti'];
-    $procedura = $_POST['procedura'];
-    $keywords = $_POST['keywords'];
+    $nome = test_input($_POST['nome']);
+    $difficolta = test_input($_POST['difficolta']);
+    $tempo = test_input($_POST['tempo']);
+    $tipo = test_input($_POST['tipo']);
+    $ingredienti = test_input($_POST['ingredienti']);
+    $procedura = test_input($_POST['procedura']);
+    $keywords = test_input($_POST['keywords']);
 
     $connection->query("INSERT INTO ricette (nome, difficolta, tempo, portata, ingredienti, procedimento, keywords, author) VALUES (\"{$nome}\",\"{$difficolta}\",\"{$tempo}\",\"{$tipo}\",\"{$ingredienti}\",\"{$procedura}\",\"{$keywords}\", \"$nickname\");");
 
