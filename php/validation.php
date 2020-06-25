@@ -112,6 +112,8 @@ function checkNomeRicetta($stringNomeRicetta, $dbCondition)
             $nomeRicettaErr = "Il nome non pu&ograve; essere un campo vuoto";
         } else {
             $nomeRicetta = test_input($_POST[$stringNomeRicetta]);
+            echo "orig: " . $_POST[$stringNomeRicetta];
+            echo "dopo:" . $nomeRicetta;
 
             $lunghezza = strlen(rimozioneLingua($_POST[$stringNomeRicetta]));
             if ($lunghezza < 3 || $lunghezza > 55) {
