@@ -24,7 +24,7 @@ Lo schema relazionale del database è:
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics{img/progettazione/schema-db}
+	\includegraphics[width=18cm]{img/progettazione/schema-db}
 \end{figure}
 
 Le chiavi primarie delle tabelle sono degli identificatori numerici autoincrementali, eccetto per \sqlcode{voti}, per la quale la chiave primaria è data dall'utente che ha dato il voto e la ricetta che è stata votata, entrambi chiavi esterne.
@@ -83,7 +83,7 @@ Ogni pagina di errore è implementata in un file nella radice del sito nominato 
 	\item Errore \textit{400 BAD REQUEST}: ritornato nel caso l'URL della richiesta non rispetti vincoli di coerenza, ad esempio l'esecuzione di una ricerca priva del termine della ricerca nella query.
 	\item Errore \textit{401 UNAUTHORIZED}: ritornato nel caso in cui sia necessaria un'autenticazione non fornita, ad esempio cercando di inserire un commento prima di aver eseguito il login.
 	\item Errore \textit{403 FORBIDDEN}: ritornato nel caso in cui l'utente sia autenticato, ma non abbia i permessi necessari ad eseguire l'operazione richiesta, ad esempio cercando di inserire una nuova ricetta senza essere un amministratore.
-	\item Errore \textit{404 NOT FOUND}: ritornato nel caso in cui la richiesta abbia una sintassi non riconosciuta, ad esempio se l'URL individua un file non esistente.
+	\item Errore \textit{404 NOT FOUND}: ritornato nel caso in cui la richiesta abbia una sintassi non riconosciuta, ad esempio se l'URL individua una ricetta non esistente.
 \end{itemize}
 
 \paragraph{Funzionalità di ricerca}
