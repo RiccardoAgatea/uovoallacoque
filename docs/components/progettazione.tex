@@ -4,7 +4,7 @@
 \label{sub:struttura}
 \subsubsection{Header}
 \label{ssub:header}
-L'header contiene logo, nav, breadcrumb e due link per il login e il signup. Il logo, situato in alto a sinistra, non rimanda a nessuna pagina in quanto il link per la homepage è già contenuto nel menu sotto la voce Home. I due pulsanti per il login e il signup sono rispettivamente ``Accedi'' e ``Registrati'' e sono entrambi presenti solo nel caso in cui l'utente non abbia ancora effettuato l'accesso. Una volta effettuato l'accesso, al posto dei due link c'è il nickname dell'utente e il link ``esci'' che scollega l'utente e lo porta alla home.
+L'header contiene logo, nav, breadcrumb e due link per il login e il signup. Il logo, situato in alto a sinistra, non rimanda a nessuna pagina in quanto il link per la homepage è già contenuto nel menu sotto la voce Home. I due pulsanti per il login e il signup sono rispettivamente ``Accedi'' e ``Registrati'' e sono entrambi presenti solo nel caso in cui l'utente non abbia ancora effettuato l'accesso. Una volta effettuato l'accesso, al posto dei due link l'utente visualizza il messaggio di saluto \textit{Ciao nickname! Esci} dove c'è il nickname dell'utente cliccabile che rimanda al proprio profilo e il link ``esci'' che scollega l'utente e lo riporta alla home.
 % subsubsection header (end)
 \paragraph{Nav}
 \label{par:nav}
@@ -28,25 +28,25 @@ Lo scopo principale del sito è cercare e consultare le ricette a cui si è inte
 
 \paragraph{Pagina Home}
 È la prima pagina ad essere visualizzata quando un utente visita il sito, contiene una breve descrizione dei contenuti.
-Sono poi presenti le tre ricette (una per portata) con il voto più alto.
+Sono poi presenti le tre ricette (una per portata) che hanno ricevuto il voto medio più alto.
 
 \paragraph{Pagine delle portate}
-Le pagine con gli elenchi dei primi piatti, i secondi piatti e i dolci hanno la stessa struttura: in ogni pagina viene presentata la lista di tutte le ricette relative alla portata selezionata. Le ricette sono presentate in riquadri contenenti l'immagine del piatto, il nome, la difficoltà, il tempo necessario allo svolgimento, il voto medio e il link ``apri'' che porta alla pagina della ricetta selezionata.
+Le pagine con gli elenchi dei primi piatti, i secondi piatti e i dolci hanno la stessa struttura: in ogni pagina viene presentata la lista di tutte le ricette relative alla portata selezionata. Le ricette sono presentate in riquadri contenenti l'immagine del piatto, il nome cliccabile che apre la pagina della ricetta, la difficoltà, il tempo necessario allo svolgimento e il voto medio. In ogni pagina l'elenco contiene al massimo 6 ricette, e per visualizzare le altre, in basso al centro è possibile scorrere le pagine o con i link "Precedente" e "Successiva" o se si vuole saltare alcune pagine, con i numeri della paginazione.
 
 \paragraph{Pagine delle ricette}
-È la pagina in cui viene presentata la ricetta selezionata. Per prima cosa, è visibile il titolo della ricetta, l'immagine del piatto e sulla destra la lista degli ingredienti, la difficoltà e la durata della ricetta; in seguito è descritto il procedimento, seguito da un form che permette di assegnare alla ricetta un voto da 1 a 5. Infine c'è la sezione dei commenti in cui è possibile inserire un commento relativo alla ricetta e leggere i commenti degli altri utenti.
+È la pagina in cui viene presentata la ricetta selezionata. Per prima cosa, è visibile il titolo della ricetta, l'immagine del piatto a sinistra e sulla destra, la difficoltà, la durata della ricetta, il voto medio e la lista degli ingredienti; in seguito è descritto il procedimento, seguito da un form che permette di assegnare alla ricetta un voto da 1 a 5. Infine è disponibile la sezione dei commenti in cui è possibile inserire un commento relativo alla ricetta e leggere i commenti degli altri utenti se si ha effettuato l'accesso, altrimenti si trovano due link che rimandano uno alla registrazione e l'altro alla pagina di accesso. Se l'utente che visualizza questa pagina è un amministratore, allora in alto a destra subito prima della difficoltà, durata e voto medio della ricetta, appariranno due link, uno per modificare la ricetta, che rimanda alla pagina relativa alla modifica, e uno che elimina la ricetta e rimanda alla pagina delle portate.
 
 \paragraph{Pagine di Login e Signup}
-L'utente ha la possibilità di registrarsi o accedere con le proprie credenziali tramite le pagine di login e signup. Nella pagina signup sono presenti dei campi per inserire l'indirizzo email, il nickname e la password (quest'ultima da inserire due volte per confermare la correttezza). Per il login è necessario inserire  il nickname e la password.
+L'utente ha la possibilità di registrarsi o accedere con le proprie credenziali tramite le pagine di login e signup. Nella pagina signup sono presenti dei campi per inserire l'indirizzo email, il nickname e la password (quest'ultima da inserire due volte per confermare la correttezza). Per il login è necessario inserire il nickname e la password.
 
 \paragraph{Pagina Utente}
-Una volta effettuato l'accesso, l'utente può visitare la propria area personale e verificare le proprie informazioni correnti. C'è la possibilità di eliminare l'account inserendo la propria password nel form apposito in fondo alla pagina.
+Una volta effettuato l'accesso, l'utente può visitare la propria area personale e verificare le proprie informazioni correnti. Da questa pagina è possibile modificare i propri dati grazie al link "modifica dati" che rimanda alla pagina \textit{Modifica utente} oppure è possibile eliminare l'account inserendo la propria password nel form apposito in fondo alla pagina. Inoltre, se si è un amministratore, si ha la possibilità di aggiungere delle nuove ricette attraverso il link "Aggiungi nuova ricetta" che rimanda alla relativa pagina.
 
 \paragraph{Pagina Modifica Utente}
-Dalla pagina utente è possibile aprire la pagina modifica utente in cui sono presenti tutti i form necessari per cambiare le informazioni dell'utente (immagine, nickname, email e password). Ciascun form permette la modifica di un unica informazione, e deve essere confermato inserendo la password attuale. Nel caso si vogliano annullare le modifiche, lo si può fare mediante il pulsante ``Annulla'', in fondo alla pagina.
+Dalla pagina utente è possibile aprire la pagina modifica utente in cui sono presenti tutti i form necessari per cambiare le informazioni dell'utente (immagine, nickname, email e password). Ciascun form permette la modifica di un' unica informazione, e deve essere confermato inserendo la password attuale. Nel caso si vogliano annullare le modifiche, lo si può fare mediante il pulsante ``Annulla'', in fondo alla pagina, che rimanda alla pagina utente.
 
 \paragraph{Pagine Aggiungi e Modifica ricetta}
-Queste pagine sono raggiungibili solo dagli utenti con permessi amministratore. In entrambe le pagine sono presenti i form per l'inserimento delle informazioni che poi compariranno nella pagina della ricetta. Nella pagina ``modifica ricetta'' i form sono già compilati con le informazioni attuali. Anche in questo caso, per annullare le modifiche è presente il pulsante ``Annulla'' in fondo alla pagina.
+Queste pagine sono raggiungibili solo dagli utenti con permessi amministratore. In entrambe le pagine sono presenti i form per l'inserimento delle informazioni che poi compariranno nella pagina della ricetta. Nella pagina ``modifica ricetta'' i form sono già compilati con le informazioni attuali: questo perchè se si vuole modificare solo un campo e lasciare gli altri invariati è possibile facilmente. Anche in questo caso, per annullare le modifiche è presente il pulsante ``Annulla'' in fondo alla pagina, che rimandano alla pagina precedente.
 
 % subsubsection content (end)
 \subsubsection{Footer}
@@ -59,6 +59,7 @@ Il footer contiene la dicitura per il copyright, i nomi degli autori del sito, e
 \label{sub:visualizzazione}
 La visualizzazione del sito è stata pensata in modo da rendere le pagine accessibili ad ogni categoria di utente e reattive alla tipologia di dispositivo utilizzato. Sono state quindi utilizzate unità di misura relative e colori che garantissero sempre un adeguato livello di contrasto tra le scritte e lo sfondo sottostante. \\
 Sono state previste quattro tipologie di visualizzazione del sito: desktop, tablet, mobile e stampa.
+
 \subsubsection{Desktop}
 \label{ssub:desktop}
 Nella visualizzazione desktop il layout è diviso in tre schede posizionate vericalmente. La prima presenta il logo del sito, i link per effettuare l'accesso e la registrazione, il menù e la barra di ricerca. In questo modo appena l'utente entra nel sito può facilmente raggiungere la pagina desiderata. \\
