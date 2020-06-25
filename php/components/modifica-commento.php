@@ -1,8 +1,8 @@
 <div id="inserimento-commento">
     <h3>Modifica il commento</h3>
-    <form id="modifica-commento-form" method="post" action="<rootFolder />/php/handle-modifica-commento.php?ricetta=<ricettaPlaceholder />&idcommento=<idCommentoPlaceholder />&pagina=<paginaPlaceholder />">
-    	<fieldset class=fieldset-noborder>
-	        <label for="commento">
+    <form id="modifica-commento-form" method="post" action="<rootFolder />/php/handle-modifica-commento.php?ricetta=<ricettaPlaceholder />&amp;idcommento=<idCommentoPlaceholder />&amp;pagina=<paginaPlaceholder />">
+    	<fieldset class="fieldset-noborder">
+	        <label for="modifica-commento">
 	            Modifica il tuo commento
 	        </label>
 	        <textarea rows="" cols="" id="modifica-commento" name="modifica-commento"><testoCommentoDaModificarePlaceholder /></textarea>
@@ -10,9 +10,9 @@
 	        <input class="commento-submit" type="submit" value="Modifica"/>
 	    </fieldset>
 	</form>
-	<form id="annulla-commento" method="post" action="<rootFolder />/php/ricetta.php?id=<ricettaPlaceholder />&pagina=<paginaRicettaPlaceholder />#sezione-commenti">
+	<form id="annulla-commento" method="post" action="<rootFolder />/php/ricetta.php?id=<ricettaPlaceholder />&amp;pagina=<paginaRicettaPlaceholder />#sezione-commenti">
 		<fieldset class="fieldset-noborder">
-			<input class="commenti-input-annulla" type="submit" value="Annulla">
+			<input class="commenti-input-annulla" type="submit" value="Annulla"/>
 		</fieldset>
 	</form>
 </div>
