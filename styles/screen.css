@@ -27,6 +27,12 @@ input {
     padding: 0.2em;
 }
 
+.aiuti-screenreader {
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+}
+
 /*sfondo e stile*/
 
 html {

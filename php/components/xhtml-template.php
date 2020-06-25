@@ -42,6 +42,7 @@
 			<img id="immagine-logo"
 				 src="<rootFolder />/img/logo/coque_scritta_long.png"
 				 alt="Uovo alla coque" />
+			<a class="aiuti-screenreader" href="#content">Salta la navigazione</a>
 			<span class="apri-nav">
 				<img class="open-button"
 					 src="<rootFolder />/img/icone/hamburger.png"
