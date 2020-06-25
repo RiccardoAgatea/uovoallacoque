@@ -20,7 +20,7 @@
                 </li>
                 <li class="form-element">
                     <label
-                           for="user-password-immagine"><span xml:lang="en" lang="en">Passowrd</span>:</label>
+                           for="user-password-immagine"><span xml:lang="en" lang="en">Password</span>:</label>
                     <input class="barra-input"
                            id="user-password-immagine"
                            type="password"
