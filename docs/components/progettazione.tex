@@ -57,24 +57,22 @@ Il footer contiene la dicitura per il copyright, i nomi degli autori del sito, e
 % subsection struttura (end)
 \subsection{Visualizzazione} %le pagine devono essere accessibili indipendentemente dalle dimensioni del dispositivo e del browser
 \label{sub:visualizzazione}
-La visualizzazione del sito è stata pensata in modo da rendere le pagine accessibili ad ogni categoria di utente e reattive alla tipologia di dispositivo utilizzato. Sono state quindi utilizzate unità di misura relative e colori che garantissero sempre un adeguato livello di contrasto tra le scritte e lo sfondo sottostante. \\
+La visualizzazione del sito è stata pensata in modo da rendere le pagine accessibili ad ogni categoria di utente e reattive alla tipologia di dispositivo usato. Sono state quindi utilizzate unità di misura relative e colori che garantissero sempre un adeguato livello di contrasto tra le scritte e lo sfondo sottostante. \\
 Sono state previste quattro tipologie di visualizzazione del sito: desktop, tablet, mobile e stampa.
 
 \subsubsection{Desktop}
 \label{ssub:desktop}
-Nella visualizzazione desktop il layout è diviso in tre schede posizionate vericalmente. La prima presenta il logo del sito, i link per effettuare l'accesso e la registrazione, il menù e la barra di ricerca. In questo modo appena l'utente entra nel sito può facilmente raggiungere la pagina desiderata. \\
-La seconda scheda racchiude il contenuto che si adatta in base alla grandezza della schermata, in particolare gli elenchi delle ricette mostreranno da 1 a 3 ricette per fila dipendentemente dallo spazio a disposizione. \\
-La terza scheda contiene infine il footer.  
+Nella visualizzazione desktop il layout è diviso in tre schede posizionate vericalmente. La prima presenta il logo del sito, i link per effettuare l'accesso e la registrazione, il menù e la barra di ricerca. In questo modo appena l'utente entra nel sito può facilmente raggiungere la pagina desiderata. La seconda scheda racchiude il contenuto che si adatta in base alla grandezza della schermata, in particolare gli elenchi delle ricette mostreranno da 1 a 3 ricette per fila dipendentemente dallo spazio a disposizione. La terza scheda contiene infine il footer. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=16cm]{img/progettazione/desktop.jpg}
 \end{figure}
 % subsubsection desktop (end)
+
 \subsubsection{Tablet}
 \label{ssub:tablet}
 La visualizzazione tablet è pensata per dispositivi con meno spazio rispetto al desktop e per questo motivo lo spazio dedicato alla prima scheda viene visibilmente ridimensionato passando da un menù sempre visibile ad un menù ad hamburger, in cui è necessario premere l'apposito pulsante, in questo caso situato in alto a destra, per farlo apparire. Una volta aperto, il menù occupa la parte destra dello schermo e presenta le varie voci in verticale. Sono presenti inoltre i link per il login e il signup e la barra di ricerca posizionata sul fondo del menù. Si è deciso di inserire tutte le voci insieme alla barra di ricerca nel menù, per avere tutti gli elementi necessari per la navigazione raccolti in un unico spazio. Quando il menù è chiuso è visibile solo il logo affiancato dal tasto del menù. \\
 Il resto del design resta, invece, invariato.
-
 \begin{figure}[H]
 	\begin{minipage}[b]{8.5cm}
 		\centering
@@ -92,7 +90,7 @@ Il resto del design resta, invece, invariato.
 % subsubsection tablet (end)
 \subsubsection{Mobile}
 \label{ssub:mobile}
-Anche nella visualizzazione da mobile è stato implementato il menù ad hamburger al fine di gestire al meglio lo spazio disponibile. Il pulsante è facilmente raggiungibile per gli utenti che usano il telefono con due mani, mentre gli utenti destri che usano il telefano con una sola mano potranno aprire comodamente il menù col pollice. Una volta aperto, occupa quasi tutto lo schermo.
+Anche nella visualizzazione da mobile è stato implementato il menù ad hamburger al fine di gestire al meglio lo spazio disponibile. Il pulsante è facilmente raggiungibile per gli utenti che usano il telefono con due mani, mentre gli utenti destri che usano il telefono con una sola mano potranno aprire comodamente il menù col pollice. Una volta aperto, occupa quasi tutto lo schermo.
 \begin{figure}[H]
 	\begin{minipage}[b]{8.5cm}
 		\centering
@@ -118,15 +116,17 @@ Le pagine sono in bianco e nero per dare valore al contenuto anzichè alla prese
 
 \subsection{Accessibilità}
 \label{sub:accessibilità}
-Per garantire un alto livello di accessibilità sono state le linee guida dello standard WCAG. Comportamento, struttura e presentazione sono separate per permettere un miglior accesso al sito tramite diversi motori di ricerca e browser, inoltre, facilita l'interazione con utenti che presentano disabilità.
+Per garantire un alto livello di accessibilità sono state seguite le linee guida dello standard WCAG. Comportamento, struttura e presentazione sono separate per permettere un miglior accesso al sito tramite diversi motori di ricerca e browser e per facilitare l'interazione del sito con utenti che presentano disabilità.
 
 \subsubsection{Comportamento}
 Il sito offre la possibilità di cercare ricette in modo preciso tramite la barra di ricerca, altrimenti, le ricette più votate presenti nella home rappresentano uno spunto per esplorare le ricette all'interno del sito. La suddivisione delle ricette tra le pagine dei primi, secondi e dolci facilitano l'esplorazione del sito e una ricerca più mirata. Le informazioni sono reperibili con un numero limitato di click: ad esempio per accedere ad una determinata ricetta cercata tramite la barra di ricerca, saranno sufficienti due click.
-Per facilitare la navigazione, sul fondo di ogni pagina c'è il pulsante "torna su" che permette di raggiungere l'inizio della pagina senza utilizzare lo scroll. Inoltre, in ogni pagina è presente il breadcrumb che mostra la posizione dell'utente all'interno del sito. I link circolari vengono evitati rendendo l'ultimo campo del breadcrumb (che rappresenta la pagina corrente) semplice testo; lo stesso vale per tutti i link presenti nel header: una volta raggiunta una certa pagina, il link corrispondente non sarà clickabile perchè sarà testo.
-I tag input sono sottoposti ad un processo di validazione per garantire il corretto inserimento dei dati richiesti. Nel caso un input non superi la validazione, viene mostrato un messaggio di errore che spiega l'errore commesso ed eventualmente come si può evitare. Il messaggio di errore non elimina il contenuto dei tag, per permettere all' utente di modificare i dati senza risciverli.
+
+Per facilitare la navigazione, sul fondo di ogni pagina è presente il pulsante "torna su" che permette di raggiungere l'inizio della pagina senza utilizzare lo scroll.
+
+I tag input sono sottoposti ad un processo di validazione per garantire il corretto inserimento dei dati richiesti. Nel caso un input non superi la validazione, viene mostrato un messaggio di errore che spiega l'errore commesso ed eventualmente come si può evitare. Il messaggio di errore non elimina il contenuto all'interno dei tag \htmlcode{input}, per permettere all'utente di modificare i dati senza risciverli.
 
 \subsubsection{Struttura}
-Ogni pagina in cui si trova l'utente, quest'ultimo è consapevole di come è arrivato ad essa grazie al breadcrumb presente all'inizio di ogni pagina, è consapevole di dove si trova attualmente sempre tramite il breadcrumb e sa quali altre pagine può esplorare attraverso i link sottolineati presenti nella pagina. 
+Ogni pagina in cui si trova l'utente, quest'ultimo è consapevole di come è arrivato ad essa grazie al breadcrumb presente all'inizio di ogni pagina, è consapevole di dove si trova attualmente sempre tramite il breadcrumb e sa quali altre pagine può esplorare attraverso i link sottolineati presenti nella pagina. I link circolari vengono evitati rendendo l'ultimo campo del breadcrumb (che rappresenta la pagina corrente) semplice testo; lo stesso vale per tutti i link presenti nel header: una volta raggiunta una certa pagina, il link corrispondente non sarà cliccabile perchè viene trasformato in testo.
 
 Tutte le immagini presenti nel sito sono incapsulate nel tag \htmlcode{img} di cui ne è sempre specificata la proprietà \htmlcode{alt} così da fornire una descrizione alternativa per gli screen reader. Allo stesso modo in tutte le form ogni \htmlcode{input} possiede una sua \htmlcode{label} descrittiva. Sono stati messi a disposizione dell'utente dei \htmlcode{tabindex} con cui saltare direttamente al menu, alla ricerca e al contenuto della pagina corrente. abbiamo deciso di non utilizzare nessun \htmlcode{accessKey} perché spesso creano conflitti con gli shortcut predefiniti dei browser o addirittura con quelli degli screen reader.
 
@@ -134,7 +134,8 @@ Durante la navigazione all'interno del sito ci si può imbattere in alcune parol
 
 \subsubsection{Presentazione}
 Tramite il CSS è stato implementato il design utilizzando classi che definiscono il contenuto dell'oggetto e non il comportamento, in modo da mantenere la separazione tra comportamento e presentazione. Vengono utilizzate misure relative (em) o in percentuale per permettere una corretta visualizzazione delle pagine su schermi di dimensioni diverse. Sono presenti due fogli di stile diversi: il primo è dedicato alla stampa mentre il secondo è dedicato alla visualizzazione da dasktop e mobile.
-Il colore dominante del sito è il blu: il background è un pattern con le uova a sfondo azzurro, a contrasto col header e gli elementi del sito color blu scuro. Le scritte sono bianche per essere in contrasto col blu, oppure gialle nel caso dei link visitati.Il colore utilizzato per l' hover dei link è in contrasto sia con lo sfondo che col colore della scritta. Il rapporto tra colore di sfondo e testo superano il test WCAG AAA che richiede un rapporto di contrasto di almeno 7:1 per il testo normale e 4.5:1 per il testo in grassetto.
+
+Il colore dominante del sito è il blu: il background è un pattern con le uova a sfondo azzurro, a contrasto col header e gli elementi del sito color blu scuro. Le scritte sono bianche per essere in contrasto col blu, oppure gialle nel caso dei link visitati. Il colore utilizzato per l' hover dei link è in contrasto sia con lo sfondo che col colore della scritta. Il rapporto tra colore di sfondo e testo superano il test WCAG AAA che richiede un rapporto di contrasto di almeno 7:1 per il testo normale e 4.5:1 per il testo in grassetto.
 
 % come da specifiche è stata rispettata la completa separazione tra comportamento, presentazione e struttura.
 % ricerca: già scritta nell analisi
