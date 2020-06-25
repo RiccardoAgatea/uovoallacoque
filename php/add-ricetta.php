@@ -78,7 +78,7 @@ if (key_exists("wrong-add", $_SESSION) && $_SESSION["wrong-add"]) {
 } else {
     $content = str_replace("<nomePlaceholder />", "", $content);
     $content = str_replace("<checked1Placeholder />", "checked=\"checked\"", $content);
-    $content = preg_replace("(checked.Placeholder />)", "", $content);
+    $content = preg_replace("(<checked.Placeholder />)", "", $content);
     $content = str_replace("<difficoltaPlaceholder />", "", $content);
     $content = str_replace("<tempoPlaceholder />", "", $content);
     $content = str_replace("<ingredientiPlaceholder />", "", $content);
