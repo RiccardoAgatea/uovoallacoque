@@ -113,7 +113,7 @@ function checkNomeRicetta($stringNomeRicetta, $dbCondition)
         } else {
             $nomeRicetta = test_input($_POST[$stringNomeRicetta]);
 
-            $lunghezza = strlen(rimozioneLingua(html_entity_decode($nomeRicetta, ENT_QUOTES | ENT_XHTML)));
+            $lunghezza = strlen(rimozioneLingua($_POST[$stringNomeRicetta]));
             if ($lunghezza < 3 || $lunghezza > 55) {
                 $nomeRicettaErr = "La lunghezza &egrave; tra 3 e 55 caratteri";
             }
