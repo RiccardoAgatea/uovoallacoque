@@ -229,13 +229,13 @@ ul{
     margin-bottom: -1em;
 }
 #breadcrumb p {
-    display: inline;
+    display: block;
     background-color: #0c2752;
     -wedkit-border-radius:1em;
     -moz-border-radius:1em;
     border-radius: 1em;
     padding: 1em;
-    white-space: nowrap;
+    margin-right: 1em;
     
 }
 #header{
