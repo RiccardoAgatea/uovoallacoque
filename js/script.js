@@ -34,7 +34,13 @@ function checkNickname(nickname) {
 
 function checkImage(image) {
 	var test = document.getElementById(image).value;
-	var fileSize = document.getElementById(image).files[0].size;
+	var file = document.getElementById(image).files[0];
+
+	if (!file) {
+		return true;
+	}
+
+	var fileSize = file.size;
 	var extensions = ['png', 'jpg', 'jpeg', 'svg'];
 	var isImage = extensions.includes(test.split('.').pop());
 	var result = isImage && (fileSize < 153600);
