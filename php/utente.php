@@ -46,6 +46,8 @@ $content = str_replace("<PlaceholderEmailUtente />", $_SESSION["user"]->getEmail
 
 if (key_exists("logged", $_SESSION) && $_SESSION["logged"] && $_SESSION["user"]->getAdmin()) {
     $content = str_replace("<addPlaceholder />", "<a id=\"aggiungi-ricetta-link\" href=\" <rootFolder />/php/add-ricetta.php\" > Aggiungi nuova ricetta </a> ", $content);
+} else {
+    $content = str_replace("<addPlaceholder />", "", $content);
 }
 
 if (key_exists("wrong", $_SESSION)) {

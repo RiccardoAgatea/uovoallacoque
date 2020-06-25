@@ -75,7 +75,7 @@ if (!$result) {
     $portate = [
         "Primi piatti",
         "Secondi piatti",
-        "Dessert",
+        "Dolci",
     ];
 
     $percorsoBread = "<a xml:lang=\"en\" href=\"<rootFolder />/index.php\">Home</a> &gt; <a href=\"<rootFolder />/php/elenco.php?id=$portata\">{$portate[$portata - 1]}</a> &gt; $nome";
