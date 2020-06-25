@@ -112,10 +112,12 @@ function checkNomeRicetta($stringNomeRicetta, $dbCondition)
             $nomeRicettaErr = "Il nome non pu&ograve; essere un campo vuoto";
         } else {
             $nomeRicetta = test_input($_POST[$stringNomeRicetta]);
+            echo "orig: " . $_POST[$stringNomeRicetta];
+            echo "dopo:" . $nomeRicetta;
 
-            $lunghezza = strlen(rimozioneLingua(html_entity_decode($nomeRicetta, ENT_QUOTES | ENT_XHTML)));
+            $lunghezza = strlen(rimozioneLingua($_POST[$stringNomeRicetta]));
             if ($lunghezza < 3 || $lunghezza > 55) {
-                $nomeRicettaErr = "La lunghezza &egrave; tra 3 e 55 caratteri";
+                $nomeRicettaErr = "La lunghezza &egrave; minore di 3 caratteri e maggiore di 55";
             }
             if ($dbCondition && $connection->query(" SELECT nome FROM ricette WHERE nome=\"$nomeRicetta\" ")->fetch_row() != null) {
                 $nomeRicettaErr = "Questa ricetta &egrave; gi&agrave; presente";

@@ -33,23 +33,23 @@ if ($_SESSION["errorNome"] != "" ||
 } else {
     $connection = new DBConnection();
 
-    if(key_exists("immagine", $_FILES) && $_FILES['immagine']['name']!="") {
+    if (key_exists("immagine", $_FILES) && $_FILES['immagine']['name'] != "") {
 
-            $imageFileType = strtolower(pathinfo($_FILES['immagine']['name'], PATHINFO_EXTENSION));
-            $uploadfile = "../img/ricette/" . $id . "." . $imageFileType;
-            move_uploaded_file($_FILES['immagine']['tmp_name'], $uploadfile);
-            $path = str_replace("..", "<rootFolder />", $uploadfile);
+        $imageFileType = strtolower(pathinfo($_FILES['immagine']['name'], PATHINFO_EXTENSION));
+        $uploadfile = "../img/ricette/" . $id . "." . $imageFileType;
+        move_uploaded_file($_FILES['immagine']['tmp_name'], $uploadfile);
+        $path = str_replace("..", "<rootFolder />", $uploadfile);
 
-            $connection->query("UPDATE ricette SET img = \"{$path}\" WHERE ricette.id={$id}");
-        }
+        $connection->query("UPDATE ricette SET img = \"{$path}\" WHERE ricette.id={$id}");
+    }
 
-    $nome = $_POST['nome'];
-    $difficolta = $_POST['difficolta'];
-    $tempo = $_POST['tempo'];
-    $portata = $_POST['tipo'];
-    $ingredienti = $_POST['ingredienti'];
-    $procedura = $_POST['procedura'];
-    $keywords = $_POST['keywords'];
+    $nome = test_input($_POST['nome']);
+    $difficolta = test_input($_POST['difficolta']);
+    $tempo = test_input($_POST['tempo']);
+    $portata = test_input($_POST['tipo']);
+    $ingredienti = test_input($_POST['ingredienti']);
+    $procedura = test_input($_POST['procedura']);
+    $keywords = test_input($_POST['keywords']);
 
     $connection->query("UPDATE ricette SET nome=\"$nome\" WHERE ricette.id='{$id}'");
     $connection->query("UPDATE ricette SET difficolta=\"$difficolta\" WHERE ricette.id='{$id}'");

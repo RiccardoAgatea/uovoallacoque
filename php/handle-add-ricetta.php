@@ -28,15 +28,22 @@ if ($_SESSION["errorNome"] != "" ||
     header("Location: ./add-ricetta.php");
     exit;
 } else {
-    $connection = new DBConnection(); 
+    $connection = new DBConnection();
     $nickname = $_SESSION['user']->getNickname();
 
-    
-    $connection->query("INSERT INTO ricette (nome, difficolta, tempo, portata, ingredienti, procedimento, keywords, author) VALUES (\"{$_POST['nome']}\",\"{$_POST['difficolta']}\",\"{$_POST['tempo']}\",\"{$_POST['tipo']}\",\"{$_POST['ingredienti']}\",\"{$_POST['procedura']}\",\"{$_POST['keywords']}\", \"$nickname\");");
+    $nome = test_input($_POST['nome']);
+    $difficolta = test_input($_POST['difficolta']);
+    $tempo = test_input($_POST['tempo']);
+    $tipo = test_input($_POST['tipo']);
+    $ingredienti = test_input($_POST['ingredienti']);
+    $procedura = test_input($_POST['procedura']);
+    $keywords = test_input($_POST['keywords']);
 
-    if(key_exists("immagine", $_FILES) && $_FILES['immagine']['name']!="") {
+    $connection->query("INSERT INTO ricette (nome, difficolta, tempo, portata, ingredienti, procedimento, keywords, author) VALUES (\"{$nome}\",\"{$difficolta}\",\"{$tempo}\",\"{$tipo}\",\"{$ingredienti}\",\"{$procedura}\",\"{$keywords}\", \"$nickname\");");
+
+    if (key_exists("immagine", $_FILES) && $_FILES['immagine']['name'] != "") {
         $ricettaRow = $connection->query("SELECT id FROM ricette WHERE nome=\"{$_POST['nome']}\"");
-        if($ricettaRow) {
+        if ($ricettaRow) {
             $idRicetta = $ricettaRow->fetch_assoc()['id'];
             $imageFileType = strtolower(pathinfo($_FILES['immagine']['name'], PATHINFO_EXTENSION));
             $uploadfile = "../img/ricette/" . $idRicetta . "." . $imageFileType;

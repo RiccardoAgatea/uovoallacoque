@@ -17,9 +17,9 @@ function isPasswordEqual(password, passwordConfirm) {
 }
 
 function checkEmail(email) { //passo l'id della mail che voglio controllare, per esempio "signup-email"
-	var regex = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$"); 
+	var regex = new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$");
 	var test = document.getElementById(email).value.toLowerCase();
-	var result = (regex.test(test)) && !(test === ""); 
+	var result = (regex.test(test)) && !(test === "");
 	printError(result, email, "Email non corretta");
 	return result;
 }
@@ -32,13 +32,19 @@ function checkNickname(nickname) {
 	return result;
 }
 
-function checkImage(image) { 
+function checkImage(image) {
 	var test = document.getElementById(image).value;
-	var fileSize = document.getElementById(image).files[0].size;
+	var file = document.getElementById(image).files[0];
+
+	if (!file) {
+		return true;
+	}
+
+	var fileSize = file.size;
 	var extensions = ['png', 'jpg', 'jpeg', 'svg'];
-	var isImage = extensions.includes(test.split('.').pop()); 
-	var result = isImage && (fileSize < 153600); 
-	printError(result, image, "Il formato non &egrave; valido o la dimensione egrave; superiore a 150KB"); 
+	var isImage = extensions.includes(test.split('.').pop());
+	var result = isImage && (fileSize < 153600);
+	printError(result, image, "Il formato non &egrave; valido o la dimensione egrave; superiore a 150KB");
 	return result;
 }
 
@@ -46,7 +52,7 @@ function checkTitolo(titolo) {
 	var test = document.getElementById(titolo).value;
 	var regex = new RegExp("^.{3,55}$");
 	var result = (regex.test(test)) && !(test === "");
-	printError(result, titolo, "La lunghezza massima &egrave; di 55 caratteri ciao");
+	printError(result, titolo, "La lunghezza &egrave; minore di 3 caratteri o maggiore di 55");
 	return result;
 }
 
@@ -87,7 +93,7 @@ function checkCommento(commento) {
 function loginValidator(campo) {
 	var campoString = document.getElementById(campo).value;
 	var result = campoString.toString().length !== 0;
-	printError(result, campo, "Questo campo non pu&ograve; essere vuoto"); 
+	printError(result, campo, "Questo campo non pu&ograve; essere vuoto");
 	return result;
 }
 
@@ -96,7 +102,7 @@ function signupValidator(nickname, email, password, passwordConfirm) {
 	var emailChecked = checkEmail(email);
 	var passwordChecked = isPasswordEqual(password, passwordConfirm);
 
-	return (nicknameChecked && emailChecked && passwordChecked); 
+	return (nicknameChecked && emailChecked && passwordChecked);
 }
 
 function ricettaValidator(titolo, difficolta, tempo, image, keywords) {
